@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url:kjdove.github.io/cisc449-its/
+      url: https://kjdove.github.io/cisc449-its/
 
     steps:
       - name: Deploy to GitHub Pages
