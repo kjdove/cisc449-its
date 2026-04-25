@@ -7,20 +7,22 @@ import { topics } from "./PreQuestions";
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
 
-    //useStates
-    //each topic needs a rating from the student
     const [currentTopicInd, setCurrentTopicInd] = useState(0);
+    const ratings = [1,2,3,4,5,6,7,8,9,10];
+    const [studentRating, setSR] = useState(0);
 
-    //question array of all pretest questions (three per page/topic, submit button)
-
-
+    //setSR helper function
+    const hnadleSR = (r: number) => {
+        setSR(r);
+        console.log('rating: ', r);
+        //save to local storage
+    }
     //on submit helper function
         //save user's answer and rating
         //go to next topic/set of questions from array
     const handleSubmit = () => {
-        //save user's answer and rating
-        //go to next topic/set of questions from array
         alert("are you sure you want to submit? once you submit, you cannot go back to change your answer or rating for this topic");
+        //save student answers to local storage before changing topics
         if (currentTopicInd < topics.length - 1) {
             setCurrentTopicInd(currentTopicInd + 1);
         } else {
@@ -36,24 +38,23 @@ export function Pretest(): JSX.Element {
             <div className="pretest-top">
                 <p>On a scale from 1 to 10:</p>
                 <p>{topics[currentTopicInd].topic}</p>
-
-                {/* <Form.Group className="mb-3">
-                    <Form.Label>How well do you know <strong>TOPIC</strong></Form.Label>
-                    <div className="d-flex flex-wrap">
-                        {[...Array(10)].map((_, i) => (
-                        <Form.Check
-                            inline
-                            key={i + 1}
-                            label={i + 1}
-                            name="rating-group"
-                            type="radio"
-                            id={`rating-${i + 1}`}
-                            value={i + 1}
-                            onChange={(e) => console.log(e.target.value)}
-                        />
+                <div className="rating-system">
+                    <p><strong>Not well at all</strong></p>
+                    {ratings.map((r) => (
+                            <label key={r} style={{ cursor: 'pointer' }}>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value={r}
+                                checked={studentRating === r}
+                                onChange={() => hnadleSR(r)}
+                                style={{ marginRight: '5px' }}
+                            />
+                            {r}
+                            </label>
                         ))}
-                    </div>
-                </Form.Group> */}
+                        <p><strong>Extremely well</strong></p>
+                </div>
 
             </div>
             <br/>
