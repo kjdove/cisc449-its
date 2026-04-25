@@ -19,9 +19,16 @@ export function Pretest(): JSX.Element {
             </div>
             <br/>
             <div className="pretest-bottom">
-                <p>Question</p>
-                <p>answer section</p>
+                <div className="question-area"> 
+                    <h4>questions</h4>
+                </div>
+                <div className="answer-area">
+                    <h4>answer</h4>
+                </div>
+                <div className="pretest-buttons">
                 {/**next question button, when third question submit button */}
+                </div>
+                
             </div>
             
            
