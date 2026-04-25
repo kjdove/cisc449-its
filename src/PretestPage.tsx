@@ -1,21 +1,60 @@
-import type { JSX } from "react";
+import {  useState, type JSX } from "react";
 import "./PretestPage.css";
-// import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+// import { Form } from "react-bootstrap";
+import { topics } from "./PreQuestions";
 
 export function Pretest(): JSX.Element {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    //navigate to a sub page for pretest for each question, submit go to next page
-    //also on submit, save user's answer and rating
+    //useStates
+    //each topic needs a rating from the student
+    const [currentTopicInd, setCurrentTopicInd] = useState(0);
+
+    //question array of all pretest questions (three per page/topic, submit button)
+
 
     //on submit helper function
+        //save user's answer and rating
+        //go to next topic/set of questions from array
+    const handleSubmit = () => {
+        //save user's answer and rating
+        //go to next topic/set of questions from array
+        alert("are you sure you want to submit? once you submit, you cannot go back to change your answer or rating for this topic");
+        if (currentTopicInd < topics.length - 1) {
+            setCurrentTopicInd(currentTopicInd + 1);
+        } else {
+            navigate('/dashboard');
+            console.log("pretest completed, navigate to dashboard");
+        }
+    }
 
     //CHANGE CLASS NAMES
     return (
         <div className="pretest-page">
+            <h2>Pretest</h2>
             <div className="pretest-top">
-                <h3>how well u know</h3>
-                <p>rating scale</p>
+                <p>On a scale from 1 to 10:</p>
+                <p>{topics[currentTopicInd].topic}</p>
+
+                {/* <Form.Group className="mb-3">
+                    <Form.Label>How well do you know <strong>TOPIC</strong></Form.Label>
+                    <div className="d-flex flex-wrap">
+                        {[...Array(10)].map((_, i) => (
+                        <Form.Check
+                            inline
+                            key={i + 1}
+                            label={i + 1}
+                            name="rating-group"
+                            type="radio"
+                            id={`rating-${i + 1}`}
+                            value={i + 1}
+                            onChange={(e) => console.log(e.target.value)}
+                        />
+                        ))}
+                    </div>
+                </Form.Group> */}
+
             </div>
             <br/>
             <div className="pretest-bottom">
@@ -25,8 +64,8 @@ export function Pretest(): JSX.Element {
                 <div className="answer-area">
                     <h4>answer</h4>
                 </div>
-                <div className="pretest-buttons">
-                {/**next question button, when third question submit button */}
+                <div className="submit-button">
+                    <button onClick={handleSubmit}>submit</button>
                 </div>
                 
             </div>
