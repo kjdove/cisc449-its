@@ -1,13 +1,30 @@
 import type { JSX } from "react";
-import {useNavigate} from 'react-router-dom';
+import "./PretestPage.css";
+// import {useNavigate} from 'react-router-dom';
 
 export function Pretest(): JSX.Element {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
+    //navigate to a sub page for pretest for each question, submit go to next page
+    //also on submit, save user's answer and rating
+
+    //on submit helper function
+
+    //CHANGE CLASS NAMES
     return (
         <div className="pretest-page">
-            <h1>Pretest Page</h1>
-            <button onClick={() => navigate('/')}>Back to Start Page</button>
+            <div className="pretest-top">
+                <h3>how well u know</h3>
+                <p>rating scale</p>
+            </div>
+            <br/>
+            <div className="pretest-bottom">
+                <p>Question</p>
+                <p>answer section</p>
+                {/**next question button, when third question submit button */}
+            </div>
+            
+           
         </div>
     );
 }
