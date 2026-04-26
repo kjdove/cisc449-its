@@ -5,9 +5,9 @@ import App from './App.tsx'
 import {HashRouter, Route, Routes} from "react-router-dom";
 import { Pretest } from './Pretest/PretestPage.tsx';
 import { Dashboard } from './Dashboard.tsx';
-import { Module1 } from './Module1.tsx';
-import { Module2 } from './Module2.tsx';
-import { Module3 } from './Module3.tsx';
+import { Module1 } from './module1/Module1.tsx';
+import { Module2 } from './module2/Module2.tsx';
+import { Module3 } from './module3/Module3.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,8 +17,13 @@ createRoot(document.getElementById('root')!).render(
           <Route path= "/pretest" element={<Pretest/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/module1" element={<Module1/>} />
+          <Route path="/module1/topic1" element={<Module1/>} />
+          <Route path="/module1/topic2" element={<Module1/>} />
+          <Route path="/module1/topic3" element={<Module1/>} />
+          <Route path="/module1/topic4" element={<Module1/>} />
           <Route path="/module2" element={<Module2/>} />
           <Route path="/module3" element={<Module3/>} />
+
         </Routes>
       </HashRouter>
   </StrictMode>,

@@ -2,7 +2,7 @@ import {  useState, type JSX } from "react";
 import "./PretestPage.css";
 import {useNavigate} from 'react-router-dom';
 import { Form } from "react-bootstrap";
-import { pretestQuestions, topics, /*PretestState,*/ type Topic } from "../PreQuestions";
+import { pretestQuestions, topics, /*PretestState,*/ type Topic } from "./PreQuestions";
 
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
