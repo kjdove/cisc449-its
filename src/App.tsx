@@ -1,7 +1,8 @@
 // import { useState } from 'react'
 
 import './App.css'
-import { StartPage } from './StartPage'
+import { Dashboard } from './Dashboard'
+// import { StartPage } from './StartPage'
 
 function App() {
   
@@ -11,8 +12,8 @@ function App() {
  
   return (
     <>
-    
-      <StartPage/>
+    <Dashboard />
+     {/* { <StartPage/>} */}
     </>
   )
 }

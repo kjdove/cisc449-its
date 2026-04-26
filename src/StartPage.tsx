@@ -5,7 +5,6 @@ export function StartPage(): JSX.Element {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        alert('You must complete the pretest in one sitting. Once you submit your answers and ratings for a topic, you cannot go back to change them. Are you sure you want to start the pretest?');
         navigate('/pretest');
     }
     return (

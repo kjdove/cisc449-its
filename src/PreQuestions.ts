@@ -1,4 +1,15 @@
 //compare topic rating to each question's correct answer and student answer to determine which modules should be 'unlocked'
+export type PretestState = {
+    topics: {
+      topicId: string;
+      rating: number;
+      answers?: {
+        questionId: string;
+        studentAnswer: string;
+      }[];
+    }[];
+};
+
 export interface Topic {
     id: string;
     topic: string;
