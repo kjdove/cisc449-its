@@ -8,12 +8,11 @@ export function Dashboard(): JSX.Element {
     return (
         <div className="dashboard-page">
             <h3>dashbaord</h3>
+            <p>Click on a module to learn its topics.</p>
+
             <div className="dashboard-content">
                 <div className="dashboard-left">
-                    <p className="pretest-link">Retake the pretest</p>
-                    <p>
-                        Click on a module to view its topics.
-                    </p>
+                    <p className="pretest-link" onClick={() => navigate("/pretest")}>Retake the pretest</p>
                     {/*circular progress bar for modules */}
                 </div>
                 <div className="dashboard-right">

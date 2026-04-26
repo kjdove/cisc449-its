@@ -1,30 +1,28 @@
 import {  useState, type JSX } from "react";
 import "./PretestPage.css";
 import {useNavigate} from 'react-router-dom';
-import { Form } from "react-bootstrap";
-import { pretestQuestions, topics, /*PretestState,*/ type Topic } from "./PreQuestions";
+// import { Form } from "react-bootstrap";
+import { /*pretestQuestions,*/ topics, /*PretestState,*/} from "./PreQuestions";
 
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
-    const LOCAL_STORAGE_KEY = "pretestData";
 
     const [currentTopicInd, setCurrentTopicInd] = useState(0);
     const ratings = [1,2,3,4,5,6,7,8,9,10];
     const [studentRating, setSR] = useState(0);
-    const questions = pretestQuestions.filter((q) => q.topicId === topics[currentTopicInd].id);
-    const [pretestQs, setPretestQuestions] = useState(questions);
+    // const questions = pretestQuestions.filter((q) => q.topicId === topics[currentTopicInd].id);
     //setSR helper function
     const hnadleSR = (r: number) => {
         setSR(r);
     }
 
     //helper function for saving student's answer
-    const handleAnswerChange = (questionId: string, answer: string) => {
-        const updatedQuestions = pretestQuestions.map((q) =>
-            q.id === questionId ? { ...q, studentAnswer: answer } : q
-        );
-        setPretestQuestions(updatedQuestions);  
-    }
+    // const handleAnswerChange = (questionId: string, answer: string) => {
+    //     const updatedQuestions = pretestQuestions.map((q) =>
+    //         q.id === questionId ? { ...q, studentAnswer: answer } : q
+    //     );
+    //     setPretestQuestions(updatedQuestions);  
+    // }
 
     //on submit helper function
         //save user's answer and rating
@@ -35,28 +33,6 @@ export function Pretest(): JSX.Element {
         if(currentTopicInd === 0){
             window.confirm( "Are you sure you want to submit? You cannot go back.");
         }
-        //save rating and answers to localstorage
-        const currentTopic = topics[currentTopicInd];
-
-        const topicData = {
-            topicId: currentTopic.id,
-            rating: studentRating,
-            answers: pretestQs.map((q) => ({
-                questionId: q.id,
-                studentAnswer: q.studentAnswer || "",
-            })),
-        }
-
-        const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-        const parsedData = storedData ? JSON.parse(storedData) : { topics: [] };
-
-        const filteredTopics = parsedData.topics.filter((t: Topic) => t.id !== currentTopic.id);
-
-        const updatedState = {
-            topics: [...filteredTopics, topicData],
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedState));
-
         setSR(0);
 
         if (currentTopicInd < topics.length - 1) {
@@ -96,30 +72,6 @@ export function Pretest(): JSX.Element {
             <div className="pretest-bottom">
                 <div className="question-area"> 
                     <h4>questions</h4>
-                    {questions.map((q) => (
-                        <div key={q.id} className="question">
-                            <p>{q.question}</p>
-                            {q.options ? (
-                                <Form.Select
-                                
-                                    value={q.studentAnswer || ""}
-                                    onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                                >
-                                    
-                                    {q.options.map((option, index) => (
-                                        <option key={index} value={option}>{option}</option>
-                                    ))}
-                                </Form.Select>
-                            ) : (
-                                <Form.Control
-                                    type="text"
-                                    value={q.studentAnswer || ""}
-                                    onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                                    placeholder="Type your answer here"
-                                />
-                            )}
-                        </div>
-                    ))}
                 </div>
                {/* { <div className="answer-area">
                     <h4>answer</h4>
