@@ -26,10 +26,10 @@ export function Module1(): JSX.Element {
                 <div>
                     <h1>Module 1: Forms</h1>
                     <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <h4 onClick={() => handleTopicChange("1")}>1. Forms and Form.Groups</h4>
-                    <h4 onClick={() => handleTopicChange("2")}>2. Form.Group Tags and Attributes</h4>
-                    <h4 onClick={() => handleTopicChange("3")}>3. ReadOnly Forms (Form Controls)</h4>
-                    <h4 onClick={() => handleTopicChange("4")}>4. How to Use Form Input Value</h4>
+                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("1")}>1. Forms and Form.Groups</h4>
+                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("2")}>2. Form.Group Tags and Attributes</h4>
+                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("3")}>3. ReadOnly Forms (Form Controls)</h4>
+                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("4")}>4. How to Use Form Input Value</h4>
                 </div>
             )}
 

@@ -25,9 +25,9 @@ export function Module3(): JSX.Element {
                <div>
                     <h1>Module 3</h1>
                     <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <h4 onClick={() => handleTopicChange("1")}>1. Variations of textboxes</h4>
-                    <h4 onClick={() => handleTopicChange("2")}>2. Variations of checkboxes</h4>
-                    <h4 onClick={() => handleTopicChange("3")}>3. Dropdown with .map to list options</h4>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("1")}>1. Variations of textboxes</h4>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("2")}>2. Variations of checkboxes</h4>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdown with .map to list options</h4>
                 </div>
             )}
             {topic === "1" && (

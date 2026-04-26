@@ -10,3 +10,8 @@
     padding: 20px;
     height: auto;
 }
+
+.m1-topic-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
