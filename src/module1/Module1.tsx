@@ -26,9 +26,11 @@ export function Module1(): JSX.Element {
                 <div>
                     <h1>Module 1: Forms</h1>
                     <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                    <p>Review <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/state.html#the-usestate-concept">useStates</a>.</p>
+                    <p>Read over the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#what-are-forms">Forms</a> section of the textbook before completing the questions in the below topics.</p>
                     <h4 className="m1-topic-link" onClick={() => handleTopicChange("1")}>1. Forms and Form.Groups</h4>
                     <h4 className="m1-topic-link" onClick={() => handleTopicChange("2")}>2. Form Attributes and Controls</h4>
-                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("3")}>3. How to Use Form Input Value</h4>
+                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("3")}>3. How to Use the Value Attribute</h4>
                 </div>
             )}
 
@@ -36,7 +38,6 @@ export function Module1(): JSX.Element {
                 <div>
                     <h2>Forms and Form.Groups</h2>
                     <button onClick={handleBackButton}>Back to Module 1</button>
-                    <p>Visit the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#what-are-forms">Textbook</a></p>
                     
                 </div>
             )}
@@ -44,15 +45,13 @@ export function Module1(): JSX.Element {
                 <div>
                     <h2>Form Attributes and Controls</h2>
                     <button onClick={handleBackButton}>Back to Module 1</button>
-                    <p>Visit the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#form-attributes">Textbook</a></p>
 
                 </div>
             )}
             {topic === "3" && (
                 <div>
-                    <h2>How to Use Form Input Value</h2>
+                    <h2>How to Use the Value Attribute</h2>
                     <button onClick={handleBackButton}>Back to Module 1</button>
-                    <p>Review <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/state.html#the-usestate-concept">useStates</a></p>
                 </div>
             )}
         </div>
