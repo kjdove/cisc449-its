@@ -1,4 +1,4 @@
-/**TOPIC 1: Forms and Form.Groups Questions*/
+/**TOPIC 1: Forms and Form.Groups Questions (20)*/
 //multiple choice questions for topic 1
 export const topic1MCQ = [
     {id: "1.1.1", question: "What is a form? "},
@@ -10,12 +10,11 @@ export const topic1MCQ = [
     {id: "1.1.7", question: "What is the purpose of a Form.Control?"},
     {id: "1.1.8", question: "What is the purpose of a Form.Text?"},
     {id: "1.1.9", question: "What is the className attribute used for in a Form.Group?"},
-    {id: "1.1.10", question: "Select the correct code to create a Form.Group with a label, control, and text."},
-
 ]
 
 //select all that apply questions for topic 1 - multi checkboxes for answer options
 export const topic1SelectAll = [
+    {id: "1.1.10", question: "Select the correct code to create a Form.Group with a label, control, and text."},
     {id: "1.1.11", question: "Select all the correct statements about forms."},
     {id: "1.1.12", question: "Select all the correct statements about Form.Groups."},
     {id: "1.1.13", question: "Select all the correct statements about Form.Labels."},
@@ -37,7 +36,7 @@ export const topic1Code = [
     {id: "1.1.20", question: ""}
 ]
 
-/**TOPIC 2: Form Attributes and Controls*/
+/**TOPIC 2: Form Attributes and Controls (15)*/
 export const topic2MCQ = [
     //attributes
     {id: "1.2.1", question: "[] are used to control the behavior of form components"},
@@ -81,15 +80,49 @@ export const topic2Code = [
     {id: "1.2.15", question: "You want to create a form control that is completely non-interactive and appears grayed out. What attribute(s) would you use?"}
 ]
 
-/**TOPIC 3: How to Use the Value Attribute*/
+/**TOPIC 3: How to Use the Value Attribute (13)*/
 export const topic3MCQ = [
-
-]
-
-export const topic3SelectAll = [
-
+    //value
+    {id: "1.3.1", question: "The [] attribute represents the current value of a Form component and can be looked up and used throughout code."},
+    //useState
+    {id: "1.3.2", question: "[] is used to create controlled components, where the value of the form control is bound to a state variable."},
+    //where the state of the form data is stored
+        //controlled - state variable
+        //uncontrolled - DOM
+    {id: "1.3.3", question: "What is the difference between controlled and uncontrolled components in React forms?"},
+    //binding value to state variable syntax (value={name})
+    /**
+     *  const [name, setName] = useState<string>("");
+        <Form.Control 
+            type="text" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+        />
+     */
+    {id: "1.3.4", question: "Which of the following is the correct syntax for binding the value of a form control to a state variable called 'name'?"},
+    //updating state variable on user input syntax (setName(e.target.value))
+    {id: "1.3.5", question: "Which of the following is the correct syntax for updating a state variable called 'name' when the user types in a form control?"}
 ]
 
 export const topic3Code = [
+    //based off following code, what will happen (select from options)
+    //correct syntax - state updates as user types, form control value updates to match state
+    {id: "1.3.6", question: "Given the following code, what will happen when the user types in the form control?"},
+    //incorrect onChange syntax - state does not update as user types and stays initial value
+    {id: "1.3.7", question: "Given the following code, what will happen when the user types in the form control?"},
+    //incorrect value syntax - form control does not update to match state
+    {id: "1.3.8", question: "Given the following code, what will happen when the user types in the form control?"},
+    //correct syntax - state updates as user types, form control value updates to match state
+    {id: "1.3.9", question: "Given the following code, what will happen when the user types in the form control?"},
 
+    //ask user what part of the code defines the state, handles change, binds the value
+    {id: "1.3.10", question: "In the following code, which part (1) defines the state variable for the form control, (2) handles updating the state variable when the user types in the form control, and (3) binds the value of the form control to the state variable?"},
+
+    //what's missing/wrong with code (free response)
+    //missing definition of state variable
+    {id: "1.3.11", question: "What is missing or wrong with the following code for a controlled form control?"},
+    //missing onChange handler
+    {id: "1.3.12", question: "What is missing or wrong with the following code for a controlled form control?"},
+    //missing value attribute/binding value to state
+    {id: "1.3.13", question: "What is missing or wrong with the following code for a controlled form control?"},
 ]
