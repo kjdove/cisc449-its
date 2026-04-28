@@ -2,6 +2,7 @@ import type { JSX } from "react";
 import { useState } from "react";
 import './Module1.css';
 import { useNavigate } from "react-router-dom";
+// import { topic1Code, topic1MCQ, topic2Code, topic2MCQ, topic3Code, topic3MCQ } from "./M1Questions";
 
 
 export function Module1(): JSX.Element {

@@ -1,7 +1,7 @@
 /**TOPIC 1: Forms and Form.Groups Questions (20)*/
 //multiple choice questions for topic 1
 export const topic1MCQ = [
-    {id: "1.1.1", question: "What is a form? "},
+    {id: "1.1.1", question: "What is a form?"},
     {id: "1.1.2", question: "What is a Form.Group?"},
     {id: "1.1.3", question: "What are the common tags used in a Form.Group?"},
     {id: "1.1.4", question: "What are the common properties of a Form.Group?"}, 
