@@ -24,12 +24,29 @@ export function Module2(): JSX.Element {
         <div className="m2-container">
             {topic === "" && (
                 <div>
-                    <h1>Module 2</h1>
-                    <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("1")}>1. Textboxes</h4>
-                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("2")}>2. Checkboxes</h4>
-                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdowns</h4>
-                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between Textbox/Checkbox/Dropdown </h4>
+                    <div className="module-header">
+                        <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                        <h1>Module 2</h1>
+                    </div>
+                    <p>Click on a topic title to complete its questions.</p>
+
+                    <div className="module-content">
+                        <div className="module-left">
+                            <h2 className="topic-title">Topics</h2>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("1")}>1. Textboxes</h4>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("2")}>2. Checkboxes</h4>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdowns</h4>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between Textbox/Checkbox/Dropdown </h4>
+                        </div>
+                        <div className="module-right">
+                            <h2 className="mastery-title">Mastery</h2>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                        </div>
+
+                    </div>
                     <button className="end-button">End of Module Quiz</button>
                 </div>
             )}
