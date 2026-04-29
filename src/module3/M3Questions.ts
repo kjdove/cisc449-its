@@ -72,6 +72,7 @@ export const topic1Code = [
     {id: "3.1.14", question: "You are creating a registration form for an event. You want to include a field for users to enter their full name, and you want the label to be displayed on the same line as the input field. Which of the following code snippets correctly implements this requirement?"},
 
     //parsons/ordering code
+        //for each question, include all the possible lines of code that make each variation of textbox
     {id: "3.1.15", question: "Order the following lines of code to correctly create a number input box."},
     {id: "3.1.16", question: "Order the following lines of code to correctly create a textbox with a horizontal layout."},
     {id: "3.1.17", question: "Order the following lines of code to correctly create a multiline textarea."},
@@ -198,16 +199,37 @@ export const topic2Code = [
     {id: "3.2.19", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
 
     //parsons/ordering
+        //for each question, include all the possible lines of code that make each variation of checkbox
     {id: "3.2.20", question: "Order the following lines of code to correctly create a switch."},
     {id: "3.2.21", question: "Order the following lines of code to correctly create a set of radio buttons."},
     {id: "3.2.22", question: "Order the following lines of code to correctly create a set of multi checkboxes."},
 ]
 
-/**TOPIC 3: Dropdown Variations () */
+/**TOPIC 3: Dropdown Variations (9) */
 export const topic3MCQ = [
+    //a list of options
+    {id: "3.3.1", question: "A very frequent situation is to have a dropdown populated by []."},
+    //key
+    {id: "3.3.2", question: "A unique [] attribute is required for each option in a dropdown to ensure that React can efficiently update and render the list when changes occur."},
+    //.map()
+    {id: "3.3.3", question: "The higher order array method [] is commonly used to generate all of the option tags."},
+    // key and value attr
+    {id: "3.3.4", question: "When generating dropdown options from an array of data, the [] and [] attributes are commonly used to specify the unique identifier and display value for each option, respectively."},
+    //value and onChange attr
+    {id: "3.3.5", question: "The [] and [] attributes are used in the Form.Select tag to manage the selected option in a dropdown."},
 
-]
+    //code
+    {id: "3.3.6", question: "Select the correct code to create a dropdown populated by an array of options."},
+]  
 
 export const topic3Code = [
+    //fill in blanks
+        //One that's : Form.(Select), (value)={...}, (onChange)={...}(.map(...)),  <(option)>, (key)={...}, (value)={...}
+        //One that's : fill in value and onChange in form.select, fill in what should be inside .map func, fill in what should be key and value attrs in option tag
+    {id: "3.3.7", question: "Fill in the blanks to create a dropdown populated by an array of options."},
+    {id: "3.3.8", question: "Fill in the blanks to create a dropdown populated by an array of options."},
 
+    //parsons/ordering
+        //include possible lines of code that make a dropdown populated by an array of options and a regular dropdown
+    {id: "3.3.9", question: "Order the following lines of code to correctly create a dropdown populated by an array of options."},
 ]
