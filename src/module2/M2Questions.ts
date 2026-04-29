@@ -47,20 +47,72 @@ export const topic1Code = [
         //value stays initial value because onChange handler does not correctly update state
     {id: "2.1.19", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
 
-    //parsons/ordering code
-    {id: "2.1.20", question: "Order the following code snippets to correctly create a textbox component."},
-    {id: "2.1.21", question: "Order the following code snippets to correctly create a textbox component."},
-
     //what's missing/wrong with code (free response)
-        //missing useState definition
+        //missing/incorrect useState definition
+    {id: "2.1.20", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+        //missing/incorrect onChange handler
+    {id: "2.1.21", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+        //missing /incorrectvalue attribute/binding value to state
     {id: "2.1.22", question: "What is missing or wrong with the following code for a controlled textbox component?"},
-        //missing onChange handler
-    {id: "2.1.23", question: "What is missing or wrong with the following code for a controlled textbox component?"},
-        //missing value attribute/binding value to state
-    {id: "2.1.24", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+
+    //parsons/ordering code
+    {id: "2.1.23", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.1.24", question: "Order the following code snippets to correctly create a textbox component."},
 ]
 
-/**TOPIC 2: Checkboxes*/
+/**TOPIC 2: Checkboxes (20)*/
+export const topic2MCQ = [
+    //def
+    {id: "2.2.1", question: "[] corresponds to some boolean state."},
+    //Form.Check
+    {id: "2.2.2", question: "What form tag is used to create a checkbox?"},
+    //type = "checkbox"
+    {id: "2.2.3", question: "What attribute is used to specify the type of a checkbox?"},
+    //checked
+    {id: "2.2.4", question: "The [] attribute is used instead of value to represent the current state of a checkbox."},
+    //label and id
+    {id: "2.2.5", question: "What two attributes are used to help with screen readers?"},
+    //label
+    {id: "2.2.6", question: "Which attribute is used to specify the text shown next to a checkbox that the user sees?"},
+    //id
+    {id: "2.2.7", question: "Which attribute is used to link the checkbox input to the text shown next to it that a user does not see?"},
+    //useState
+    {id: "2.2.8", question: "Which React hook is commonly used to manage the state of a checkbox?"},
+    //event.target.checked 
+    {id: "2.2.9", question: "How do you correctly access whether a checkbox is checked or not in an onChange handler?"},
+]
+
+export const topic2Code = [
+    //identifying 
+        //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
+    {id: "2.2.10", question: "Identify the Model"}, 
+    {id: "2.2.11", question: "Identify the Controller"},
+    {id: "2.2.12", question: "Identify the View"},
+
+    //fill in blanks
+        //1)Form.(Check), 2)type="(checkbox)", 3)(value) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
+        //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
+    {id: "2.2.13", question: "Fill in the blanks for the following code to create a controlled checkbox component."},
+
+    //based off following code, what will happen (select from options)
+    //correct syntax - state updates as user clicks, checkbox checked state updates to match state
+    {id: "2.2.14", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
+    //incorrect onChange syntax - state does not update as user clicks and stays initial value
+        //checkbox checked state stays initial value because onChange handler does not correctly update state
+    {id: "2.2.15", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
+
+    //what's missing/wrong with code (free response)
+        //missing/incorrect useState definition
+    {id: "2.2.16", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
+        //missin/incorrect onChange handler
+    {id: "2.2.17", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
+        //missing/incorrect checked attribute/binding checked to state
+    {id: "2.2.18", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
+
+    //parson/ordering code
+    {id: "2.2.19", question: "Order the following code snippets to correctly create a checkbox component."},
+    {id: "2.2.20", question: "Order the following code snippets to correctly create a checkbox component."},
+]
 
 /**TOPIC 3: Dropdowns*/
 
