@@ -20,31 +20,32 @@ export function Module3(): JSX.Element {
     }
 
     return (
-        <div className="module3">
+        <div className="m3-container">
             {topic === "" && (
                <div>
                     <h1>Module 3</h1>
-                    <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("1")}>1. Variations of textboxes</h4>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("2")}>2. Variations of checkboxes</h4>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdown with .map to list options</h4>
+                    <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("1")}>1. Textbox Variations</h4>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("2")}>2. Checkbox Variations</h4>
+                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdown Variations</h4>
+                    <button className="end-button">End of Module Quiz</button>
                 </div>
             )}
             {topic === "1" && (
                 <div>
-                    <h2>Variations of textboxes</h2>
+                    <h2>Textbox Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>
                 </div>
             )}
             {topic === "2" && (
                 <div>
-                    <h2>Variations of checkboxes</h2>
+                    <h2>Checkbox Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>
                 </div>
             )}
             {topic === "3" && (
                 <div>
-                    <h2>Dropdown with .map to list options</h2>
+                    <h2>Dropdown Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>
                 </div>
             )}

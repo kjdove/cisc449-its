@@ -21,17 +21,16 @@ export function Module2(): JSX.Element {
     }
 
     return (
-        <div className="module2">
+        <div className="m2-container">
             {topic === "" && (
                 <div>
                     <h1>Module 2</h1>
-                    <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                    <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
                     <h4 className="m2-topic-link" onClick={() => handleTopicChange("1")}>1. Textboxes</h4>
                     <h4 className="m2-topic-link" onClick={() => handleTopicChange("2")}>2. Checkboxes</h4>
                     <h4 className="m2-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdowns</h4>
-                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between textbox/checkbox/dropdown </h4>
-
-
+                    <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between Textbox/Checkbox/Dropdown </h4>
+                    <button className="end-button">End of Module Quiz</button>
                 </div>
             )}
             {topic === "1" && (
@@ -54,7 +53,7 @@ export function Module2(): JSX.Element {
             )}
             {topic === "4" && (
                 <div>
-                    <h2>Differentiate between textbox/checkbox/dropdown</h2>
+                    <h2>Differentiate between Textbox/Checkbox/Dropdown</h2>
                     <button onClick={handleBackButton}>Back to Module 2</button>
                 </div>
             )}

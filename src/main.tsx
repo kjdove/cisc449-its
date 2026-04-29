@@ -20,7 +20,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/module1/topic1" element={<Module1/>} />
           <Route path="/module1/topic2" element={<Module1/>} />
           <Route path="/module1/topic3" element={<Module1/>} />
-          <Route path="/module1/topic4" element={<Module1/>} />
           <Route path="/module2" element={<Module2/>} />
           <Route path="/module2/topic1" element={<Module2/>} />
           <Route path="/module2/topic2" element={<Module2/>} />
