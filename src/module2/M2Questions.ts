@@ -19,6 +19,7 @@ export const topic1MCQ = [
     {id: "2.1.9", question: "Which of the following is true about updating multiple textboxes with a single onChange handler?"},
 
     //model/view/controller in regards to textbox component 
+        //useState variable - model
     {id: "2.1.10", question: "Which part of the textbox component represents the Model?"},
         //callback function - controller
     {id: "2.1.11", question: "Which part of the textbox component represents the Controller?"},
@@ -114,6 +115,58 @@ export const topic2Code = [
     {id: "2.2.20", question: "Order the following code snippets to correctly create a checkbox component."},
 ]
 
-/**TOPIC 3: Dropdowns*/
+/**TOPIC 3: Dropdowns (19)*/
+export const topic3MCQ = [
+    //def
+    {id: "2.3.1", question: "[], also known as select menus or comboboxes, correspond to some string state, or a subset of strings, that can take on multiple values."},
+    //form.select
+    {id: "2.3.2", question: "What form tag is used to create a dropdown?"},
+    //value/onchange
+    {id: "2.3.3", question: "What two attributes tie the Form.Select component to the app's State?"},
+    //option tags
+    {id: "2.3.4", question: "Dropdowns are created using a combination of the Form.Select tag and [] tags that have their own value attribute."},
+    //useState
+    {id: "2.3.5", question: "Which React hook is commonly used to manage the state of a dropdown?"},
+    //event.target.value
+    {id: "2.3.6", question: "How do you correctly access the option selected in a dropdown in an onChange handler?"},
+
+    //model/view/controller in regards to dropdown component 
+        //useState variable - model
+    {id: "2.3.7", question: "Which part of the dropdown component represents the Model?"},
+        //callback function - controller
+    {id: "2.3.8", question: "Which part of the dropdown component represents the Controller?"},
+        //form.group - view
+    {id: "2.3.9", question: "Which part of the dropdown component represents the View?"},
+]
+
+export const topic3Code = [
+    //identifying 
+        //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
+    {id: "2.3.10", question: "Identify the Model"}, 
+    {id: "2.3.11", question: "Identify the Controller"},
+    {id: "2.3.12", question: "Identify the View"},
+
+    //fill in blanks
+        //1)Form.(Select), 2)(value) = {name}, 3)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
+        //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
+    {id: "2.3.13", question: "Fill in the blanks for the following code to create a controlled dropdown component."},
+    
+    //based off following code, what will happen (select from options)
+    //correct syntax - state updates as user selects option, dropdown selected option updates to match state
+    {id: "2.3.14", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+    {id: "2.3.15", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+
+    //incorrect onChange syntax - state does not update as user selects and stays initial value
+        //dropdown selected option stays initial value because onChange handler does not correctly update state
+    {id: "2.3.16", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+
+    //what's missing/wrong with code (free response)
+        //missing/incorrect useState definition
+    {id: "2.3.17", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
+        //missing/incorrect onChange
+    {id: "2.3.18", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
+        //missing/incorrect value attribute/binding value to state
+    {id: "2.3.19", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
+]
 
 /**TOPIC 4: Differences*/
