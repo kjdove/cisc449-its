@@ -8,9 +8,15 @@
     /* background-color: blue; */
 }
 
-.m1-topic-link:hover {
-    cursor: pointer;
-    text-decoration: underline;
+.module-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.module-header h1{
+    text-align: center;
+
 }
 .back-button {
     display: inline-block;
@@ -20,9 +26,35 @@
     border-radius: 4px;
     font-weight: 500;
     cursor: pointer;
-    top: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
+.module-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* height: 100vh; */
+   text-align: center;
+}
+.module-left, .module-right {
+    flex: 0.35;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+/* .m1-left {
+    margin-right: 30px;
+}
+.m1-right {
+    margin-left: 30px;
+} */
+
+.m1-topic-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
 .end-button {
     display: inline-block;
     padding: 10px 20px;

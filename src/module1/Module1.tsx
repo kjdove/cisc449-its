@@ -24,15 +24,30 @@ export function Module1(): JSX.Element {
     return (
         <div className="m1-container">
             {topic === "" && (
-                <div >
-                    <h1>Module 1: Forms</h1>
-                    <button className="back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <p>Review <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/state.html#the-usestate-concept">useStates</a>.</p>
-                    <p>Read over the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#what-are-forms">Forms</a> section of the textbook before completing the questions in the below topics.</p>
-                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("1")}>1. Forms and Form.Groups</h4>
-                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("2")}>2. Form Attributes and Controls</h4>
-                    <h4 className="m1-topic-link" onClick={() => handleTopicChange("3")}>3. How to Use the Value Attribute</h4>
+                <div>
+                    <div className="module-header">
+                        <button className="back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                        <h1>Module 1: Forms</h1>
+                    </div>
+                    <p>Click on a topic title to complete its questions.</p>
+                    {/* <p>Review <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/state.html#the-usestate-concept">useStates</a>.</p>
+                    <p>Read over the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#what-are-forms">Forms</a> section of the textbook before completing the questions in the below topics.</p> */}
+                    <div className="module-content">
+                        <div className="module-left">
+                            <h2 className="topic-title">Topics</h2>
+                            <h4 className="m1-topic-link" onClick={() => handleTopicChange("1")}>1. Forms and Form.Groups</h4>
+                            <h4 className="m1-topic-link" onClick={() => handleTopicChange("2")}>2. Form Attributes and Controls</h4>
+                            <h4 className="m1-topic-link" onClick={() => handleTopicChange("3")}>3. How to Use the Value Attribute</h4>
+                        </div>
+                        <div className="module-right">
+                            <h2 className="mastery-title">Mastery</h2>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                        </div>
+                    </div>
                     <button className="end-button">End of Module Quiz</button>
+                    <p>Placeholder for note if u want to include it</p>
                 </div>
             )}
 
