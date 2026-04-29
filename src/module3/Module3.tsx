@@ -23,11 +23,25 @@ export function Module3(): JSX.Element {
         <div className="m3-container">
             {topic === "" && (
                <div>
-                    <h1>Module 3</h1>
-                    <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("1")}>1. Textbox Variations</h4>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("2")}>2. Checkbox Variations</h4>
-                    <h4 className="m3-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdown Variations</h4>
+                    <div className="module-header">
+                        <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+                        <h1>Module 3: Variations</h1>
+                    </div>
+                    <p>Click on a topic title to complete its questions.</p>
+                    <div className="module-content">
+                        <div className="module-left">
+                            <h2 className="topic-title">Topics</h2>
+                            <h4 className="m3-topic-link" onClick={() => handleTopicChange("1")}>1. Textbox Variations</h4>
+                            <h4 className="m3-topic-link" onClick={() => handleTopicChange("2")}>2. Checkbox Variations</h4>
+                            <h4 className="m3-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdown Variations</h4>
+                        </div>
+                        <div className="module-right">
+                            <h2 className="mastery-title">Mastery</h2>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                            <h4 className="mastery-level">mastery level palceholder</h4>
+                        </div>
+                    </div>
                     <button className="end-button">End of Module Quiz</button>
                 </div>
             )}

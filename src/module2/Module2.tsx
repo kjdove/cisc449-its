@@ -26,7 +26,7 @@ export function Module2(): JSX.Element {
                 <div>
                     <div className="module-header">
                         <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
-                        <h1>Module 2</h1>
+                        <h1>Module 2: Textboxes, Checkboxes, Dropdowns</h1>
                     </div>
                     <p>Click on a topic title to complete its questions.</p>
 
