@@ -1,4 +1,4 @@
-/**TOPIC 1: Forms and Form.Groups Questions (20)*/
+/**TOPIC 1: Forms and Form.Groups Questions (23)*/
 //multiple choice questions for topic 1
 export const topic1MCQ = [
     {id: "1.1.1", question: "What is a form?"},
@@ -25,15 +25,22 @@ export const topic1SelectAll = [
 //code questions (parsons/fill in missing code/ordering lines of code) for topic 1
 export const topic1Code = [
     //fill in blank - missing tags, attributes
-    {id: "1.1.16", question: ""},
-    //fill in blank - missing tags, attributes
-    {id: "1.1.17", question: ""},
-    //scenario - given this code how will the form render? (mcq - select from images of forms rendered with different errors)
-    {id: "1.1.18", question: ""},
+        //what could be missing : 
+        //1) Form.Group, Form.Label, Form.Control, Form.Text tags, 
+        //2) controlId attribute in Form.Group, 
+        //3) className attribute in Form.Group, 
+        //4) label prop in Form.Label, 
+        //5) type prop in Form.Control
+    {id: "1.1.16", question: "Fill in the blanks for the following code."},
+    {id: "1.1.17", question: "Fill in the blanks for the following code."},
+    {id: "1.1.18", question: "Fill in the blanks for the following code."},
+    {id: "1.1.19", question: "Fill in the blanks for the following code."},
+    {id: "1.1.20", question: "Fill in the blanks for the following code."},
+
     //parsons/ordering lines of code
-    {id: "1.1.19", question: ""},
-    //parsons/ordering lines of code
-    {id: "1.1.20", question: ""}
+    {id: "1.1.21", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.22", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.23", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
 ]
 
 /**TOPIC 2: Form Attributes and Controls (15)*/
