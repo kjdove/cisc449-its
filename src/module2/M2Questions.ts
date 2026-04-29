@@ -169,4 +169,56 @@ export const topic3Code = [
     {id: "2.3.19", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
 ]
 
-/**TOPIC 4: Differences*/
+/**TOPIC 4: Differences (24)*/
+export const topic4MCQ = [
+    //definitional
+    {id: "2.4.1", question: "Which component allows the user to enter text into an input field?"},
+    {id: "2.4.2", question: "Which component represents a boolean value for the user to select?"},
+    {id: "2.4.3", question: "Which component allows the user to select one option from a list of options?"},
+    //tags
+        //textbox
+    {id: "2.4.4", question: "Which component uses Form.Control?"},
+        //checkbox
+    {id: "2.4.5", question: "Which component uses Form.Check?"},
+        //dropdown
+    {id: "2.4.6", question: "Which component uses Form.Select?"},
+
+    //state type
+        //textbox - string
+    {id: "2.4.7", question: "The state of a textbox component is typically represented as which data type?"},
+        //checkbox - boolean
+    {id: "2.4.8", question: "The state of a checkbox component is typically represented as which data type?"},
+        //dropdown - string
+    {id: "2.4.9", question: "The state of a dropdown component is typically represented as which data type?"},
+]
+
+export const topic4Scenarios = [
+    //scenarios, which component would you use (textbox/free response answer)
+    {id: "2.4.10", question: "You want to create a form where the user can enter their name. Which component would you use?"},
+    {id: "2.4.11", question: "You want to create a form where the user can select whether they agree to the terms and conditions. Which component would you use?"},
+    {id: "2.4.12", question: "You want to create a form where the user can select their favorite color from a list of options. Which component would you use?"},
+    {id: "2.4.13", question: "You want to create a form where the user can enter their email address. Which component would you use?"},
+    {id: "2.4.14", question: "You want to create a form where the user can select whether they want to receive a newsletter subscription. Which component would you use?"},
+    {id: "2.4.15", question: "You want to create a form where the user can select their preferred contact method (email, phone, or mail). Which component would you use?"},
+]
+
+export const topic4Code = [
+    //following code represents which component
+    {id: "2.4.16", question: "The following code represents which component?"},
+    {id: "2.4.17", question: "The following code represents which component?"},
+    {id: "2.4.18", question: "The following code represents which component?"},
+
+    //what's missing/wrong with code (free response)
+        //textbox (INCLUDE FORM.CONTROL) missing type="text"
+    {id: "2.4.19", question: "What is missing or wrong with the following code for this component?"},
+        //checkbox (INCLUDE TYPE="CHECKBOX") missing/incorrect Form.Check tag
+    {id: "2.4.20", question: "What is missing or wrong with the following code for this component?"},
+        //dropdown (INCLUDE OPTIONS) missing/incorrect Form.Select tag
+    {id: "2.4.21", question: "What is missing or wrong with the following code for this component?"},
+
+    //parsons/ordering
+        //order code snippets to create a textbox, checkbox, dropdown component
+    {id: "2.4.22", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.4.23", question: "Order the following code snippets to correctly create a checkbox component."},
+    {id: "2.4.24", question: "Order the following code snippets to correctly create a dropdown component."},
+]
