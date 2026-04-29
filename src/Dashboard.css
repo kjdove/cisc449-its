@@ -49,7 +49,7 @@ body, html {
 
 .module1, .module2, .module3 {
     /* width: 30%; */
-    height: 200px;
+    height: 100px;
     background-color: var(--card-bg);
     border-radius: 8px;
     display: flex;
