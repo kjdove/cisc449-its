@@ -5,11 +5,11 @@ export const topic1MCQ = [
     {id: "1.1.2", question: "What is a Form.Group?"},
     {id: "1.1.3", question: "What are the common tags used in a Form.Group?"},
     {id: "1.1.4", question: "What are the common properties of a Form.Group?"}, 
-    {id: "1.1.5", question: "What is the controlId attribute used for in a Form.Group?"},
+    {id: "1.1.5", question: "What is the purpose of the controlId attribute in a Form.Group?"},
     {id: "1.1.6", question: "What is the purpose of a Form.Label?"},
     {id: "1.1.7", question: "What is the purpose of a Form.Control?"},
     {id: "1.1.8", question: "What is the purpose of a Form.Text?"},
-    {id: "1.1.9", question: "What is the className attribute used for in a Form.Group?"},
+    {id: "1.1.9", question: "What is the purpose of the className attribute in a Form.Group?"},
 ]
 
 //select all that apply questions for topic 1 - multi checkboxes for answer options
