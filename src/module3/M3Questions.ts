@@ -1,4 +1,4 @@
-/**TOPIC 1: Textbox Variations () */
+/**TOPIC 1: Textbox Variations (17) */
 export const topic1MCQ = [
     //number input box, horizontal layout, multiline textarea
     {id: "3.1.1", question: "Which of the following are valid variations of textboxes in React-Bootstrap?"},
@@ -77,13 +77,130 @@ export const topic1Code = [
     {id: "3.1.17", question: "Order the following lines of code to correctly create a multiline textarea."},
 ]
 
-/**TOPIC 2: Checkbox Variations () */
+/**TOPIC 2: Checkbox Variations (22) */
 export const topic2MCQ = [
+    //switch, radio buttons, multi checkboxes
+    {id: "3.2.1", question: "Which of the following are valid variations of checkboxes in React-Bootstrap?"},
 
+    //switch
+        //def
+    {id: "3.2.2", question: "A [] is a visual modication of a checkbox that uses a toggle."},
+        //type="switch" in Form.Check
+    {id: "3.2.3", question: "Which attribute is used in the Form.Check tag to create a switch?"},
+
+    //radio buttons
+        //def
+    {id: "3.2.4", question: "[] represent a set of choices where only one option can be selected at a time."},
+        //form.check
+    {id: "3.2.5", question: "Radio buttons are created using multiple [] elements."},
+        //type="radio" in Form.Check, same name attr for all options in the set
+    {id: "3.2.5", question: "Radio buttons use type = '(1)' in the Form.Check tag, and all options in the set should have the same (2) attribute to be a single, cohesive set."},
+        //checked attr
+    {id: "3.2.6", question: "The [] attribute uses a calculated expression based on the state in order to turn the string into a boolean value and determine which radio button is selected."},
+        //inline attr
+    {id: "3.2.7", question: "The [] attribute can be added to Form.Check elements to display radio buttons in a horizontal row instead of a vertical stack."},
+        //string state
+    {id: "3.2.8", question: "When using radio buttons, the state that determines which option is selected should be a [] that matches the value attribute of the selected radio button."},
+
+
+    //multi checkboxes
+        //def
+    {id: "3.2.9", question: "[] are used when you want to allow users to select multiple options from a set of choices."},
+        //string[] state
+    {id: "3.2.10", question: "When using multiple checkboxes, the state that determines which options are selected should be [] that contains the value attributes of the selected checkboxes."},
+
+    //choose correct code
+    /** switch
+    <Form.Check
+        type="switch"
+        id="is-happy-check"
+        label="Happy?"
+        checked={isHappy}
+        onChange={updateHappiness}
+    />
+     */
+    {id: "3.2.11", question: "Select the correct code to create a switch."},
+    /** radio buttons
+    <div>
+        <Form.Check
+            type="radio"
+            name="emotions"
+            onChange={updateEmotion}
+            id="emotion-check-happy"
+            label="Happy"
+            value="happy"
+            checked={emotion === "happy"}
+        />
+        <Form.Check
+            type="radio"
+            name="emotions"
+            onChange={updateEmotion}
+            id="emotion-check-sad"
+            label="Sad"
+            value="sad"
+            checked={emotion === "sad"}
+        />
+        <Form.Check
+            type="radio"
+            name="emotions"
+            onChange={updateEmotion}
+            id="emotion-check-angry"
+            label="Angry"
+            value="angry"
+            checked={emotion === "angry"}
+        />
+    </div>
+    */
+    {id: "3.2.12", question: "Select the correct code to create a set of radio buttons."},
+
+    /** multi checkboxes
+     <div>
+        <Form.Check
+            inline
+            type="radio"
+            name="response"
+            onChange={(e) => setResponse(e.target.value)}
+            id="response-good"
+            label="😃"
+            value="good"
+            checked={response === "good"}
+        />
+        <Form.Check
+            inline
+            type="radio"
+            name="response"
+            onChange={(e) => setResponse(e.target.value)}
+            id="response-bad"
+            label="😒"
+            value="bad"
+            checked={response === "bad"}
+        />
+    </div>
+    */
+    {id: "3.2.13", question: "Select the correct code to create a set of multi checkboxes."},
 ]
 
 export const topic2Code = [
+    //fill in blanks
+        //switch
+        //missing - in useState: <boolean>, "default boolean value", in form: Form.(Check), type="switch"
+    {id: "3.2.14", question: "Fill in the blanks to create a switch."},
+        //radio buttons
+        //missing - in useState: <string>, "default string value", in form: multiple Form.(Check) elements, type="radio", same name attr for all options in the set, checked attr with calculated expression based on state
+    {id: "3.2.15", question: "Fill in the blanks to create a set of radio buttons."},
+        //multi checkboxes
+        //missing - in useState: <string[]>, "default string array value", in form: multiple Form.(Check) elements, type="checkbox", checked attr with expression that checks if value attribute is included in the state array
+    {id: "3.2.16", question: "Fill in the blanks to create a set of multi checkboxes."},
 
+    //scenarios
+    {id: "3.2.17", question: "You are creating a settings page for a web application. You want to include a toggle option option for users to enable or disable email notifications. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.18", question: "You are creating a quiz form that asks users to select their preferred development environment. Users should only be able to select one option. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.19", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
+
+    //parsons/ordering
+    {id: "3.2.20", question: "Order the following lines of code to correctly create a switch."},
+    {id: "3.2.21", question: "Order the following lines of code to correctly create a set of radio buttons."},
+    {id: "3.2.22", question: "Order the following lines of code to correctly create a set of multi checkboxes."},
 ]
 
 /**TOPIC 3: Dropdown Variations () */
