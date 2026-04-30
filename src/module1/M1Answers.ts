@@ -1,5 +1,6 @@
 //20
-export const topic1Answers = [
+export const topic1MCQAnswers = [
+    //mcq questions
     {id: "1.1.1", options: [
         {textId: "1", text: "a collection of specialized user interface elements"}, 
         {textId: "2", text: "a communication protocol"},
@@ -36,6 +37,28 @@ export const topic1Answers = [
         {textId: "3", text: ""},
         {textId: "4", text: ""}],
     correctId: "2"},
+    {id: "1.1.7", options: [
+        {textId: "1", text: " "},
+        {textId: "2", text: "Interactive element that allows users to input data"}, 
+        {textId: "3", text: ""},
+        {textId: "4", text: ""}],   
+    correctId: "2"},
+    {id: "1.1.8", options: [
+        {textId: "1", text: " "},
+        {textId: "2", text: "Small text that provides additional information or instructions about the form control"}, 
+        {textId: "3", text: ""},
+        {textId: "4", text: ""}],
+    correctId: "2"},
+    {id: "1.1.9", options: [
+        {textId: "1", text: " "},
+        {textId: "2", text: "Allows you to apply custom CSS styles to the Form.Group component"}, 
+        {textId: "3", text: ""},
+        {textId: "4", text: ""}],
+    correctId: "2"},
+]
+
+export const topic1CodeAnswers = [
+
 ]
 
 //15

@@ -27,7 +27,7 @@ export interface PretestQuestion {
 }
 
 export const topics: Topic[] = [
-    {id: "1.1", topic: "How well could you describe a form and a form.group in React-Bootstrap?"}, 
+    {id: "1.1", topic: "How well could you create a Form component using Form.Group in React-Bootstrap?"}, 
     {id: "1.2", topic: "How well could you identify and define the common tags used in a form.group?"},
     {id: "1.3", topic: "How well could you identify and define the common properties of a form.group? "},
     {id: "1.4", topic: "How well could you explain when to use and how to create a readOnly form?"},

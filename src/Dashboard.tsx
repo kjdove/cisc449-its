@@ -7,7 +7,7 @@ export function Dashboard(): JSX.Element {
 
     return (
         <div className="dashboard-page">
-            <h3>dashbaord</h3>
+            <h2>Dashboard</h2>
             <p>Click on a module to learn its topics.</p>
 
             <div className="dashboard-content">

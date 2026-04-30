@@ -1,37 +1,30 @@
 import type { JSX } from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import './Module1.css';
-import { useNavigate } from "react-router-dom";
-// import { topic1Code, topic1MCQ, topic2Code, topic2MCQ, topic3Code, topic3MCQ } from "./M1Questions";
-
+import { useNavigate, useParams } from "react-router-dom";
+import { Topic1Quiz } from "./Topic1Quiz";
 
 export function Module1(): JSX.Element {
     const navigate = useNavigate();
-    const [topic, setTopic] = useState<string>("");
-    const url = window.location.href;
-    console.log('url', url);
-    
+    const { topicId } = useParams();
+
     const handleTopicChange = (topic: string) => {
-        setTopic(topic);
-        navigate(`/module1/topic${topic}`);
-    }
+        navigate(`/module1/${topic}`);
+    };
 
     const handleBackButton = () => {
-        setTopic("");
         navigate("/module1");
-    }
+    };
 
     return (
         <div className="m1-container">
-            {topic === "" && (
+            {!topicId && (
                 <div>
                     <div className="module-header">
                         <button className="back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
                         <h1>Module 1: Forms</h1>
                     </div>
                     <p>Click on a topic title to complete its questions.</p>
-                    {/* <p>Review <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/state.html#the-usestate-concept">useStates</a>.</p>
-                    <p>Read over the <a target="_blank" href="https://frontend-fun.github.io/react-hooks-typescript-tome/4-state/forms.html#what-are-forms">Forms</a> section of the textbook before completing the questions in the below topics.</p> */}
                     <div className="module-content">
                         <div className="module-left">
                             <h2 className="topic-title">Topics</h2>
@@ -51,21 +44,23 @@ export function Module1(): JSX.Element {
                 </div>
             )}
 
-            {topic === "1" && (
-                <div>
-                    <h2>Forms and Form.Groups</h2>
-                    <button onClick={handleBackButton}>Back to Module 1</button>
-                    
+            {topicId === "1" && (
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 1</button>
+                        <h2>Forms and Form.Groups</h2>
+                    </div>
+                    <Topic1Quiz />
                 </div>
             )}
-            {topic === "2" && (
+            {topicId === "2" && (
                 <div>
                     <h2>Form Attributes and Controls</h2>
                     <button onClick={handleBackButton}>Back to Module 1</button>
 
                 </div>
             )}
-            {topic === "3" && (
+            {topicId === "3" && (
                 <div>
                     <h2>How to Use the Value Attribute</h2>
                     <button onClick={handleBackButton}>Back to Module 1</button>

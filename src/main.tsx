@@ -17,19 +17,11 @@ createRoot(document.getElementById('root')!).render(
           <Route path= "/pretest" element={<Pretest/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/module1" element={<Module1/>} />
-          <Route path="/module1/topic1" element={<Module1/>} />
-          <Route path="/module1/topic2" element={<Module1/>} />
-          <Route path="/module1/topic3" element={<Module1/>} />
+          <Route path="/module1/:topicId" element={<Module1 />} />          
           <Route path="/module2" element={<Module2/>} />
-          <Route path="/module2/topic1" element={<Module2/>} />
-          <Route path="/module2/topic2" element={<Module2/>} />
-          <Route path="/module2/topic3" element={<Module2/>} />
-          <Route path="/module2/topic4" element={<Module2/>} />
+          <Route path="/module2/:topicId" element={<Module2 />} />          
           <Route path="/module3" element={<Module3/>} />
-          <Route path="/module3/topic1" element={<Module3/>} />
-          <Route path="/module3/topic2" element={<Module3/>} />
-          <Route path="/module3/topic3" element={<Module3/>} />
-
+          <Route path="/module3/:topicId" element={<Module3 />} />          
         </Routes>
       </HashRouter>
   </StrictMode>,

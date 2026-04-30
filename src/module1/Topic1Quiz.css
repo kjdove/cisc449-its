@@ -1,0 +1,33 @@
+.t1-container {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    width: 100%;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.question-link {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.question-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.t1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
