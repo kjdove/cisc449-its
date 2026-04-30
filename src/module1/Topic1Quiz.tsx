@@ -31,6 +31,7 @@ export function Topic1Quiz(): JSX.Element {
     return (
         <div className="t1-container">
            <div className="question-list">
+            
             {allQuestions.map((q, index) => (
                     <div
                         key={q.id}
@@ -54,7 +55,7 @@ export function Topic1Quiz(): JSX.Element {
                         </div>
                     ))}
                 </div>
-                <button>Submit</button>
+                <button className="submit-button">Submit</button>
            </div>
             
         </div>
