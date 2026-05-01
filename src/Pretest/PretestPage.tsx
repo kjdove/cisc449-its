@@ -2,7 +2,7 @@ import {  useState, type JSX } from "react";
 import "./PretestPage.css";
 import {useNavigate} from 'react-router-dom';
 // import { Form } from "react-bootstrap";
-import { /*pretestQuestions,*/ topics, /*PretestState,*/} from "./PreQuestions";
+import { pretestQuestions, topics, } from "./PreQuestions";
 
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
@@ -16,6 +16,12 @@ export function Pretest(): JSX.Element {
         setSR(r);
     }
 
+    const easyQuestions = pretestQuestions.filter((q) => q.difficulty === "easy" && q.topicId === topics[currentTopicInd].id);
+    const mediumQuestions = pretestQuestions.filter((q) => q.difficulty === "medium" && q.topicId === topics[currentTopicInd].id);
+    const hardQuestions = pretestQuestions.filter((q) => q.difficulty === "hard" && q.topicId === topics[currentTopicInd].id);
+
+
+    console.log('medium questions: ', mediumQuestions);
     //helper function for saving student's answer
     // const handleAnswerChange = (questionId: string, answer: string) => {
     //     const updatedQuestions = pretestQuestions.map((q) =>
@@ -50,7 +56,7 @@ export function Pretest(): JSX.Element {
                 <p>On a scale from 1 to 10:</p>
                 <p>{topics[currentTopicInd].topic}</p>
                 <div className="rating-system">
-                    <p><strong>Not well at all</strong></p>
+                    <p><strong>Not at all confident.</strong></p>
                     {ratings.map((r) => (
                             <label key={r} style={{ cursor: 'pointer' }}>
                             <input
@@ -64,7 +70,7 @@ export function Pretest(): JSX.Element {
                             {r}
                             </label>
                         ))}
-                        <p><strong>Extremely well</strong></p>
+                        <p><strong>Extremely confident.</strong></p>
                 </div>
 
             </div>
@@ -72,6 +78,26 @@ export function Pretest(): JSX.Element {
             <div className="pretest-bottom">
                 <div className="question-area"> 
                     <h4>questions</h4>
+                    {1 <= studentRating && studentRating <= 3 && easyQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
+                        </div>
+                    ))}
+                    {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
+                        </div>
+                    ))}
+                    {8 <= studentRating && studentRating <= 10 && hardQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
+                        </div>
+                    ))}
+
+    
                 </div>
                {/* { <div className="answer-area">
                     <h4>answer</h4>
