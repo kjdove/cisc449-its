@@ -21,7 +21,6 @@ export function Pretest(): JSX.Element {
     const hardQuestions = pretestQuestions.filter((q) => q.difficulty === "hard" && q.topicId === topics[currentTopicInd].id);
 
 
-    console.log('medium questions: ', mediumQuestions);
     //helper function for saving student's answer
     // const handleAnswerChange = (questionId: string, answer: string) => {
     //     const updatedQuestions = pretestQuestions.map((q) =>
@@ -77,7 +76,6 @@ export function Pretest(): JSX.Element {
             <br/>
             <div className="pretest-bottom">
                 <div className="question-area"> 
-                    <h4>questions</h4>
                     {1 <= studentRating && studentRating <= 3 && easyQuestions.map((q) => (
                         <div key={q.id} className="question">
                             <p>{q.question}</p>
@@ -99,12 +97,36 @@ export function Pretest(): JSX.Element {
 
     
                 </div>
-               {/* { <div className="answer-area">
-                    <h4>answer</h4>
-                </div>} */}
+               <div className="answer-area">
+                    {1 <= studentRating && studentRating <= 3 && easyQuestions.map((a) => (
+                        <div key={a.id} className="answer">
+                           {a.options? a.options.map((option) => (
+                                <div key={option} className="answer-option">
+                                    <input type="radio" id={option} name={a.id} value={option} />
+                                    <label htmlFor={option}>{option}</label>
+                                </div>
+                            )): <p>No answer options, please answer in the text box.</p>}
+                        </div>
+                    ))}
+                    {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((a) => (
+                        <div key={a.id} className="answer">
+                            {a.options? a.options.map((option) => (
+                                  <div key={option} className="answer-option">
+                                        <input type="radio" id={option} name={a.id} value={option} />
+                                        <label htmlFor={option}>{option}</label>
+                                  </div>
+                             )): <p>No answer options, please answer in the text box.</p>}
+                        </div>
+                    ))}
+                   
+                   
+
+                </div>
+               {studentRating > 0 && 
                 <div className="submit-button">
                     <button onClick={handleSubmit}>submit</button>
                 </div>
+                }
                 
             </div>
             
