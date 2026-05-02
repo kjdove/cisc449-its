@@ -3,6 +3,7 @@ import "./PretestPage.css";
 import {useNavigate} from 'react-router-dom';
 // import { Form } from "react-bootstrap";
 import { pretestQuestions, topics, } from "./PreQuestions";
+import { PreHardQuestions } from "./PreHardQuestions";
 
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
@@ -34,10 +35,13 @@ export function Pretest(): JSX.Element {
         //go to next topic/set of questions from array
     const handleSubmit = () => {
        //alert user they can't go back after submitting
-       
         if(currentTopicInd === 0){
             window.confirm( "Are you sure you want to submit? You cannot go back.");
         }
+
+        //alert user if they haven't made an answer or rating
+
+
         setSR(0);
 
         if (currentTopicInd < topics.length - 1) {
@@ -47,6 +51,8 @@ export function Pretest(): JSX.Element {
             console.log("pretest completed, navigate to dashboard");
         }
     }
+
+    // console.log('current question id', hardQuestions[0]?.id);
 
     return (
         <div className="pretest-page">
@@ -79,19 +85,16 @@ export function Pretest(): JSX.Element {
                     {1 <= studentRating && studentRating <= 3 && easyQuestions.map((q) => (
                         <div key={q.id} className="question">
                             <p>{q.question}</p>
-                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
                         </div>
                     ))}
                     {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((q) => (
                         <div key={q.id} className="question">
                             <p>{q.question}</p>
-                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
                         </div>
                     ))}
                     {8 <= studentRating && studentRating <= 10 && hardQuestions.map((q) => (
                         <div key={q.id} className="question">
                             <p>{q.question}</p>
-                            {/* <Form.Control type="text" value={q.studentAnswer || ""} onChange={(e) => handleAnswerChange(q.id, e.target.value)} /> */}
                         </div>
                     ))}
 
@@ -109,7 +112,7 @@ export function Pretest(): JSX.Element {
                         </div>
                     ))}
                     {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((a) => (
-                        <div key={a.id} className="answer">
+                         <div key={a.id} className="answer">
                             {a.options? a.options.map((option) => (
                                   <div key={option} className="answer-option">
                                         <input type="radio" id={option} name={a.id} value={option} />
@@ -118,6 +121,9 @@ export function Pretest(): JSX.Element {
                              )): <p>No answer options, please answer in the text box.</p>}
                         </div>
                     ))}
+                    {8 <= studentRating && studentRating <= 10 && 
+                        <PreHardQuestions questionId={hardQuestions[0]?.id || ""} />
+                    }
                    
                    
 
