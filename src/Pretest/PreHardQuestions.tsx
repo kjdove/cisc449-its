@@ -3,9 +3,9 @@ import type { JSX } from 'react';
 import {useState} from 'react';
 
 export function PreHardQuestions({questionId}: {questionId: string}): JSX.Element {
-    const [answer, setAnswer] = useState<string[]>([]);
+    const [studentAnswer, setAnswer] = useState<string[]>([]);
     const updateAnswers = (value: string, index: number) => {
-        const newAnswers = [...answer];
+        const newAnswers = [...studentAnswer];
         newAnswers[index] = value;
         setAnswer(newAnswers);
     };
@@ -19,8 +19,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`<Form.`}
                             <input 
                                 type="text"
-                                value={answer[0]}
-                                onChange={() => updateAnswers(answer[0], 0)}
+                                value={studentAnswer[0]}
+                                onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -35,8 +35,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`  <Form.`}
                             <input 
                                 type="text"
-                                value={answer[1]}
-                                onChange={() => updateAnswers(answer[1], 1)}
+                                value={studentAnswer[1]}
+                                onChange={() => updateAnswers(studentAnswer[1], 1)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -49,8 +49,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`>Email address</Form.`}
                             <input 
                                 type="text"
-                                value={answer[2]}
-                                onChange={() => updateAnswers(answer[2], 2)}
+                                value={studentAnswer[2]}
+                                onChange={() => updateAnswers(studentAnswer[2], 2)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -65,8 +65,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`  <Form.`} 
                             <input 
                                 type="text"
-                                value={answer[3]}
-                                onChange={() => updateAnswers(answer[3], 3)}
+                                value={studentAnswer[3]}
+                                onChange={() => updateAnswers(studentAnswer[3], 3)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -81,8 +81,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`  <Form.`} 
                             <input
                                 type="text"
-                                value={answer[4]}
-                                onChange={() => updateAnswers(answer[4], 4)}
+                                value={studentAnswer[4]}
+                                onChange={() => updateAnswers(studentAnswer[4], 4)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -99,8 +99,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`  </Form.`}
                             <input
                                 type="text"
-                                value={answer[5]}
-                                onChange={() => updateAnswers(answer[5], 5)}
+                                value={studentAnswer[5]}
+                                onChange={() => updateAnswers(studentAnswer[5], 5)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -115,8 +115,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`</Form.`}
                             <input
                                 type="text"
-                                value={answer[6]}
-                                onChange={() => updateAnswers(answer[6], 6)}
+                                value={studentAnswer[6]}
+                                onChange={() => updateAnswers(studentAnswer[6], 6)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -139,8 +139,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <br/>
                             <input
                                 type="text"
-                                value={answer[0]}
-                                onChange={() => updateAnswers(answer[0], 0)}
+                                value={studentAnswer[0]}
+                                onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing attribute"
                                 style={{
                                     width: "150px",
@@ -154,8 +154,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <br/>
                             <input
                                 type="text"
-                                value={answer[1]}
-                                onChange={() => updateAnswers(answer[1], 1)}
+                                value={studentAnswer[1]}
+                                onChange={() => updateAnswers(studentAnswer[1], 1)}
                                 placeholder="Enter missing attribute"
                                 style={{
                                     width: "150px",
@@ -180,8 +180,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`onChange={(e) => `}
                                 <input
                                     type="text"
-                                    value={answer[0]}
-                                    onChange={() => updateAnswers(answer[0], 0)}
+                                    value={studentAnswer[0]}
+                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing code"
                                     style={{
                                         width: "200px",
@@ -202,8 +202,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`<Form.`}
                                     <input
                                         type="text"
-                                        value={answer[0]}
-                                        onChange={() => updateAnswers(answer[0], 0)}
+                                        value={studentAnswer[0]}
+                                        onChange={() => updateAnswers(studentAnswer[0], 0)}
                                         placeholder="Enter missing tag"
                                         style={{
                                             width: "100px",
@@ -217,8 +217,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`type="`}
                                     <input 
                                         type="text"
-                                        value={answer[1]}
-                                        onChange={() => updateAnswers(answer[1], 1)}
+                                        value={studentAnswer[1]}
+                                        onChange={() => updateAnswers(studentAnswer[1], 1)}
                                         placeholder="Enter missing input type"
                                         style={{
                                             width: "150px",
@@ -235,8 +235,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`value={`}
                                     <input
                                         type="text"
-                                        value={answer[2]}
-                                        onChange={() => updateAnswers(answer[2], 2)}
+                                        value={studentAnswer[2]}
+                                        onChange={() => updateAnswers(studentAnswer[2], 2)}
                                         placeholder="Enter state variable"
                                         style={{
                                             width: "150px",
@@ -251,8 +251,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`onChange={(e) => `}
                                     <input
                                         type="text"
-                                        value={answer[3]}
-                                        onChange={() => updateAnswers(answer[3], 3)}
+                                        value={studentAnswer[3]}
+                                        onChange={() => updateAnswers(studentAnswer[3], 3)}
                                         placeholder="Enter missing code"
                                         style={{
                                             width: "200px",
@@ -273,8 +273,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`<Form.`}
                         <input
                             type="text"
-                            value={answer[0]}
-                            onChange={() => updateAnswers(answer[0], 0)}
+                            value={studentAnswer[0]}
+                            onChange={() => updateAnswers(studentAnswer[0], 0)}
                             placeholder="Enter missing tag"
                             style={{
                                 width: "100px",
@@ -288,8 +288,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`type="`}
                         <input 
                             type="text"
-                            value={answer[1]}
-                            onChange={() => updateAnswers(answer[1], 1)}
+                            value={studentAnswer[1]}
+                            onChange={() => updateAnswers(studentAnswer[1], 1)}
                             placeholder="Enter missing input type"
                             style={{
                                 width: "150px",
@@ -306,8 +306,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`checked={`}
                         <input
                             type="text"
-                            value={answer[1]}
-                            onChange={() => updateAnswers(answer[1], 1)}
+                            value={studentAnswer[1]}
+                            onChange={() => updateAnswers(studentAnswer[1], 1)}
                             placeholder="Enter state variable"
                             style={{
                                 width: "150px",
@@ -322,8 +322,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`onChange={(e) => `}
                         <input
                             type="text"
-                            value={answer[2]}
-                            onChange={() => updateAnswers(answer[2], 2)}
+                            value={studentAnswer[2]}
+                            onChange={() => updateAnswers(studentAnswer[2], 2)}
                             placeholder="Enter missing code"
                             style={{
                                 width: "200px",
@@ -344,8 +344,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`<Form.`}
                             <input
                                 type="text"
-                                value={answer[0]}
-                                onChange={() => updateAnswers(answer[0], 0)}
+                                value={studentAnswer[0]}
+                                onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -360,8 +360,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`value={`}
                             <input
                                 type="text"
-                                value={answer[1]}
-                                onChange={() => updateAnswers(answer[1], 1)}
+                                value={studentAnswer[1]}
+                                onChange={() => updateAnswers(studentAnswer[1], 1)}
                                 placeholder="Enter state variable"
                                 style={{
                                     width: "150px",
@@ -376,8 +376,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`onChange={(e) => `}
                             <input
                                 type="text"
-                                value={answer[2]}
-                                onChange={() => updateAnswers(answer[2], 2)}
+                                value={studentAnswer[2]}
+                                onChange={() => updateAnswers(studentAnswer[2], 2)}
                                 placeholder="Enter missing code"
                                 style={{
                                     width: "200px",
@@ -392,8 +392,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`<`}
                             <input
                                 type="text"
-                                value={answer[3]}
-                                onChange={() => updateAnswers(answer[3], 3)}
+                                value={studentAnswer[3]}
+                                onChange={() => updateAnswers(studentAnswer[3], 3)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -406,8 +406,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`>France</`}
                             <input
                                 type="text"
-                                value={answer[4]}
-                                onChange={() => updateAnswers(answer[4], 4)}
+                                value={studentAnswer[4]}
+                                onChange={() => updateAnswers(studentAnswer[4], 4)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -422,8 +422,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`<`}
                             <input
                                 type="text"
-                                value={answer[5]}
-                                onChange={() => updateAnswers(answer[5], 5)}
+                                value={studentAnswer[5]}
+                                onChange={() => updateAnswers(studentAnswer[5], 5)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -436,8 +436,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`>Peru</`}
                             <input
                                 type="text"
-                                value={answer[6]}
-                                onChange={() => updateAnswers(answer[6], 6)}
+                                value={studentAnswer[6]}
+                                onChange={() => updateAnswers(studentAnswer[6], 6)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -452,8 +452,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`<`}
                             <input
                                 type="text"
-                                value={answer[7]}
-                                onChange={() => updateAnswers(answer[7], 7)}
+                                value={studentAnswer[7]}
+                                onChange={() => updateAnswers(studentAnswer[7], 7)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -466,8 +466,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`>Japan</`}
                             <input
                                 type="text"
-                                value={answer[8]}
-                                onChange={() => updateAnswers(answer[8], 8)}
+                                value={studentAnswer[8]}
+                                onChange={() => updateAnswers(studentAnswer[8], 8)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -482,8 +482,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             {`</Form.`}
                             <input
                                 type="text"
-                                value={answer[9]}
-                                onChange={() => updateAnswers(answer[9], 9)}
+                                value={studentAnswer[9]}
+                                onChange={() => updateAnswers(studentAnswer[9], 9)}
                                 placeholder="Enter missing tag"
                                 style={{
                                     width: "100px",
@@ -508,8 +508,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`<Form.Control type="`}
                                 <input 
                                     type="text"
-                                    value={answer[0]}
-                                    onChange={() => updateAnswers(answer[0], 0)}
+                                    value={studentAnswer[0]}
+                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing input type"
                                     style={{
                                         width: "150px",
@@ -521,27 +521,11 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 />
                                 {`" placeholder="Enter name" />`}
                                 <br/>
-                                {`<Form.Check type="`}
-                                <input
-                                    type="text"
-                                    value={answer[1]}
-                                    onChange={() => updateAnswers(answer[1], 1)}
-                                    placeholder="Enter missing input type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
-                                />
-                                {`" label="Subscribe to newsletter" />`}
-                                <br/>
                                 {`<Form.`}
                                 <input
                                     type="text"
-                                    value={answer[2]}
-                                    onChange={() => updateAnswers(answer[2], 2)}
+                                    value={studentAnswer[1]}
+                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing tag"
                                     style={{
                                         width: "100px",
@@ -562,8 +546,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`</Form.`}
                                 <input
                                     type="text"
-                                    value={answer[3]}
-                                    onChange={() => updateAnswers(answer[3], 3)}
+                                    value={studentAnswer[2]}
+                                    onChange={() => updateAnswers(studentAnswer[2], 2)}
                                     placeholder="Enter missing tag"
                                     style={{
                                         width: "100px",
@@ -574,6 +558,22 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     }}
                                 />
                                 {`>`}
+                                <br/>
+                                {`<Form.Check type="`}
+                                <input
+                                    type="text"
+                                    value={studentAnswer[3]}
+                                    onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                    placeholder="Enter missing input type"
+                                    style={{
+                                        width: "150px",
+                                        margin: "0 5px",
+                                        border: "1px solid #ccc",
+                                        borderRadius: "4px",
+                                        padding: "2px",
+                                    }}
+                                />
+                                {`" label="Subscribe to newsletter" />`}
                                 <br/>
                                 {`</Form.Group>`}
                             </pre>
@@ -586,8 +586,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`<Form.Control type="`}
                                     <input 
                                         type="text"
-                                        value={answer[0]}
-                                        onChange={() => updateAnswers(answer[0], 0)}
+                                        value={studentAnswer[0]}
+                                        onChange={() => updateAnswers(studentAnswer[0], 0)}
                                         placeholder="Enter missing input type"
                                         style={{
                                             width: "150px",
@@ -602,8 +602,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     {`<Form.Control as="`}
                                     <input
                                         type="text"
-                                        value={answer[1]}
-                                        onChange={() => updateAnswers(answer[1], 1)}
+                                        value={studentAnswer[1]}
+                                        onChange={() => updateAnswers(studentAnswer[1], 1)}
                                         placeholder="Enter missing input type"
                                         style={{
                                             width: "150px",
@@ -624,8 +624,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`<Form.Check type="`}   
                                 <input
                                     type="text"
-                                    value={answer[0]}
-                                    onChange={() => updateAnswers(answer[0], 0)}
+                                    value={studentAnswer[0]}
+                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing checkbox type"
                                     style={{
                                         width: "150px",
@@ -641,8 +641,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`<Form.Check type="`}
                                 <input
                                     type="text"
-                                    value={answer[1]}
-                                    onChange={() => updateAnswers(answer[1], 1)}
+                                    value={studentAnswer[1]}
+                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing checkbox type"
                                     style={{
                                         width: "150px",
@@ -657,8 +657,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`<Form.Check type="`}
                                 <input
                                     type="text"
-                                    value={answer[2]}
-                                    onChange={() => updateAnswers(answer[2], 2)}
+                                    value={studentAnswer[2]}
+                                    onChange={() => updateAnswers(studentAnswer[2], 2)}
                                     placeholder="Enter missing checkbox type"
                                     style={{
                                         width: "150px",
@@ -673,8 +673,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`<Form.Check type="`}
                                 <input
                                     type="text"
-                                    value={answer[3]}
-                                    onChange={() => updateAnswers(answer[3], 3)}
+                                    value={studentAnswer[3]}
+                                    onChange={() => updateAnswers(studentAnswer[3], 3)}
                                     placeholder="Enter missing checkbox type"
                                     style={{
                                         width: "150px",
@@ -692,15 +692,15 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                     return (
                         <div>
                             <pre>
-                                {`const countries = ['United States', 'Canada', 'Mexico'];`}
+                                {`const countries = ['France', 'Japan', 'Peru'];`}
                                 <br/>
                                 {`<Form.Select value={country} onChange={(e) => setCountry(e.target.value)}> `}
                                 <br/>
                                 {`  {countries.`}
                                 <input 
                                     type="text"
-                                    value={answer[0]}
-                                    onChange={() => updateAnswers(answer[0], 0)}
+                                    value={studentAnswer[0]}
+                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing array method"
                                     style={{
                                         width: "150px",
@@ -715,8 +715,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 {`    <option `}
                                 <input
                                     type="text"
-                                    value={answer[1]}
-                                    onChange={() => updateAnswers(answer[1], 1)}
+                                    value={studentAnswer[1]}
+                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing attribute"
                                     style={{
                                         width: "150px",
