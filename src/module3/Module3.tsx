@@ -1,27 +1,25 @@
 import type { JSX } from "react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+// import { useState } from "react";
 
 import './Module3.css';
 
 export function Module3(): JSX.Element {
     const navigate = useNavigate();
+    const { topicId } = useParams();
 
-    const [topic, setTopic] = useState<string>("");
 
     const handleTopicChange = (topic: string) => {
-        setTopic(topic);
-        navigate(`/module3/topic${topic}`);
+        navigate(`/module3/${topic}`);
     }
 
     const handleBackButton = () => {
-        setTopic("");
         navigate("/module3");
     }
 
     return (
         <div className="m3-container">
-            {topic === "" && (
+            {!topicId && (
                <div>
                     <div className="module-header">
                         <button className = "back-button" onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
@@ -45,19 +43,19 @@ export function Module3(): JSX.Element {
                     <button className="end-button">End of Module Quiz</button>
                 </div>
             )}
-            {topic === "1" && (
+            {topicId === "1" && (
                 <div>
                     <h2>Textbox Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>
                 </div>
             )}
-            {topic === "2" && (
+            {topicId === "2" && (
                 <div>
                     <h2>Checkbox Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>
                 </div>
             )}
-            {topic === "3" && (
+            {topicId === "3" && (
                 <div>
                     <h2>Dropdown Variations</h2>
                     <button onClick={handleBackButton}>Back to Module 3</button>

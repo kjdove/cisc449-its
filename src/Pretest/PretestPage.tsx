@@ -2,7 +2,8 @@ import {  useState, type JSX } from "react";
 import "./PretestPage.css";
 import {useNavigate} from 'react-router-dom';
 // import { Form } from "react-bootstrap";
-import { /*pretestQuestions,*/ topics, /*PretestState,*/} from "./PreQuestions";
+import { pretestQuestions, topics, } from "./PreQuestions";
+import { PreHardQuestions } from "./PreHardQuestions";
 
 export function Pretest(): JSX.Element {
     const navigate = useNavigate();
@@ -15,6 +16,11 @@ export function Pretest(): JSX.Element {
     const hnadleSR = (r: number) => {
         setSR(r);
     }
+
+    const easyQuestions = pretestQuestions.filter((q) => q.difficulty === "easy" && q.topicId === topics[currentTopicInd].id);
+    const mediumQuestions = pretestQuestions.filter((q) => q.difficulty === "medium" && q.topicId === topics[currentTopicInd].id);
+    const hardQuestions = pretestQuestions.filter((q) => q.difficulty === "hard" && q.topicId === topics[currentTopicInd].id);
+
 
     //helper function for saving student's answer
     // const handleAnswerChange = (questionId: string, answer: string) => {
@@ -29,10 +35,13 @@ export function Pretest(): JSX.Element {
         //go to next topic/set of questions from array
     const handleSubmit = () => {
        //alert user they can't go back after submitting
-       
         if(currentTopicInd === 0){
             window.confirm( "Are you sure you want to submit? You cannot go back.");
         }
+
+        //alert user if they haven't made an answer or rating
+
+
         setSR(0);
 
         if (currentTopicInd < topics.length - 1) {
@@ -43,6 +52,8 @@ export function Pretest(): JSX.Element {
         }
     }
 
+    // console.log('current question id', hardQuestions[0]?.id);
+
     return (
         <div className="pretest-page">
             <h2>Pretest</h2>
@@ -50,7 +61,7 @@ export function Pretest(): JSX.Element {
                 <p>On a scale from 1 to 10:</p>
                 <p>{topics[currentTopicInd].topic}</p>
                 <div className="rating-system">
-                    <p><strong>Not well at all</strong></p>
+                    <p><strong>Not at all confident.</strong></p>
                     {ratings.map((r) => (
                             <label key={r} style={{ cursor: 'pointer' }}>
                             <input
@@ -64,21 +75,64 @@ export function Pretest(): JSX.Element {
                             {r}
                             </label>
                         ))}
-                        <p><strong>Extremely well</strong></p>
+                        <p><strong>Extremely confident.</strong></p>
                 </div>
 
             </div>
             <br/>
             <div className="pretest-bottom">
                 <div className="question-area"> 
-                    <h4>questions</h4>
+                    {1 <= studentRating && studentRating <= 3 && easyQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                        </div>
+                    ))}
+                    {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                        </div>
+                    ))}
+                    {8 <= studentRating && studentRating <= 10 && hardQuestions.map((q) => (
+                        <div key={q.id} className="question">
+                            <p>{q.question}</p>
+                        </div>
+                    ))}
+
+    
                 </div>
-               {/* { <div className="answer-area">
-                    <h4>answer</h4>
-                </div>} */}
+               <div className="answer-area">
+                    {1 <= studentRating && studentRating <= 3 && easyQuestions.map((a) => (
+                        <div key={a.id} className="answer">
+                           {a.options? a.options.map((option) => (
+                                <div key={option} className="answer-option">
+                                    <input type="radio" id={option} name={a.id} value={option} />
+                                    <label htmlFor={option}>{option}</label>
+                                </div>
+                            )): <p>No answer options, please answer in the text box.</p>}
+                        </div>
+                    ))}
+                    {4 <= studentRating && studentRating <= 7 && mediumQuestions.map((a) => (
+                         <div key={a.id} className="answer">
+                            {a.options? a.options.map((option) => (
+                                  <div key={option} className="answer-option">
+                                        <input type="radio" id={option} name={a.id} value={option} />
+                                        <label htmlFor={option}>{option}</label>
+                                  </div>
+                             )): <p>No answer options, please answer in the text box.</p>}
+                        </div>
+                    ))}
+                    {8 <= studentRating && studentRating <= 10 && 
+                        <PreHardQuestions questionId={hardQuestions[0]?.id || ""} />
+                    }
+                   
+                   
+
+                </div>
+               {studentRating > 0 && 
                 <div className="submit-button">
                     <button onClick={handleSubmit}>submit</button>
                 </div>
+                }
                 
             </div>
             

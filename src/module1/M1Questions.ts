@@ -1,4 +1,4 @@
-/**TOPIC 1: Forms and Form.Groups Questions (23)*/
+/**TOPIC 1: Forms and Form.Groups Questions (17)*/
 //multiple choice questions for topic 1
 export const topic1MCQ = [
     {id: "1.1.1", question: "What is a form?"},
@@ -12,15 +12,15 @@ export const topic1MCQ = [
     {id: "1.1.9", question: "What is the purpose of the className attribute in a Form.Group?"},
 ]
 
-//select all that apply questions for topic 1 - multi checkboxes for answer options
-export const topic1SelectAll = [
-    {id: "1.1.10", question: "Select the correct code to create a Form.Group with a label, control, and text."},
-    {id: "1.1.11", question: "Select all the correct statements about forms."},
-    {id: "1.1.12", question: "Select all the correct statements about Form.Groups."},
-    {id: "1.1.13", question: "Select all the correct statements about Form.Labels."},
-    {id: "1.1.14", question: "Select all the correct statements about Form.Controls."},
-    {id: "1.1.15", question: "Select all the correct statements about Form.Texts."},
-]
+// //select all that apply questions for topic 1 - multi checkboxes for answer options
+// export const topic1SelectAll = [
+//     {id: "1.1.10", question: "Select the correct code to create a Form.Group with a label, control, and text."},
+//     {id: "1.1.11", question: "Select all the correct statements about forms."},
+//     {id: "1.1.12", question: "Select all the correct statements about Form.Groups."},
+//     {id: "1.1.13", question: "Select all the correct statements about Form.Labels."},
+//     {id: "1.1.14", question: "Select all the correct statements about Form.Controls."},
+//     {id: "1.1.15", question: "Select all the correct statements about Form.Texts."},
+// ]
 
 //code questions (parsons/fill in missing code/ordering lines of code) for topic 1
 export const topic1Code = [
@@ -31,16 +31,16 @@ export const topic1Code = [
         //3) className attribute in Form.Group, 
         //4) label prop in Form.Label, 
         //5) type prop in Form.Control
-    {id: "1.1.16", question: "Fill in the blanks for the following code."},
-    {id: "1.1.17", question: "Fill in the blanks for the following code."},
-    {id: "1.1.18", question: "Fill in the blanks for the following code."},
-    {id: "1.1.19", question: "Fill in the blanks for the following code."},
-    {id: "1.1.20", question: "Fill in the blanks for the following code."},
+    {id: "1.1.10", question: "Fill in the blanks for the following code."},
+    {id: "1.1.11", question: "Fill in the blanks for the following code."},
+    {id: "1.1.12", question: "Fill in the blanks for the following code."},
+    {id: "1.1.13", question: "Fill in the blanks for the following code."},
+    {id: "1.1.14", question: "Fill in the blanks for the following code."},
 
     //parsons/ordering lines of code
-    {id: "1.1.21", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
-    {id: "1.1.22", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
-    {id: "1.1.23", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.15", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.16", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.17", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
 ]
 
 /**TOPIC 2: Form Attributes and Controls (15)*/
