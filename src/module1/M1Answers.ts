@@ -61,9 +61,10 @@ export const topic1CodeAnswers = [
     {id: "1.1.10", correctAnswers: ["Group", "Label", "Control", "Text"]},
     {id: "1.1.11", correctAnswers: ["controlId", "className"]},
     {id: "1.1.12", correctAnswers: ["Form.Control", "type", "placeholder"]},
-    {id: "1.1.13", correctAnswers: ["className", "controlId", "type", "placeholder"]},
-    {id: "1.1.14", correctAnswers: ["Form.Group", "Form.Label", "Form.Label", "Form.Control", "Form.Text", "Form.Text", "Form.Group"]},
-]
+    {id: "1.1.13", 
+        correctOrder: "7,3,6,1,4,5,2", 
+        options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
+]   
 
 //15
 export const topic2Answers = [

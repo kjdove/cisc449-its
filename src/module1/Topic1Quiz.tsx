@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { topic1MCQ, topic1Code } from "./M1Questions";
-import {topic1MCQAnswers} from "./M1Answers";
+import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
+import { M1Code } from "./M1Code";
 import { useState } from "react";
 import './Topic1Quiz.css';
 
@@ -19,9 +20,9 @@ export function Topic1Quiz(): JSX.Element {
 
     const currentQuestion = allQuestions[currentQInd];
 
-    const allAnswers = [...topic1MCQAnswers];
+    // const allAnswers = [...topic1MCQAnswers, ...topic1CodeAnswers];
+    // const currentAnswer = allAnswers[currentAInd];
     const [currentAInd, setCurrentAInd] = useState<number>(0);
-    const currentAnswer = allAnswers[currentAInd];
 
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
@@ -48,12 +49,13 @@ export function Topic1Quiz(): JSX.Element {
                 </div>
                 <div className="answer">
                     {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
-                    {currentAnswer.options.map((option) => (
+                    {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
+                    {currentAInd >= 9 && <M1Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
            </div>

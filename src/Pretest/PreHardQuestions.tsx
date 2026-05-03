@@ -508,6 +508,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             </pre>
                         </div>
                     )/*end to case 3.3h*/
+                default:
+                    return <div><p>No question found for this ID.</p></div>
         }/**end to switch case*/
     }
     return (
