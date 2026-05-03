@@ -58,7 +58,11 @@ export const topic1MCQAnswers = [
 ]
 
 export const topic1CodeAnswers = [
-
+    {id: "1.1.10", correctAnswers: ["Group", "Label", "Control", "Text"]},
+    {id: "1.1.11", correctAnswers: ["controlId", "className"]},
+    {id: "1.1.12", correctAnswers: ["Form.Control", "type", "placeholder"]},
+    {id: "1.1.13", correctAnswers: ["className", "controlId", "type", "placeholder"]},
+    {id: "1.1.14", correctAnswers: ["Form.Group", "Form.Label", "Form.Label", "Form.Control", "Form.Text", "Form.Text", "Form.Group"]},
 ]
 
 //15

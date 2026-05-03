@@ -10,7 +10,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
         setAnswer(newAnswers);
     };
 
-    const code = () => {
+    const codeBlock = () => {
         switch (questionId) {
             case "1.1h":
                 return(
@@ -18,17 +18,11 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         <pre>
                             {`<Form.`}
                             <input 
+                                className="fill-in-blank"
                                 type="text"
                                 value={studentAnswer[0]}
                                 onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
                             />
                             {` controlId="formBasicEmail">`}
                             <br/>
@@ -38,13 +32,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[1]}
                                 onChange={() => updateAnswers(studentAnswer[1], 1)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             /> 
                             {`>Email address</Form.`}
                             <input 
@@ -52,13 +40,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[2]}
                                 onChange={() => updateAnswers(studentAnswer[2], 2)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
                             <br/>
@@ -68,13 +50,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[3]}
                                 onChange={() => updateAnswers(studentAnswer[3], 3)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`type="email" placeholder="Enter email" />`}
                             <br/>
@@ -84,13 +60,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[4]}
                                 onChange={() => updateAnswers(studentAnswer[4], 4)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`className="text-muted">`}
                             <br/>
@@ -102,13 +72,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[5]}
                                 onChange={() => updateAnswers(studentAnswer[5], 5)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                                 />  
                             {`>`}
                             <br/>
@@ -118,13 +82,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[6]}
                                 onChange={() => updateAnswers(studentAnswer[6], 6)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
 
@@ -142,13 +100,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[0]}
                                 onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing attribute"
-                                style={{
-                                    width: "150px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`="Enter email" `}
                             <br/>
@@ -157,13 +109,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[1]}
                                 onChange={() => updateAnswers(studentAnswer[1], 1)}
                                 placeholder="Enter missing attribute"
-                                style={{
-                                    width: "150px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`={true} />`}
                         </pre>
@@ -183,13 +129,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[0]}
                                     onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing code"
-                                    style={{
-                                        width: "200px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`} />`}
                             </pre>
@@ -205,13 +145,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[0]}
                                         onChange={() => updateAnswers(studentAnswer[0], 0)}
                                         placeholder="Enter missing tag"
-                                        style={{
-                                            width: "100px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     <br/>
                                     {`type="`}
@@ -220,13 +154,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[1]}
                                         onChange={() => updateAnswers(studentAnswer[1], 1)}
                                         placeholder="Enter missing input type"
-                                        style={{
-                                            width: "150px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     {`"`}
                                     <br/>
@@ -238,13 +166,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[2]}
                                         onChange={() => updateAnswers(studentAnswer[2], 2)}
                                         placeholder="Enter state variable"
-                                        style={{
-                                            width: "150px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     {`} `}
                                     <br/>
@@ -254,13 +176,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[3]}
                                         onChange={() => updateAnswers(studentAnswer[3], 3)}
                                         placeholder="Enter missing code"
-                                        style={{
-                                            width: "200px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     {`} />`}
                                 </pre>
@@ -276,13 +192,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             value={studentAnswer[0]}
                             onChange={() => updateAnswers(studentAnswer[0], 0)}
                             placeholder="Enter missing tag"
-                            style={{
-                                width: "100px",
-                                margin: "0 5px",
-                                border: "1px solid #ccc",
-                                borderRadius: "4px",
-                                padding: "2px",
-                            }}
+                            className="fill-in-blank"
                         />
                         <br/>
                         {`type="`}
@@ -291,13 +201,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             value={studentAnswer[1]}
                             onChange={() => updateAnswers(studentAnswer[1], 1)}
                             placeholder="Enter missing input type"
-                            style={{
-                                width: "150px",
-                                margin: "0 5px",
-                                border: "1px solid #ccc",
-                                borderRadius: "4px",
-                                padding: "2px",
-                            }}
+                            className="fill-in-blank"
                         />
                         {`"`}
                         <br/>
@@ -309,13 +213,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             value={studentAnswer[1]}
                             onChange={() => updateAnswers(studentAnswer[1], 1)}
                             placeholder="Enter state variable"
-                            style={{
-                                width: "150px",
-                                margin: "0 5px",
-                                border: "1px solid #ccc",
-                                borderRadius: "4px",
-                                padding: "2px",
-                            }}
+                            className="fill-in-blank"
                         />
                         {`} `}
                         <br/>
@@ -325,13 +223,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             value={studentAnswer[2]}
                             onChange={() => updateAnswers(studentAnswer[2], 2)}
                             placeholder="Enter missing code"
-                            style={{
-                                width: "200px",
-                                margin: "0 5px",
-                                border: "1px solid #ccc",
-                                borderRadius: "4px",
-                                padding: "2px",
-                            }}
+                            className="fill-in-blank"
                         />
                         {`} />`}
                     </pre>
@@ -347,13 +239,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[0]}
                                 onChange={() => updateAnswers(studentAnswer[0], 0)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             
                             <br/>
@@ -395,13 +281,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[3]}
                                 onChange={() => updateAnswers(studentAnswer[3], 3)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>France</`}
                             <input
@@ -409,13 +289,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[4]}
                                 onChange={() => updateAnswers(studentAnswer[4], 4)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
                             <br/>
@@ -425,13 +299,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[5]}
                                 onChange={() => updateAnswers(studentAnswer[5], 5)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>Peru</`}
                             <input
@@ -439,13 +307,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[6]}
                                 onChange={() => updateAnswers(studentAnswer[6], 6)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
                             <br/>
@@ -455,13 +317,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[7]}
                                 onChange={() => updateAnswers(studentAnswer[7], 7)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>Japan</`}
                             <input
@@ -469,13 +325,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[8]}
                                 onChange={() => updateAnswers(studentAnswer[8], 8)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
                             <br/>
@@ -485,13 +335,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 value={studentAnswer[9]}
                                 onChange={() => updateAnswers(studentAnswer[9], 9)}
                                 placeholder="Enter missing tag"
-                                style={{
-                                    width: "100px",
-                                    margin: "0 5px",
-                                    border: "1px solid #ccc",
-                                    borderRadius: "4px",
-                                    padding: "2px",
-                                }}
+                                className="fill-in-blank"
                             />
                             {`>`}
                         </pre>
@@ -511,13 +355,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[0]}
                                     onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing input type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" placeholder="Enter name" />`}
                                 <br/>
@@ -527,13 +365,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[1]}
                                     onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing tag"
-                                    style={{
-                                        width: "100px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`> `}
                                 <br/>
@@ -549,13 +381,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[2]}
                                     onChange={() => updateAnswers(studentAnswer[2], 2)}
                                     placeholder="Enter missing tag"
-                                    style={{
-                                        width: "100px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`>`}
                                 <br/>
@@ -565,13 +391,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[3]}
                                     onChange={() => updateAnswers(studentAnswer[3], 3)}
                                     placeholder="Enter missing input type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" label="Subscribe to newsletter" />`}
                                 <br/>
@@ -589,13 +409,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[0]}
                                         onChange={() => updateAnswers(studentAnswer[0], 0)}
                                         placeholder="Enter missing input type"
-                                        style={{
-                                            width: "150px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     {`" placeholder="Enter age" />`}
                                     <br/>
@@ -605,13 +419,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                         value={studentAnswer[1]}
                                         onChange={() => updateAnswers(studentAnswer[1], 1)}
                                         placeholder="Enter missing input type"
-                                        style={{
-                                            width: "150px",
-                                            margin: "0 5px",
-                                            border: "1px solid #ccc",
-                                            borderRadius: "4px",
-                                            padding: "2px",
-                                        }}
+                                        className="fill-in-blank"
                                     />
                                     {`" placeholder="Enter comments" />`}
                                 </pre>
@@ -627,13 +435,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[0]}
                                     onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing checkbox type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" label="Subscribe to newsletter?" />`}
                                 <br/>
@@ -644,13 +446,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[1]}
                                     onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing checkbox type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" label="Text Message" />`}
                                 <br/>
@@ -660,13 +456,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[2]}
                                     onChange={() => updateAnswers(studentAnswer[2], 2)}
                                     placeholder="Enter missing checkbox type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" label="Email" />`}
                                 <br/>
@@ -676,13 +466,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[3]}
                                     onChange={() => updateAnswers(studentAnswer[3], 3)}
                                     placeholder="Enter missing checkbox type"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`" label="Delivery" />`}
                             </pre>
@@ -702,13 +486,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[0]}
                                     onChange={() => updateAnswers(studentAnswer[0], 0)}
                                     placeholder="Enter missing array method"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`((country) => ( `}
                                 <br/>
@@ -718,13 +496,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     value={studentAnswer[1]}
                                     onChange={() => updateAnswers(studentAnswer[1], 1)}
                                     placeholder="Enter missing attribute"
-                                    style={{
-                                        width: "150px",
-                                        margin: "0 5px",
-                                        border: "1px solid #ccc",
-                                        borderRadius: "4px",
-                                        padding: "2px",
-                                    }}
+                                    className="fill-in-blank"
                                 />
                                 {`={country} value={country}> `}
                                 <br/>
@@ -736,14 +508,11 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             </pre>
                         </div>
                     )/*end to case 3.3h*/
-
         }/**end to switch case*/
-
     }
-
     return (
         <>
-        {code()}
+        {codeBlock()}
         </>
     )
 }
