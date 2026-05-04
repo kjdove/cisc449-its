@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 // import { useState } from "react";
 
 import './Module3.css';
+import { Topic1Quiz } from "./Topic1Quiz";
 
 export function Module3(): JSX.Element {
     const navigate = useNavigate();
@@ -44,21 +45,28 @@ export function Module3(): JSX.Element {
                 </div>
             )}
             {topicId === "1" && (
-                <div>
-                    <h2>Textbox Variations</h2>
-                    <button onClick={handleBackButton}>Back to Module 3</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                        <h2>Textbox Variations</h2>
+                    </div>
+                    <Topic1Quiz/>
                 </div>
             )}
             {topicId === "2" && (
-                <div>
-                    <h2>Checkbox Variations</h2>
-                    <button onClick={handleBackButton}>Back to Module 3</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                        <h2>Checkbox Variations</h2>
+                    </div>
                 </div>
             )}
             {topicId === "3" && (
-                <div>
-                    <h2>Dropdown Variations</h2>
-                    <button onClick={handleBackButton}>Back to Module 3</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                        <h2>Dropdown Variations</h2>
+                    </div>
                 </div>
             )}
 

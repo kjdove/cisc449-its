@@ -64,9 +64,11 @@ export function Module1(): JSX.Element {
                 </div>
             )}
             {topicId === "3" && (
-                <div>
-                    <h2>How to Use the Value Attribute</h2>
-                    <button onClick={handleBackButton}>Back to Module 3</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button onClick={handleBackButton}>Back to Module 3</button>
+                        <h2>How to Use the Value Attribute</h2>
+                    </div>
                 </div>
             )}
         </div>
