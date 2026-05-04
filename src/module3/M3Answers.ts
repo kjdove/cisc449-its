@@ -147,4 +147,128 @@ export const topic1MCQAnswers = [
     correctId: "1"},
 ]
 
-export const topic1CodeAnswers = []
+export const topic1CodeAnswers = [
+    {id: "3.1.9", correctAnswers: ["number", "Control", "number"]},
+    {id: "3.1.10", correctAnswers: ["Row", "column", "Col", "Col", "Row", "column", "Col", "Col"]},
+    {id: "3.1.11", correctAnswers: ["textarea", "5"]},
+    {id: "3.1.12", options: [
+        {textId: "1", text: `<Form.Group controlId="formAge">
+            <Form.Label>Age:</Form.Label>
+            <Form.Control
+                type="number"
+                value={age}
+                onChange={updateAge}
+                />
+                </Form.Group>`},
+        {textId: "2", text: `<Form.Group controlId="formAge">
+            <Form.Label>Age:</Form.Label>
+            <Form.Control
+                type="text"
+                value={age}
+                onChange={updateAge}
+                />
+                </Form.Group>`},
+        {textId: "3", text: `<Form.Group controlId="formAge">
+            <Form.Label>Age:</Form.Label>
+            <Form.Control
+                type="textarea"
+                value={age}
+                onChange={updateAge}
+                />
+                </Form.Group>`},
+        {textId: "4", text: `<Form.Group controlId="formAge">
+            <Form.Label>Age:</Form.Label>
+            <Form.Control
+                type="dropdown"
+                value={age}
+                onChange={updateAge}
+                />
+                </Form.Group>`},
+    ],
+    correctId: "1"},
+    {id: "3.1.13", options: [
+        {textId: "1", text: `<Form.Group controlId="formComments">
+        <Form.Label>Comments:</Form.Label>
+        <Col>
+        <Form.Control as="textarea" rows={5} value={comments} onChange={updateComments}/>
+        </Col>
+    </Form.Group>`},
+        {textId: "2", text: `<Form.Group controlId="formComments">
+        <Form.Label>Comments:</Form.Label>
+        <Form.Control as="textarea" rows={5} value={comments} onChange={updateComments}/>  
+    </Form.Group>`},
+        {textId: "3", text: `<Form.Group controlId="formComments">
+        <Form.Label>Comments:</Form.Label>
+        <Form.Control as="multiline" rows={5} value={comments} onChange={updateComments} />  
+    </Form.Group>`},
+        {textId: "4", text: `<Form.Group controlId="formComments">
+        <Form.Label>Comments:</Form.Label>
+        <Form.Control type="textarea" rows={5} value={comments} onChange={updateComments}/>
+    </Form.Group>`},
+     ],
+        correctId: "1"
+    },
+    {id: "3.1.14", options: [
+        {textId: "1", text: `<Form.Group controlId="formFullName" as={Row}>
+            <Form.Label column sm={2}>Full Name:</Form.Label>
+            <Col>
+            <Form.Control type= "text" value={fullName} onChange={updateFullName} />
+            </Col>
+            </Form.Group>`},
+        {textId: "2", text: `<Form.Group controlId="formFullName" as={Row}>
+            <Form.Label column sm={2}>Full Name:</Form.Label>
+            <Form.Control type= "text" value={fullName} onChange={updateFullName} />
+            </Form.Group>`},
+        {textId: "3", text: `<Form.Group controlId="formFullName">
+            <Form.Label column sm={2}>Full Name:</Form.Label>
+            <Form.Control type= "text" value={fullName} onChange={updateFullName} />
+            </Form.Group>`},
+        {textId: "4", text: `<Form.Group controlId="formFullName">
+            <Form.Label column sm={2}>Full Name:</Form.Label>
+            <Col>
+            <Form.Control type= "text" value={fullName} onChange={updateFullName} />
+            </Col>
+            </Form.Group>`},
+    ],
+    correctId: "1"},
+    {id: "3.1.15", correctOrder: ["6,3,1,8,5,4,7,9,2,10"], options: [
+        `setReleased(event.target.value)`,
+        `</div>`,
+        `function updateReleased(event: React.ChangeEvent<HTMLInputElement>) {`, 
+        `<Form.Label>Released:</Form.Label>`,
+        `<Form.Group controlId="formMovieReleased">`,
+        `const [released, setReleased] = useState<number>(2026);`, 
+        `<Form.Control type="number" value={released} onChange={updateReleased} />`,
+        `return <div>`,
+        `</Form.Group>`,
+        `}`,
+        ]
+    },
+    {id: "3.1.16", correctOrder: ["5,10,8,1,6,4,9,2,11,12,7,3"], options: [
+        `}`,
+        `<Col>`,
+        `</div>`,
+        `<Form.Group controlId="formName" as={Row} >`,
+        `const [name, setName] = useState<string>("Ponyo");`,
+        `return <div>`,
+        `</Form.Group>`,
+        `setName(event.target.value)`,
+        `<Form.Label column sm={2}>Name:</Form.Label>`,
+        `function updateName(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `<Form.Control type="text" value={name} onChange={updateName} />`,
+        `</Col>`,
+    ]},
+    {id: "3.1.17", correctOrder: ["3,7,10,2,9,1,6,8,4,5"], options: [
+        `<Form.Group controlId="formDescription">`,
+        `}`,
+        `const [description, setDescription] = useState<string>("My Movie Description");`,
+        `</Form.Group`,
+        `</div>`,
+        `<Form.Label>Movie Description:</Form.Label>`,
+        `function updateDescription(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `<Form.Control as="textarea" rows={5} value={description} onChange={updateDescription} />`,
+        `return <div>`,
+        `setDescription(event.target.value)`,
+    ]}
+
+]

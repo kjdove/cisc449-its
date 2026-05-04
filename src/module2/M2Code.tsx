@@ -235,6 +235,8 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                     </div>
                     </>
                 )
+            default: 
+                return <div>Question not found</div>
         }//end to switch
     }//end to M2CodeBlock
 
