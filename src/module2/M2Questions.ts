@@ -1,9 +1,9 @@
 /**TOPIC 1: Textboxes (24)*/ 
 export const topic1MCQ = [
-    //Form.Control
-    {id: "2.1.1", question: "What form tag is used to create a textbox?"},
     //type = "text"
-    {id: "2.1.2", question: "What attribute is used to specify the type of a textbox?"},
+    {id: "2.1.1", question: "What attribute is used to specify the type of a textbox?"},
+    //Form.Control
+    {id: "2.1.2", question: "Which form tag includes the type attribute to create a textbox?"},
     //value and onChange
     {id: "2.1.3", question: "What two critical fields tie the Form.Control to the app's State?"},
     //value

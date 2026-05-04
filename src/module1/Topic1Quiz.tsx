@@ -1,9 +1,10 @@
+//Module 1 Topic 1
 import type { JSX } from "react";
 import { topic1MCQ, topic1Code } from "./M1Questions";
 import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
 import { M1Code } from "./M1Code";
 import { useState } from "react";
-import './Topic1Quiz.css';
+import './TopicPages.css';
 
 /**
  * NOTES:
@@ -43,7 +44,7 @@ export function Topic1Quiz(): JSX.Element {
                     </div>
             ))}
            </div>
-           <div className="t1-content">
+           <div className="topic-content">
                 <div className="question">
                     {currentQuestion.question}
                 </div>

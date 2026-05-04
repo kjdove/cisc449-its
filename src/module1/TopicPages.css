@@ -1,4 +1,10 @@
-.t1-container {
+.t1-container, .t2-container, .t3-container {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    width: 100%;
+}
+
+.t3-container {
     display: grid;
     grid-template-columns: 120px 1fr;
     width: 100%;
@@ -26,7 +32,7 @@
     text-decoration: underline;
 }
 
-.t1-content {
+.topic-content {
     display: flex;
     flex-direction: column;
     align-items: center;  

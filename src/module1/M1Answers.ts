@@ -1,6 +1,4 @@
-//20
 export const topic1MCQAnswers = [
-    //mcq questions
     {id: "1.1.1", options: [
         {textId: "1", text: "a collection of specialized user interface elements"}, 
         {textId: "2", text: "a communication protocol"},
@@ -66,12 +64,10 @@ export const topic1CodeAnswers = [
         options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
 ]   
 
-//15
 export const topic2Answers = [
 
 ]
 
-//13
 export const topic3Answers = [
 
 ]
