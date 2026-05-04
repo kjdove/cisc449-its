@@ -18,47 +18,40 @@ export const topic1MCQ = [
     //use the input name attribute to identify which field to update in the state
     {id: "2.1.9", question: "Which of the following is true about updating multiple textboxes with a single onChange handler?"},
 
-    //model/view/controller in regards to textbox component 
-        //useState variable - model
-    {id: "2.1.10", question: "Which part of the textbox component represents the Model?"},
-        //callback function - controller
-    {id: "2.1.11", question: "Which part of the textbox component represents the Controller?"},
-        //form.group - view
-    {id: "2.1.12", question: "Which part of the textbox component represents the View?"},
 ]
 
 export const topic1Code = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
-    {id: "2.1.13", question: "Identify the Model"}, 
-    {id: "2.1.14", question: "Identify the Controller"},
-    {id: "2.1.15", question: "Identify the View"},
+    {id: "2.1.10", question: "Identify the Model"}, 
+    {id: "2.1.11", question: "Identify the Controller"},
+    {id: "2.1.12", question: "Identify the View"},
 
     //fill in blanks
     //1)Form.(Control), 2)type="(text)", 3)(value) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
         //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
-    {id: "2.1.16", question: "Fill in the blanks for the following code to create a controlled textbox component."},
+    {id: "2.1.13", question: "Fill in the blanks for the following code to create a controlled textbox component."},
     
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user types, textbox value updates to match state
         //replace SOMETHING with different words - both scenarios will update to whatever user types
-    {id: "2.1.17", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
-    {id: "2.1.18", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
+    {id: "2.1.14", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
+    {id: "2.1.15", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
     //incorrect onChange syntax - state does not update as user types and stays initial value
         //value stays initial value because onChange handler does not correctly update state
-    {id: "2.1.19", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
+    {id: "2.1.16", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
 
     //what's missing/wrong with code (free response)
         //missing/incorrect useState definition
-    {id: "2.1.20", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+    {id: "2.1.17", question: "What is missing or wrong with the following code for a controlled textbox component?"},
         //missing/incorrect onChange handler
-    {id: "2.1.21", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+    {id: "2.1.18", question: "What is missing or wrong with the following code for a controlled textbox component?"},
         //missing /incorrectvalue attribute/binding value to state
-    {id: "2.1.22", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+    {id: "2.1.19", question: "What is missing or wrong with the following code for a controlled textbox component?"},
 
     //parsons/ordering code
-    {id: "2.1.23", question: "Order the following code snippets to correctly create a textbox component."},
-    {id: "2.1.24", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.1.20", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.1.21", question: "Order the following code snippets to correctly create a textbox component."},
 ]
 
 /**TOPIC 2: Checkboxes (20)*/
