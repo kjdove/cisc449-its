@@ -17,41 +17,26 @@ export const topic1MCQ = [
     {id: "2.1.8", question: "How do you correctly access the text typed into an input?"},
     //use the input name attribute to identify which field to update in the state
     {id: "2.1.9", question: "Which of the following is true about updating multiple textboxes with a single onChange handler?"},
-
 ]
 
 export const topic1Code = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
-    {id: "2.1.10", question: "Identify the Model"}, 
-    {id: "2.1.11", question: "Identify the Controller"},
-    {id: "2.1.12", question: "Identify the View"},
+    {id: "2.1.10", question: "Identify the Model, Controller, and View in the following code."},
 
     //fill in blanks
     //1)Form.(Control), 2)type="(text)", 3)(value) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
-        //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
-    {id: "2.1.13", question: "Fill in the blanks for the following code to create a controlled textbox component."},
+    {id: "2.1.11", question: "Fill in the blanks for the following code to create a controlled textbox component."},
     
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user types, textbox value updates to match state
-        //replace SOMETHING with different words - both scenarios will update to whatever user types
-    {id: "2.1.14", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
-    {id: "2.1.15", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
+    {id: "2.1.12", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'Howl's Moving Castle'?"},
     //incorrect onChange syntax - state does not update as user types and stays initial value
         //value stays initial value because onChange handler does not correctly update state
-    {id: "2.1.16", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'SOMETHING'?"},
-
-    //what's missing/wrong with code (free response)
-        //missing/incorrect useState definition
-    {id: "2.1.17", question: "What is missing or wrong with the following code for a controlled textbox component?"},
-        //missing/incorrect onChange handler
-    {id: "2.1.18", question: "What is missing or wrong with the following code for a controlled textbox component?"},
-        //missing /incorrectvalue attribute/binding value to state
-    {id: "2.1.19", question: "What is missing or wrong with the following code for a controlled textbox component?"},
+    {id: "2.1.13", question: "Given the following code, what will happen when the user types in the textbox? What is the value of the textbox after the user types 'Isle of Dogs'?"},
 
     //parsons/ordering code
-    {id: "2.1.20", question: "Order the following code snippets to correctly create a textbox component."},
-    {id: "2.1.21", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.1.14", question: "Order the following code snippets to correctly create a textbox component."},
 ]
 
 /**TOPIC 2: Checkboxes (20)*/
@@ -79,33 +64,22 @@ export const topic2MCQ = [
 export const topic2Code = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
-    {id: "2.2.10", question: "Identify the Model"}, 
-    {id: "2.2.11", question: "Identify the Controller"},
-    {id: "2.2.12", question: "Identify the View"},
+    {id: "2.2.10", question: "Identify the Model, Controller, and View in the following code."},
 
     //fill in blanks
         //1)Form.(Check), 2)type="(checkbox)", 3)(value) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
         //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
-    {id: "2.2.13", question: "Fill in the blanks for the following code to create a controlled checkbox component."},
+    {id: "2.2.11", question: "Fill in the blanks for the following code to create a controlled checkbox component."},
 
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user clicks, checkbox checked state updates to match state
-    {id: "2.2.14", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
+    {id: "2.2.12", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
     //incorrect onChange syntax - state does not update as user clicks and stays initial value
         //checkbox checked state stays initial value because onChange handler does not correctly update state
-    {id: "2.2.15", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
-
-    //what's missing/wrong with code (free response)
-        //missing/incorrect useState definition
-    {id: "2.2.16", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
-        //missin/incorrect onChange handler
-    {id: "2.2.17", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
-        //missing/incorrect checked attribute/binding checked to state
-    {id: "2.2.18", question: "What is missing or wrong with the following code for a controlled checkbox component?"},
+    {id: "2.2.13", question: "Given the following code, what will happen when the user clicks the checkbox? Is the checkbox checked or unchecked after the user clicks it?"},
 
     //parson/ordering code
-    {id: "2.2.19", question: "Order the following code snippets to correctly create a checkbox component."},
-    {id: "2.2.20", question: "Order the following code snippets to correctly create a checkbox component."},
+    {id: "2.2.14", question: "Order the following code snippets to correctly create a checkbox component."},
 ]
 
 /**TOPIC 3: Dropdowns (19)*/
@@ -122,44 +96,27 @@ export const topic3MCQ = [
     {id: "2.3.5", question: "Which React hook is commonly used to manage the state of a dropdown?"},
     //event.target.value
     {id: "2.3.6", question: "How do you correctly access the option selected in a dropdown in an onChange handler?"},
-
-    //model/view/controller in regards to dropdown component 
-        //useState variable - model
-    {id: "2.3.7", question: "Which part of the dropdown component represents the Model?"},
-        //callback function - controller
-    {id: "2.3.8", question: "Which part of the dropdown component represents the Controller?"},
-        //form.group - view
-    {id: "2.3.9", question: "Which part of the dropdown component represents the View?"},
 ]
 
 export const topic3Code = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
-    {id: "2.3.10", question: "Identify the Model"}, 
-    {id: "2.3.11", question: "Identify the Controller"},
-    {id: "2.3.12", question: "Identify the View"},
+    {id: "2.3.7", question: "Identify the Model, Controller, and View in the following code."},
 
     //fill in blanks
         //1)Form.(Select), 2)(value) = {name}, 3)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
-        //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
-    {id: "2.3.13", question: "Fill in the blanks for the following code to create a controlled dropdown component."},
+    {id: "2.3.8", question: "Fill in the blanks for the following code to create a controlled dropdown component."},
     
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user selects option, dropdown selected option updates to match state
-    {id: "2.3.14", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
-    {id: "2.3.15", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+    {id: "2.3.9", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
 
     //incorrect onChange syntax - state does not update as user selects and stays initial value
         //dropdown selected option stays initial value because onChange handler does not correctly update state
-    {id: "2.3.16", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+    {id: "2.3.10", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
 
-    //what's missing/wrong with code (free response)
-        //missing/incorrect useState definition
-    {id: "2.3.17", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
-        //missing/incorrect onChange
-    {id: "2.3.18", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
-        //missing/incorrect value attribute/binding value to state
-    {id: "2.3.19", question: "What is missing or wrong with the following code for a controlled dropdown component?"},
+     //parson/ordering code
+     {id: "2.3.11", question: "Order the following code snippets to correctly create a dropdown component."},
 ]
 
 /**TOPIC 4: Differences (24)*/
@@ -201,17 +158,9 @@ export const topic4Code = [
     {id: "2.4.17", question: "The following code represents which component?"},
     {id: "2.4.18", question: "The following code represents which component?"},
 
-    //what's missing/wrong with code (free response)
-        //textbox (INCLUDE FORM.CONTROL) missing type="text"
-    {id: "2.4.19", question: "What is missing or wrong with the following code for this component?"},
-        //checkbox (INCLUDE TYPE="CHECKBOX") missing/incorrect Form.Check tag
-    {id: "2.4.20", question: "What is missing or wrong with the following code for this component?"},
-        //dropdown (INCLUDE OPTIONS) missing/incorrect Form.Select tag
-    {id: "2.4.21", question: "What is missing or wrong with the following code for this component?"},
-
     //parsons/ordering
         //order code snippets to create a textbox, checkbox, dropdown component
-    {id: "2.4.22", question: "Order the following code snippets to correctly create a textbox component."},
-    {id: "2.4.23", question: "Order the following code snippets to correctly create a checkbox component."},
-    {id: "2.4.24", question: "Order the following code snippets to correctly create a dropdown component."},
+    {id: "2.4.19", question: "Order the following code snippets to correctly create a textbox component."},
+    {id: "2.4.20", question: "Order the following code snippets to correctly create a checkbox component."},
+    {id: "2.4.21", question: "Order the following code snippets to correctly create a dropdown component."},
 ]

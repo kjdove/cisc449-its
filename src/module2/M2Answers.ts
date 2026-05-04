@@ -1,4 +1,4 @@
-export const topic2MCQAnswers = [
+export const topic1MCQAnswers = [
     {id: "2.1.1", options: [
         {textId: "1", text: "value =  {text}"},
         {textId: "2", text: "onChange={(e) => setState(e.target.value)}"},
@@ -62,4 +62,36 @@ export const topic2MCQAnswers = [
         {textId: "4", text: "use the controlId attribute to bind each form control to its corresponding state variable"},
     ],
     correctId: "1"},
+]
+
+export const topic1CodeAnswers = [
+    {id: "2.1.10", correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.1.11", correctAnswers: ["Control", "text", "name", "updateName"]},
+    {id: "2.1.12", options: [
+        {textId: "1", text: "Since the code has the corrext syntax, the textbox value will update and display My Neighbor Totoro."},
+        {textId: "2", text: "Since the code has the correct syntax, the textbox value will update and display Howl's Moving Castle."},
+        {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the textbox value will not update and will stay as the initial value of My Neighbor Totoro."},
+        {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the textbox value will not update and will stay as the initial value of My Neighbor Totoro."},
+    ],
+    correctId: "2"},
+    {id: "2.1.13", options: [
+        {textId: "1", text: "Since the coode incorrectly updates the name state variable, the textbox value will not update and will stay as the initial value of Princess Monoke."},
+        {textId: "2", text: "Since the code correctly updates the name state variable, the textbox value will update and display whatever Isle of Dogs."},
+        {textId: "3", text: "Since the code incorrectly binds the name state variable to the value attribute, the textbox value will not update and will stay as the initial value of Princess Monoke."},
+        {textId: "4", text: "Since the code correctly binds the name state variable to the value attribute, the textbox value will update and display Isle of Dogs."},
+    ],
+    correctId: "1"},
+   {id: "2.1.14", correctOrder: "6,7,1,5,4,10,8,3,9", options: [
+    `setEmotion(event.target.value);`,
+    `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
+    `</Form.Group>`,
+    `return <div>`,
+    `}`,
+    `const [emotion, setEmotion] = useState<string>('Happy');`,
+    `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
+    `<Form.Label>How are you?</Form.Label>`,
+    `</div>`,
+    `<Form.Group controlId = 'formEmotion'>`
+   ]}
+
 ]

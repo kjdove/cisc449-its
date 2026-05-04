@@ -11,13 +11,12 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
         newCodeAnswer[index] = value;
         setCA(newCodeAnswer);
     }
-    console.log('question 13', question13);
 
     const M1CodeBlock = () => {
         switch(questionId) {
             case "1.1.10":
                 return (
-                    <div>
+                    <div className = "code-container">
                         <pre>
                             {`<Form.`}
                             <input
@@ -69,7 +68,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                 )
             case "1.1.11":
                 return (
-                    <div>
+                    <div className = "code-container">
                         <pre>
                             {`<Form.Group `}
                             <input
@@ -105,7 +104,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                 )
             case "1.1.12":
                 return (
-                    <div>
+                    <div className = "code-container">
                         <pre>
                         {`<Form.Group controlId = "formBasicEmail" className = "mb-3">`}
                             <br/>

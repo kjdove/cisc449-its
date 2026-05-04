@@ -1,8 +1,8 @@
 import type { JSX } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // import { useState } from "react";
-
 import './Module2.css';
+import { Topic1Quiz } from "./Topic1Quiz";
 
 
 export function Module2(): JSX.Element {
@@ -49,9 +49,12 @@ export function Module2(): JSX.Element {
                 </div>
             )}
             {topicId === "1" && (
-                <div>
-                    <h2>Textboxes</h2>
-                    <button onClick={handleBackButton}>Back to Module 2</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Textboxes</h2>
+                    </div>
+                    <Topic1Quiz />
                 </div>
             )}
             {topicId === "2" && (

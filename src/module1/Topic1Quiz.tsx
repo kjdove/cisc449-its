@@ -46,7 +46,7 @@ export function Topic1Quiz(): JSX.Element {
            </div>
            <div className="topic-content">
                 <div className="question">
-                    {currentQuestion.question}
+                    <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
                 <div className="answer">
                     {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
