@@ -270,5 +270,86 @@ export const topic1CodeAnswers = [
         `return <div>`,
         `setDescription(event.target.value)`,
     ]}
-
 ]
+
+export const topic2MCQAnswers = [
+    {id: "3.2.1", options: [
+        {textId: "1", text: "switch"},
+        {textId: "2", text: "radio buttons"},
+        {textId: "3", text: "multi checkboxes"},
+        {textId: "4", text: "all of the above"},
+    ], correctId: "4"},
+    {id: "3.2.2", options: [
+        {textId: "1", text: "switch"},
+        {textId: "2", text: "radio buttons"},
+        {textId: "3", text: "multi checkboxes"},
+        {textId: "4", text: "dropdown menu"},
+    ], correctId: "1"},
+    {id: "3.2.3", options: [
+        {textId: "1", text: "type = 'switch' attribute to the <Form.Control> tag"},
+        {textId: "2", text: "type = 'checkbox' attribute to the <Form.Control> tag"},
+        {textId: "3", text: "type = 'radio' attribute to the <Form.Check> tag"},
+        {textId: "4", text: "type = 'switch' attribute to the <Form.Check> tag"},
+    ], correctId: "4"},
+    {id: "3.2.4", options: [
+        {textId: "1", text: "radio buttons"},
+        {textId: "2", text: "switches"},
+        {textId: "3", text: "multi checkboxes"},
+        {textId: "4", text: "textboxes"},
+    ], correctId: "1"},
+    {id: "3.2.5", options: [
+        {textId: "1", text: "<Form.Control>"},
+        {textId: "2", text: "<Form.Check>"},
+        {textId: "3", text: "<Form.Switch>"},
+        {textId: "4", text: "<Form.Radio>"},
+    ], correctId: "2"},
+    {id: "3.2.6", options: [
+        {textId: "1", text: "radio, name"},
+        {textId: "2", text: "switch, id"},
+        {textId: "3", text: "checkbox, name"},
+        {textId: "4", text: "checkbox, id"},
+    ], correctId: "1"},
+    {id: "3.2.7", options: [
+        {textId: "1", text: "disabled"},
+        {textId: "2", text: "checked"},
+        {textId: "3", text: "value"},
+        {textId: "4", text: "inline"},
+    ], correctId: "2"},
+    {id: "3.2.8", options: [
+        {textId: "1", text: "disabled"},
+        {textId: "2", text: "checked"},
+        {textId: "3", text: "value"},
+        {textId: "4", text: "inline"},
+    ], correctId: "4"},
+    {id: "3.2.9", options: [
+        {textId: "1", text: "dropdowns"},
+        {textId: "2", text: "switches"},
+        {textId: "3", text: "radio buttons"},
+        {textId: "4", text: "multi checkboxes"},
+    ], correctId: "4"},
+]
+
+export const topic2CodeAnswers = [
+    {id: "3.2.10", options: [
+        {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a switch component"},
+        {textId: "2", text: `The type attribute should be set to "checkbox" instead of "switch"`},
+        {textId: "3", text: `The <Form.Check> tag should be changed to <Form.Switch>`},
+        {textId: "4", text: `The value attribute should be the checked attribute instead`},
+    ], correctId: "4"},
+    {id: "3.2.11", options: [
+        {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a group of radio buttons"},
+        {textId: "2", text: `The type attribute should be set to "checkbox" instead of "radio"`},
+        {textId: "3", text: `The <Form.Check> tag should be changed to <Form.Radio>`},
+        {textId: "4", text: `The name attribute should be removed`},
+        ], correctId: "1"},
+    {id: "3.2.12", options: [
+        {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a group of multi checkboxes"},
+        {textId: "2", text: `The <Form.Check> tag should be changed to <Form.Multi>`},
+        {textId: "3", text: `The type of the state value should be string[] instead of string`},
+        {textId: "4", text: `The name attribute should be removed`},
+    ], correctId: "3"},
+]
+
+export const topic3MCQAnswers = []
+
+export const topic3CodeAnswers = []

@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 import {useState} from 'react';
-import { topic1CodeAnswers } from './M3Answers';
+import { topic1CodeAnswers, topic2CodeAnswers } from './M3Answers';
 
 
 export function M3Code({questionId}: {questionId: string}): JSX.Element {
@@ -11,12 +11,16 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
         newCodeAnswer[index] = value;
         setCA(newCodeAnswer);
     }
-    const question12 = topic1CodeAnswers.find((q) => q.id === "3.1.12");
-    const question13 = topic1CodeAnswers.find((q) => q.id === "3.1.13");
-    const question14 = topic1CodeAnswers.find((q) => q.id === "3.1.14");
-    const question15 = topic1CodeAnswers.find((q) => q.id === "3.1.15");
-    const question16 = topic1CodeAnswers.find((q) => q.id === "3.1.16");
-    const question17 = topic1CodeAnswers.find((q) => q.id === "3.1.17");
+    const t1Q12 = topic1CodeAnswers.find((q) => q.id === "3.1.12");
+    const t1Q13 = topic1CodeAnswers.find((q) => q.id === "3.1.13");
+    const t1Q14 = topic1CodeAnswers.find((q) => q.id === "3.1.14");
+    const t1Q15 = topic1CodeAnswers.find((q) => q.id === "3.1.15");
+    const t1Q16 = topic1CodeAnswers.find((q) => q.id === "3.1.16");
+    const t1Q17 = topic1CodeAnswers.find((q) => q.id === "3.1.17");
+
+    const t2Q10 = topic2CodeAnswers.find((q) => q.id === "3.2.10");
+    const t2Q11 = topic2CodeAnswers.find((q) => q.id === "3.2.11");
+    const t2Q12 = topic2CodeAnswers.find((q) => q.id === "3.2.12");
 
     const M1CodeBlock = () => {
         switch(questionId){
@@ -212,7 +216,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className='code-container'>
                         <div className='code-options-container'>
                             <pre>
-                                {question12?.options.map((option) => (
+                                {t1Q12?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -227,7 +231,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className='code-container'>
                         <div className='code-options-container'>
                             <pre>
-                                {question13?.options.map((option) => (
+                                {t1Q13?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -242,7 +246,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className='code-container'>
                         <div className='code-options-container'>
                             <pre>
-                                {question14?.options.map((option) => (
+                                {t1Q14?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -256,7 +260,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {question15?.options.map((option, index) => (
+                        {t1Q15?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -277,7 +281,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {question16?.options.map((option, index) => (
+                        {t1Q16?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -298,7 +302,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {question17?.options.map((option, index) => (
+                        {t1Q17?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -312,6 +316,172 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
+                    </div>
+                    </>
+                )
+            case "3.2.10":
+                return(
+                    <>
+                    <div className='code-container'>
+                        <pre>
+                            {`const [isHappy, setIsHappy] = useState<boolean>(true);`}
+                            <br/>
+                            {`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`}
+                            <br/>
+                            {`  setIsHappy(event.target.value));`}
+                            <br/>
+                            {`}`}
+                            <br/>
+                            {`return (`}
+                            <br/>
+                            {`<Form.Check`}
+                            <br/>
+                            {`  type="switch"`}
+                            <br/>
+                            {`  id="is-happy-check"`}
+                            <br/>
+                            {`  label="Happy?"`}
+                            <br/>
+                            {`  value={isHappy}`}
+                            <br/>
+                            {`  onChange={updateHappiness}/>`}
+                            <br/>
+                            {`)`}
+                        </pre>
+                    </div>
+                    <div className='code-options-container'>
+                        <pre>
+                            {t2Q10?.options.map((option) => (
+                                <div key={option.textId} className="code-answer-option">
+                                <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                <label htmlFor={option.textId}>{option.text}</label>
+                            </div>
+                            ))}
+                        </pre>
+                    </div>
+                    </>
+                )
+            case "3.2.11":
+                return (
+                    <>
+                    <div className='code-container'>
+                        {`const [emotion, setEmotion] = useState<string>("happy");`}
+                            <br/>
+                            {`function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`}
+                            <br/>
+                            {`  setEmotion(event.target.value));`}
+                            <br/>
+                            {`}`}
+                            <br/>
+                            {`return (`}
+                            <br/>
+                            {`<Form.Check`}
+                            <br/>
+                            {`  type="radio"`}
+                            <br/>
+                            {`  name="emotions"`}
+                            <br/>
+                            {`  id="happy-check"`}
+                            <br/>
+                            {`  label="Happy"`}
+                            <br/>
+                            {`  value="happy"`}
+                            <br/>
+                            {`  checked={emotion === "happy"}`}
+                            <br/>
+                            {`  onChange={updateEmotion}/>`}
+                            <br/>
+                            {`<Form.Check`}
+                            <br/>
+                            {`  type="radio"`}
+                            <br/>
+                            {`  name="emotions"`}
+                            <br/>
+                            {`  id="sad-check"`}
+                            <br/>
+                            {`  label="Sad"`}
+                            <br/>
+                            {`  value="sad"`}
+                            <br/>
+                            {`  checked={emotion === "sad"}`}
+                            <br/>
+                            {`  onChange={updateEmotion}/>`}
+                            <br/>
+                            {`)`}
+                    </div>
+                    <div className='code-options-container'>
+                        <pre>
+                            {t2Q11?.options.map((option) => (
+                                <div key={option.textId} className="code-answer-option">
+                                <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                <label htmlFor={option.textId}>{option.text}</label>
+                            </div>
+                            ))}
+                        </pre>
+                    </div>
+                    </>
+                )
+            case "3.2.12":
+                return (
+                    <>
+                    <div className='code-container'>
+                        <pre>
+                            {`const [emotions, setEmotions] = useState<string>("happy");`}
+                            <br/>
+                            {`function updateEmotions(event: React.ChangeEvent<HTMLInputElement>) {`}
+                            <br/>
+                            {`  setEmotions(event.target.value));`}
+                            <br/>
+                            {`}`}
+                            <br/>
+                            {`return (`}
+                            <br/>
+                            {`<Form.Check`}
+                            <br/>
+                            {`  type="checkbox"`}
+                            <br/>
+                            {`  name="emotions"`}
+                            <br/>
+                            {`  id="happy-check"`}
+                            <br/>
+                            {`  label="Happy"`}
+                            <br/>
+                            {`  value="happy"`}
+                            <br/>
+                            {`  checked={emotions === "happy"}`}
+                            <br/>
+                            {`  onChange={updateEmotions}/>`}
+                            <br/>
+                            {`<Form.Check`}
+                            <br/>
+                            {`  type="checkbox"`}
+                            <br/>
+                            {`  name="emotions"`}
+                            <br/>
+                            {`  id="sad-check"`}
+                            <br/>
+                            {`  label="Sad"`}
+                            <br/>
+                            {`  value="sad"`}
+                            <br/>
+                            {`  checked={emotions === "sad"}`}
+                            <br/>
+                            {`  onChange={updateEmotions}/>`}
+                            <br/>
+                            {`)`}
+
+                        </pre>
+
+                    </div>
+                    <div className='code-options-container'>
+                        <pre>
+                            {t2Q12?.options.map((option) => (
+                                <div key={option.textId} className="code-answer-option">
+                                <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                <label htmlFor={option.textId}>{option.text}</label>
+                            </div>
+                            ))}
+                        </pre>
                     </div>
                     </>
                 )

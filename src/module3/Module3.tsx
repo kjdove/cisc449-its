@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import './Module3.css';
 import { Topic1Quiz } from "./Topic1Quiz";
+import { Topic2Quiz } from "./Topic2Quiz";
 
 export function Module3(): JSX.Element {
     const navigate = useNavigate();
@@ -59,6 +60,7 @@ export function Module3(): JSX.Element {
                         <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
                         <h2>Checkbox Variations</h2>
                     </div>
+                    <Topic2Quiz/>
                 </div>
             )}
             {topicId === "3" && (

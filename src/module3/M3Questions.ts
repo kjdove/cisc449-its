@@ -94,22 +94,18 @@ export const topic2MCQ = [
         //form.check
     {id: "3.2.5", question: "Radio buttons are created using multiple [] elements."},
         //type="radio" in Form.Check, same name attr for all options in the set
-    {id: "3.2.5", question: "Radio buttons use type = '(1)' in the Form.Check tag, and all options in the set should have the same (2) attribute to be a single, cohesive set."},
+    {id: "3.2.6", question: "Radio buttons use type = '(1)' in the Form.Check tag, and all options in the set should have the same (2) attribute to be a single, cohesive set."},
         //checked attr
-    {id: "3.2.6", question: "The [] attribute uses a calculated expression based on the state in order to turn the string into a boolean value and determine which radio button is selected."},
+    {id: "3.2.7", question: "The [] attribute uses a calculated expression based on the state in order to turn the string into a boolean value and determine which radio button is selected."},
         //inline attr
-    {id: "3.2.7", question: "The [] attribute can be added to Form.Check elements to display radio buttons in a horizontal row instead of a vertical stack."},
-        //string state
-    {id: "3.2.8", question: "When using radio buttons, the state that determines which option is selected should be a [] that matches the value attribute of the selected radio button."},
-
+    {id: "3.2.8", question: "The [] attribute can be added to Form.Check elements to display radio buttons in a horizontal row instead of a vertical stack."},
 
     //multi checkboxes
         //def
     {id: "3.2.9", question: "[] are used when you want to allow users to select multiple options from a set of choices."},
-        //string[] state
-    {id: "3.2.10", question: "When using multiple checkboxes, the state that determines which options are selected should be [] that contains the value attributes of the selected checkboxes."},
+]
 
-    //choose correct code
+export const topic2Code = [
     /** switch
     <Form.Check
         type="switch"
@@ -119,7 +115,7 @@ export const topic2MCQ = [
         onChange={updateHappiness}
     />
      */
-    {id: "3.2.11", question: "Select the correct code to create a switch."},
+    {id: "3.2.10", question: "Identify what is incorrect or missing from the following code to create a switch component."},
     /** radio buttons
     <div>
         <Form.Check
@@ -151,7 +147,7 @@ export const topic2MCQ = [
         />
     </div>
     */
-    {id: "3.2.12", question: "Select the correct code to create a set of radio buttons."},
+    {id: "3.2.11", question: "Identify what is incorrect or missing from the following code to create a radio button component."},
 
     /** multi checkboxes
      <div>
@@ -177,31 +173,28 @@ export const topic2MCQ = [
         />
     </div>
     */
-    {id: "3.2.13", question: "Select the correct code to create a set of multi checkboxes."},
-]
-
-export const topic2Code = [
+    {id: "3.2.12", question: "Identify what is incorrect or missing from the following code to create a multi checkbox component."},
     //fill in blanks
         //switch
         //missing - in useState: <boolean>, "default boolean value", in form: Form.(Check), type="switch"
-    {id: "3.2.14", question: "Fill in the blanks to create a switch."},
+    {id: "3.2.13", question: "Fill in the blanks to create a switch."},
         //radio buttons
         //missing - in useState: <string>, "default string value", in form: multiple Form.(Check) elements, type="radio", same name attr for all options in the set, checked attr with calculated expression based on state
-    {id: "3.2.15", question: "Fill in the blanks to create a set of radio buttons."},
+    {id: "3.2.14", question: "Fill in the blanks to create a set of radio buttons."},
         //multi checkboxes
         //missing - in useState: <string[]>, "default string array value", in form: multiple Form.(Check) elements, type="checkbox", checked attr with expression that checks if value attribute is included in the state array
-    {id: "3.2.16", question: "Fill in the blanks to create a set of multi checkboxes."},
+    {id: "3.2.15", question: "Fill in the blanks to create a set of multi checkboxes."},
 
     //scenarios
-    {id: "3.2.17", question: "You are creating a settings page for a web application. You want to include a toggle option option for users to enable or disable email notifications. Which of the following code snippets correctly implements this requirement?"},
-    {id: "3.2.18", question: "You are creating a quiz form that asks users to select their preferred development environment. Users should only be able to select one option. Which of the following code snippets correctly implements this requirement?"},
-    {id: "3.2.19", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.16", question: "You are creating a settings page for a web application. You want to include a toggle option option for users to enable or disable email notifications. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.17", question: "You are creating a quiz form that asks users to select their preferred development environment. Users should only be able to select one option. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.18", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
 
     //parsons/ordering
         //for each question, include all the possible lines of code that make each variation of checkbox
-    {id: "3.2.20", question: "Order the following lines of code to correctly create a switch."},
-    {id: "3.2.21", question: "Order the following lines of code to correctly create a set of radio buttons."},
-    {id: "3.2.22", question: "Order the following lines of code to correctly create a set of multi checkboxes."},
+    {id: "3.2.19", question: "Order the following lines of code to correctly create a switch."},
+    {id: "3.2.20", question: "Order the following lines of code to correctly create a set of radio buttons."},
+    {id: "3.2.21", question: "Order the following lines of code to correctly create a set of multi checkboxes."},
 ]
 
 /**TOPIC 3: Dropdown Variations*/
