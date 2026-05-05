@@ -43,6 +43,7 @@ export function Topic1Quiz(): JSX.Element {
                     ))}
                     {currentAInd >= 8 && <M3Code questionId={currentQuestion.id} />}
                 </div>
+                <button className="submit-button">Submit</button>
             </div>
         </div>
     )

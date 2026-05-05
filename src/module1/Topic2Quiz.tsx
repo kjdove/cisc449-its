@@ -30,6 +30,10 @@ export function Topic2Quiz(): JSX.Element {
                 <div className="question">
                     {'question' in currentQuestion ? currentQuestion.question : currentQuestion.definition}
                 </div>
+                <div className="answer">
+
+                </div>
+                <button className="submit-button">Submit</button>
             </div>
         </div>
     )

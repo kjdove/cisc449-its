@@ -560,9 +560,39 @@ export const topic2CodeAnswers = [
                 checked={response === "bad"}
         />`
     ]}
-
 ]
 
-export const topic3MCQAnswers = []
+export const topic3MCQAnswers = [
+    {id: "3.3.1", options: [
+        {textId: "1", text: "checkboxes"},
+        {textId: "2", text: "radio buttons"},
+        {textId: "3", text: "a list of options"},
+        {textId: "4", text: "all of the above"},
+    ], correctId: "3"},
+    {id: "3.3.2", options: [
+        {textId: "1", text: "value"},
+        {textId: "2", text: "onChange"},
+        {textId: "3", text: "type"},
+        {textId: "4", text: "key"},
+    ], correctId: "4"},
+    {id: "3.3.3", options: [
+        {textId: "1", text: ".map()"},
+        {textId: "2", text: ".forEach()"},
+        {textId: "3", text: ".filter()"},
+        {textId: "4", text: ".find()"},
+    ], correctId: "1"},
+    {id: "3.3.4", options: [
+        {textId: "1", text: "key, name"},
+        {textId: "2", text: "key, value"},
+        {textId: "3", text: "value, onChange"},
+        {textId: "4", text: "name, value"},
+    ], correctId: "2"},
+    {id: "3.3.5", options: [
+        {textId: "1", text: "key, onChange"},
+        {textId: "2", text: "key, value"},
+        {textId: "3", text: "value, onChange"},
+        {textId: "4", text: "name, value"},
+    ], correctId: "3"},
+]
 
 export const topic3CodeAnswers = []

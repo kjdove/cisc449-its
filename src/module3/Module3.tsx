@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import './Module3.css';
 import { Topic1Quiz } from "./Topic1Quiz";
 import { Topic2Quiz } from "./Topic2Quiz";
+import { Topic3Quiz } from "./Topic3Quiz";
 
 export function Module3(): JSX.Element {
     const navigate = useNavigate();
@@ -69,6 +70,7 @@ export function Module3(): JSX.Element {
                         <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
                         <h2>Dropdown Variations</h2>
                     </div>
+                    <Topic3Quiz/>
                 </div>
             )}
 
