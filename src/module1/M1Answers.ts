@@ -64,8 +64,78 @@ export const topic1CodeAnswers = [
         options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
 ]   
 
-export const topic2Answers = [
+export const topic2MCQAnswers = [
+    {id: "1.2.1", options: [
+        {textId: "1", text: "Form components"},
+        {textId: "2", text: "attributes"},
+        {textId: "3", text: "event handlers"},
+        {textId: "4", text: "state variables"},
+    ], correctId: "2"},
+    {id: "1.2.2", options: [
+        {textId: "1", text: "Form.Group"},
+        {textId: "2", text: "Form.Label"},
+        {textId: "3", text: "Form.Control"},
+        {textId: "4", text: "Form.Text"},
+    ], correctId: "3"},
+    {id: "1.2.3", options: [
+        {textId: "1", text: `<Form.Control disabled={canEdit}>`},
+        {textId: "2", text: `<Form.Control placeholder="Enter Email">`},
+        {textId: "3", text: `<Form.Control type="email">`},
+        {textId: "4", text: `All of the above`},
+    ], correctId: "4"},
+    {id: "1.2.4", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "1"},
+    {id: "1.2.5", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "2"},
+    {id: "1.2.6", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "3"},
+    {id: "1.2.7", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "4"},
+    {id: "1.2.8", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "defaultValue"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "value"},
+    ], correctId: "4"},
+    {id: "1.2.9", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "value"},
+        {textId: "4", text: "defaultValue"},
+    ], correctId: "4"},
+]
 
+export const topic2CodeAnswers = [
+    {id: "1.2.10", options: [
+        {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
+        {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
+        {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
+        {textId: "4", text: "All of the above."},
+    ], correctId: "1"},
+    {id: "1.2.11", options: [
+        {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
+        {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
+        {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
+        {textId: "4", text: "All of the above."},
+    ], correctId: "2"},
+    {id: "1.2.12", correctAnswer: "defaultValue"},
+    {id: "1.2.13", correctAnswer: "readOnly"},
 ]
 
 export const topic3Answers = [

@@ -1066,7 +1066,6 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return <div>Question not found</div>
         }//end to switch
     }//end to m1 code block
-
     return(
         <div>
             {M1CodeBlock()}

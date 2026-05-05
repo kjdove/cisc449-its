@@ -41,18 +41,18 @@ export const topic2MCQ = [
 //match each attribute to its definition
 export const topic2Matching = [
     //readOnly
-    {id: "1.2.4", defintion: "with this attribute, the user will only be able to view and copy data, and not be able to edit it."},
+    {id: "1.2.4", question: "With this attribute, the user will only be able to view and copy data, and not be able to edit it."},
     //disabled
-    {id: "1.2.5", definition: "this attribute prevents user interaction."},
+    {id: "1.2.5", question: "This attribute prevents user interaction."},
     //placeholder
-    {id: "1.2.6", definition: "the value of this attribute will appear in the form control when it is empty, and will disappear when the user starts typing."},
+    {id: "1.2.6", question: "The value of this attribute will appear in the form control when it is empty, and will disappear when the user starts typing."},
     //required
-    {id: "1.2.7", definition: "this attribute indicates that a field must be filled out before submitting the form."},
+    {id: "1.2.7", question: "This attribute indicates that a field must be filled out before submitting the form."},
     //value
-    {id: "1.2.8", definition: "this attribute binds the value of the form control to a state variable, allowing for controlled components."},
+    {id: "1.2.8", question: "This attribute binds the value of the form control to a state variable, allowing for controlled components."},
     //defaultValue
-    {id: "1.2.9", definition: "this attribute sets the initial value of an uncontrolled form control without binding it to a state after."},
-]  
+    {id: "1.2.9", question: "This attribute sets the initial value of an uncontrolled form control without binding it to a state after."},
+]
 
 
 export const topic2Code = [
@@ -60,10 +60,8 @@ export const topic2Code = [
     {id: "1.2.10", question: "Given the following code, what will be the behavior of the form control?"},
     {id: "1.2.11", question: "Given the following code, what will be the behavior of the form control?"},
     //scenarios, what attribute(s) should be used to achieve this behavior
-    {id: "1.2.12", question: "You want to create a form control that has an initial value of 'Hello World' but can be edited by the user. What attribute(s) would you use?"},
-    {id: "1.2.13", question: "You want to create a form control that is pre-filled with the value of a state variable called 'email', and updates the 'email' state variable whenever the user types in the form control. What attribute(s) would you use?"},
-    {id: "1.2.14", question: "You want to create a form control that is visible but not editable by the user. What attribute(s) would you use?"},
-    {id: "1.2.15", question: "You want to create a form control that is completely non-interactive and appears grayed out. What attribute(s) would you use?"}
+    {id: "1.2.12", question: "You want to create a form control that has an initial value of 'Hello World' but can be edited by the user. Add the missing attribute(s)."},
+    {id: "1.2.13", question: "You want to create a form control that is visible but not editable by the user. Add the missing attribute(s)."},
 ]
 
 /**TOPIC 3: How to Use the Value Attribute (13)*/
