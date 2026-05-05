@@ -93,5 +93,16 @@ export const topic1CodeAnswers = [
     `</div>`,
     `<Form.Group controlId = 'formEmotion'>`
    ]}
-
 ]
+
+export const topic2MCQAnswers = []
+
+export const topic2CodeAnswers = []
+
+export const topic3MCQAnswers = []
+
+export const topic3CodeAnswers = []
+
+export const topic4MCQAnswers = []
+
+export const topic4CodeAnswers = []

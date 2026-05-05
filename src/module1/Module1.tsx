@@ -42,7 +42,6 @@ export function Module1(): JSX.Element {
                         </div>
                     </div>
                     <button className="end-button">End of Module Quiz</button>
-                    <p>Placeholder for note if u want to include it</p>
                 </div>
             )}
 

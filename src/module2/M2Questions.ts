@@ -1,4 +1,4 @@
-/**TOPIC 1: Textboxes (24)*/ 
+/**TOPIC 1: Textboxes*/ 
 export const topic1MCQ = [
     //type = "text"
     {id: "2.1.1", question: "What attribute is used to specify the type of a textbox?"},
@@ -39,7 +39,7 @@ export const topic1Code = [
     {id: "2.1.14", question: "Order the following code snippets to correctly create a textbox component."},
 ]
 
-/**TOPIC 2: Checkboxes (20)*/
+/**TOPIC 2: Checkboxes*/
 export const topic2MCQ = [
     //def
     {id: "2.2.1", question: "[] corresponds to some boolean state."},
@@ -82,7 +82,7 @@ export const topic2Code = [
     {id: "2.2.14", question: "Order the following code snippets to correctly create a checkbox component."},
 ]
 
-/**TOPIC 3: Dropdowns (19)*/
+/**TOPIC 3: Dropdowns*/
 export const topic3MCQ = [
     //def
     {id: "2.3.1", question: "[], also known as select menus or comboboxes, correspond to some string state, or a subset of strings, that can take on multiple values."},
