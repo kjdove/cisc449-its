@@ -348,6 +348,219 @@ export const topic2CodeAnswers = [
         {textId: "3", text: `The type of the state value should be string[] instead of string`},
         {textId: "4", text: `The name attribute should be removed`},
     ], correctId: "3"},
+    {id: "3.2.13", correctAnswers: ["boolean", "Check", "switch"]},
+    {id: "3.2.14", correctAnswers: ["string", "Check", "radio", "color", "green", "Check", "radio", "color", "blue"]},
+    {id: "3.2.15", correctAnswers: ["string[]", "Check", "checkbox", "checked", "Check", "checkbox", "checked"]},
+    {id: "3.2.16", options: [
+        {textId: "1", text: 
+        `<Form.Check 
+        type='switch' 
+        label='Enable Notifications' 
+        checked = {enableNotifications}
+        onChange={updateEnableNotifications}
+        />`},
+        {textId: "2", text: 
+        `<Form.Check 
+        type='checkbox'
+        label='Enable Notifications'
+        checked = {enableNotifications}
+        onChange={updateEnableNotifications}
+        />`},
+        {textId: "3", text: 
+        `<Form.Switch
+        label='Enable Notifications'
+        checked = {enableNotifications}
+        onChange={updateEnableNotifications}
+        />`},
+        {textId: "4", text: 
+        `<Form.Check 
+        type='switch'
+        label='Enable Notifications'
+        value = {enableNotifications}
+        onChange={updateEnableNotifications}
+        />`},
+    ], correctId: "1"},
+    {id: "3.2.17", options: [
+        {textId: "1", text: 
+        `<Form.Check 
+        type='radio' 
+        label='Option 1' 
+        name='options' 
+        checked={selectedOption === 'option1'} 
+        onChange={() => setSelectedOption('option1')} 
+        />
+        <Form.Check 
+        type='radio' 
+        label='Option 2' 
+        name='options' 
+        checked={selectedOption === 'option2'} 
+        onChange={() => setSelectedOption('option2')} 
+        />`},
+        {textId: "2", text: 
+        `<Form.Check 
+        type='checkbox' 
+        label='Option 1' 
+        name='options' 
+        checked={selectedOption === 'option1'} 
+        onChange={() => setSelectedOption('option1')} 
+        />
+        <Form.Check 
+        type='checkbox' 
+        label='Option 2' 
+        name='options' 
+        checked={selectedOption === 'option2'} 
+        onChange={() => setSelectedOption('option2')} 
+        />`},
+        {textId: "3", text:
+        `<Form.Radio
+        type='radio'
+        label='Option 1'
+        name='options'
+        checked={selectedOption === 'option1'}
+        onChange={() => setSelectedOption('option1')}
+        />
+        <Form.Radio
+        type='radio'
+        label='Option 2'
+        name='options'
+        checked={selectedOption === 'option2'}
+        onChange={() => setSelectedOption('option2')}
+        />`},
+        {textId: "4", text:
+        `<Form.Check
+        type='radio'
+        label='Option 1'
+        name='options'
+        value='option1'
+        onChange={() => setSelectedOption('option1')}
+        />
+        <Form.Check
+        type='radio'
+        label='Option 2'
+        name='options'
+        value='option2'
+        onChange={() => setSelectedOption('option2')}
+        />`
+        }
+    ], correctId: "1"},
+    {id: "3.2.18", options: [
+        {textId: "1", text: 
+        `<Form.Check 
+        type='checkbox' 
+        label='Option A' 
+        name='options' 
+        checked={selectedOptions.includes('optionA')} 
+        onChange={() => toggleOption('optionA')} 
+        />
+        <Form.Check 
+        type='checkbox' 
+        label='Option B' 
+        name='options' 
+        checked={selectedOptions.includes('optionB')} 
+        onChange={() => toggleOption('optionB')} 
+        />`},
+        {textId: "2", text: 
+        `<Form.Check 
+        type='radio' 
+        label='Option A' 
+        name='options' 
+        checked={selectedOptions.includes('optionA')} 
+        onChange={() => toggleOption('optionA')} 
+        />
+        <Form.Check 
+        type='radio' 
+        label='Option B' 
+        name='options' 
+        checked={selectedOptions.includes('optionB')} 
+        onChange={() => toggleOption('optionB')} 
+        />`},
+        {textId: "3", text:
+        `<Form.Check
+        type='checkbox'
+        label='Option A'
+        name='options'
+        value='optionA'
+        onChange={() => toggleOption('optionA')}
+        />
+        <Form.Check
+        type='checkbox'
+        label='Option B'
+        name='options'
+        value='optionB'
+        onChange={() => toggleOption('optionB')}
+        />`},
+        {textId: "4", text:
+        `<Form.Multi
+        type='checkbox'
+        label='Option A'
+        name='options'
+        value='optionA'
+        onChange={() => toggleOption('optionA')}
+        />
+        <Form.Multi
+        type='checkbox'
+        label='Option B'
+        name='options'
+        value='optionB'
+        onChange={() => toggleOption('optionB')}
+        />`}
+    ], correctId: "1"},
+    {id: "3.2.19", correctOrder: ["5,1,7,3,6,4,2", ""], options: [`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `</div>`, `}`, `<Form.Check type="swtich" id="happy-check" label="Happy?" checked={isHappy} onChange={updateHappiness} />`, 
+        `const [isHappy, setIsHappy] = useState<boolean>(true);`, `return <div>`, `setIsHappy(event.target.checked)`, ]
+    },
+    {id: "3.2.20", correctOrder: ["8,7,1,6,2,3,4,5", "8,7,1,6,2,4,3,5"], options: [
+        `setEmotion(event.target.value);`,
+        `return <div>`,
+        `<Form.Check
+                type="radio"
+                name="emotions"
+                onChange={updateEmotion}
+                id="emotion-check-happy"
+                label="Happy"
+                value="happy"
+                checked={emotion === "happy"}
+        />`,
+        `<Form.Check
+                type="radio"
+                name="emotions"
+                onChange={updateEmotion}
+                id="emotion-check-sad"
+                label="Sad"
+                value="sad"
+                checked={emotion === "sad"}
+        />`, 
+        `</div>`,
+        `}`,
+        `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `const [emotion, setEmotion] = useState<string>("happy");`
+    ]},
+    {id: "3.2.21", correctOrder:["4,1,2,5,3", "4,1,5,2,3"], options: [
+        `return <div>`,
+        `<Form.Check
+                inline
+                type="radio"
+                name="response"
+                onChange={(e) => setResponse(e.target.value)}
+                id="response-good"
+                label="good"
+                value="good"
+                checked={response === "good"}
+        />`,
+        `</div>`,
+        `const [response, setResponse] = useState<string>("good");`,
+        `<Form.Check
+                inline
+                type="radio"
+                name="response"
+                onChange={(e) => setResponse(e.target.value)}
+                id="response-bad"
+                label="bad"
+                value="bad"
+                checked={response === "bad"}
+        />`
+    ]}
+
 ]
 
 export const topic3MCQAnswers = []

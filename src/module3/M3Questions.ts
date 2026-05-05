@@ -106,83 +106,16 @@ export const topic2MCQ = [
 ]
 
 export const topic2Code = [
-    /** switch
-    <Form.Check
-        type="switch"
-        id="is-happy-check"
-        label="Happy?"
-        checked={isHappy}
-        onChange={updateHappiness}
-    />
-     */
-    {id: "3.2.10", question: "Identify what is incorrect or missing from the following code to create a switch component."},
-    /** radio buttons
-    <div>
-        <Form.Check
-            type="radio"
-            name="emotions"
-            onChange={updateEmotion}
-            id="emotion-check-happy"
-            label="Happy"
-            value="happy"
-            checked={emotion === "happy"}
-        />
-        <Form.Check
-            type="radio"
-            name="emotions"
-            onChange={updateEmotion}
-            id="emotion-check-sad"
-            label="Sad"
-            value="sad"
-            checked={emotion === "sad"}
-        />
-        <Form.Check
-            type="radio"
-            name="emotions"
-            onChange={updateEmotion}
-            id="emotion-check-angry"
-            label="Angry"
-            value="angry"
-            checked={emotion === "angry"}
-        />
-    </div>
-    */
-    {id: "3.2.11", question: "Identify what is incorrect or missing from the following code to create a radio button component."},
-
-    /** multi checkboxes
-     <div>
-        <Form.Check
-            inline
-            type="radio"
-            name="response"
-            onChange={(e) => setResponse(e.target.value)}
-            id="response-good"
-            label="😃"
-            value="good"
-            checked={response === "good"}
-        />
-        <Form.Check
-            inline
-            type="radio"
-            name="response"
-            onChange={(e) => setResponse(e.target.value)}
-            id="response-bad"
-            label="😒"
-            value="bad"
-            checked={response === "bad"}
-        />
-    </div>
-    */
-    {id: "3.2.12", question: "Identify what is incorrect or missing from the following code to create a multi checkbox component."},
+    {id: "3.2.10", question: "Identify if there is anything incorrect or missing in the following code to create a switch component."},
+    {id: "3.2.11", question: "Identify if there is anything incorrect or missing in the following code to create a radio button component."},
+    {id: "3.2.12", question: "Identify if there is anything incorrect or missing in the following code to create a multi checkbox component."},
+    
     //fill in blanks
         //switch
-        //missing - in useState: <boolean>, "default boolean value", in form: Form.(Check), type="switch"
-    {id: "3.2.13", question: "Fill in the blanks to create a switch."},
+    {id: "3.2.13", question: "Fill in the blanks to create a switch checkbox."},
         //radio buttons
-        //missing - in useState: <string>, "default string value", in form: multiple Form.(Check) elements, type="radio", same name attr for all options in the set, checked attr with calculated expression based on state
     {id: "3.2.14", question: "Fill in the blanks to create a set of radio buttons."},
         //multi checkboxes
-        //missing - in useState: <string[]>, "default string array value", in form: multiple Form.(Check) elements, type="checkbox", checked attr with expression that checks if value attribute is included in the state array
     {id: "3.2.15", question: "Fill in the blanks to create a set of multi checkboxes."},
 
     //scenarios
@@ -191,8 +124,7 @@ export const topic2Code = [
     {id: "3.2.18", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
 
     //parsons/ordering
-        //for each question, include all the possible lines of code that make each variation of checkbox
-    {id: "3.2.19", question: "Order the following lines of code to correctly create a switch."},
+    {id: "3.2.19", question: "Order the following lines of code to correctly create a switch component."},
     {id: "3.2.20", question: "Order the following lines of code to correctly create a set of radio buttons."},
     {id: "3.2.21", question: "Order the following lines of code to correctly create a set of multi checkboxes."},
 ]
