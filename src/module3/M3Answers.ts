@@ -595,4 +595,58 @@ export const topic3MCQAnswers = [
     ], correctId: "3"},
 ]
 
-export const topic3CodeAnswers = []
+export const topic3CodeAnswers = [
+    {id: "3.3.6", options: [
+        {textId: "1", text: `<Form.Group controlId="favoriteColors">
+                <Form.Label>What is your favorite color?</Form.Label>
+                <Form.Select value={favorite} onChange={updateFavorite}>
+                  { COLORS.map((color: string) =>
+                    <option key={color} value={color}>{color}</option>
+                  )}
+                </Form.Select>
+            </Form.Group>`},
+        {textId: "2", text: `<Form.Group controlId="favoriteColors">
+                <Form.Label>What is your favorite color?</Form.Label>
+                <Form.Control value={favorite} onChange={updateFavorite}>
+                  { COLORS.map((color: string) =>
+                    <option key={color} value={color}>{color}</option>
+                  )}
+                </Form.Control>
+            </Form.Group>`},
+        {textId: "3", text: `<Form.Group controlId="favoriteColors">
+            <Form.Label>What is your favorite color?</Form.Label>
+            <Form.Control value={favorite} onChange={updateFavorite}>
+                { COLORS.map((color: string) =>
+                <option value={color}>{color}</option>
+                )}
+            </Form.Control>
+        </Form.Group>`},
+        {textId: "4", text: `<Form.Group controlId="favoriteColors">
+            <Form.Label>What is your favorite color?</Form.Label>
+            <Form.Select value={favorite} onChange={updateFavorite}>
+                { COLORS.map((color: string) =>
+                <option value={color}>{color}</option>
+                )}
+            </Form.Select>
+        </Form.Group>`},
+
+    ], correctId: "1"},
+    {id: "3.3.7", correctAnswers: ["Group", "Select", "favorite", "updateFavorite", "COLORS", "option", "option", "Select", "Group"]},
+    {id: "3.3.8", correctAnswers: ["value", "onChange", "map", "key"]},
+    {id: "3.3.9", correctOrder: ["13,1,5,11,4,6,12,2,8,14,9,10,3,7"], options: [
+        `const DEFAULT_COLOR = COLORS[0];`,
+        `<Form.Label>What is your favorite color?</Form.Label>`,
+        `</Form.Group>`,
+        `setFavorite(event.target.value);}`,
+        `const [favorite, setFavorite] = useState<string>(DEFAULT_COLOR);`,
+        `return <div>`,
+        `</div>`,
+        `<Form.Select value={favorite} onChange={updateFavorite}>`,
+        `<option key={color} value={color}>{color}</option>)}`,
+        `</Form.Select>`,
+        `function updateFavorite(event: React.ChangeEvent<HTMLSelectElement>) {`,
+        `<Form.Group controlId="favoriteColors">`,
+        `const COLORS = ["red", "blue", "green", "orange", "purple", "yellow"];`,
+        `{ COLORS.map((color: string) =>`
+    ]}
+]

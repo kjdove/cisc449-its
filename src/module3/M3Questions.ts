@@ -145,7 +145,8 @@ export const topic3MCQ = [
 
 export const topic3Code = [
     //code
-    {id: "3.3.6", question: "Select the correct code to create a dropdown populated by an array of options."},
+    {id: "3.3.6", question: "Select the correct code to create a dropdown populated by an array called COLORS of color options using .map()."},
+
     //fill in blanks
         //One that's : Form.(Select), (value)={...}, (onChange)={...}(.map(...)),  <(option)>, (key)={...}, (value)={...}
         //One that's : fill in value and onChange in form.select, fill in what should be inside .map func, fill in what should be key and value attrs in option tag
