@@ -172,5 +172,24 @@ export const topic3MCQAnswers = [
 ]
 
 export const topic3CodeAnswers = [
-
+    {id: "1.3.6", options: [
+        {textId: "1", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "2", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite'."},
+        {textId: "3", text: "No, the form control will not update to reflect what the user types."},
+        {textId: "4", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+    ], correctId: "1"},
+    {id: "1.3.7", options: [
+        {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
+        {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+        {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
+    ], correctId: "3"},
+    {id: "1.3.8", options: [
+        {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
+        {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+        {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
+    ], correctId: "1"},
+    {id: "1.3.9", correctAnswers: ["useState", "value", "onChange"]},
+    {id: "1.3.10", correctAnswers: ["{favorite}", "setFavorite(e.target.value)"]},
 ]

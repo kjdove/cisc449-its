@@ -91,22 +91,15 @@ export const topic3MCQ = [
 export const topic3Code = [
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user types, form control value updates to match state
-    {id: "1.3.6", question: "Given the following code, what will happen when the user types in the form control?"},
+    {id: "1.3.6", question: "Given the following code, will the state and form update as the user types?"},
     //incorrect onChange syntax - state does not update as user types and stays initial value
-    {id: "1.3.7", question: "Given the following code, what will happen when the user types in the form control?"},
+    {id: "1.3.7", question: "Given the following code, will the state and form update as the user types?"},
     //incorrect value syntax - form control does not update to match state
-    {id: "1.3.8", question: "Given the following code, what will happen when the user types in the form control?"},
-    //correct syntax - state updates as user types, form control value updates to match state
-    {id: "1.3.9", question: "Given the following code, what will happen when the user types in the form control?"},
-
-    //ask user what part of the code defines the state, handles change, binds the value
-    {id: "1.3.10", question: "In the following code, which part (1) defines the state variable for the form control, (2) handles updating the state variable when the user types in the form control, and (3) binds the value of the form control to the state variable?"},
+    {id: "1.3.8", question: "Given the following code, will the state and form update as the user types?"},
 
     //what's missing/wrong with code (free response)
     //missing definition of state variable
-    {id: "1.3.11", question: "What is missing or wrong with the following code for a controlled form control?"},
+    {id: "1.3.9", question: "Fill in the blank for the following code to correctly create a controlled form control."},
     //missing onChange handler
-    {id: "1.3.12", question: "What is missing or wrong with the following code for a controlled form control?"},
-    //missing value attribute/binding value to state
-    {id: "1.3.13", question: "What is missing or wrong with the following code for a controlled form control?"},
+    {id: "1.3.10", question: "Fill in the blank for the following code to correctly create a controlled form control."},
 ]
