@@ -138,6 +138,39 @@ export const topic2CodeAnswers = [
     {id: "1.2.13", correctAnswer: "readOnly"},
 ]
 
-export const topic3Answers = [
+export const topic3MCQAnswers = [
+    {id: "1.3.1", options: [
+        {textId: "1", text: "defaultValue"},
+        {textId: "2", text: "value"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "name"},
+    ], correctId: "2"},
+    {id: "1.3.2", options: [
+        {textId: "1", text: "useState"},
+        {textId: "2", text: "useEffect"},
+        {textId: "3", text: "useRef"},
+        {textId: "4", text: "useContext"},
+    ], correctId: "1"},
+    {id: "1.3.3", options: [
+        {textId: "1", text: "Controlled components have their form data managed by React state, while uncontrolled components manage their own state internally."},
+        {textId: "2", text: "Controlled components are faster than uncontrolled components."},
+        {textId: "3", text: "Uncontrolled components are more secure than controlled components."},
+        {textId: "4", text: "There is no difference between controlled and uncontrolled components."},
+    ], correctId: "1"},
+    {id: "1.3.4", options: [
+        {textId: "1", text: `value={name}`},
+        {textId: "2", text: `value="name"`},
+        {textId: "3", text: `name={value}`},
+        {textId: "4", text: `name="value"`},
+    ], correctId: "1"},
+    {id: "1.3.5", options: [
+        {textId: "1", text: `onChange={(e) => setName(e.target.value)}`},
+        {textId: "2", text: `onChange={(e) => setName(e.value)}`},
+        {textId: "3", text: `onChange={(e) => setName(e.target)}`},
+        {textId: "4", text: `onChange={(e) => setName(e)}`},
+    ], correctId: "1"},
+]
+
+export const topic3CodeAnswers = [
 
 ]

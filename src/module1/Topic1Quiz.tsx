@@ -49,7 +49,6 @@ export function Topic1Quiz(): JSX.Element {
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
                 <div className="answer">
-                    {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
                     {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />

@@ -64,7 +64,7 @@ export const topic2Code = [
     {id: "1.2.13", question: "You want to create a form control that is visible but not editable by the user. Add the missing attribute(s)."},
 ]
 
-/**TOPIC 3: How to Use the Value Attribute (13)*/
+/**TOPIC 3: How to Use the Value Attribute*/
 export const topic3MCQ = [
     //value
     {id: "1.3.1", question: "The [] attribute represents the current value of a Form component and can be looked up and used throughout code."},

@@ -4,6 +4,7 @@ import './Module1.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { Topic1Quiz } from "./Topic1Quiz";
 import { Topic2Quiz } from "./Topic2Quiz";
+import { Topic3Quiz } from "./Topic3Quiz";
 
 export function Module1(): JSX.Element {
     const navigate = useNavigate();
@@ -66,9 +67,10 @@ export function Module1(): JSX.Element {
             {topicId === "3" && (
                 <div className="topic-page">
                     <div className="topic-header">
-                        <button onClick={handleBackButton}>Back to Module 3</button>
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
                         <h2>How to Use the Value Attribute</h2>
                     </div>
+                    <Topic3Quiz/>
                 </div>
             )}
         </div>
