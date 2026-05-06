@@ -7,9 +7,9 @@ export const topic1MCQ = [
     //value and onChange
     {id: "2.1.3", question: "What two critical fields tie the Form.Control to the app's State?"},
     //value
-    {id: "2.1.4", question: "[] is the field that is shown in the textbox when the component is rendered."},
+    {id: "2.1.4", question: "This is the field that is shown in the textbox when the component is rendered."},
     //onChange for 5 and 6
-    {id: "2.1.5", question: "[] is the callback function that will call a State setter to update the current state."},
+    {id: "2.1.5", question: "Thi is the callback function that will call a State setter to update the current state."},
     {id: "2.1.6", question: "Which event attribute is used to update the state in a textbox when the user types?"},
     //useState
     {id: "2.1.7", question: "Which React hook is commonly used to manage the state of a textbox?"},
@@ -42,13 +42,13 @@ export const topic1Code = [
 /**TOPIC 2: Checkboxes*/
 export const topic2MCQ = [
     //def
-    {id: "2.2.1", question: "[] corresponds to some boolean state."},
+    {id: "2.2.1", question: "This component corresponds to some boolean state, checked or unchecked."},
     //Form.Check
     {id: "2.2.2", question: "What form tag is used to create a checkbox?"},
     //type = "checkbox"
     {id: "2.2.3", question: "What attribute is used to specify the type of a checkbox?"},
     //checked
-    {id: "2.2.4", question: "The [] attribute is used instead of value to represent the current state of a checkbox."},
+    {id: "2.2.4", question: "This attribute is used instead of value to represent the current state of a checkbox."},
     //label and id
     {id: "2.2.5", question: "What two attributes are used to help with screen readers?"},
     //label
@@ -85,13 +85,13 @@ export const topic2Code = [
 /**TOPIC 3: Dropdowns*/
 export const topic3MCQ = [
     //def
-    {id: "2.3.1", question: "[], also known as select menus or comboboxes, correspond to some string state, or a subset of strings, that can take on multiple values."},
+    {id: "2.3.1", question: "This component, also known as select menus or comboboxes, correspond to some string state, or a subset of strings, that can take on multiple values."},
     //form.select
     {id: "2.3.2", question: "What form tag is used to create a dropdown?"},
     //value/onchange
     {id: "2.3.3", question: "What two attributes tie the Form.Select component to the app's State?"},
     //option tags
-    {id: "2.3.4", question: "Dropdowns are created using a combination of the Form.Select tag and [] tags that have their own value attribute."},
+    {id: "2.3.4", question: "Dropdowns are created using a combination of the Form.Select tag and what other tag that had its own value attribute?"},
     //useState
     {id: "2.3.5", question: "Which React hook is commonly used to manage the state of a dropdown?"},
     //event.target.value

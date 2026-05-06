@@ -25,7 +25,7 @@ export const topic1Code = [
 /**TOPIC 2: Form Attributes and Controls*/
 export const topic2MCQ = [
     //attributes
-    {id: "1.2.1", question: "[] are used to control the behavior of form components"},
+    {id: "1.2.1", question: "What are used to control the behavior of form components?"},
     //Form.Control
     {id: "1.2.2", question: "Which tag are these attributes commonly used on?"},
     //valid syntaxes (all true)
@@ -67,9 +67,9 @@ export const topic2Code = [
 /**TOPIC 3: How to Use the Value Attribute*/
 export const topic3MCQ = [
     //value
-    {id: "1.3.1", question: "The [] attribute represents the current value of a Form component and can be looked up and used throughout code."},
+    {id: "1.3.1", question: "This attribute represents the current value of a Form component and can be looked up and used throughout code."},
     //useState
-    {id: "1.3.2", question: "[] is used to create controlled components, where the value of the form control is bound to a state variable."},
+    {id: "1.3.2", question: "What is used to create controlled components, where the value of the form control is bound to a state variable?"},
     //where the state of the form data is stored
         //controlled - state variable
         //uncontrolled - DOM

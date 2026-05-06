@@ -5,7 +5,7 @@ export const topic1MCQ = [
     
     //number input box
         //def
-    {id: "3.1.2", question: "A [] is an HTML element that enforces the user to enter a number."},
+    {id: "3.1.2", question: "This variation is an HTML element that enforces the user to enter a number."},
         //attribute - type = 'number' in Form.Control
     {id: "3.1.3", question: "Which attribute is used in the Form.Control tag to create a number input box?"},
 
@@ -84,25 +84,25 @@ export const topic2MCQ = [
 
     //switch
         //def
-    {id: "3.2.2", question: "A [] is a visual modication of a checkbox that uses a toggle."},
+    {id: "3.2.2", question: "This variation is a visual modication of a checkbox that uses a toggle."},
         //type="switch" in Form.Check
     {id: "3.2.3", question: "Which attribute is used in the Form.Check tag to create a switch?"},
 
     //radio buttons
         //def
-    {id: "3.2.4", question: "[] represent a set of choices where only one option can be selected at a time."},
+    {id: "3.2.4", question: "This variation represent a set of choices where only one option can be selected at a time."},
         //form.check
-    {id: "3.2.5", question: "Radio buttons are created using multiple [] elements."},
+    {id: "3.2.5", question: "Radio buttons are created using multiple of the ? tags."},
         //type="radio" in Form.Check, same name attr for all options in the set
     {id: "3.2.6", question: "Radio buttons use type = '(1)' in the Form.Check tag, and all options in the set should have the same (2) attribute to be a single, cohesive set."},
         //checked attr
-    {id: "3.2.7", question: "The [] attribute uses a calculated expression based on the state in order to turn the string into a boolean value and determine which radio button is selected."},
+    {id: "3.2.7", question: "This attribute uses a calculated expression based on the state in order to turn the string into a boolean value and determine which radio button is selected."},
         //inline attr
-    {id: "3.2.8", question: "The [] attribute can be added to Form.Check elements to display radio buttons in a horizontal row instead of a vertical stack."},
+    {id: "3.2.8", question: "This attribute can be added to Form.Check elements to display radio buttons in a horizontal row instead of a vertical stack."},
 
     //multi checkboxes
         //def
-    {id: "3.2.9", question: "[] are used when you want to allow users to select multiple options from a set of choices."},
+    {id: "3.2.9", question: "This variation is used when you want to allow users to select multiple options from a set of choices."},
 ]
 
 export const topic2Code = [
@@ -132,15 +132,15 @@ export const topic2Code = [
 /**TOPIC 3: Dropdown Variations*/
 export const topic3MCQ = [
     //a list of options
-    {id: "3.3.1", question: "A very frequent situation is to have a dropdown populated by []."},
+    {id: "3.3.1", question: "A very frequent situation is to have a dropdown populated by ..."},
     //key
-    {id: "3.3.2", question: "A unique [] attribute is required for each option in a dropdown to ensure that React can efficiently update and render the list when changes occur."},
+    {id: "3.3.2", question: "This unique attribute is required for each option in a dropdown to ensure that React can efficiently update and render the list when changes occur."},
     //.map()
-    {id: "3.3.3", question: "The higher order array method [] is commonly used to generate all of the option tags."},
+    {id: "3.3.3", question: "What higher order array method is commonly used to generate all of the option tags?"},
     // key and value attr
-    {id: "3.3.4", question: "When generating dropdown options from an array of data, the [] and [] attributes are commonly used to specify the unique identifier and display value for each option, respectively."},
+    {id: "3.3.4", question: "When generating dropdown options from an array of data, these two attributes are commonly used to specify the unique identifier and display value for each option, respectively."},
     //value and onChange attr
-    {id: "3.3.5", question: "The [] and [] attributes are used in the Form.Select tag to manage the selected option in a dropdown."},
+    {id: "3.3.5", question: "These two attributes are used in the Form.Select tag to manage the selected option in a dropdown."},
 ]  
 
 export const topic3Code = [

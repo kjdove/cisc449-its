@@ -95,9 +95,94 @@ export const topic1CodeAnswers = [
    ]}
 ]
 
-export const topic2MCQAnswers = []
+export const topic2MCQAnswers = [
+    {id: "2.2.1", options: [
+        {textId: "1", text: "dropdown"},
+        {textId: "2", text: "checkbox"},
+        {textId: "3", text: "textbox"},
+        {textId: "4", text: "list"},
+    ], correctId: "2"},
+    {id: "2.2.2", options: [
+        {textId: "1", text: "<Form.Control>"},
+        {textId: "2", text: "<Form.Check>"},
+        {textId: "3", text: "<Form.Select>"},
+        {textId: "4", text: "<Form.Group>"},
+    ], correctId: "2"},
+    {id: "2.2.3", options: [
+        {textId: "1", text: "value={checkbox}"},
+        {textId: "2", text: "checked={true}"},
+        {textId: "3", text: `type="checkbox"`},
+        {textId: "4", text: `type = "check"`},
+    ], correctId: "3"},
+    {id: "2.2.4", options: [
+        {textId: "1", text: "checked"},
+        {textId: "2", text: "value"},
+        {textId: "3", text: "type"},
+        {textId: "4", text: "placeholder"},
+    ], correctId: "1"},
+    {id: "2.2.5", options: [
+        {textId: "1", text: "id and classname"},
+        {textId: "2", text: "name and value"},
+        {textId: "3", text: "label and id"},
+        {textId: "4", text: "label and name"},
+    ], correctId: "3"},
+    {id: "2.2.6", options: [
+        {textId: "1", text: "id"},
+        {textId: "2", text: "name"},
+        {textId: "3", text: "value"},
+        {textId: "4", text: "label"},
+    ], correctId: "4"},
+    {id: "2.2.7", options: [
+        {textId: "1", text: "id"},
+        {textId: "2", text: "value"},
+        {textId: "3", text: "type"},
+        {textId: "4", text: "placeholder"},
+    ], correctId: "1"},
+    {id: "2.2.8", options: [
+        {textId: "1", text: "useState"},
+        {textId: "2", text: "useEffect"},
+        {textId: "3", text: "useRef"},
+        {textId: "4", text: "useContext"},
+    ], correctId: "1"},
+    {id: "2.2.9", options: [
+        {textId: "1", text: "event.target.checked"},
+        {textId: "2", text: "event.target.value"},
+        {textId: "3", text: "event.target.type"},
+        {textId: "4", text: "event.target.name"},
+    ], correctId: "1"},
+]
 
-export const topic2CodeAnswers = []
+export const topic2CodeAnswers = [
+    {id: "2.2.10", correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.2.11", correctAnswers: ["checked", "Check", "checkbox", "checked"]},
+    {id: "2.2.12", options: [
+        {textId: "1", text: "Since the code has the correct syntax, the checkbox value will update and display as checked since the initial value was true."},
+        {textId: "2", text: "Since the code has the correct syntax, the checkbox value will update and display as checked sine the initial value was false."},
+        {textId: "3", text: "Since the code has the incorrect syntax for the checked attribute, the checkbox value will not update and will stay as the initial value of checked."},
+        {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the checkbox value will not update and will stay as the initial value of checked."},
+    ], correctId: "2"},
+    {id: "2.2.13", options: [
+        {textId: "1", text: "Since the code incorrectly updates the checked state variable, the checkbox value will not update and will stay as the initial value of unchecked."},
+        {textId: "2", text: "Since the code correctly updates the checked state variable, the checkbox value will update and display as checked."},
+        {textId: "3", text: "Since the code incorrectly binds the checked state variable to the checked attribute, the checkbox value will not update and will stay as the initial value of unchecked."},
+        {textId: "4", text: "Since the code correctly binds the checked state variable to the checked attribute, the checkbox value will update and display as checked."},
+    ], correctId: "1"},
+    {id: "2.2.14", correctOrder: "4,2,7,6,3,1,5", options: [
+        `<Form.Check
+          type="checkbox"
+          id="has-watched-check"
+          label="Have you watched Ponyo?"
+          checked={watched}
+          onChange={updateWatched}
+      />`,
+      `function updateWatched(event: React.ChangeEvent<HTMLInputElement>) {`,
+      `return <div>`,
+      `const [watched, setWatched] = useState<boolean>(true);`,
+      `</div>`,
+      `}`,
+      `setWatched(event.target.checked);`
+    ]}
+]
 
 export const topic3MCQAnswers = []
 
