@@ -1,4 +1,4 @@
-import type { mcAnswer } from "../Types"
+import type { mcAnswer, CodingAnswer } from "../Types"
 
 export const topic1MCQAnswers: mcAnswer[] = [
     {id: "3.1.1", options: [
@@ -149,11 +149,11 @@ export const topic1MCQAnswers: mcAnswer[] = [
     correctId: "1"},
 ]
 
-export const topic1CodeAnswers = [
-    {id: "3.1.9", correctAnswers: ["number", "Control", "number"]},
-    {id: "3.1.10", correctAnswers: ["Row", "column", "Col", "Col", "Row", "column", "Col", "Col"]},
-    {id: "3.1.11", correctAnswers: ["textarea", "5"]},
-    {id: "3.1.12", options: [
+export const topic1CodeAnswers: CodingAnswer[] = [
+    {id: "3.1.9", type: "fib",correctAnswers: ["number", "Control", "number"]},
+    {id: "3.1.10", type: "fib",correctAnswers: ["Row", "column", "Col", "Col", "Row", "column", "Col", "Col"]},
+    {id: "3.1.11", type: "fib",correctAnswers: ["textarea", "5"]},
+    {id: "3.1.12", type: "mcq",options: [
         {textId: "1", text: `<Form.Group controlId="formAge">
             <Form.Label>Age:</Form.Label>
             <Form.Control
@@ -188,7 +188,7 @@ export const topic1CodeAnswers = [
                 </Form.Group>`},
     ],
     correctId: "1"},
-    {id: "3.1.13", options: [
+    {id: "3.1.13", type: "mcq",options: [
         {textId: "1", text: `<Form.Group controlId="formComments">
         <Form.Label>Comments:</Form.Label>
         <Col>
@@ -210,7 +210,7 @@ export const topic1CodeAnswers = [
      ],
         correctId: "1"
     },
-    {id: "3.1.14", options: [
+    {id: "3.1.14", type: "mcq",options: [
         {textId: "1", text: `<Form.Group controlId="formFullName" as={Row}>
             <Form.Label column sm={2}>Full Name:</Form.Label>
             <Col>
@@ -233,7 +233,7 @@ export const topic1CodeAnswers = [
             </Form.Group>`},
     ],
     correctId: "1"},
-    {id: "3.1.15", correctOrder: ["6,3,1,8,5,4,7,9,2,10"], options: [
+    {id: "3.1.15", type: "ordering",correctOrder: ["6,3,1,8,5,4,7,9,2,10"], options: [
         `setReleased(event.target.value)`,
         `</div>`,
         `function updateReleased(event: React.ChangeEvent<HTMLInputElement>) {`, 
@@ -246,7 +246,7 @@ export const topic1CodeAnswers = [
         `}`,
         ]
     },
-    {id: "3.1.16", correctOrder: ["5,10,8,1,6,4,9,2,11,12,7,3"], options: [
+    {id: "3.1.16", type: "ordering",correctOrder: ["5,10,8,1,6,4,9,2,11,12,7,3"], options: [
         `}`,
         `<Col>`,
         `</div>`,
@@ -260,7 +260,7 @@ export const topic1CodeAnswers = [
         `<Form.Control type="text" value={name} onChange={updateName} />`,
         `</Col>`,
     ]},
-    {id: "3.1.17", correctOrder: ["3,7,10,2,9,1,6,8,4,5"], options: [
+    {id: "3.1.17", type: "ordering",correctOrder: ["3,7,10,2,9,1,6,8,4,5"], options: [
         `<Form.Group controlId="formDescription">`,
         `}`,
         `const [description, setDescription] = useState<string>("My Movie Description");`,
@@ -331,29 +331,29 @@ export const topic2MCQAnswers: mcAnswer[] = [
     ], correctId: "4"},
 ]
 
-export const topic2CodeAnswers = [
-    {id: "3.2.10", options: [
+export const topic2CodeAnswers: CodingAnswer[]  = [
+    {id: "3.2.10", type: "mcq",options: [
         {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a switch component"},
         {textId: "2", text: `The type attribute should be set to "checkbox" instead of "switch"`},
         {textId: "3", text: `The <Form.Check> tag should be changed to <Form.Switch>`},
         {textId: "4", text: `The value attribute should be the checked attribute instead`},
     ], correctId: "4"},
-    {id: "3.2.11", options: [
+    {id: "3.2.11", type: "mcq",options: [
         {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a group of radio buttons"},
         {textId: "2", text: `The type attribute should be set to "checkbox" instead of "radio"`},
         {textId: "3", text: `The <Form.Check> tag should be changed to <Form.Radio>`},
         {textId: "4", text: `The name attribute should be removed`},
         ], correctId: "1"},
-    {id: "3.2.12", options: [
+    {id: "3.2.12", type: "mcq",options: [
         {textId: "1", text: "There is nothing wrong with this code, it is the correct syntax for a group of multi checkboxes"},
         {textId: "2", text: `The <Form.Check> tag should be changed to <Form.Multi>`},
         {textId: "3", text: `The type of the state value should be string[] instead of string`},
         {textId: "4", text: `The name attribute should be removed`},
     ], correctId: "3"},
-    {id: "3.2.13", correctAnswers: ["boolean", "Check", "switch"]},
-    {id: "3.2.14", correctAnswers: ["string", "Check", "radio", "color", "green", "Check", "radio", "color", "blue"]},
-    {id: "3.2.15", correctAnswers: ["string[]", "Check", "checkbox", "checked", "Check", "checkbox", "checked"]},
-    {id: "3.2.16", options: [
+    {id: "3.2.13", type: "fib",correctAnswers: ["boolean", "Check", "switch"]},
+    {id: "3.2.14", type: "fib",correctAnswers: ["string", "Check", "radio", "color", "green", "Check", "radio", "color", "blue"]},
+    {id: "3.2.15", type: "fib",correctAnswers: ["string[]", "Check", "checkbox", "checked", "Check", "checkbox", "checked"]},
+    {id: "3.2.16", type: "mcq",options: [
         {textId: "1", text: 
         `<Form.Check 
         type='switch' 
@@ -382,7 +382,7 @@ export const topic2CodeAnswers = [
         onChange={updateEnableNotifications}
         />`},
     ], correctId: "1"},
-    {id: "3.2.17", options: [
+    {id: "3.2.17", type: "mcq",options: [
         {textId: "1", text: 
         `<Form.Check 
         type='radio' 
@@ -445,7 +445,7 @@ export const topic2CodeAnswers = [
         />`
         }
     ], correctId: "1"},
-    {id: "3.2.18", options: [
+    {id: "3.2.18", type: "mcq",options: [
         {textId: "1", text: 
         `<Form.Check 
         type='checkbox' 
@@ -507,11 +507,11 @@ export const topic2CodeAnswers = [
         onChange={() => toggleOption('optionB')}
         />`}
     ], correctId: "1"},
-    {id: "3.2.19", correctOrder: ["5,1,7,3,6,4,2", ""], options: [`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`,
+    {id: "3.2.19", type: "ordering",correctOrder: ["5,1,7,3,6,4,2", ""], options: [`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`,
         `</div>`, `}`, `<Form.Check type="swtich" id="happy-check" label="Happy?" checked={isHappy} onChange={updateHappiness} />`, 
         `const [isHappy, setIsHappy] = useState<boolean>(true);`, `return <div>`, `setIsHappy(event.target.checked)`, ]
     },
-    {id: "3.2.20", correctOrder: ["8,7,1,6,2,3,4,5", "8,7,1,6,2,4,3,5"], options: [
+    {id: "3.2.20", type: "ordering",correctOrder: ["8,7,1,6,2,3,4,5", "8,7,1,6,2,4,3,5"], options: [
         `setEmotion(event.target.value);`,
         `return <div>`,
         `<Form.Check
@@ -537,7 +537,7 @@ export const topic2CodeAnswers = [
         `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
         `const [emotion, setEmotion] = useState<string>("happy");`
     ]},
-    {id: "3.2.21", correctOrder:["4,1,2,5,3", "4,1,5,2,3"], options: [
+    {id: "3.2.21", type: "ordering",correctOrder:["4,1,2,5,3", "4,1,5,2,3"], options: [
         `return <div>`,
         `<Form.Check
                 inline
@@ -597,8 +597,8 @@ export const topic3MCQAnswers: mcAnswer[] = [
     ], correctId: "3"},
 ]
 
-export const topic3CodeAnswers = [
-    {id: "3.3.6", options: [
+export const topic3CodeAnswers: CodingAnswer[]  = [
+    {id: "3.3.6", type: "mcq",options: [
         {textId: "1", text: `<Form.Group controlId="favoriteColors">
                 <Form.Label>What is your favorite color?</Form.Label>
                 <Form.Select value={favorite} onChange={updateFavorite}>
@@ -633,9 +633,9 @@ export const topic3CodeAnswers = [
         </Form.Group>`},
 
     ], correctId: "1"},
-    {id: "3.3.7", correctAnswers: ["Group", "Select", "favorite", "updateFavorite", "COLORS", "option", "option", "Select", "Group"]},
-    {id: "3.3.8", correctAnswers: ["value", "onChange", "map", "key"]},
-    {id: "3.3.9", correctOrder: ["13,1,5,11,4,6,12,2,8,14,9,10,3,7"], options: [
+    {id: "3.3.7", type: "fib",correctAnswers: ["Group", "Select", "favorite", "updateFavorite", "COLORS", "option", "option", "Select", "Group"]},
+    {id: "3.3.8", type: "fib",correctAnswers: ["value", "onChange", "map", "key"]},
+    {id: "3.3.9", type: "ordering",correctOrder: ["13,1,5,11,4,6,12,2,8,14,9,10,3,7"], options: [
         `const DEFAULT_COLOR = COLORS[0];`,
         `<Form.Label>What is your favorite color?</Form.Label>`,
         `</Form.Group>`,

@@ -1,4 +1,4 @@
-import type {mcAnswer} from "../Types";
+import type {mcAnswer, CodingAnswer} from "../Types";
 export const topic1MCQAnswers: mcAnswer[] = [
     {id: "1.1.1", options: [
         {textId: "1", text: "a collection of specialized user interface elements"}, 
@@ -57,10 +57,10 @@ export const topic1MCQAnswers: mcAnswer[] = [
 ]
 
 export const topic1CodeAnswers = [
-    {id: "1.1.10", correctAnswers: ["Group", "Label", "Control", "Text"]},
-    {id: "1.1.11", correctAnswers: ["controlId", "className"]},
-    {id: "1.1.12", correctAnswers: ["Form.Control", "type", "placeholder"]},
-    {id: "1.1.13", 
+    {id: "1.1.10", type: "fib", correctAnswers: ["Group", "Label", "Control", "Text"]},
+    {id: "1.1.11",type: "fib", correctAnswers: ["controlId", "className"]},
+    {id: "1.1.12", type: "fib",correctAnswers: ["Form.Control", "type", "placeholder"]},
+    {id: "1.1.13", type: "ordering",
         correctOrder: "7,3,6,1,4,5,2", 
         options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
 ]   
@@ -122,21 +122,21 @@ export const topic2MCQAnswers: mcAnswer[] = [
     ], correctId: "4"},
 ]
 
-export const topic2CodeAnswers = [
-    {id: "1.2.10", options: [
+export const topic2CodeAnswers: CodingAnswer[]  = [
+    {id: "1.2.10", type: "mcq", options: [
         {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
         {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
         {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
         {textId: "4", text: "All of the above."},
     ], correctId: "1"},
-    {id: "1.2.11", options: [
+    {id: "1.2.11",type: "mcq",options: [
         {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
         {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
         {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
         {textId: "4", text: "All of the above."},
     ], correctId: "2"},
-    {id: "1.2.12", correctAnswer: "defaultValue"},
-    {id: "1.2.13", correctAnswer: "readOnly"},
+    {id: "1.2.12", type: "fib", correctAnswers: "defaultValue"},
+    {id: "1.2.13", type: "fib", correctAnswers: "readOnly"},
 ]
 
 export const topic3MCQAnswers: mcAnswer[] = [
@@ -172,25 +172,25 @@ export const topic3MCQAnswers: mcAnswer[] = [
     ], correctId: "1"},
 ]
 
-export const topic3CodeAnswers = [
-    {id: "1.3.6", options: [
+export const topic3CodeAnswers: CodingAnswer[]  = [
+    {id: "1.3.6", type: "mcq", options: [
         {textId: "1", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
         {textId: "2", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite'."},
         {textId: "3", text: "No, the form control will not update to reflect what the user types."},
         {textId: "4", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
     ], correctId: "1"},
-    {id: "1.3.7", options: [
+    {id: "1.3.7", type: "mcq", options: [
         {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
         {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
         {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
         {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
     ], correctId: "3"},
-    {id: "1.3.8", options: [
+    {id: "1.3.8", type: "mcq", options: [
         {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
         {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
         {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
         {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
     ], correctId: "1"},
-    {id: "1.3.9", correctAnswers: ["useState", "value", "onChange"]},
-    {id: "1.3.10", correctAnswers: ["{favorite}", "setFavorite(e.target.value)"]},
+    {id: "1.3.9", type: "fib", correctAnswers: ["useState", "value", "onChange"]},
+    {id: "1.3.10", type: "fib", correctAnswers: ["{favorite}", "setFavorite(e.target.value)"]},
 ]

@@ -31,7 +31,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -41,7 +41,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -51,7 +51,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -61,7 +61,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -83,7 +83,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -91,7 +91,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -123,14 +123,14 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -138,7 +138,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -168,7 +168,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -196,7 +196,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q10?.options.map((option) => (
+                            {t2Q10.type === "mcq" && t2Q10.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -226,7 +226,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q11?.options.map((option) => (
+                            {t2Q11.type === "mcq" && t2Q11.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -247,7 +247,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -270,7 +270,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -302,7 +302,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q6?.options.map((option) => (
+                            {t3Q6.type ==="mcq" && t3Q6.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -332,7 +332,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q7?.options.map((option) => (
+                            {t3Q7.type ==="mcq" && t3Q7.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -362,7 +362,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q8?.options.map((option) => (
+                            {t3Q8.type==="mcq"&& t3Q8.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -379,7 +379,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -395,7 +395,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -403,7 +403,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input 
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />  
@@ -431,7 +431,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -439,7 +439,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />

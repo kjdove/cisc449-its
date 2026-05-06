@@ -40,7 +40,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -60,7 +60,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -68,7 +68,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -90,7 +90,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -100,7 +100,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -110,7 +110,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -124,7 +124,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -136,7 +136,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[4]}
-                                onChange={() => updateCodeAnswer(codeAnswer[4], 4)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -146,7 +146,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[5]}
-                                onChange={() => updateCodeAnswer(codeAnswer[5], 5)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -156,7 +156,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[6]}
-                                onChange={() => updateCodeAnswer(codeAnswer[6], 6)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 6)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -170,7 +170,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[7]}
-                                onChange={() => updateCodeAnswer(codeAnswer[7], 7)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 7)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -201,7 +201,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -209,7 +209,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -223,7 +223,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                         <div className='code-options-container'>
-                                {t1Q12?.options.map((option) => (
+                                {t1Q12.type==="mcq" && t1Q12.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -236,7 +236,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                         <div className='code-options-container'>
-                                {t1Q13?.options.map((option) => (
+                                {t1Q13.type==="mcq"&& t1Q13.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -249,7 +249,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                         <div className='code-options-container'>
-                                {t1Q14?.options.map((option) => (
+                                {t1Q14.type==="mcq" && t1Q14.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>
@@ -262,7 +262,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t1Q15?.options.map((option, index) => (
+                        {t1Q15.type==="ordering"&&t1Q15.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -272,7 +272,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -283,7 +283,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t1Q16?.options.map((option, index) => (
+                        {t1Q16.type==="ordering" && t1Q16.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -293,7 +293,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -304,7 +304,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t1Q17?.options.map((option, index) => (
+                        {t1Q17.type==="ordering" && t1Q17.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -314,7 +314,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -352,7 +352,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q10?.options.map((option) => (
+                            {t2Q10.type==="mcq" && t2Q10.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -410,7 +410,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             {`)`}
                     </div>
                     <div className='code-options-container'>
-                            {t2Q11?.options.map((option) => (
+                            {t2Q11.type==="mcq"&& t2Q11.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -470,7 +470,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q12?.options.map((option) => (
+                            {t2Q12.type==="mcq" && t2Q12.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -487,7 +487,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -505,7 +505,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank" 
                             />
@@ -514,7 +514,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -541,7 +541,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -559,7 +559,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -568,7 +568,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -586,7 +586,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -594,7 +594,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[4]}
-                                onChange={() => updateCodeAnswer(codeAnswer[4], 4)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -606,7 +606,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[5]}
-                                onChange={() => updateCodeAnswer(codeAnswer[5], 5)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -615,7 +615,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[6]}
-                                onChange={() => updateCodeAnswer(codeAnswer[6], 6)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 6)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -633,7 +633,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[7]}
-                                onChange={() => updateCodeAnswer(codeAnswer[7], 7)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 7)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -641,7 +641,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[8]}
-                                onChange={() => updateCodeAnswer(codeAnswer[8], 8)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 8)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -662,7 +662,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -680,7 +680,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -688,7 +688,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -705,7 +705,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -717,7 +717,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[4]}
-                                onChange={() => updateCodeAnswer(codeAnswer[4], 4)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -725,7 +725,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[5]}
-                                onChange={() => updateCodeAnswer(codeAnswer[5], 5)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -742,7 +742,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[6]}
-                                onChange={() => updateCodeAnswer(codeAnswer[6], 6)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 6)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -758,7 +758,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                     <div className='code-options-container'>
-                            {t2Q16?.options.map((option) => (
+                            {t2Q16.type==="mcq" && t2Q16.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -771,7 +771,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                     <div className='code-options-container'>
-                            {t2Q17?.options.map((option) => (
+                            {t2Q17.type==="mcq" && t2Q17.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -784,7 +784,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                     <div className='code-options-container'>
-                            {t2Q18?.options.map((option) => (
+                            {t2Q18.type==="mcq" && t2Q18.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -797,7 +797,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t2Q19?.options.map((option, index) => (
+                        {t2Q19.type==="ordering" && t2Q19.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -807,7 +807,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -818,7 +818,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t2Q20?.options.map((option, index) => (
+                        {t2Q20.type==="ordering" && t2Q20.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -828,7 +828,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -839,7 +839,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t2Q21?.options.map((option, index) => (
+                        {t2Q21.type==="ordering" && t2Q21.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -849,7 +849,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -860,7 +860,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                     <div className='code-options-container'>
-                            {t3Q6?.options.map((option) => (
+                            {t3Q6.type==="mcq" && t3Q6.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -889,7 +889,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -901,7 +901,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -909,7 +909,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -917,7 +917,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -927,7 +927,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[4]}
-                                onChange={() => updateCodeAnswer(codeAnswer[4], 4)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -937,7 +937,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[5]}
-                                onChange={() => updateCodeAnswer(codeAnswer[5], 5)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -945,7 +945,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[6]}
-                                onChange={() => updateCodeAnswer(codeAnswer[6], 6)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 6)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -955,7 +955,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[7]}
-                                onChange={() => updateCodeAnswer(codeAnswer[7], 7)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 7)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -965,7 +965,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[8]}
-                                onChange={() => updateCodeAnswer(codeAnswer[8], 8)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 8)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -999,7 +999,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -1007,7 +1007,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -1017,7 +1017,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -1027,7 +1027,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -1045,7 +1045,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className='code-bank'>
-                        {t3Q9?.options.map((option, index) => (
+                        {t3Q9.type==="ordering" && t3Q9.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -1055,7 +1055,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />

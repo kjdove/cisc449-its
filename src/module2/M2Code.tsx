@@ -4,12 +4,13 @@ import { topic1CodeAnswers, topic2CodeAnswers, topic3CodeAnswers, topic4CodeAnsw
 
 interface M2CodeProps {
     questionId: string;
-    currentAInd: number;
 }
  
-export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
+export function M2Code({questionId}: M2CodeProps): JSX.Element {
     const [codeAnswer, setCA] = useState<string[]>([]);
 
+    const t1Q12 = topic1CodeAnswers.find((q) => q.id === "2.1.12");
+    const t1Q13 = topic1CodeAnswers.find((q) => q.id === "2.1.13");
     const t1Q14 = topic1CodeAnswers.find((q) => q.id === "2.1.14");
 
     const t2Q12 = topic2CodeAnswers.find((q) => q.id === "2.2.12");
@@ -43,7 +44,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -54,7 +55,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -69,7 +70,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -111,7 +112,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -120,7 +121,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -132,7 +133,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -142,7 +143,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -181,7 +182,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             {`</div>`}
                         </pre>
                         <div className="code-options-container">
-                            { topic1CodeAnswers[currentAInd-9].options.map((option) => (
+                            { t1Q12.type ==="mcq" && t1Q12.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -217,7 +218,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             {`</div>`}
                         </pre>
                         <div className="code-options-container">
-                            { topic1CodeAnswers[currentAInd-9].options.map((option) => (
+                            { t1Q13.type==="mcq" && t1Q13.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -230,7 +231,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                 return(
                     <>
                     <div className="code-bank">
-                        {t1Q14?.options.map((option, index) => (
+                        {t1Q14.type==="ordering" && t1Q14.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -240,7 +241,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -255,7 +256,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -266,7 +267,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -281,7 +282,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -318,7 +319,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -332,7 +333,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -341,7 +342,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -354,7 +355,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -398,7 +399,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             {` </div>`}
                         </pre>
                         <div className="code-options-container">
-                            { t2Q12.options.map((option) => (
+                            { t2Q12.type==="mcq" && t2Q12.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -440,7 +441,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t2Q13.options.map((option) => (
+                            { t2Q13.type==="mcq"&&t2Q13.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -453,7 +454,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t2Q14?.options.map((option, index) => (
+                        {t2Q14.type==="ordering" && t2Q14.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -463,7 +464,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -478,7 +479,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -489,7 +490,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -504,7 +505,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -543,7 +544,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -553,7 +554,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[1]}
-                                onChange={() => updateCodeAnswer(codeAnswer[1], 1)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -561,7 +562,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[2]}
-                                onChange={() => updateCodeAnswer(codeAnswer[2], 2)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -571,7 +572,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[3]}
-                                onChange={() => updateCodeAnswer(codeAnswer[3], 3)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -579,7 +580,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[4]}
-                                onChange={() => updateCodeAnswer(codeAnswer[4], 4)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -589,7 +590,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[5]}
-                                onChange={() => updateCodeAnswer(codeAnswer[5], 5)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
                             />
@@ -630,7 +631,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t3Q9?.options.map((option) => (
+                            {t3Q9.type==="mcq" && t3Q9.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -669,7 +670,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t3Q10?.options.map((option) => (
+                            {t3Q10.type==="mcq" && t3Q10.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -682,7 +683,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t3Q11?.options.map((option, index) => (
+                        {t3Q11.type==="ordering" && t3Q11.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -692,7 +693,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -726,7 +727,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q16?.options.map((option) => (
+                            { t4Q16.type==="mcq"&& t4Q16.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -766,7 +767,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q17?.options.map((option) => (
+                            { t4Q17.type==="mcq" && t4Q17.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -803,7 +804,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q18?.options.map((option) => (
+                            { t4Q18.type==="mcq" && t4Q18.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -816,7 +817,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t4Q19?.options.map((option, index) => (
+                        {t4Q19.type==="ordering" && t4Q19.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -826,7 +827,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         <input
                             type="text"
                             value={codeAnswer[0]}
-                            onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                            onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
                         />
@@ -837,7 +838,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                     return (
                         <>
                         <div className="code-bank">
-                            {t4Q20?.options.map((option, index) => (
+                            {t4Q20.type==="ordering" && t4Q20.options.map((option, index) => (
                                 <div key={index} className="code-option">
                                     <strong>{index+1}.</strong> {option}
                                 </div>
@@ -847,7 +848,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                             <input
                                 type="text"
                                 value={codeAnswer[0]}
-                                onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter your answer in the format: 1,2,3,..."
                                 className="ordering"
                             />
@@ -858,7 +859,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                         return (
                             <>
                             <div className="code-bank">
-                                {t4Q21?.options.map((option, index) => (
+                                {t4Q21.type==="ordering" && t4Q21.options.map((option, index) => (
                                     <div key={index} className="code-option">
                                         <strong>{index+1}.</strong> {option}
                                     </div>
@@ -868,7 +869,7 @@ export function M2Code({questionId, currentAInd}: M2CodeProps): JSX.Element {
                                 <input
                                     type="text"
                                     value={codeAnswer[0]}
-                                    onChange={() => updateCodeAnswer(codeAnswer[0], 0)}
+                                    onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                     placeholder="Enter your answer in the format: 1,2,3,..."
                                     className="ordering"
                                 />

@@ -1,4 +1,4 @@
-import type { mcAnswer } from "../Types"
+import type { mcAnswer, CodingAnswer } from "../Types"
 export const topic1MCQAnswers: mcAnswer[] = [
     {id: "2.1.1", options: [
         {textId: "1", text: "value =  {text}"},
@@ -65,24 +65,24 @@ export const topic1MCQAnswers: mcAnswer[] = [
     correctId: "1"},
 ]
 
-export const topic1CodeAnswers = [
-    {id: "2.1.10", correctAnswers: ["Model", "Controller", "View"]},
-    {id: "2.1.11", correctAnswers: ["Control", "text", "name", "updateName"]},
-    {id: "2.1.12", options: [
+export const topic1CodeAnswers: CodingAnswer[]  = [
+    {id: "2.1.10", type: "fib",correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.1.11", type: "fib",correctAnswers: ["Control", "text", "name", "updateName"]},
+    {id: "2.1.12", type: "mcq",options: [
         {textId: "1", text: "Since the code has the corrext syntax, the textbox value will update and display My Neighbor Totoro."},
         {textId: "2", text: "Since the code has the correct syntax, the textbox value will update and display Howl's Moving Castle."},
         {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the textbox value will not update and will stay as the initial value of My Neighbor Totoro."},
         {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the textbox value will not update and will stay as the initial value of My Neighbor Totoro."},
     ],
     correctId: "2"},
-    {id: "2.1.13", options: [
+    {id: "2.1.13", type: "mcq",options: [
         {textId: "1", text: "Since the coode incorrectly updates the name state variable, the textbox value will not update and will stay as the initial value of Princess Monoke."},
         {textId: "2", text: "Since the code correctly updates the name state variable, the textbox value will update and display whatever Isle of Dogs."},
         {textId: "3", text: "Since the code incorrectly binds the name state variable to the value attribute, the textbox value will not update and will stay as the initial value of Princess Monoke."},
         {textId: "4", text: "Since the code correctly binds the name state variable to the value attribute, the textbox value will update and display Isle of Dogs."},
     ],
     correctId: "1"},
-   {id: "2.1.14", correctOrder: "6,7,1,5,4,10,8,3,9", options: [
+   {id: "2.1.14", type: "ordering",correctOrder: "6,7,1,5,4,10,8,3,9", options: [
     `setEmotion(event.target.value);`,
     `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
     `</Form.Group>`,
@@ -153,22 +153,22 @@ export const topic2MCQAnswers: mcAnswer[] = [
     ], correctId: "1"},
 ]
 
-export const topic2CodeAnswers = [
-    {id: "2.2.10", correctAnswers: ["Model", "Controller", "View"]},
-    {id: "2.2.11", correctAnswers: ["checked", "Check", "checkbox", "checked"]},
-    {id: "2.2.12", options: [
+export const topic2CodeAnswers: CodingAnswer[]  = [
+    {id: "2.2.10", type: "fib",correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.2.11", type: "fib",correctAnswers: ["checked", "Check", "checkbox", "checked"]},
+    {id: "2.2.12", type: "mcq",options: [
         {textId: "1", text: "Since the code has the correct syntax, the checkbox value will update and display as checked since the initial value was true."},
         {textId: "2", text: "Since the code has the correct syntax, the checkbox value will update and display as checked sine the initial value was false."},
         {textId: "3", text: "Since the code has the incorrect syntax for the checked attribute, the checkbox value will not update and will stay as the initial value of checked."},
         {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the checkbox value will not update and will stay as the initial value of checked."},
     ], correctId: "2"},
-    {id: "2.2.13", options: [
+    {id: "2.2.13", type: "mcq",options: [
         {textId: "1", text: "Since the code incorrectly updates the checked state variable, the checkbox value will not update and will stay as the initial value of unchecked."},
         {textId: "2", text: "Since the code correctly updates the checked state variable, the checkbox value will update and display as checked."},
         {textId: "3", text: "Since the code incorrectly binds the checked state variable to the checked attribute, the checkbox value will not update and will stay as the initial value of unchecked."},
         {textId: "4", text: "Since the code correctly binds the checked state variable to the checked attribute, the checkbox value will update and display as checked."},
     ], correctId: "1"},
-    {id: "2.2.14", correctOrder: "4,2,7,6,3,1,5", options: [
+    {id: "2.2.14", type: "ordering", correctOrder: "4,2,7,6,3,1,5", options: [
         `<Form.Check
           type="checkbox"
           id="has-watched-check"
@@ -224,22 +224,22 @@ export const topic3MCQAnswers: mcAnswer[] = [
     ], correctId: "1"},
 ]
 
-export const topic3CodeAnswers = [
-    {id: "2.3.7", correctAnswers: ["Model", "Controller", "View"]},
-    {id: "2.3.8", correctAnswers: ["Select", "option", "option", "option", "option", "Select"]},
-    {id: "2.3.9", options: [
+export const topic3CodeAnswers: CodingAnswer[]  = [
+    {id: "2.3.7", type: "fib", correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.3.8", type: "fib", correctAnswers: ["Select", "option", "option", "option", "option", "Select"]},
+    {id: "2.3.9", type: "mcq", options: [
         {textId: "1", text: "Since the code has the correct syntax, the dropdown value will update and display 'Sad'."},
         {textId: "2", text: "Since the code has the correct syntax, the dropdown value will update and display 'Happy'."},
         {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
         {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
     ], correctId: "1"},
-    {id: "2.3.10", options: [
+    {id: "2.3.10", type: "mcq", options: [
         {textId: "1", text: "Since the code has the correct syntax, the dropdown value will update and display 'Sad'."},
         {textId: "2", text: "Since the code has the correct syntax, the dropdown value will update and display 'Happy'."},
         {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
         {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
     ], correctId: "4"},
-    {id: "2.3.11", correctOrder: ["3,7,2,4,9,8,1,6,5", "3,7,2,4,9,1,8,6,5"], options: [
+    {id: "2.3.11", type: "ordering", correctOrder: ["3,7,2,4,9,8,1,6,5", "3,7,2,4,9,1,8,6,5"], options: [
         `<option value="sad">Sad</option>`,
         `setEmotion(event.target.value);}`,
         `const [emotion, setEmotion] = useState<string>("happy");`,
@@ -331,23 +331,23 @@ export const topic4MCQAnswers: mcAnswer[] = [
     ], correctId: "2"},
 ]
 
-export const topic4CodeAnswers = [
-    {id: "2.4.16", options: [
+export const topic4CodeAnswers: CodingAnswer[]  = [
+    {id: "2.4.16", type: "mcq", options: [
         {textId: "1", text: "checkbox"},
         {textId: "2", text: "dropdown"},
         {textId: "3", text: "textbox"},
     ], correctId: "3"},
-    {id: "2.4.17", options: [
+    {id: "2.4.17", type: "mcq", options: [
         {textId: "1", text: "checkbox"},
         {textId: "2", text: "dropdown"},
         {textId: "3", text: "textbox"},
     ], correctId: "2"},
-    {id: "2.4.18", options: [
+    {id: "2.4.18", type: "mcq", options: [
         {textId: "1", text: "checkbox"},
         {textId: "2", text: "dropdown"},
         {textId: "3", text: "textbox"},
     ], correctId: "2"},
-    {id: "2.4.19", correctOrder: "1,7,4,12,11,10,8,5,6", options: [
+    {id: "2.4.19", type: "ordering", correctOrder: "1,7,4,12,11,10,8,5,6", options: [
         `const [emotion, setEmotion] = useState<string>("happy");`,
         `<option value="sad">Sad</option>`,
         `setEmotion(event.target.checked);}`,
@@ -361,7 +361,7 @@ export const topic4CodeAnswers = [
         `<Form.Group controlId = 'formEmotion'>`,
         `return <div>`,
     ]}, 
-    {id: "2.4.20", correctOrder: "2, 7,3,11,10,9,5,6", options: [
+    {id: "2.4.20", type: "ordering", correctOrder: "2, 7,3,11,10,9,5,6", options: [
         `const [emotion, setEmotion] = useState<string>("happy");`,
         `const [emotion, setEmotion] = useState<boolean>(true);`,
         `setEmotion(event.target.checked);}`,
@@ -380,7 +380,7 @@ export const topic4CodeAnswers = [
         `<Form.Group controlId = 'formEmotion'>`,
         `return <div>`,
     ]},
-    {id: "2.4.21", correctOrder: ["1,6,3,12,11,9,8,2,13,10,4,5", "1,6,3,12,11,9,8,13,2,10,4,5"] , options: [
+    {id: "2.4.21", type: "ordering", correctOrder: ["1,6,3,12,11,9,8,2,13,10,4,5", "1,6,3,12,11,9,8,13,2,10,4,5"] , options: [
         `const [emotion, setEmotion] = useState<string>("happy");`,
         `<option value="sad">Sad</option>`,
         `setEmotion(event.target.value);}`,

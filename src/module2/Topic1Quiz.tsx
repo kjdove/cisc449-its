@@ -42,7 +42,7 @@ export function Topic1Quiz(): JSX.Element {
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9  && <M2Code questionId={currentQuestion.id} currentAInd={currentAInd} />}
+                    {currentAInd >= 9  && <M2Code questionId={currentQuestion.id}/>}
                 </div>
                 <button className="submit-button">Submit</button>
            </div>
