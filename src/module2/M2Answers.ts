@@ -184,7 +184,44 @@ export const topic2CodeAnswers = [
     ]}
 ]
 
-export const topic3MCQAnswers = []
+export const topic3MCQAnswers = [
+    {id: "2.3.1", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+        {textId: "4", text: "form"},
+    ], correctId: "2"},
+    {id: "2.3.2", options: [
+        {textId: "1", text: "<Form.Control>"},
+        {textId: "2", text: "<Form.Check>"},
+        {textId: "3", text: "<Form.Select>"},
+        {textId: "4", text: "<Form.Group>"},
+    ], correctId: "3"},
+    {id: "2.3.3", options: [
+        {textId: "1", text: "value and onChange"},
+        {textId: "2", text: "value and placeholder"},
+        {textId: "3", text: "type and onChange"},
+        {textId: "4", text: "select and onChange"},
+    ], correctId: "1"},
+    {id: "2.3.4", options: [
+        {textId: "1", text: "<value>"},
+        {textId: "2", text: "<option>"},
+        {textId: "3", text: "<select>"},
+        {textId: "4", text: "<dropdown>"},
+    ], correctId: "2"},
+    {id: "2.3.5", options: [
+        {textId: "1", text: "useContext"},
+        {textId: "2", text: "useRef"},
+        {textId: "3", text: "useState"},
+        {textId: "4", text: "useEffect"},
+    ], correctId: "3"},
+    {id: "2.3.6", options: [
+        {textId: "1", text: "event.target.value"},
+        {textId: "2", text: "event.target.selected"},
+        {textId: "3", text: "event.target.select"},
+        {textId: "4", text: "event.target.option"},
+    ], correctId: "1"},
+]
 
 export const topic3CodeAnswers = []
 

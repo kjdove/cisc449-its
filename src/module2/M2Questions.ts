@@ -67,8 +67,7 @@ export const topic2Code = [
     {id: "2.2.10", question: "Identify the Model, Controller, and View in the following code."},
 
     //fill in blanks
-        //1)Form.(Check), 2)type="(checkbox)", 3)(value) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
-        //include pic of code with missing blanks and corresponding nums in each blank, include useState definition and onChange handler func
+        //1)Form.(Check), 2)type="(checkbox)", 3)(checked) = {name}, 4)onChange={(/name of handler func/)} /in handler func/ 6) setName(e.target.value)
     {id: "2.2.11", question: "Fill in the blanks for the following code to create a controlled checkbox component."},
 
     //based off following code, what will happen (select from options)

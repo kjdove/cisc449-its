@@ -33,13 +33,13 @@ export function Topic4Quiz(): JSX.Element {
                 </div>
                 <div className="answer">
                     {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
-                    {currentAInd < 6 && topic4MCQAnswers[currentAInd].options.map((option) => (
+                    {currentAInd < 9 && topic4MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 6 && <M2Code questionId={currentQuestion.id} currentAInd={currentAInd} />}
+                    {currentAInd >= 9 && <M2Code questionId={currentQuestion.id} currentAInd={currentAInd} />}
                 </div>
                 <button className="submit-button">Submit</button>
             </div>
