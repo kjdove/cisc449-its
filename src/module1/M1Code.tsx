@@ -6,19 +6,19 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
     const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "1.1.13");
-    if(questionId==="1.1.13" && !t1Q13) {return null};
+    // if(questionId==="1.1.13" && !t1Q13) {return null};
 
     const t2Q10 = topic2CodeAnswers.find((q) => q.id === "1.2.10");
-    if(questionId==="1.2.10" && !t2Q10) {return null};
+    // if(questionId==="1.2.10" && !t2Q10) {return null};
     const t2Q11 = topic2CodeAnswers.find((q) => q.id === "1.2.11");
-    if(questionId==="1.2.11" && !t2Q11) {return null};
+    // if(questionId==="1.2.11" && !t2Q11) {return null};
     
     const t3Q6 = topic3CodeAnswers.find((q) => q.id === "1.3.6");
-    if(questionId==="1.3.6" && !t3Q6) {return null}
+    // if(questionId==="1.3.6" && !t3Q6) {return null};
     const t3Q7 = topic3CodeAnswers.find((q) => q.id === "1.3.7");
-    if(questionId==="1.3.7" && !t3Q7) {return null}
+    // if(questionId==="1.3.7" && !t3Q7) {return null};
     const t3Q8 = topic3CodeAnswers.find((q) => q.id === "1.3.8");
-    if(questionId==="1.3.8" && !t3Q8) {return null}
+    // if(questionId==="1.3.8" && !t3Q8) {return null};
 
     const updateCodeAnswer = (value: string, index: number) => {
         const newCodeAnswer = [...codeAnswer];
@@ -202,7 +202,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q10.type === "mcq" && t2Q10.options.map((option) => (
+                            {t2Q10?.type === "mcq" && t2Q10?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -232,7 +232,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t2Q11.type === "mcq" && t2Q11.options.map((option) => (
+                            {t2Q11?.type === "mcq" && t2Q11?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -308,7 +308,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q6.type ==="mcq" && t3Q6.options.map((option) => (
+                            {t3Q6?.type ==="mcq" && t3Q6?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -338,7 +338,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q7.type ==="mcq" && t3Q7.options.map((option) => (
+                            {t3Q7?.type ==="mcq" && t3Q7?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>
@@ -368,7 +368,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                         </pre>
                     </div>
                     <div className='code-options-container'>
-                            {t3Q8.type==="mcq"&& t3Q8.options.map((option) => (
+                            {t3Q8?.type==="mcq"&& t3Q8?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                 <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                 <label htmlFor={option.textId}>{option.text}</label>

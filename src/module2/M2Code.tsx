@@ -10,38 +10,38 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
     const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t1Q12 = topic1CodeAnswers.find((q) => q.id === "2.1.12");
-    if(questionId==="2.1.12" && !t1Q12) {return null};
+    // if(questionId==="2.1.12" && !t1Q12) {return null};
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "2.1.13");
-    if(questionId==="2.1.13" && !t1Q13) {return null};
+    // if(questionId==="2.1.13" && !t1Q13) {return null};
     const t1Q14 = topic1CodeAnswers.find((q) => q.id === "2.1.14");
-    if(questionId==="2.1.14" && !t1Q14) {return null};
+    // if(questionId==="2.1.14" && !t1Q14) {return null};
 
     const t2Q12 = topic2CodeAnswers.find((q) => q.id === "2.2.12");
-    if(questionId==="2.2.12" && !t2Q12) {return null};
+    // if(questionId==="2.2.12" && !t2Q12) {return null};
     const t2Q13 = topic2CodeAnswers.find((q) => q.id === "2.2.13");
-    if(questionId==="2.2.13" && !t2Q13) {return null};
+    // if(questionId==="2.2.13" && !t2Q13) {return null};
     const t2Q14 = topic2CodeAnswers.find((q) => q.id === "2.2.14");
-    if(questionId==="2.2.14" && !t2Q14) {return null};
+    // if(questionId==="2.2.14" && !t2Q14) {return null};
 
     const t3Q9 = topic3CodeAnswers.find((q) => q.id === "2.3.9");
-    if(questionId==="2.3.9" && !t3Q9) {return null};
+    // if(questionId==="2.3.9" && !t3Q9) {return null};
     const t3Q10 = topic3CodeAnswers.find((q) => q.id === "2.3.10");
-    if(questionId==="2.3.10" && !t3Q10) {return null};
+    // if(questionId==="2.3.10" && !t3Q10) {return null};
     const t3Q11 = topic3CodeAnswers.find((q) => q.id === "2.3.11");
-    if(questionId==="2.3.11" && !t3Q11) {return null};
+    // if(questionId==="2.3.11" && !t3Q11) {return null};
 
     const t4Q16 = topic4CodeAnswers.find((q) => q.id === "2.4.16");
-    if(questionId==="2.4.16" && !t4Q16) {return null};
+    // if(questionId==="2.4.16" && !t4Q16) {return null};
     const t4Q17 = topic4CodeAnswers.find((q) => q.id === "2.4.17");
-    if(questionId==="2.4.17" && !t4Q17) {return null};
+    // if(questionId==="2.4.17" && !t4Q17) {return null};
     const t4Q18 = topic4CodeAnswers.find((q) => q.id === "2.4.18");
-    if(questionId==="2.4.18" && !t4Q18) {return null};
+    // if(questionId==="2.4.18" && !t4Q18) {return null};
     const t4Q19 = topic4CodeAnswers.find((q) => q.id === "2.4.19");
-    if(questionId==="2.4.19" && !t4Q19) {return null};
+    // if(questionId==="2.4.19" && !t4Q19) {return null};
     const t4Q20 = topic4CodeAnswers.find((q) => q.id === "2.4.20");
-    if(questionId==="2.4.20" && !t4Q20) {return null};
+    // if(questionId==="2.4.20" && !t4Q20) {return null};
     const t4Q21 = topic4CodeAnswers.find((q) => q.id === "2.4.21");
-    if(questionId==="2.4.21" && !t4Q21) {return null};
+    // if(questionId==="2.4.21" && !t4Q21) {return null};
 
     const updateCodeAnswer = (value: string, index: number) => {
         const newCodeAnswer = [...codeAnswer];
@@ -197,7 +197,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                             {`</div>`}
                         </pre>
                         <div className="code-options-container">
-                            { t1Q12.type ==="mcq" && t1Q12.options.map((option) => (
+                            { t1Q12?.type ==="mcq" && t1Q12?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -233,7 +233,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                             {`</div>`}
                         </pre>
                         <div className="code-options-container">
-                            { t1Q13.type==="mcq" && t1Q13.options.map((option) => (
+                            { t1Q13?.type==="mcq" && t1Q13?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -246,7 +246,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                 return(
                     <>
                     <div className="code-bank">
-                        {t1Q14.type==="ordering" && t1Q14.options.map((option, index) => (
+                        {t1Q14?.type==="ordering" && t1Q14?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -414,7 +414,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                             {` </div>`}
                         </pre>
                         <div className="code-options-container">
-                            { t2Q12.type==="mcq" && t2Q12.options.map((option) => (
+                            { t2Q12?.type==="mcq" && t2Q12?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -456,7 +456,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t2Q13.type==="mcq"&&t2Q13.options.map((option) => (
+                            { t2Q13?.type==="mcq"&&t2Q13?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -469,7 +469,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t2Q14.type==="ordering" && t2Q14.options.map((option, index) => (
+                        {t2Q14?.type==="ordering" && t2Q14?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -646,7 +646,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            {t3Q9.type==="mcq" && t3Q9.options.map((option) => (
+                            {t3Q9?.type==="mcq" && t3Q9?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -685,7 +685,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            {t3Q10.type==="mcq" && t3Q10.options.map((option) => (
+                            {t3Q10?.type==="mcq" && t3Q10?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -698,7 +698,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t3Q11.type==="ordering" && t3Q11.options.map((option, index) => (
+                        {t3Q11?.type==="ordering" && t3Q11?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -742,7 +742,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q16.type==="mcq"&& t4Q16.options.map((option) => (
+                            { t4Q16?.type==="mcq"&& t4Q16?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -782,7 +782,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q17.type==="mcq" && t4Q17.options.map((option) => (
+                            { t4Q17?.type==="mcq" && t4Q17?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -819,7 +819,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         </pre>
                     </div>
                     <div className="code-options-container">
-                            { t4Q18.type==="mcq" && t4Q18.options.map((option) => (
+                            { t4Q18?.type==="mcq" && t4Q18?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                     <label htmlFor={option.textId}>{option.text}</label>
@@ -832,7 +832,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t4Q19.type==="ordering" && t4Q19.options.map((option, index) => (
+                        {t4Q19?.type==="ordering" && t4Q19?.options.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
@@ -853,7 +853,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                     return (
                         <>
                         <div className="code-bank">
-                            {t4Q20.type==="ordering" && t4Q20.options.map((option, index) => (
+                            {t4Q20?.type==="ordering" && t4Q20?.options.map((option, index) => (
                                 <div key={index} className="code-option">
                                     <strong>{index+1}.</strong> {option}
                                 </div>
@@ -874,7 +874,7 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
                         return (
                             <>
                             <div className="code-bank">
-                                {t4Q21.type==="ordering" && t4Q21.options.map((option, index) => (
+                                {t4Q21?.type==="ordering" && t4Q21?.options.map((option, index) => (
                                     <div key={index} className="code-option">
                                         <strong>{index+1}.</strong> {option}
                                     </div>
