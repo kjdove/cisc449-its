@@ -108,11 +108,11 @@ export const topic3Code = [
     
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user selects option, dropdown selected option updates to match state
-    {id: "2.3.9", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+    {id: "2.3.9", question: "Given the following code, what will happen when the user selects 'Sad' from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
 
     //incorrect onChange syntax - state does not update as user selects and stays initial value
         //dropdown selected option stays initial value because onChange handler does not correctly update state
-    {id: "2.3.10", question: "Given the following code, what will happen when the user selects an option from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
+    {id: "2.3.10", question: "Given the following code, what will happen when the user selects 'Sad' from the dropdown? What is the selected option in the dropdown after the user makes a selection?"},
 
      //parson/ordering code
      {id: "2.3.11", question: "Order the following code snippets to correctly create a dropdown component."},
@@ -139,10 +139,7 @@ export const topic4MCQ = [
     {id: "2.4.8", question: "The state of a checkbox component is typically represented as which data type?"},
         //dropdown - string
     {id: "2.4.9", question: "The state of a dropdown component is typically represented as which data type?"},
-]
 
-export const topic4Scenarios = [
-    //scenarios, which component would you use (textbox/free response answer)
     {id: "2.4.10", question: "You want to create a form where the user can enter their name. Which component would you use?"},
     {id: "2.4.11", question: "You want to create a form where the user can select whether they agree to the terms and conditions. Which component would you use?"},
     {id: "2.4.12", question: "You want to create a form where the user can select their favorite color from a list of options. Which component would you use?"},
@@ -150,6 +147,7 @@ export const topic4Scenarios = [
     {id: "2.4.14", question: "You want to create a form where the user can select whether they want to receive a newsletter subscription. Which component would you use?"},
     {id: "2.4.15", question: "You want to create a form where the user can select their preferred contact method (email, phone, or mail). Which component would you use?"},
 ]
+
 
 export const topic4Code = [
     //following code represents which component

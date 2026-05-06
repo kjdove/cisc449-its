@@ -223,7 +223,33 @@ export const topic3MCQAnswers = [
     ], correctId: "1"},
 ]
 
-export const topic3CodeAnswers = []
+export const topic3CodeAnswers = [
+    {id: "2.3.7", correctAnswers: ["Model", "Controller", "View"]},
+    {id: "2.3.8", correctAnswers: ["Select", "option", "option", "option", "option", "Select"]},
+    {id: "2.3.9", options: [
+        {textId: "1", text: "Since the code has the correct syntax, the dropdown value will update and display 'Sad'."},
+        {textId: "2", text: "Since the code has the correct syntax, the dropdown value will update and display 'Happy'."},
+        {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
+        {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
+    ], correctId: "1"},
+    {id: "2.3.10", options: [
+        {textId: "1", text: "Since the code has the correct syntax, the dropdown value will update and display 'Sad'."},
+        {textId: "2", text: "Since the code has the correct syntax, the dropdown value will update and display 'Happy'."},
+        {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
+        {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
+    ], correctId: "4"},
+    {id: "2.3.11", correctOrder: ["3,7,2,4,9,8,1,6,5", "3,7,2,4,9,1,8,6,5"], options: [
+        `<option value="sad">Sad</option>`,
+        `setEmotion(event.target.value);}`,
+        `const [emotion, setEmotion] = useState<string>("happy");`,
+        `return <div>`,
+        `</div>`,
+        `</Form.Select>`,
+        `function updateEmotion(event: React.ChangeEvent<HTMLSelectElement>) {`,
+        `<option value="happy">Happy</option>`,
+        `<Form.Select value={emotion} onChange={updateEmotion}>`
+    ]}
+]
 
 export const topic4MCQAnswers = []
 
