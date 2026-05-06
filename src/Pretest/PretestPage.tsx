@@ -77,7 +77,6 @@ export function Pretest(): JSX.Element {
                         ))}
                         <p><strong>Extremely confident.</strong></p>
                 </div>
-
             </div>
             <br/>
             <div className="pretest-bottom">
@@ -97,8 +96,6 @@ export function Pretest(): JSX.Element {
                             <p>{q.question}</p>
                         </div>
                     ))}
-
-    
                 </div>
                <div className="answer-area">
                     {1 <= studentRating && studentRating <= 3 && easyQuestions.map((a) => (
@@ -124,19 +121,13 @@ export function Pretest(): JSX.Element {
                     {8 <= studentRating && studentRating <= 10 && 
                         <PreHardQuestions questionId={hardQuestions[0]?.id || ""} />
                     }
-                   
-                   
-
                 </div>
                {studentRating > 0 && 
                 <div className="submit-button">
                     <button onClick={handleSubmit}>submit</button>
                 </div>
-                }
-                
+                } 
             </div>
-            
-           
         </div>
     );
 }

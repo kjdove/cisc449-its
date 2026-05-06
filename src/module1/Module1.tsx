@@ -3,6 +3,8 @@ import type { JSX } from "react";
 import './Module1.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { Topic1Quiz } from "./Topic1Quiz";
+import { Topic2Quiz } from "./Topic2Quiz";
+import { Topic3Quiz } from "./Topic3Quiz";
 
 export function Module1(): JSX.Element {
     const navigate = useNavigate();
@@ -40,7 +42,6 @@ export function Module1(): JSX.Element {
                         </div>
                     </div>
                     <button className="end-button">End of Module Quiz</button>
-                    <p>Placeholder for note if u want to include it</p>
                 </div>
             )}
 
@@ -54,16 +55,21 @@ export function Module1(): JSX.Element {
                 </div>
             )}
             {topicId === "2" && (
-                <div>
-                    <h2>Form Attributes and Controls</h2>
-                    <button onClick={handleBackButton}>Back to Module 1</button>
-
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Form Attributes and Controls</h2>
+                    </div>
+                    <Topic2Quiz />
                 </div>
             )}
             {topicId === "3" && (
-                <div>
-                    <h2>How to Use the Value Attribute</h2>
-                    <button onClick={handleBackButton}>Back to Module 1</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                        <h2>How to Use the Value Attribute</h2>
+                    </div>
+                    <Topic3Quiz/>
                 </div>
             )}
         </div>

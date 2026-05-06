@@ -1,8 +1,12 @@
 import type { JSX } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // import { useState } from "react";
-
 import './Module2.css';
+import { Topic1Quiz } from "./Topic1Quiz";
+import { Topic2Quiz } from "./Topic2Quiz";
+import { Topic3Quiz } from "./Topic3Quiz";
+import { Topic4Quiz } from "./Topic4Quiz";
+
 
 
 export function Module2(): JSX.Element {
@@ -49,27 +53,39 @@ export function Module2(): JSX.Element {
                 </div>
             )}
             {topicId === "1" && (
-                <div>
-                    <h2>Textboxes</h2>
-                    <button onClick={handleBackButton}>Back to Module 2</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Textboxes</h2>
+                    </div>
+                    <Topic1Quiz />
                 </div>
             )}
             {topicId === "2" && (
-                <div>
-                    <h2>Checkboxes</h2>
-                    <button onClick={handleBackButton}>Back to Module 2</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Checkboxes</h2>
+                    </div>
+                    <Topic2Quiz />
                 </div>
             )}
             {topicId === "3" && (
-                <div>
-                    <h2>Dropdowns</h2>
-                    <button onClick={handleBackButton}>Back to Module 2</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Dropdowns</h2>
+                    </div>
+                    <Topic3Quiz />
                 </div>
             )}
             {topicId === "4" && (
-                <div>
-                    <h2>Differentiate between Textbox/Checkbox/Dropdown</h2>
-                    <button onClick={handleBackButton}>Back to Module 2</button>
+                <div className="topic-page">
+                    <div className="topic-header">
+                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                        <h2>Differentiate between Textbox/Checkbox/Dropdown</h2>
+                    </div>
+                    <Topic4Quiz />
                 </div>
             )}
 

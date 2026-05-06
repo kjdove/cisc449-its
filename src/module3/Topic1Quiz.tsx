@@ -1,22 +1,24 @@
-//Module 1 Topic 2
-import { useState, type JSX } from "react";
-import { topic2MCQ, topic2Matching, topic2Code } from "./M1Questions";
-import { topic2MCQAnswers } from "./M1Answers";
-import './TopicPages.css';
-import { M1Code } from "./M1Code";
+//module 3 topic 1
+import type { JSX } from "react";
+import {useState} from "react";
+import { M3Code } from "./M3Code";
+import { topic1MCQAnswers } from "./M3Answers";
+import { topic1MCQ, topic1Code } from "./M3Questions";
 
-export function Topic2Quiz(): JSX.Element {
+export function Topic1Quiz(): JSX.Element {
+    const allQuestions = [...topic1MCQ, ...topic1Code];
     const [currentQInd, setCurrentQInd] = useState<number>(0);
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
-    const allQuestions = [...topic2MCQ, ...topic2Matching, ...topic2Code];
     const currentQuestion = allQuestions[currentQInd];
+
+    const [currentAInd, setCurrentAInd] = useState<number>(0);
 
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
         setCurrentAInd(index);
     }
+
     return (
-        <div className="t2-container">
+        <div className="t1-container">
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                         <div
@@ -33,13 +35,13 @@ export function Topic2Quiz(): JSX.Element {
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
                 <div className="answer">
-                    {currentAInd < 9 && topic2MCQAnswers[currentAInd].options.map((option) => (
+                    {currentAInd < 8 && topic1MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9 && <M1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 8 && <M3Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
             </div>

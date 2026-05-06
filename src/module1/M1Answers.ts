@@ -1,6 +1,4 @@
-//20
 export const topic1MCQAnswers = [
-    //mcq questions
     {id: "1.1.1", options: [
         {textId: "1", text: "a collection of specialized user interface elements"}, 
         {textId: "2", text: "a communication protocol"},
@@ -32,41 +30,166 @@ export const topic1MCQAnswers = [
         {textId: "4", text: "Sets the type attribute for the Form.Control tag."}],
     correctId: "2"},
     {id: "1.1.6", options: [
-        {textId: "1", text: " "},
-        {textId: "2", text: "Human-friendly identifier visible to the user"}, 
-        {textId: "3", text: ""},
-        {textId: "4", text: ""}],
+        {textId: "1", text: "It creates a new input field for the user to enter data"},
+        {textId: "2", text: "It is a human-friendly identifier visible to the user"}, 
+        {textId: "3", text: "It groups related form controls together visually and semantically"},
+        {textId: "4", text: "It provides additional information or instructions about the form control"}],
     correctId: "2"},
     {id: "1.1.7", options: [
-        {textId: "1", text: " "},
-        {textId: "2", text: "Interactive element that allows users to input data"}, 
-        {textId: "3", text: ""},
-        {textId: "4", text: ""}],   
+        {textId: "1", text: "It is a container for grouping related form controls together"},
+        {textId: "2", text: "It is an interactive element that allows users to input data"}, 
+        {textId: "3", text: "It is a text element that provides additional information or instructions about the form control"},
+        {textId: "4", text: "It is a styling class that can be applied to the Form.Group component to add margin-bottom spacing"}],   
     correctId: "2"},
     {id: "1.1.8", options: [
-        {textId: "1", text: " "},
-        {textId: "2", text: "Small text that provides additional information or instructions about the form control"}, 
-        {textId: "3", text: ""},
-        {textId: "4", text: ""}],
+        {textId: "1", text: "It is a container for grouping related form controls together"},
+        {textId: "2", text: "It is small text that provides additional information or instructions about the form control"}, 
+        {textId: "3", text: "It is an interactive element that allows users to input data"},
+        {textId: "4", text: "It is a styling class that can be applied to the Form.Group component to add margin-bottom spacing"}],
     correctId: "2"},
     {id: "1.1.9", options: [
-        {textId: "1", text: " "},
-        {textId: "2", text: "Allows you to apply custom CSS styles to the Form.Group component"}, 
-        {textId: "3", text: ""},
-        {textId: "4", text: ""}],
+        {textId: "1", text: "It sets the id attribute for the inner Form.Control tag and the htmlFor attribute for the Form.Label tag."},
+        {textId: "2", text: "It allows the user to apply custom CSS styles to the Form.Group component"}, 
+        {textId: "3", text: "It is a human-friendly identifier visible to the user"},
+        {textId: "4", text: "It groups related form controls together visually and semantically"}],
     correctId: "2"},
 ]
 
 export const topic1CodeAnswers = [
+    {id: "1.1.10", correctAnswers: ["Group", "Label", "Control", "Text"]},
+    {id: "1.1.11", correctAnswers: ["controlId", "className"]},
+    {id: "1.1.12", correctAnswers: ["Form.Control", "type", "placeholder"]},
+    {id: "1.1.13", 
+        correctOrder: "7,3,6,1,4,5,2", 
+        options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
+]   
 
+export const topic2MCQAnswers = [
+    {id: "1.2.1", options: [
+        {textId: "1", text: "Form components"},
+        {textId: "2", text: "attributes"},
+        {textId: "3", text: "event handlers"},
+        {textId: "4", text: "state variables"},
+    ], correctId: "2"},
+    {id: "1.2.2", options: [
+        {textId: "1", text: "Form.Group"},
+        {textId: "2", text: "Form.Label"},
+        {textId: "3", text: "Form.Control"},
+        {textId: "4", text: "Form.Text"},
+    ], correctId: "3"},
+    {id: "1.2.3", options: [
+        {textId: "1", text: `<Form.Control disabled={canEdit}>`},
+        {textId: "2", text: `<Form.Control placeholder="Enter Email">`},
+        {textId: "3", text: `<Form.Control type="email">`},
+        {textId: "4", text: `All of the above`},
+    ], correctId: "4"},
+    {id: "1.2.4", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "1"},
+    {id: "1.2.5", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "2"},
+    {id: "1.2.6", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "3"},
+    {id: "1.2.7", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "required"},
+    ], correctId: "4"},
+    {id: "1.2.8", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "defaultValue"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "value"},
+    ], correctId: "4"},
+    {id: "1.2.9", options: [
+        {textId: "1", text: "readOnly"},
+        {textId: "2", text: "disabled"},
+        {textId: "3", text: "value"},
+        {textId: "4", text: "defaultValue"},
+    ], correctId: "4"},
 ]
 
-//15
-export const topic2Answers = [
-
+export const topic2CodeAnswers = [
+    {id: "1.2.10", options: [
+        {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
+        {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
+        {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
+        {textId: "4", text: "All of the above."},
+    ], correctId: "1"},
+    {id: "1.2.11", options: [
+        {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
+        {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
+        {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
+        {textId: "4", text: "All of the above."},
+    ], correctId: "2"},
+    {id: "1.2.12", correctAnswer: "defaultValue"},
+    {id: "1.2.13", correctAnswer: "readOnly"},
 ]
 
-//13
-export const topic3Answers = [
+export const topic3MCQAnswers = [
+    {id: "1.3.1", options: [
+        {textId: "1", text: "defaultValue"},
+        {textId: "2", text: "value"},
+        {textId: "3", text: "placeholder"},
+        {textId: "4", text: "name"},
+    ], correctId: "2"},
+    {id: "1.3.2", options: [
+        {textId: "1", text: "useState"},
+        {textId: "2", text: "useEffect"},
+        {textId: "3", text: "useRef"},
+        {textId: "4", text: "useContext"},
+    ], correctId: "1"},
+    {id: "1.3.3", options: [
+        {textId: "1", text: "Controlled components have their form data managed by React state, while uncontrolled components manage their own state internally."},
+        {textId: "2", text: "Controlled components are faster than uncontrolled components."},
+        {textId: "3", text: "Uncontrolled components are more secure than controlled components."},
+        {textId: "4", text: "There is no difference between controlled and uncontrolled components."},
+    ], correctId: "1"},
+    {id: "1.3.4", options: [
+        {textId: "1", text: `value={name}`},
+        {textId: "2", text: `value="name"`},
+        {textId: "3", text: `name={value}`},
+        {textId: "4", text: `name="value"`},
+    ], correctId: "1"},
+    {id: "1.3.5", options: [
+        {textId: "1", text: `onChange={(e) => setName(e.target.value)}`},
+        {textId: "2", text: `onChange={(e) => setName(e.value)}`},
+        {textId: "3", text: `onChange={(e) => setName(e.target)}`},
+        {textId: "4", text: `onChange={(e) => setName(e)}`},
+    ], correctId: "1"},
+]
 
+export const topic3CodeAnswers = [
+    {id: "1.3.6", options: [
+        {textId: "1", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "2", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite'."},
+        {textId: "3", text: "No, the form control will not update to reflect what the user types."},
+        {textId: "4", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+    ], correctId: "1"},
+    {id: "1.3.7", options: [
+        {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
+        {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+        {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
+    ], correctId: "3"},
+    {id: "1.3.8", options: [
+        {textId: "1", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' but has the correct onChange syntax."},
+        {textId: "2", text: "Yes, because it has the correct syntax for binding the favorite value and updating it on user input."},
+        {textId: "3", text: "No, the state variable 'favorite' will not update when the user types in the form control becuase the onChange syntax is incorrect."},
+        {textId: "4", text: "No, because it incorrectly binds the value of the form control to the state variable 'favorite' and has the incorrect onChange syntax."},
+    ], correctId: "1"},
+    {id: "1.3.9", correctAnswers: ["useState", "value", "onChange"]},
+    {id: "1.3.10", correctAnswers: ["{favorite}", "setFavorite(e.target.value)"]},
 ]

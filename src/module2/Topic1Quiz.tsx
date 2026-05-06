@@ -1,28 +1,14 @@
-//Module 1 Topic 1
-import type { JSX } from "react";
-import { topic1MCQ, topic1Code } from "./M1Questions";
-import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
-import { M1Code } from "./M1Code";
-import { useState } from "react";
-import './TopicPages.css';
-
-/**
- * NOTES:
- * - submit button logic
- * - when a question is clicked, the answers (if MCQ) should not have a filled in radio button
- * - styling for the question list on the left (active question should be highlighted, box around the question list)
- * - styling for the question section - box around text, add Question #. before text, place underneath the header, not in middle of page
- * - styling for the answer section - add for mcq, a-d next to radio buttons 
- */
+//Module 2 Topic 1
+import { topic1MCQ, topic1Code } from './M2Questions';
+import { topic1MCQAnswers } from './M2Answers';
+import { useState } from 'react';
+import { M2Code } from './M2Code';
+import {type JSX} from 'react';
 
 export function Topic1Quiz(): JSX.Element {
     const allQuestions = [...topic1MCQ, ...topic1Code];
     const [currentQInd, setCurrentQInd] = useState<number>(0);
-
     const currentQuestion = allQuestions[currentQInd];
-
-    // const allAnswers = [...topic1MCQAnswers, ...topic1CodeAnswers];
-    // const currentAnswer = allAnswers[currentAInd];
     const [currentAInd, setCurrentAInd] = useState<number>(0);
 
     const handleQuestionChange = (index: number) => {
@@ -30,7 +16,7 @@ export function Topic1Quiz(): JSX.Element {
         setCurrentAInd(index);
     }
 
-    return (
+    return(
         <div className="t1-container">
            <div className="question-list">
             
@@ -49,17 +35,18 @@ export function Topic1Quiz(): JSX.Element {
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
                 <div className="answer">
+                    {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
                     {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9 && <M1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9  && <M2Code questionId={currentQuestion.id} currentAInd={currentAInd} />}
                 </div>
                 <button className="submit-button">Submit</button>
            </div>
-            
         </div>
     )
+
 }
