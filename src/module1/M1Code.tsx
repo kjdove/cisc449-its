@@ -164,7 +164,7 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <>
                     <div className="code-bank">
-                        {t1Q13?.type==="ordering" && t1Q13?.options.map((option, index) => (
+                        {t1Q13!.type==="ordering" && t1Q13!.options!.map((option, index) => (
                             <div key={index} className="code-option">
                                 <strong>{index+1}.</strong> {option}
                             </div>
