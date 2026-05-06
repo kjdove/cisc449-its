@@ -12,24 +12,42 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
         setCA(newCodeAnswer);
     }
     const t1Q12 = topic1CodeAnswers.find((q) => q.id === "3.1.12");
+    if(questionId==="3.1.12" && !t1Q12){return null};
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "3.1.13");
+    if(questionId==="3.1.13" && !t1Q13){return null};
     const t1Q14 = topic1CodeAnswers.find((q) => q.id === "3.1.14");
+    if(questionId==="3.1.14" && !t1Q14){return null};
     const t1Q15 = topic1CodeAnswers.find((q) => q.id === "3.1.15");
+    if(questionId==="3.1.15" && !t1Q15){return null};
     const t1Q16 = topic1CodeAnswers.find((q) => q.id === "3.1.16");
+    if(questionId==="3.1.16" && !t1Q16){return null};
     const t1Q17 = topic1CodeAnswers.find((q) => q.id === "3.1.17");
+    if(questionId==="3.1.17" && !t1Q17){return null};
 
     const t2Q10 = topic2CodeAnswers.find((q) => q.id === "3.2.10");
+    if(questionId==="3.2.10" && !t2Q10){return null};
     const t2Q11 = topic2CodeAnswers.find((q) => q.id === "3.2.11");
+    if(questionId==="3.2.11" && !t2Q11){return null};
     const t2Q12 = topic2CodeAnswers.find((q) => q.id === "3.2.12");
+    if(questionId==="3.2.12" && !t2Q12){return null};
     const t2Q16 = topic2CodeAnswers.find((q) => q.id === "3.2.16");
+    if(questionId==="3.2.16" && !t2Q16){return null};
     const t2Q17 = topic2CodeAnswers.find((q) => q.id === "3.2.17");
+    if(questionId==="3.2.17" && !t2Q17){return null};
     const t2Q18 = topic2CodeAnswers.find((q) => q.id === "3.2.18");
+    if(questionId==="3.2.18" && !t2Q18){return null};
     const t2Q19 = topic2CodeAnswers.find((q) => q.id === "3.2.19");
+    if(questionId==="3.2.19" && !t2Q19){return null};
     const t2Q20 = topic2CodeAnswers.find((q) => q.id === "3.2.20");
+    if(questionId==="3.2.20" && !t2Q20){return null};
     const t2Q21 = topic2CodeAnswers.find((q) => q.id === "3.2.21");
+    if(questionId==="3.2.21" && !t2Q21){return null};
 
     const t3Q6 = topic3CodeAnswers.find((q) => q.id === "3.3.6");
+    if(questionId==="3.3.6" && !t3Q6){return null}
     const t3Q9 = topic3CodeAnswers.find((q) => q.id === "3.3.9");
+    if(questionId==="3.3.9" && !t3Q9){return null}
+
     const M1CodeBlock = () => {
         switch(questionId){
             case "3.1.9":
@@ -223,7 +241,7 @@ export function M3Code({questionId}: {questionId: string}): JSX.Element {
                 return (
                     <div className='code-container'>
                         <div className='code-options-container'>
-                                {t1Q12.type==="mcq" && t1Q12.options.map((option) => (
+                                {t1Q12.type==="mcq" && t1Q12?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
                                     <input type="radio" id={option.textId} name="answer" value={option.textId} />
                                    <label htmlFor={option.textId}>{option.text}</label>

@@ -6,13 +6,19 @@ export function M1Code({questionId}: {questionId: string}): JSX.Element {
     const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "1.1.13");
+    if(questionId==="1.1.13" && !t1Q13) {return null};
 
     const t2Q10 = topic2CodeAnswers.find((q) => q.id === "1.2.10");
+    if(questionId==="1.2.10" && !t2Q10) {return null};
     const t2Q11 = topic2CodeAnswers.find((q) => q.id === "1.2.11");
+    if(questionId==="1.2.11" && !t2Q11) {return null};
     
     const t3Q6 = topic3CodeAnswers.find((q) => q.id === "1.3.6");
+    if(questionId==="1.3.6" && !t3Q6) {return null}
     const t3Q7 = topic3CodeAnswers.find((q) => q.id === "1.3.7");
+    if(questionId==="1.3.7" && !t3Q7) {return null}
     const t3Q8 = topic3CodeAnswers.find((q) => q.id === "1.3.8");
+    if(questionId==="1.3.8" && !t3Q8) {return null}
 
     const updateCodeAnswer = (value: string, index: number) => {
         const newCodeAnswer = [...codeAnswer];

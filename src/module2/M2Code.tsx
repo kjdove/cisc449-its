@@ -10,23 +10,38 @@ export function M2Code({questionId}: M2CodeProps): JSX.Element {
     const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t1Q12 = topic1CodeAnswers.find((q) => q.id === "2.1.12");
+    if(questionId==="2.1.12" && !t1Q12) {return null};
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "2.1.13");
+    if(questionId==="2.1.13" && !t1Q13) {return null};
     const t1Q14 = topic1CodeAnswers.find((q) => q.id === "2.1.14");
+    if(questionId==="2.1.14" && !t1Q14) {return null};
 
     const t2Q12 = topic2CodeAnswers.find((q) => q.id === "2.2.12");
+    if(questionId==="2.2.12" && !t2Q12) {return null};
     const t2Q13 = topic2CodeAnswers.find((q) => q.id === "2.2.13");
+    if(questionId==="2.2.13" && !t2Q13) {return null};
     const t2Q14 = topic2CodeAnswers.find((q) => q.id === "2.2.14");
+    if(questionId==="2.2.14" && !t2Q14) {return null};
 
     const t3Q9 = topic3CodeAnswers.find((q) => q.id === "2.3.9");
+    if(questionId==="2.3.9" && !t3Q9) {return null};
     const t3Q10 = topic3CodeAnswers.find((q) => q.id === "2.3.10");
+    if(questionId==="2.3.10" && !t3Q10) {return null};
     const t3Q11 = topic3CodeAnswers.find((q) => q.id === "2.3.11");
+    if(questionId==="2.3.11" && !t3Q11) {return null};
 
     const t4Q16 = topic4CodeAnswers.find((q) => q.id === "2.4.16");
+    if(questionId==="2.4.16" && !t4Q16) {return null};
     const t4Q17 = topic4CodeAnswers.find((q) => q.id === "2.4.17");
+    if(questionId==="2.4.17" && !t4Q17) {return null};
     const t4Q18 = topic4CodeAnswers.find((q) => q.id === "2.4.18");
+    if(questionId==="2.4.18" && !t4Q18) {return null};
     const t4Q19 = topic4CodeAnswers.find((q) => q.id === "2.4.19");
+    if(questionId==="2.4.19" && !t4Q19) {return null};
     const t4Q20 = topic4CodeAnswers.find((q) => q.id === "2.4.20");
+    if(questionId==="2.4.20" && !t4Q20) {return null};
     const t4Q21 = topic4CodeAnswers.find((q) => q.id === "2.4.21");
+    if(questionId==="2.4.21" && !t4Q21) {return null};
 
     const updateCodeAnswer = (value: string, index: number) => {
         const newCodeAnswer = [...codeAnswer];
