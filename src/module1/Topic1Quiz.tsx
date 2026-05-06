@@ -2,7 +2,7 @@
 import type { JSX } from "react";
 import { topic1MCQ, topic1Code } from "./M1Questions";
 import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
-import { M1Code } from "./M1Code";
+import { T1Code } from "./T1Code";
 import { useState } from "react";
 import './TopicPages.css';
 
@@ -55,7 +55,7 @@ export function Topic1Quiz(): JSX.Element {
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9 && <M1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
            </div>
