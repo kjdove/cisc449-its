@@ -118,7 +118,7 @@ export const topic3Code = [
      {id: "2.3.11", question: "Order the following code snippets to correctly create a dropdown component."},
 ]
 
-/**TOPIC 4: Differences (24)*/
+/**TOPIC 4: Differences*/
 export const topic4MCQ = [
     //definitional
     {id: "2.4.1", question: "Which component allows the user to enter text into an input field?"},
@@ -141,10 +141,10 @@ export const topic4MCQ = [
     {id: "2.4.9", question: "The state of a dropdown component is typically represented as which data type?"},
 
     {id: "2.4.10", question: "You want to create a form where the user can enter their name. Which component would you use?"},
-    {id: "2.4.11", question: "You want to create a form where the user can select whether they agree to the terms and conditions. Which component would you use?"},
+    {id: "2.4.11", question: "You want to create a form where the user can select whether or not they agree to the terms and conditions. Which component would you use?"},
     {id: "2.4.12", question: "You want to create a form where the user can select their favorite color from a list of options. Which component would you use?"},
     {id: "2.4.13", question: "You want to create a form where the user can enter their email address. Which component would you use?"},
-    {id: "2.4.14", question: "You want to create a form where the user can select whether they want to receive a newsletter subscription. Which component would you use?"},
+    {id: "2.4.14", question: "You want to create a form where the user can select whether or not they want to receive a newsletter subscription. Which component would you use?"},
     {id: "2.4.15", question: "You want to create a form where the user can select their preferred contact method (email, phone, or mail). Which component would you use?"},
 ]
 

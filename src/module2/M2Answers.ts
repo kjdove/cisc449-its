@@ -251,6 +251,83 @@ export const topic3CodeAnswers = [
     ]}
 ]
 
-export const topic4MCQAnswers = []
+export const topic4MCQAnswers = [
+    {id: "2.4.1", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "3"},
+    {id: "2.4.2", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "1"},
+    {id: "2.4.3", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+
+    {id: "2.4.4", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "3"},
+    {id: "2.4.5", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "1"},
+    {id: "2.4.6", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+    {id: "2.4.7", options: [
+        {textId: "1", text: "string"},
+        {textId: "2", text: "boolean"},
+        {textId: "3", text: "number"},
+    ], correctId: "1"},
+    {id: "2.4.8", options: [
+        {textId: "1", text: "string"},
+        {textId: "2", text: "boolean"},
+        {textId: "3", text: "number"},
+    ], correctId: "2"},
+    {id: "2.4.9", options: [
+        {textId: "1", text: "string"},
+        {textId: "2", text: "boolean"},
+        {textId: "3", text: "number"},
+    ], correctId: "1"},
+    {id: "2.4.10", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "3"},
+    {id: "2.4.11", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "1"},
+    {id: "2.4.12", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+    {id: "2.4.13", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "3"},
+    {id: "2.4.14", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "1"},
+    {id: "2.4.15", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+]
 
 export const topic4CodeAnswers = []
