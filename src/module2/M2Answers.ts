@@ -330,4 +330,68 @@ export const topic4MCQAnswers = [
     ], correctId: "2"},
 ]
 
-export const topic4CodeAnswers = []
+export const topic4CodeAnswers = [
+    {id: "2.4.16", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "3"},
+    {id: "2.4.17", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+    {id: "2.4.18", options: [
+        {textId: "1", text: "checkbox"},
+        {textId: "2", text: "dropdown"},
+        {textId: "3", text: "textbox"},
+    ], correctId: "2"},
+    {id: "2.4.19", correctOrder: "1,7,4,12,11,10,8,5,6", options: [
+        `const [emotion, setEmotion] = useState<string>("happy");`,
+        `<option value="sad">Sad</option>`,
+        `setEmotion(event.target.checked);}`,
+        `setEmotion(event.target.value);}`,
+        `</Form.Group>`,
+        `</div>`,
+        `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
+        `<Form.Select value={emotion} onChange={updateEmotion}>`,
+        `<Form.Label>How are you?</Form.Label>`,
+        `<Form.Group controlId = 'formEmotion'>`,
+        `return <div>`,
+    ]}, 
+    {id: "2.4.20", correctOrder: "2, 7,3,11,10,9,5,6", options: [
+        `const [emotion, setEmotion] = useState<string>("happy");`,
+        `const [emotion, setEmotion] = useState<boolean>(true);`,
+        `setEmotion(event.target.checked);}`,
+        `setEmotion(event.target.value);}`,
+        `</Form.Group>`,
+        `</div>`,
+        `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
+        `<Form.Check
+          type="checkbox"
+          id="is-happy-check"
+          label="Are you happy?"
+          checked={emotion}
+          onChange={updateEmotion}
+      />`,
+        `<Form.Group controlId = 'formEmotion'>`,
+        `return <div>`,
+    ]},
+    {id: "2.4.21", correctOrder: ["1,6,3,12,11,9,8,2,13,10,4,5", "1,6,3,12,11,9,8,13,2,10,4,5"] , options: [
+        `const [emotion, setEmotion] = useState<string>("happy");`,
+        `<option value="sad">Sad</option>`,
+        `setEmotion(event.target.value);}`,
+        `</Form.Group>`,
+        `</div>`,
+        `function updateEmotion(event: React.ChangeEvent<HTMLInputElement>) {`,
+        `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
+        `<Form.Select value={emotion} onChange={updateEmotion}>`,
+        `<Form.Label>How are you?</Form.Label>`,
+        `</Form.Select>`,
+        `<Form.Group controlId = 'formEmotion'>`,
+        `return <div>`,
+        `<option value="happy">Happy</option>`,
+    ]}, 
+]
