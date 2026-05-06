@@ -246,6 +246,8 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                     </div>
                     </>
                 )
+            default:
+                return <div>Question not found</div>
         }//end to switch
     }//end to t3codeblock
 

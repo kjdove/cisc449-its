@@ -168,7 +168,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                         </>
                     )
                 default:
-                    return <div>Invalid question ID</div>
+                    return <div>Question not found</div>
             }//end to switch
     }
 

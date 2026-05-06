@@ -123,9 +123,9 @@ export function T2Code({questionId}: {questionId: string}): JSX.Element {
                     </div>
                 )
             default:
-                return <div>Code question not found.</div>
-        }
-    }
+                return <div>Question not found</div>
+        }//end to switch
+    }//end to T2CodeBlock
     return (
         <div>
            {T2CodeBlock()}
