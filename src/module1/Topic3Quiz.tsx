@@ -3,7 +3,7 @@ import { useState, type JSX } from "react";
 import './TopicPages.css';
 import { topic3MCQ, topic3Code } from "./M1Questions";
 import { topic3MCQAnswers } from "./M1Answers";
-import { M1Code } from "./M1Code";
+import { T3Code } from "./T3Code";
 
 export function Topic3Quiz(): JSX.Element {
     const [currentQInd, setCurrentQInd] = useState<number>(0);
@@ -40,7 +40,7 @@ export function Topic3Quiz(): JSX.Element {
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 5 && <M1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
                 </div>
             </div>
         </div>

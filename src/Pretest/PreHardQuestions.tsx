@@ -21,7 +21,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 className="fill-in-blank"
                                 type="text"
                                 value={studentAnswer[0]}
-                                onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                onChange={(e) => updateAnswers(e.target.value, 0)}
                                 placeholder="Enter missing tag"
                             />
                             {` controlId="formBasicEmail">`}
@@ -38,7 +38,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input 
                                 type="text"
                                 value={studentAnswer[2]}
-                                onChange={() => updateAnswers(studentAnswer[2], 2)}
+                                onChange={(e) => updateAnswers(e.target.value, 2)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -48,7 +48,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input 
                                 type="text"
                                 value={studentAnswer[3]}
-                                onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                onChange={(e) => updateAnswers(e.target.value, 3)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -58,7 +58,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[4]}
-                                onChange={() => updateAnswers(studentAnswer[4], 4)}
+                                onChange={(e) => updateAnswers(e.target.value, 4)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -70,7 +70,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[5]}
-                                onChange={() => updateAnswers(studentAnswer[5], 5)}
+                                onChange={(e) => updateAnswers(e.target.value, 5)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                                 />  
@@ -80,7 +80,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[6]}
-                                onChange={() => updateAnswers(studentAnswer[6], 6)}
+                                onChange={(e) => updateAnswers(e.target.value, 6)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -98,7 +98,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[0]}
-                                onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                onChange={(e) => updateAnswers(e.target.value, 0)}
                                 placeholder="Enter missing attribute"
                                 className="fill-in-blank"
                             />
@@ -107,7 +107,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[1]}
-                                onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                onChange={(e) => updateAnswers(e.target.value, 1)}
                                 placeholder="Enter missing attribute"
                                 className="fill-in-blank"
                             />
@@ -127,7 +127,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[0]}
-                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                    onChange={(e) => updateAnswers(e.target.value, 0)}
                                     placeholder="Enter missing code"
                                     className="fill-in-blank"
                                 />
@@ -143,7 +143,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input
                                         type="text"
                                         value={studentAnswer[0]}
-                                        onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                        onChange={(e) => updateAnswers(e.target.value, 0)}
                                         placeholder="Enter missing tag"
                                         className="fill-in-blank"
                                     />
@@ -152,7 +152,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input 
                                         type="text"
                                         value={studentAnswer[1]}
-                                        onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                        onChange={(e) => updateAnswers(e.target.value, 1)}
                                         placeholder="Enter missing input type"
                                         className="fill-in-blank"
                                     />
@@ -164,7 +164,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input
                                         type="text"
                                         value={studentAnswer[2]}
-                                        onChange={() => updateAnswers(studentAnswer[2], 2)}
+                                        onChange={(e) => updateAnswers(e.target.value, 2)}
                                         placeholder="Enter state variable"
                                         className="fill-in-blank"
                                     />
@@ -174,7 +174,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input
                                         type="text"
                                         value={studentAnswer[3]}
-                                        onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                        onChange={(e) => updateAnswers(e.target.value, 3)}
                                         placeholder="Enter missing code"
                                         className="fill-in-blank"
                                     />
@@ -190,7 +190,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         <input
                             type="text"
                             value={studentAnswer[0]}
-                            onChange={() => updateAnswers(studentAnswer[0], 0)}
+                            onChange={(e) => updateAnswers(e.target.value, 0)}
                             placeholder="Enter missing tag"
                             className="fill-in-blank"
                         />
@@ -199,7 +199,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         <input 
                             type="text"
                             value={studentAnswer[1]}
-                            onChange={() => updateAnswers(studentAnswer[1], 1)}
+                            onChange={(e) => updateAnswers(e.target.value, 1)}
                             placeholder="Enter missing input type"
                             className="fill-in-blank"
                         />
@@ -211,7 +211,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         <input
                             type="text"
                             value={studentAnswer[1]}
-                            onChange={() => updateAnswers(studentAnswer[1], 1)}
+                            onChange={(e) => updateAnswers(e.target.value, 1)}
                             placeholder="Enter state variable"
                             className="fill-in-blank"
                         />
@@ -221,7 +221,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         <input
                             type="text"
                             value={studentAnswer[2]}
-                            onChange={() => updateAnswers(studentAnswer[2], 2)}
+                            onChange={(e) => updateAnswers(e.target.value, 2)}
                             placeholder="Enter missing code"
                             className="fill-in-blank"
                         />
@@ -237,7 +237,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[0]}
-                                onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                onChange={(e) => updateAnswers(e.target.value, 0)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -247,7 +247,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[1]}
-                                onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                onChange={(e) => updateAnswers(e.target.value, 1)}
                                 placeholder="Enter state variable"
                                 style={{
                                     width: "150px",
@@ -263,7 +263,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[2]}
-                                onChange={() => updateAnswers(studentAnswer[2], 2)}
+                                onChange={(e) => updateAnswers(e.target.value, 2)}
                                 placeholder="Enter missing code"
                                 style={{
                                     width: "200px",
@@ -279,7 +279,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[3]}
-                                onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                onChange={(e) => updateAnswers(e.target.value, 3)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -287,7 +287,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[4]}
-                                onChange={() => updateAnswers(studentAnswer[4], 4)}
+                                onChange={(e) => updateAnswers(e.target.value, 4)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -297,7 +297,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[5]}
-                                onChange={() => updateAnswers(studentAnswer[5], 5)}
+                                onChange={(e) => updateAnswers(e.target.value, 5)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -305,7 +305,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[6]}
-                                onChange={() => updateAnswers(studentAnswer[6], 6)}
+                                onChange={(e) => updateAnswers(e.target.value, 6)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -315,7 +315,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[7]}
-                                onChange={() => updateAnswers(studentAnswer[7], 7)}
+                                onChange={(e) => updateAnswers(e.target.value, 7)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -323,7 +323,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[8]}
-                                onChange={() => updateAnswers(studentAnswer[8], 8)}
+                                onChange={(e) => updateAnswers(e.target.value, 8)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -333,7 +333,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input
                                 type="text"
                                 value={studentAnswer[9]}
-                                onChange={() => updateAnswers(studentAnswer[9], 9)}
+                                onChange={(e) => updateAnswers(e.target.value, 9)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             />
@@ -353,7 +353,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input 
                                     type="text"
                                     value={studentAnswer[0]}
-                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                    onChange={(e) => updateAnswers(e.target.value, 0)}
                                     placeholder="Enter missing input type"
                                     className="fill-in-blank"
                                 />
@@ -363,7 +363,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[1]}
-                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                    onChange={(e) => updateAnswers(e.target.value, 1)}
                                     placeholder="Enter missing tag"
                                     className="fill-in-blank"
                                 />
@@ -379,7 +379,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[2]}
-                                    onChange={() => updateAnswers(studentAnswer[2], 2)}
+                                    onChange={(e) => updateAnswers(e.target.value, 2)}
                                     placeholder="Enter missing tag"
                                     className="fill-in-blank"
                                 />
@@ -389,7 +389,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[3]}
-                                    onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                    onChange={(e) => updateAnswers(e.target.value, 3)}
                                     placeholder="Enter missing input type"
                                     className="fill-in-blank"
                                 />
@@ -407,7 +407,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input 
                                         type="text"
                                         value={studentAnswer[0]}
-                                        onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                        onChange={(e) => updateAnswers(e.target.value, 0)}
                                         placeholder="Enter missing input type"
                                         className="fill-in-blank"
                                     />
@@ -417,7 +417,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                     <input
                                         type="text"
                                         value={studentAnswer[1]}
-                                        onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                        onChange={(e) => updateAnswers(e.target.value, 1)}
                                         placeholder="Enter missing input type"
                                         className="fill-in-blank"
                                     />
@@ -433,7 +433,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[0]}
-                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                    onChange={(e) => updateAnswers(e.target.value, 0)}
                                     placeholder="Enter missing checkbox type"
                                     className="fill-in-blank"
                                 />
@@ -444,7 +444,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[1]}
-                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                    onChange={(e) => updateAnswers(e.target.value, 1)}
                                     placeholder="Enter missing checkbox type"
                                     className="fill-in-blank"
                                 />
@@ -454,7 +454,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[2]}
-                                    onChange={() => updateAnswers(studentAnswer[2], 2)}
+                                    onChange={(e) => updateAnswers(e.target.value, 2)}
                                     placeholder="Enter missing checkbox type"
                                     className="fill-in-blank"
                                 />
@@ -464,7 +464,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[3]}
-                                    onChange={() => updateAnswers(studentAnswer[3], 3)}
+                                    onChange={(e) => updateAnswers(e.target.value, 3)}
                                     placeholder="Enter missing checkbox type"
                                     className="fill-in-blank"
                                 />
@@ -484,7 +484,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input 
                                     type="text"
                                     value={studentAnswer[0]}
-                                    onChange={() => updateAnswers(studentAnswer[0], 0)}
+                                    onChange={(e) => updateAnswers(e.target.value, 0)}
                                     placeholder="Enter missing array method"
                                     className="fill-in-blank"
                                 />
@@ -494,7 +494,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                                 <input
                                     type="text"
                                     value={studentAnswer[1]}
-                                    onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                    onChange={(e) => updateAnswers(e.target.value, 1)}
                                     placeholder="Enter missing attribute"
                                     className="fill-in-blank"
                                 />

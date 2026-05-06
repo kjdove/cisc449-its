@@ -1,7 +1,7 @@
 //module 3 topic 3
 import type { JSX } from "react";
 import {useState} from "react";
-import { M3Code } from "./M3Code";
+import { T3Code } from "./T3Code";
 import { topic3MCQAnswers } from "./M3Answers";
 import { topic3MCQ, topic3Code } from "./M3Questions";
 
@@ -39,7 +39,7 @@ export function Topic3Quiz(): JSX.Element{
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 5 && <M3Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
             </div>

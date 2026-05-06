@@ -3,7 +3,7 @@ import { useState, type JSX } from "react";
 import { topic2MCQ, topic2Code } from "./M1Questions";
 import { topic2MCQAnswers } from "./M1Answers";
 import './TopicPages.css';
-import { M1Code } from "./M1Code";
+import { T2Code } from "./T2Code";
 
 export function Topic2Quiz(): JSX.Element {
     const [currentQInd, setCurrentQInd] = useState<number>(0);
@@ -39,7 +39,7 @@ export function Topic2Quiz(): JSX.Element {
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9 && <M1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9 && <T2Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
             </div>

@@ -2,7 +2,7 @@
 import { topic4MCQ, topic4Code } from './M2Questions';
 import { topic4MCQAnswers } from './M2Answers';
 import { useState } from 'react';
-import { M2Code } from './M2Code';
+import { T4Code } from './T4Code';
 import {type JSX} from 'react';
 
 export function Topic4Quiz(): JSX.Element {
@@ -39,7 +39,7 @@ export function Topic4Quiz(): JSX.Element {
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
-                    {currentAInd >= 9 && <M2Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9 && <T4Code questionId={currentQuestion.id} />}
                 </div>
                 <button className="submit-button">Submit</button>
             </div>
