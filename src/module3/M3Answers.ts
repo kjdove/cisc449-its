@@ -1,4 +1,6 @@
-export const topic1MCQAnswers = [
+import type { mcAnswer } from "../Types"
+
+export const topic1MCQAnswers: mcAnswer[] = [
     {id: "3.1.1", options: [
         {textId: "1", text: "number input box, checkbox, dropdown menu"},
         {textId: "2", text: "number input box, horizontal layout, multiline textarea"},
@@ -272,7 +274,7 @@ export const topic1CodeAnswers = [
     ]}
 ]
 
-export const topic2MCQAnswers = [
+export const topic2MCQAnswers: mcAnswer[] = [
     {id: "3.2.1", options: [
         {textId: "1", text: "switch"},
         {textId: "2", text: "radio buttons"},
@@ -562,7 +564,7 @@ export const topic2CodeAnswers = [
     ]}
 ]
 
-export const topic3MCQAnswers = [
+export const topic3MCQAnswers: mcAnswer[] = [
     {id: "3.3.1", options: [
         {textId: "1", text: "checkboxes"},
         {textId: "2", text: "radio buttons"},

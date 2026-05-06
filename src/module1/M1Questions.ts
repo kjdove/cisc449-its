@@ -1,6 +1,7 @@
 /**TOPIC 1: Forms and Form.Groups Questions*/
+import type { MCQ, CodingQ} from "../Types";
 //multiple choice questions for topic 1
-export const topic1MCQ = [
+export const topic1MCQ: MCQ[] = [
     {id: "1.1.1", question: "What is a form?"},
     {id: "1.1.2", question: "What is a Form.Group?"},
     {id: "1.1.3", question: "What are the common tags used in a Form.Group?"},
@@ -13,7 +14,7 @@ export const topic1MCQ = [
 ]
 
 //code questions (parsons/fill in missing code/ordering lines of code) for topic 1
-export const topic1Code = [
+export const topic1Code: CodingQ[] = [
     {id: "1.1.10", question: "Fill in the blanks for the following code."},
     {id: "1.1.11", question: "Fill in the blanks for the following code."},
     {id: "1.1.12", question: "Fill in the blanks for the following code."},
@@ -23,7 +24,7 @@ export const topic1Code = [
 ]
 
 /**TOPIC 2: Form Attributes and Controls*/
-export const topic2MCQ = [
+export const topic2MCQ: MCQ[] = [
     //attributes
     {id: "1.2.1", question: "What are used to control the behavior of form components?"},
     //Form.Control
@@ -35,11 +36,7 @@ export const topic2MCQ = [
         2) <Form.Control placeholder="Enter Email">
         3) <Form.Control type="email">
      */
-    {id: "1.2.3", question: "Which of the following are valid syntaxes for using form control attributes?"}
-]
-
-//match each attribute to its definition
-export const topic2Matching = [
+    {id: "1.2.3", question: "Which of the following are valid syntaxes for using form control attributes?"},
     //readOnly
     {id: "1.2.4", question: "With this attribute, the user will only be able to view and copy data, and not be able to edit it."},
     //disabled
@@ -54,8 +51,7 @@ export const topic2Matching = [
     {id: "1.2.9", question: "This attribute sets the initial value of an uncontrolled form control without binding it to a state after."},
 ]
 
-
-export const topic2Code = [
+export const topic2Code: CodingQ[] = [
     //one attribute (readonly, disabled)- mcq with options for how the form control will behave with that attribute or textbox/free response
     {id: "1.2.10", question: "Given the following code, what will be the behavior of the form control?"},
     {id: "1.2.11", question: "Given the following code, what will be the behavior of the form control?"},
@@ -65,7 +61,7 @@ export const topic2Code = [
 ]
 
 /**TOPIC 3: How to Use the Value Attribute*/
-export const topic3MCQ = [
+export const topic3MCQ: MCQ[] = [
     //value
     {id: "1.3.1", question: "This attribute represents the current value of a Form component and can be looked up and used throughout code."},
     //useState
@@ -88,7 +84,7 @@ export const topic3MCQ = [
     {id: "1.3.5", question: "Which of the following is the correct syntax for updating a state variable called 'name' when the user types in a form control?"}
 ]
 
-export const topic3Code = [
+export const topic3Code: CodingQ[] = [
     //based off following code, what will happen (select from options)
     //correct syntax - state updates as user types, form control value updates to match state
     {id: "1.3.6", question: "Given the following code, will the state and form update as the user types?"},

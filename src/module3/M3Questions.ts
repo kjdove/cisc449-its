@@ -1,5 +1,6 @@
 /**TOPIC 1: Textbox Variations*/
-export const topic1MCQ = [
+import type { MCQ, CodingQ } from "../Types"
+export const topic1MCQ: MCQ[] = [
     //number input box, horizontal layout, multiline textarea
     {id: "3.1.1", question: "Which of the following are valid variations of textboxes in React-Bootstrap?"},
     
@@ -54,7 +55,7 @@ export const topic1MCQ = [
     {id: "3.1.8", question: "Select the correct code to create a multiline textarea."},
 ]
 
-export const topic1Code = [
+export const topic1Code: CodingQ[] = [
     //fill in blanks
         //number input box
         //missing - in useState: <number>, "default number value", in form: Form.(Control), type="number"
@@ -78,7 +79,7 @@ export const topic1Code = [
 ]
 
 /**TOPIC 2: Checkbox Variations*/
-export const topic2MCQ = [
+export const topic2MCQ: MCQ[]= [
     //switch, radio buttons, multi checkboxes
     {id: "3.2.1", question: "Which of the following are valid variations of checkboxes in React-Bootstrap?"},
 
@@ -105,7 +106,7 @@ export const topic2MCQ = [
     {id: "3.2.9", question: "This variation is used when you want to allow users to select multiple options from a set of choices."},
 ]
 
-export const topic2Code = [
+export const topic2Code: CodingQ[] = [
     {id: "3.2.10", question: "Identify if there is anything incorrect or missing in the following code to create a switch component."},
     {id: "3.2.11", question: "Identify if there is anything incorrect or missing in the following code to create a radio button component."},
     {id: "3.2.12", question: "Identify if there is anything incorrect or missing in the following code to create a multi checkbox component."},
@@ -130,7 +131,7 @@ export const topic2Code = [
 ]
 
 /**TOPIC 3: Dropdown Variations*/
-export const topic3MCQ = [
+export const topic3MCQ: MCQ[] = [
     //a list of options
     {id: "3.3.1", question: "A very frequent situation is to have a dropdown populated by ..."},
     //key
@@ -143,7 +144,7 @@ export const topic3MCQ = [
     {id: "3.3.5", question: "These two attributes are used in the Form.Select tag to manage the selected option in a dropdown."},
 ]  
 
-export const topic3Code = [
+export const topic3Code: CodingQ[] = [
     //code
     {id: "3.3.6", question: "Select the correct code to create a dropdown populated by an array called COLORS of color options using .map()."},
 

@@ -1,4 +1,5 @@
-export const topic1MCQAnswers = [
+import type { mcAnswer } from "../Types"
+export const topic1MCQAnswers: mcAnswer[] = [
     {id: "2.1.1", options: [
         {textId: "1", text: "value =  {text}"},
         {textId: "2", text: "onChange={(e) => setState(e.target.value)}"},
@@ -95,7 +96,7 @@ export const topic1CodeAnswers = [
    ]}
 ]
 
-export const topic2MCQAnswers = [
+export const topic2MCQAnswers: mcAnswer[] = [
     {id: "2.2.1", options: [
         {textId: "1", text: "dropdown"},
         {textId: "2", text: "checkbox"},
@@ -184,7 +185,7 @@ export const topic2CodeAnswers = [
     ]}
 ]
 
-export const topic3MCQAnswers = [
+export const topic3MCQAnswers: mcAnswer[] = [
     {id: "2.3.1", options: [
         {textId: "1", text: "checkbox"},
         {textId: "2", text: "dropdown"},
@@ -251,7 +252,7 @@ export const topic3CodeAnswers = [
     ]}
 ]
 
-export const topic4MCQAnswers = [
+export const topic4MCQAnswers: mcAnswer[] = [
     {id: "2.4.1", options: [
         {textId: "1", text: "checkbox"},
         {textId: "2", text: "dropdown"},

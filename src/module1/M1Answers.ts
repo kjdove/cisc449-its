@@ -1,4 +1,5 @@
-export const topic1MCQAnswers = [
+import type {mcAnswer} from "../Types";
+export const topic1MCQAnswers: mcAnswer[] = [
     {id: "1.1.1", options: [
         {textId: "1", text: "a collection of specialized user interface elements"}, 
         {textId: "2", text: "a communication protocol"},
@@ -64,7 +65,7 @@ export const topic1CodeAnswers = [
         options: [`<Form.Text className="text-muted">`, ` </Form.Group>`, `<Form.Label>Email address</Form.Label>`, `We'll never share your email with anyone else.`, `</Form.Text>`, `<Form.Control type="email" placeholder="Enter email" />`, `<Form.Group className="mb-3" controlId="formBasicEmail">` ]}
 ]   
 
-export const topic2MCQAnswers = [
+export const topic2MCQAnswers: mcAnswer[] = [
     {id: "1.2.1", options: [
         {textId: "1", text: "Form components"},
         {textId: "2", text: "attributes"},
@@ -138,7 +139,7 @@ export const topic2CodeAnswers = [
     {id: "1.2.13", correctAnswer: "readOnly"},
 ]
 
-export const topic3MCQAnswers = [
+export const topic3MCQAnswers: mcAnswer[] = [
     {id: "1.3.1", options: [
         {textId: "1", text: "defaultValue"},
         {textId: "2", text: "value"},

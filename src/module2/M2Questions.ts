@@ -1,5 +1,7 @@
 /**TOPIC 1: Textboxes*/ 
-export const topic1MCQ = [
+import  type { MCQ, CodingQ } from "../Types";
+
+export const topic1MCQ: MCQ[] = [
     //type = "text"
     {id: "2.1.1", question: "What attribute is used to specify the type of a textbox?"},
     //Form.Control
@@ -19,7 +21,7 @@ export const topic1MCQ = [
     {id: "2.1.9", question: "Which of the following is true about updating multiple textboxes with a single onChange handler?"},
 ]
 
-export const topic1Code = [
+export const topic1Code: CodingQ[] = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
     {id: "2.1.10", question: "Identify the Model, Controller, and View in the following code."},
@@ -40,7 +42,7 @@ export const topic1Code = [
 ]
 
 /**TOPIC 2: Checkboxes*/
-export const topic2MCQ = [
+export const topic2MCQ: MCQ[] = [
     //def
     {id: "2.2.1", question: "This component corresponds to some boolean state, checked or unchecked."},
     //Form.Check
@@ -61,7 +63,7 @@ export const topic2MCQ = [
     {id: "2.2.9", question: "How do you correctly access whether a checkbox is checked or not in an onChange handler?"},
 ]
 
-export const topic2Code = [
+export const topic2Code: CodingQ[] = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
     {id: "2.2.10", question: "Identify the Model, Controller, and View in the following code."},
@@ -82,7 +84,7 @@ export const topic2Code = [
 ]
 
 /**TOPIC 3: Dropdowns*/
-export const topic3MCQ = [
+export const topic3MCQ: MCQ[] = [
     //def
     {id: "2.3.1", question: "This component, also known as select menus or comboboxes, correspond to some string state, or a subset of strings, that can take on multiple values."},
     //form.select
@@ -97,7 +99,7 @@ export const topic3MCQ = [
     {id: "2.3.6", question: "How do you correctly access the option selected in a dropdown in an onChange handler?"},
 ]
 
-export const topic3Code = [
+export const topic3Code: CodingQ[] = [
     //identifying 
         //(1) useState deifnition (2) onChange handler function (3) value attribute binding value to state 
     {id: "2.3.7", question: "Identify the Model, Controller, and View in the following code."},
@@ -119,7 +121,7 @@ export const topic3Code = [
 ]
 
 /**TOPIC 4: Differences*/
-export const topic4MCQ = [
+export const topic4MCQ: MCQ[] = [
     //definitional
     {id: "2.4.1", question: "Which component allows the user to enter text into an input field?"},
     {id: "2.4.2", question: "Which component represents a boolean value for the user to select?"},
@@ -149,7 +151,7 @@ export const topic4MCQ = [
 ]
 
 
-export const topic4Code = [
+export const topic4Code: CodingQ[] = [
     //following code represents which component
     {id: "2.4.16", question: "The following code represents which component?"},
     {id: "2.4.17", question: "The following code represents which component?"},
