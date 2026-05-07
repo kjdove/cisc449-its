@@ -11,6 +11,40 @@ export function Topic4Quiz(): JSX.Element {
     const currentQuestion = allQuestions[currentQInd];
     const [currentAInd, setCurrentAInd] = useState<number>(0);
 
+    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    
+    const handleAnswerChange = (questionId: string, answer: string) => {
+        setSA((prev) => ({
+            ...prev,
+            [questionId]: answer
+        }));
+    }
+
+    const handleSubmit = () => {
+        const studentAnswer = studentAnswers[currentQuestion.id]|| "";
+
+        let correctAnswer;
+        if(currentAInd < 9){
+            correctAnswer = topic4MCQAnswers[currentAInd].correctId;
+        }
+
+        console.log("student: ", studentAnswer);
+        console.log("correct: ", correctAnswer);
+
+        const isCorrect = studentAnswer === correctAnswer;
+        
+        const savedData = JSON.parse(localStorage.getItem("module2topic4") || "{}");
+        savedData[currentQuestion.id] = {
+            studentAnswer,
+            isCorrect
+        };
+
+        localStorage.setItem(
+            "module2topic4",
+            JSON.stringify(savedData)
+        );
+        
+    }//end to handleSubmit
     return (
         <div className="t3-container">
             <div className="question-list">
@@ -35,13 +69,22 @@ export function Topic4Quiz(): JSX.Element {
                     {/**if currentAInd is in range of MCQ questions render this, else render the other possible question type answers */}
                     {currentAInd < 9 && topic4MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
-                            <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                            <input
+                                type="radio"
+                                id={option.textId}
+                                name={currentQuestion.id}
+                                value={option.textId}
+                                checked={studentAnswers[currentQuestion.id] === option.textId}
+                                onChange={(e) =>
+                                    handleAnswerChange(currentQuestion.id, e.target.value)
+                                }
+                            />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
                     ))}
                     {currentAInd >= 9 && <T4Code questionId={currentQuestion.id} />}
                 </div>
-                <button className="submit-button">Submit</button>
+                <button onClick={handleSubmit}className="submit-button">Submit</button>
             </div>
         </div>
     )
