@@ -57,7 +57,7 @@ export function Module1(): JSX.Element {
             {topicId === "2" && (
                 <div className="topic-page">
                     <div className="topic-header">
-                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                        <button className="back-button"  onClick={handleBackButton}>Back to Module 1</button>
                         <h2>Form Attributes and Controls</h2>
                     </div>
                     <Topic2Quiz />
@@ -66,7 +66,7 @@ export function Module1(): JSX.Element {
             {topicId === "3" && (
                 <div className="topic-page">
                     <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                        <button className="back-button" onClick={handleBackButton}>Back to Module 1</button>
                         <h2>How to Use the Value Attribute</h2>
                     </div>
                     <Topic3Quiz/>
