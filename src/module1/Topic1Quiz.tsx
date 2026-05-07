@@ -37,9 +37,6 @@ export function Topic1Quiz(): JSX.Element {
             correctAnswer = topic1MCQAnswers[currentAInd].correctId;
         }
 
-        console.log("student: ", studentAnswer);
-        console.log("correct: ", correctAnswer);
-
         const isCorrect = studentAnswer === correctAnswer;
         
         const savedData = JSON.parse(localStorage.getItem("module1topic1") || "{}");

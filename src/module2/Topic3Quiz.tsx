@@ -27,9 +27,6 @@ export function Topic3Quiz(): JSX.Element {
             correctAnswer = topic3MCQAnswers[currentAInd].correctId;
         }
 
-        console.log("student: ", studentAnswer);
-        console.log("correct: ", correctAnswer);
-
         const isCorrect = studentAnswer === correctAnswer;
         
         const savedData = JSON.parse(localStorage.getItem("module2topic3") || "{}");
