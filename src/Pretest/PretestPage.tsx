@@ -10,49 +10,78 @@ export function Pretest(): JSX.Element {
 
     const [currentTopicInd, setCurrentTopicInd] = useState(0);
     const ratings = [1,2,3,4,5,6,7,8,9,10];
-    const [studentRating, setSR] = useState(0);
-    // const questions = pretestQuestions.filter((q) => q.topicId === topics[currentTopicInd].id);
-    //setSR helper function
+    const [studentRating, setSR] = useState<number>(0);
+    const [studentAnswers, setSA] = useState<Record<string,string>>({});
+
     const hnadleSR = (r: number) => {
         setSR(r);
     }
+
+    const handleAnswerChange = (questionId: string, answer: string) => {
+        setSA((prev) => ({
+            ...prev,
+            [questionId]: answer
+        }));
+    };
 
     const easyQuestions = pretestQuestions.filter((q) => q.difficulty === "easy" && q.topicId === topics[currentTopicInd].id);
     const mediumQuestions = pretestQuestions.filter((q) => q.difficulty === "medium" && q.topicId === topics[currentTopicInd].id);
     const hardQuestions = pretestQuestions.filter((q) => q.difficulty === "hard" && q.topicId === topics[currentTopicInd].id);
 
 
-    //helper function for saving student's answer
-    // const handleAnswerChange = (questionId: string, answer: string) => {
-    //     const updatedQuestions = pretestQuestions.map((q) =>
-    //         q.id === questionId ? { ...q, studentAnswer: answer } : q
-    //     );
-    //     setPretestQuestions(updatedQuestions);  
-    // }
-
-    //on submit helper function
-        //save user's answer and rating
-        //go to next topic/set of questions from array
     const handleSubmit = () => {
-       //alert user they can't go back after submitting
-        if(currentTopicInd === 0){
-            window.confirm( "Are you sure you want to submit? You cannot go back.");
+        if (currentTopicInd === 0) {
+            const confirmed = window.confirm(
+                "Are you sure you want to submit? You cannot go back."
+            );
+    
+            if (!confirmed) return;
         }
-
-        //alert user if they haven't made an answer or rating
-
-
+    
+        const currentTopic = topics[currentTopicInd];
+    
+        let currentQuestion;
+    
+        if (1 <= studentRating && studentRating <= 3) {
+            currentQuestion = easyQuestions[0];
+        } else if (4 <= studentRating && studentRating <= 7) {
+            currentQuestion = mediumQuestions[0];
+        } else {
+            currentQuestion = hardQuestions[0];
+        }
+    
+        if (!currentQuestion) return;
+    
+        const studentAnswer = studentAnswers[currentQuestion.id] || "";
+    
+        const isCorrect =
+            currentQuestion.correctAnswer === studentAnswer;
+    
+        const savedData = JSON.parse(
+            localStorage.getItem("pretestResults") || "{}"
+        );
+    
+        savedData[currentTopic.id] = {
+            rating: studentRating,
+            questionId: currentQuestion.id,
+            studentAnswer,
+            isCorrect
+        };
+    
+        localStorage.setItem(
+            "pretestResults",
+            JSON.stringify(savedData)
+        );
+    
         setSR(0);
-
+    
         if (currentTopicInd < topics.length - 1) {
             setCurrentTopicInd(currentTopicInd + 1);
         } else {
-            navigate('/dashboard');
-            console.log("pretest completed, navigate to dashboard");
+            navigate("/dashboard");
+            console.log("pretest completed");
         }
-    }
-
-    // console.log('current question id', hardQuestions[0]?.id);
+    };//end to handleSubmit
 
     return (
         <div className="pretest-page">
@@ -102,7 +131,14 @@ export function Pretest(): JSX.Element {
                         <div key={a.id} className="answer">
                            {a.options? a.options.map((option) => (
                                 <div key={option} className="answer-option">
-                                    <input type="radio" id={option} name={a.id} value={option} />
+                                    <input
+                                        type="radio"
+                                        id={option}
+                                        name={a.id}
+                                        value={option}
+                                        checked={studentAnswers[a.id] === option}
+                                        onChange={(e) => handleAnswerChange(a.id, e.target.value)}
+                                    />
                                     <label htmlFor={option}>{option}</label>
                                 </div>
                             )): <p>No answer options, please answer in the text box.</p>}
@@ -112,7 +148,14 @@ export function Pretest(): JSX.Element {
                          <div key={a.id} className="answer">
                             {a.options? a.options.map((option) => (
                                   <div key={option} className="answer-option">
-                                        <input type="radio" id={option} name={a.id} value={option} />
+                                        <input
+                                            type="radio"
+                                            id={option}
+                                            name={a.id}
+                                            value={option}
+                                            checked={studentAnswers[a.id] === option}
+                                            onChange={(e) => handleAnswerChange(a.id, e.target.value)}
+                                        />
                                         <label htmlFor={option}>{option}</label>
                                   </div>
                              )): <p>No answer options, please answer in the text box.</p>}
