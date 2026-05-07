@@ -82,7 +82,7 @@ export const topic1CodeAnswers: CodingAnswer[]  = [
         {textId: "4", text: "Since the code correctly binds the name state variable to the value attribute, the textbox value will update and display Isle of Dogs."},
     ],
     correctId: "1"},
-   {id: "2.1.14", type: "ordering",correctOrder: "6,7,1,5,4,10,8,3,9", options: [
+   {id: "2.1.14", type: "ordering",correctOrder: ["6,7,1,5,4,10,8,3,9"], options: [
     `setEmotion(event.target.value);`,
     `<Form.Control type='text' placeholder='enter emotion' value={emotion} onChange={updateEmotion}/>`,
     `</Form.Group>`,
@@ -168,7 +168,7 @@ export const topic2CodeAnswers: CodingAnswer[]  = [
         {textId: "3", text: "Since the code incorrectly binds the checked state variable to the checked attribute, the checkbox value will not update and will stay as the initial value of unchecked."},
         {textId: "4", text: "Since the code correctly binds the checked state variable to the checked attribute, the checkbox value will update and display as checked."},
     ], correctId: "1"},
-    {id: "2.2.14", type: "ordering", correctOrder: "4,2,7,6,3,1,5", options: [
+    {id: "2.2.14", type: "ordering", correctOrder: ["4,2,7,6,3,1,5"], options: [
         `<Form.Check
           type="checkbox"
           id="has-watched-check"
@@ -347,7 +347,7 @@ export const topic4CodeAnswers: CodingAnswer[]  = [
         {textId: "2", text: "dropdown"},
         {textId: "3", text: "textbox"},
     ], correctId: "2"},
-    {id: "2.4.19", type: "ordering", correctOrder: "1,7,4,12,11,10,8,5,6", options: [
+    {id: "2.4.19", type: "ordering", correctOrder: ["1,7,4,12,11,10,8,5,6"], options: [
         `const [emotion, setEmotion] = useState<string>("happy");`,
         `<option value="sad">Sad</option>`,
         `setEmotion(event.target.checked);}`,
@@ -361,7 +361,7 @@ export const topic4CodeAnswers: CodingAnswer[]  = [
         `<Form.Group controlId = 'formEmotion'>`,
         `return <div>`,
     ]}, 
-    {id: "2.4.20", type: "ordering", correctOrder: "2, 7,3,11,10,9,5,6", options: [
+    {id: "2.4.20", type: "ordering", correctOrder: ["2,7,3,11,10,9,5,6"], options: [
         `const [emotion, setEmotion] = useState<string>("happy");`,
         `const [emotion, setEmotion] = useState<boolean>(true);`,
         `setEmotion(event.target.checked);}`,

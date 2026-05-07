@@ -24,7 +24,7 @@ export interface CodingAnswerBase {
 }
 
 export interface FillBlankAnswer extends CodingAnswerBase {
-    correctAnswers: string | string[];
+    correctAnswers: string[];
 }
 
 export interface CodingMCAnswer extends CodingAnswerBase {
@@ -33,7 +33,7 @@ export interface CodingMCAnswer extends CodingAnswerBase {
 }
 
 export interface OrderingAnswer extends CodingAnswerBase {
-    correctOrder: string | string[];
+    correctOrder: string[];
     options: string[]; 
 }
 

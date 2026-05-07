@@ -39,9 +39,12 @@ export function Topic3Quiz(): JSX.Element {
                             <input type="radio" id={option.textId} name="answer" value={option.textId} />
                             <label htmlFor={option.textId}>{option.text}</label>
                         </div>
-                    ))}
+                        
+                    ))&& 
+                    <button className="submit-button">Submit</button>}
                     {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
                 </div>
+                
             </div>
         </div>
     )
