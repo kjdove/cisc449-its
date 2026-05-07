@@ -507,7 +507,7 @@ export const topic2CodeAnswers: CodingAnswer[]  = [
         onChange={() => toggleOption('optionB')}
         />`}
     ], correctId: "1"},
-    {id: "3.2.19", type: "ordering",correctOrder: ["5,1,7,3,6,4,2", ""], options: [`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`,
+    {id: "3.2.19", type: "ordering",correctOrder: ["5,1,7,3,6,4,2"], options: [`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`,
         `</div>`, `}`, `<Form.Check type="swtich" id="happy-check" label="Happy?" checked={isHappy} onChange={updateHappiness} />`, 
         `const [isHappy, setIsHappy] = useState<boolean>(true);`, `return <div>`, `setIsHappy(event.target.checked)`, ]
     },

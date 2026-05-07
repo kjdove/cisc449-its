@@ -135,8 +135,8 @@ export const topic2CodeAnswers: CodingAnswer[]  = [
         {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
         {textId: "4", text: "All of the above."},
     ], correctId: "2"},
-    {id: "1.2.12", type: "fib", correctAnswers: "defaultValue"},
-    {id: "1.2.13", type: "fib", correctAnswers: "readOnly"},
+    {id: "1.2.12", type: "fib", correctAnswers: ["defaultValue"]},
+    {id: "1.2.13", type: "fib", correctAnswers: ["readOnly"]},
 ]
 
 export const topic3MCQAnswers: mcAnswer[] = [
