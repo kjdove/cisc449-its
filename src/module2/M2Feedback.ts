@@ -60,6 +60,60 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
 export const topic1FeedbackCode = []
 
 export const topic2FeedbackMCQ: mcFeedback[] = [
+    {id: "2.2.1", options: [
+        {textId: "1", text: "Dropdwons are used to select one option from a long list of mutually exclusive choices."},
+        {textId: "2", text: "Checkboxes are designed for binary choices (on/off, true/false, yes/no)."},
+        {textId: "3", text: "Textboxes are used for user-inputted text, not binary choices"},
+        {textId: "4", text: "Lists are typically used for selecting one or more items from a larger set, not a simple true/false state."}
+    ]},
+    {id: "2.2.2", options: [
+        {textId: "1", text: "<Form.Control> component is used for standard text inputs, textareas, and file selects."},
+        {textId: "2", text: "<Form.Check> component is the specialized component used to create checkboxes, radio buttons, and switches."},
+        {textId: "3", text: "<Form.Select> component is used to create dropdown select menus."},
+        {textId: "4", text: "<Form.Group> is a wrapper component used to hold multiple form elements together, typically providing spacing between labels, inputs, and feedback messages"}
+    ]},
+    {id: "2.2.3", options: [
+        {textId: "1", text: "The value attribute defines the data sent to the server when the box is checked."},
+        {textId: "2", text: "The checked attribute determines if a checkbox is pre-selected when the page loads."},
+        {textId: "3", text: "The type attribute is used within an <Form.Check> tag to define the input control type, and checkbox is the specific value that creates a toggleable box."},
+        {textId: "4", text: "While 'check' sounds similar, it is not the correct HTML specification required to create a checkbox"}
+    ]},
+    {id: "2.2.4", options: [
+        {textId: "1", text: "The checked boolean attribute (or property) is used to specify whether a checkbox is checked or unchecked. Unlike the value attribute, which defines the data sent to the server, checked represents the current visual and functional state (true/false) of the checkbox."},
+        {textId: "2", text: "The value attribute defines what data is sent to the server if the box is checked, but it does not represent whether the box is currently toggled on or off."},
+        {textId: "3", text: "The type attribute simply defines the input as a checkbox, it does not indicate its state."},
+        {textId: "4", text: " (Option 4): Incorrect. The placeholder attribute is not used for checkboxes; it is used for text-based input fields to show a hint."}
+    ]},
+    {id: "2.2.5", options: [
+        {textId: "1", text: "classname is used for CSS styling and selecting groups of elements. It does not provide any semantic meaning or accessible name to screen readers."},
+        {textId: "2", text: "These are data-handling attributes. name identifies the data when a form is submitted to a server, and value is the actual data entered or predefined. They do not function as the primary descriptive label for assistive technology."},
+        {textId: "3", text: "When a screen reader encounters the input, it uses this link to read the label text aloud, providing necessary context to the user."},
+        {textId: "4", text: "The name attribute is for server-side processing and does not establish the required accessibility link."}
+    ]},
+    {id: "2.2.6", options: [
+        {textId: "1", text: "The id attribute is used to give a unique identifier to an HTML element (used to link the <label> to the <input>), not to provide the visible text for the user to read next to the checkbox."},
+        {textId: "2", text: "The name attribute defines the name of the checkbox data submitted to the server; it is not visible to the user."},
+        {textId: "3", text: " The value attribute defines the data value associated with the checkbox when it is submitted."},
+        {textId: "4", text: "The <label> element is designed to define a caption for an <input> element. It is used to label the checkbox, providing both descriptive text for the user and improving accessibility for screen readers."}
+    ]},
+    {id: "2.2.7", options: [
+        {textId: "1", text: "To link a text label to a checkbox (or any input), the input must have a unique id attribute."},
+        {textId: "2", text: "The value attribute is used to define what data is sent to the server when the form is submitted."},
+        {textId: "3", text: "The type attribute specifies the type of input control,."},
+        {textId: "4", text: " The placeholder attribute provides a hint within text fields and is generally not used for checkbox inputs"}
+    ]},
+    {id: "2.2.8", options: [
+        {textId: "1", text: "useState is the appropriate hook for managing state that changes over time and affects the UI, such as a checkbox's checked/unchecked status (boolean). It enables component re-rendering to update the UI when the checkbox is clicked"},
+        {textId: "2", text: "useEffect is used for handling side effects (like API calls or subscriptions) after a render, not for storing component state."},
+        {textId: "3", text: "While useRef persists data between renders, it does not trigger a re-render when its value changes, making it unsuitable for controlling interactive inputs like checkboxes."},
+        {textId: "4", text: "useContext is used for consuming state from React Context for deeply nested components, not for managing local input state"}
+    ]},
+    {id: "2.2.9", options: [
+        {textId: "1", text: "the checked property of a checkbox input element returns a boolean value (true or false) indicating its current checked state."},
+        {textId: "2", text: "event.target.value returns the value attribute of the checkbox, not whether it is currently checked or unchecked."},
+        {textId: "3", text: "event.target.type returns the string 'checkbox', which tells you what kind of input it is, not its current state."},
+        {textId: "4", text: "event.target.name returns the value of the name attribute of the HTML element."}
+    ]},
 ]
 
 export const topic2FeedbackCode = []
