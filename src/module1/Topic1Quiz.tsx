@@ -15,7 +15,6 @@ export function Topic1Quiz(): JSX.Element {
     const currentQuestion = allQuestions[currentQInd];
 
     const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
-    // console.log("Current Feedback: ", currentFeedback); 
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
