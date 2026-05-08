@@ -51,6 +51,26 @@
     /* width: 100%; */
     max-width: 500px;
 }
+/* .answer-option {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+} */
+
+.correct-option {
+    border-color: green;
+    background-color: rgba(0, 128, 0, 0.08);
+}
+
+.incorrect-option {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.08);
+}
+
+.feedback {
+    margin-top: 8px;
+}
 
 .code-options-container {
     display: grid;

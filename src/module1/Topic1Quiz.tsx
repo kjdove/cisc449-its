@@ -4,7 +4,7 @@ import { topic1MCQ, topic1Code } from "./M1Questions";
 import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
 import { T1Code } from "./T1Code";
 import { useState } from "react";
-// import {topic1FeedbackMCQ} from "./M1Feedback";
+import {topic1FeedbackMCQ} from "./M1Feedback";
 
 import './TopicPages.css';
 
@@ -14,8 +14,10 @@ export function Topic1Quiz(): JSX.Element {
 
     const currentQuestion = allQuestions[currentQInd];
 
-    // const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
     // console.log("Current Feedback: ", currentFeedback); 
+    const [hasSubmit, setHasSubmit] = useState<boolean>(false);
+    const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
     const [currentAInd, setCurrentAInd] = useState<number>(0);
     // const allAnswers = [...topic1MCQAnswers, topic1CodeAnswers];
@@ -23,6 +25,7 @@ export function Topic1Quiz(): JSX.Element {
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
         setCurrentAInd(index);
+        setHasSubmit(false);
     }
     const [studentAnswers, setSA] = useState<Record<string, string>>({});
     
@@ -41,18 +44,22 @@ export function Topic1Quiz(): JSX.Element {
             correctAnswer = topic1MCQAnswers[currentAInd].correctId;
         }
 
-        const isCorrect = studentAnswer === correctAnswer;
+        const correct = studentAnswer === correctAnswer;
+        setIsCorrect(correct);
+        setHasSubmit(true);
         
         const savedData = JSON.parse(localStorage.getItem("module1topic1") || "{}");
         savedData[currentQuestion.id] = {
             studentAnswer,
-            isCorrect
+            isCorrect: correct,
+            hasSubmit: true
         };
 
         localStorage.setItem(
             "module1topic1",
             JSON.stringify(savedData)
         );
+
         
     }//end to handleSubmit
 
@@ -69,12 +76,12 @@ export function Topic1Quiz(): JSX.Element {
                         Question {index + 1}.
                     </div>
             ))}
-           </div>
-           <div className="topic-content">
+            </div>
+            <div className="topic-content">
                 <div className="question">
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
-                <div className="answer">
+                {/* <div className="answer">
                     {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => (
                         <div key={option.textId} className="answer-option">
                             <input
@@ -91,10 +98,64 @@ export function Topic1Quiz(): JSX.Element {
                         </div>
                     ))}
                     {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} />}
+                </div> */}
+                <div className="answer">
+                    {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => {
+                        const optionFeedback = currentFeedback?.options.find(
+                            (f) => f.textId === option.textId
+                        );
+
+                        const selectedAnswer = studentAnswers[currentQuestion.id];
+                        const correctAnswer = topic1MCQAnswers[currentAInd].correctId;
+
+                        const shouldShowFeedback = hasSubmit && (isCorrect ||  selectedAnswer === option.textId );
+                        let optionClass: string = "answer-option";
+
+                        if (hasSubmit) {
+                            if (isCorrect && option.textId === correctAnswer) {
+                                optionClass += " correct-option";
+                            }
+                        
+                            if (isCorrect && option.textId !== correctAnswer) {
+                                optionClass += " incorrect-option";
+                            }
+                            if (!isCorrect && selectedAnswer === option.textId && option.textId !== correctAnswer) {
+                                optionClass += " incorrect-option";
+                            }
+                        }
+                        return (
+                            <div key={option.textId} className={optionClass}>
+                                <input
+                                    type="radio"
+                                    id={option.textId}
+                                    name={currentQuestion.id}
+                                    value={option.textId}
+                                    checked={selectedAnswer === option.textId}
+                                    onChange={(e) =>
+                                        handleAnswerChange(currentQuestion.id, e.target.value)
+                                    }
+                                    disabled={hasSubmit}
+                                />
+
+                                <label htmlFor={option.textId}>
+                                    {option.text}
+                                </label>
+
+                                {shouldShowFeedback && (
+                                    <div className="feedback">
+                                        {optionFeedback?.text}
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
+
+                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} />}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
-           </div>
-            
+            {/*end of topic-content*/}
+            </div>
+        {/*end of topic-container*/}
         </div>
     )
 }
