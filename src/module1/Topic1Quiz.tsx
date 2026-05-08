@@ -4,7 +4,8 @@ import { topic1MCQ, topic1Code } from "./M1Questions";
 import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
 import { T1Code } from "./T1Code";
 import { useState } from "react";
-// import { gradeMCQ, gradeFIB, gradeOrdering, saveAnswer } from "../Grading";
+// import {topic1FeedbackMCQ} from "./M1Feedback";
+
 import './TopicPages.css';
 
 export function Topic1Quiz(): JSX.Element {
@@ -12,6 +13,9 @@ export function Topic1Quiz(): JSX.Element {
     const [currentQInd, setCurrentQInd] = useState<number>(0);
 
     const currentQuestion = allQuestions[currentQInd];
+
+    // const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    // console.log("Current Feedback: ", currentFeedback); 
 
     const [currentAInd, setCurrentAInd] = useState<number>(0);
     // const allAnswers = [...topic1MCQAnswers, topic1CodeAnswers];

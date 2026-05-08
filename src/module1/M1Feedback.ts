@@ -55,3 +55,68 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
         {textId: "4", text: "While Form.Group itself does this, the purpose of the className attribute is not specifically the structural grouping."}
     ]}
 ]
+
+export const topic1FeedbackCode = []
+
+export const topic2FeedbackMCQ: mcFeedback[] = [
+    {id: "1.2.1", options: [
+        {textId: "1", text: "These are the elements themselves (e.g., <input>, <button>, <select>), not the mechanism controlling their behavior."},
+        {textId: "2", text: "Attributes like type, value, name, disabled, readOnly, and required define how an input behave and what data it accepts."},
+        {textId: "3", text: "vent handlers (e.g., onChange, onSubmit) respond to actions after they happen, rather than controlling the intrinsic behavior or configuration of the component."},
+        {textId: "4", text: "State variables (especially in React) are used to manage the value of a controlled component."}
+    ]},
+    {id: "1.2.2", options: [
+        {textId: "1", text: "This acts as a wrapper for the entire form element (label + input + help text). Its primary role is managing layout and connecting labels to inputs via controlId."},
+        {textId: "2", text: "This component represents the <label> tag for a form control."},
+        {textId: "3", text: "This component renders the actual HTML input fields (like <input> or <textarea>). Attributes such as type, placeholder, size, isValid, and isInvalid are specifically used to control the appearance and behavior of this input component."},
+        {textId: "4", text: "This component is used to display block-level or inline help text, providing context for the input field"}
+    ]},
+    {id: "1.2.3", options: [
+        {textId: "1", text: "Is this the only valid syntax?"},
+        {textId: "2", text: "Is this the only valid syntax?"},
+        {textId: "3", text: "Is this the only valid syntax?"},
+        {textId: "4", text: "Correct. All three snippets are standard, valid, and functional ways to apply attributes to Form.Control components in React-Bootstrap"}
+    ]},
+    {id: "1.2.4", options: [
+        {textId: "1", text: "The readonly attribute prevents users from changing the value of an input field, but still allows them to click, focus, highlight, and copy the text."},
+        {textId: "2", text: "While a disabled input cannot be edited, it also cannot be clicked, focused, or copied by the user."},
+        {textId: "3", text: "The placeholder attribute only provides a short hint (a temporary hint) that describes the expected value of an input field before the user enters a value. It does not restrict editing."},
+        {textId: "4", text: " Incorrect. The required attribute specifies that an input field must be filled out before submitting the form. It does not prevent editing; rather, it forces it."},
+    ]},
+    {id: "1.2.5", options: [
+        {textId: "1", text: "A readOnly field cannot be modified, but the user can still click, select, and copy text from it, and the value is still submitted."},
+        {textId: "2", text: "This attribute renders the input field unusable, un-clickable, and excludes it from form submission."},
+        {textId: "3", text: "The placeholder is a short hint displayed inside the field before the user enters a value; it does not prevent interaction."},
+        {textId: "4", text: " Incorrect. The required attribute specifies that the user must fill in a value before submitting; it does not prevent interaction."}
+    ]},
+    {id: "1.2.6", options: [
+        {textId: "1", text: "The readonly attribute makes a field non-editable, but the value remains visible and is submitted with the form. It does not disappear when typing."},
+        {textId: "2", text: "The disabled attribute makes a field un-clickable, grayed out, and prevents its value from being submitted with the form."},
+        {textId: "3", text: "The placeholder is a short hint displayed inside the field before the user enters a value; it does not prevent interaction."},
+        {textId: "4", text: "The required attribute ensures a field is filled out before form submission, but it does not control placeholder text."}
+    ]},
+    {id: "1.2.7", options: [
+        {textId: "1", text: "A readOnly field cannot be modified, but the user can still click, select, and copy text from it, and the value is still submitted."},
+        {textId: "2", text: "disabled makes a field unusable and prevents its value from being sent with the form."},
+        {textId: "3", text: "placeholder only provides a short hint or example inside the field before the user types in it."},
+        {textId: "4", text: "The required boolean attribute forces the user to fill out a field before submitting the form."}
+    ]},
+    {id: "1.2.8", options: [
+        {textId: "1", text: "readOnly makes an input non-editable. It restricts user input but does not bind the input to a dynamic state variable for bi-directional data flow."},
+        {textId: "2", text: "defaultValue is used for uncontrolled components. It sets the initial value but does not bind the input's current value to a state variable"},
+        {textId: "3", text: "placeholder provides a hint or example text inside the input field when it is empty. It is for visual guidance, not state binding"},
+        {textId: "4", text: "value explicitly sets the current value of the input to the state variable."}
+    ]},
+    {id: "1.2.9", options: [
+        {textId: "1", text: "readOnly makes an input non-editable. It restricts user input but does not bind the input to a dynamic state variable for bi-directional data flow."},
+        {textId: "2", text: "disabled makes a field unusable and prevents its value from being sent with the form."},
+        {textId: "3", text: "Setting value makes the input a controlled component, where React controls the value."},
+        {textId: "4", text: "Sets the initial value in the DOM. Subsequent user input updates the DOM directly without triggering re-renders."}
+    ]},
+]
+
+export const topic2CodeFeedback = []
+
+export const topic3FeedbackMCQ: mcFeedback[] = []
+
+export const topic3CodeFeedback = []
