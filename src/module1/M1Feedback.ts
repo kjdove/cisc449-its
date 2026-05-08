@@ -117,6 +117,37 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
 
 export const topic2CodeFeedback = []
 
-export const topic3FeedbackMCQ: mcFeedback[] = []
+export const topic3FeedbackMCQ: mcFeedback[] = [
+    {id: "1.3.1", options: [
+        {textId: "1", text: "defaultValue only sets the initial value of an uncontrolled component upon rendering."},
+        {textId: "2", text: "In form components (such as inputs, textareas, or selects), the value attribute explicitly defines the current data held by that component, which is used for state management in code, especially in frameworks like React."},
+        {textId: "3", text: "The placeholder is only a hint shown to the user before a value is entered."},
+        {textId: "4", text: "The name attribute is used to identify the field when form data is submitted to a server (as a key)."},
+    ]},
+    {id: "1.3.2", options: [
+        {textId: "1", text: "useState is used to hold the input value in the component's state, allowing React to control the input's value and update it on change."},
+        {textId: "2", text: "useEffect is for handling side effects, not for storing form control state."},
+        {textId: "3", text: "useRef is typically used for uncontrolled components to access DOM elements directly, not for binding a value to a state variable."},
+        {textId: "4", text: "useContext is used to consume context, not to manage local input state."},
+    ]},
+    {id: "1.3.3", options: [
+        {textId: "1", text: "In controlled components, the input value is driven by React state (value={value}). In uncontrolled components, the DOM handles the input data, and you access it using a ref."},
+        {textId: "2", text: "Uncontrolled components can sometimes be faster because they don't cause a re-render on every keystroke. Controlled components are preferred for validation and complex logic, not speed."},
+        {textId: "3", text: "Both approaches have the same security level; there is no security advantage to either."},
+        {textId: "4", text: "There is a fundamental difference in where the data is stored and how it is accessed."},
+    ]},
+    {id: "1.3.4", options: [
+        {textId: "1", text: "This is the proper JSX syntax for dynamic data binding. The curly braces {} tell React to evaluate the expression inside as JavaScript, assigning the current value of the name state variable to the input's value attribute."},
+        {textId: "2", text:  `Using double quotes passes the literal string "name" rather than the variable's value. This would make the input field permanently display the word "name" instead of your actual state data.`},
+        {textId: "3", text: "The name attribute identifies the form field during submission, it does not control the displayed text in the box."},
+        {textId: "4", text: `name="value": Like the previous option, this incorrectly targets the name attribute and sets it to the literal string "value", which does not facilitate state binding.`},
+    ]},
+    {id: "1.3.5", options: [
+        {textId: "1", text: "e.target refers to the DOM element (the input field) that triggered the event, and .value retrieves the current text typed into that field."},
+        {textId: "2", text: "the value property exists on the target element, not directly on the event object e."},
+        {textId: "3", text: "e.target is the entire HTML element (e.g., <input />), not the specific string of text you want to store in your state."},
+        {textId: "4", text: "e is the full event object, which contains metadata like timestamps and event types, rather than the user's input."},
+    ]},
+]
 
 export const topic3CodeFeedback = []
