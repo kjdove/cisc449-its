@@ -119,6 +119,42 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
 export const topic2FeedbackCode = []
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
+    {id: "2.3.1", options: [
+        {textId: "1", text: "A checkbox is generally used for binary (yes/no) choices or selecting multiple options simultaneously."},
+        {textId: "2", text: "A dropdown (or select menu/combobox) is specifically designed to collapse a list of options into a single line, allowing the user to select one value from a predefined set of strings."},
+        {textId: "3", text: "A textbox (or text input) is designed for users to type freeform text, rather than selecting from a predefined list of options."},
+        {textId: "4", text: " Incorrect. A form is a container for multiple input elements (including dropdowns and textboxes), not a single interactive component used for selecting from a list."}
+    ]},
+    {id: "2.3.2", options: [
+        {textId: "1", text: "While <Form.Control> can be configured to act as a select using the as='select' prop, it is not the dedicated component for a dropdown."},
+        {textId: "2", text: "<Form.Check> is used for checkboxes and radio buttons, not dropdown menus."},
+        {textId: "3", text: "In React Bootstrap, <Form.Select> is the dedicated component used to create a dropdown select menu, which renders as a <select> tag in the HTML."},
+        {textId: "4", text: "<Form.Group> is a wrapper component used for structuring form fields and managing layout/spacing, not for creating input controls themselves."}
+    ]},
+    {id: "2.3.3", options: [
+        {textId: "1", text: "The value prop tells the dropdown which option is currently active based on state, and the onChange handler updates that state whenever the user selects a new option."},
+        {textId: "2", text: "Placeholder is typically for display before a selection is made and does not bind to the app's active state."},
+        {textId: "3", text: "Type is generally not used for select components."},
+        {textId: "4", text: "Select is the component name, not a binding attribute."}
+    ]},
+    {id: "2.3.4", options: [
+        {textId: "1", text: "Value is an attribute, not an HTML tag."},
+        {textId: "2", text: "Each <option> tag accepts a value attribute, which represents the data sent to the server."},
+        {textId: "3", text: "The <select> tag is the container (or parent) tag, not the tag used to define individual items with their own values."},
+        {textId: "4", text: " here is no standard <dropdown> tag in HTML."}
+    ]},
+    {id: "2.3.5", options: [
+        {textId: "1", text: "useContext is used for sharing state globally across components, not typically for managing the internal state of a single dropdown."},
+        {textId: "2", text: "useRef is used to persist values between renders without causing a re-render."},
+        {textId: "3", text: "useState is designed to manage local state within a component, such as holding the currently selected value or controlling whether the dropdown is open or closed. Using useState ensures the component re-renders when the selection changes."},
+        {textId: "4", text: "useEffect is used to perform side effects (like API calls) when the component mounts or updates, but not for storing the state data itself."}
+    ]},
+    {id: "2.3.6", options: [
+        {textId: "1", text: "When an onChange event fires on a <select> element, event.target refers to the <select> element itself. The .value property of the select element automatically returns the value attribute of the currently selected <option>."},
+        {textId: "2", text: "selected is a property of an <option> element (a boolean indicating if it is chosen), not the <select> element. event.target.selected on a select box will return undefined."},
+        {textId: "3", text: "There is no select property on the event target that returns the value."},
+        {textId: "4", text: " There is no option property on the event target that returns the value."}
+    ]},
 ]
 
 export const topic3FeedbackCode = []
