@@ -30,7 +30,7 @@ export function Topic2Quiz(): JSX.Element {
         const studentAnswer = studentAnswers[currentQuestion.id]|| "";
 
         let correctAnswer;
-        if(currentAInd < 8){
+        if(currentAInd < 9){
             correctAnswer = topic2MCQAnswers[currentAInd].correctId;
         }
 
