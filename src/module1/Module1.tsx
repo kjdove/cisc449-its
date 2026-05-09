@@ -18,6 +18,10 @@ export function Module1(): JSX.Element {
         navigate("/module1");
     };
 
+    // const t1Data = JSON.parse(localStorage.getItem("module1topic1") || "{}");
+    // const t2Data = JSON.parse(localStorage.getItem("module1topic2") || "{}");
+    // const t3Data = JSON.parse(localStorage.getItem("module1topic3") || "{}");
+
     return (
         <div className="m1-container">
             {!topicId && (

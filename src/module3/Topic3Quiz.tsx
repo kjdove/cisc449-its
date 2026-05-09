@@ -4,6 +4,7 @@ import {useState} from "react";
 import { T3Code } from "./T3Code";
 import { topic3MCQAnswers } from "./M3Answers";
 import { topic3MCQ, topic3Code } from "./M3Questions";
+import {topic3FeedbackMCQ} from "./M3Feedback";
 
 export function Topic3Quiz(): JSX.Element{
     const allQuestions = [...topic3MCQ, ...topic3Code];
@@ -11,9 +12,14 @@ export function Topic3Quiz(): JSX.Element{
     const currentQuestion = allQuestions[currentQInd];
     const [currentAInd, setCurrentAInd] = useState<number>(0);
 
+    const currentFeedback = topic3FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const [hasSubmit, setHasSubmit] = useState<boolean>(false);
+    const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
+
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
         setCurrentAInd(index);
+        setHasSubmit(false);
     }
 
     const [studentAnswers, setSA] = useState<Record<string, string>>({});
@@ -33,12 +39,15 @@ export function Topic3Quiz(): JSX.Element{
             correctAnswer = topic3MCQAnswers[currentAInd].correctId;
         }
 
-        const isCorrect = studentAnswer === correctAnswer;
-        
+        const correct = studentAnswer === correctAnswer;
+        setIsCorrect(correct);
+        setHasSubmit(true);
+
         const savedData = JSON.parse(localStorage.getItem("module3topic3") || "{}");
         savedData[currentQuestion.id] = {
             studentAnswer,
-            isCorrect
+            isCorrect: correct,
+            hasSubmit: true
         };
 
         localStorage.setItem(
@@ -65,21 +74,56 @@ export function Topic3Quiz(): JSX.Element{
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
                 <div className="answer">
-                    {currentAInd < 5 && topic3MCQAnswers[currentAInd].options.map((option) => (
-                        <div key={option.textId} className="answer-option">
-                            <input
-                                type="radio"
-                                id={option.textId}
-                                name={currentQuestion.id}
-                                value={option.textId}
-                                checked={studentAnswers[currentQuestion.id] === option.textId}
-                                onChange={(e) =>
-                                    handleAnswerChange(currentQuestion.id, e.target.value)
-                                }
-                            />
-                            <label htmlFor={option.textId}>{option.text}</label>
-                        </div>
-                    ))}
+                    {currentAInd < 5 && topic3MCQAnswers[currentAInd].options.map((option) => {
+                        const optionFeedback = currentFeedback?.options.find(
+                            (f) => f.textId === option.textId
+                        );
+
+                        const selectedAnswer = studentAnswers[currentQuestion.id];
+                        const correctAnswer = topic3MCQAnswers[currentAInd].correctId;
+
+                        const shouldShowFeedback = hasSubmit && (isCorrect ||  selectedAnswer === option.textId );
+                        let optionClass: string = "answer-option";
+
+                        if (hasSubmit) {
+                            if (isCorrect && option.textId === correctAnswer) {
+                                optionClass += " correct-option";
+                            }
+                        
+                            if (isCorrect && option.textId !== correctAnswer) {
+                                optionClass += " incorrect-option";
+                            }
+                            if (!isCorrect && selectedAnswer === option.textId && option.textId !== correctAnswer) {
+                                optionClass += " incorrect-option";
+                            }
+                        }
+                        return (
+                            <div key={option.textId} className={optionClass}>
+                                <input
+                                    type="radio"
+                                    id={option.textId}
+                                    name={currentQuestion.id}
+                                    value={option.textId}
+                                    checked={selectedAnswer === option.textId}
+                                    onChange={(e) =>
+                                        handleAnswerChange(currentQuestion.id, e.target.value)
+                                    }
+                                    disabled={hasSubmit}
+                                />
+
+                                <label htmlFor={option.textId}>
+                                    {option.text}
+                                </label>
+
+                                {shouldShowFeedback && (
+                                    <div className="feedback">
+                                        {optionFeedback?.text}
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
+
                     {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>

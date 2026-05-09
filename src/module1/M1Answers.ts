@@ -46,7 +46,7 @@ export const topic1MCQAnswers: mcAnswer[] = [
         {textId: "1", text: "It is a container for grouping related form controls together"},
         {textId: "2", text: "It is small text that provides additional information or instructions about the form control"}, 
         {textId: "3", text: "It is an interactive element that allows users to input data"},
-        {textId: "4", text: "It is a styling class that can be applied to the Form.Group component to add margin-bottom spacing"}],
+        {textId: "4", text: "It is a styling class that can be applied to the Form.Group component"}],
     correctId: "2"},
     {id: "1.1.9", options: [
         {textId: "1", text: "It sets the id attribute for the inner Form.Control tag and the htmlFor attribute for the Form.Label tag."},

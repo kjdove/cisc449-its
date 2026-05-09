@@ -19,6 +19,11 @@ export interface mcAnswer {
     correctId: string;
 }
 
+export interface mcFeedback {
+    id: string;
+    options: Option[];
+}
+
 export interface CodingAnswerBase {
     id: string;
 }
