@@ -128,11 +128,11 @@ export const topic4MCQ: MCQ[] = [
     {id: "2.4.3", question: "Which component allows the user to select one option from a list of options?"},
     //tags
         //textbox
-    {id: "2.4.4", question: "Which component uses Form.Control?"},
+    {id: "2.4.4", question: "Which component uses <Form.Control>?"},
         //checkbox
-    {id: "2.4.5", question: "Which component uses Form.Check?"},
+    {id: "2.4.5", question: "Which component uses <Form.Check>?"},
         //dropdown
-    {id: "2.4.6", question: "Which component uses Form.Select?"},
+    {id: "2.4.6", question: "Which component uses <Form.Select>?"},
 
     //state type
         //textbox - string

@@ -160,6 +160,82 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
 export const topic3FeedbackCode = []
 
 export const topic4FeedbackMCQ: mcFeedback[] = [
+    {id: "2.4.1", options: [
+        {textId: "1", text: "Checkboxes are used to select one or more predefined options from a set. They are binary (checked/unchecked) and do not allow for custom text input."},
+        {textId: "2", text: "Dropdowns present a list of choices from which the user can select a single item. It is not used for entering new, custom text, unless it is a specialized combobox."},
+        {textId: "3", text: "Textboxes the only component listed that allows for free-form user entry."},
+    ]},
+    {id: "2.4.2", options: [
+        {textId: "1", text: "A checkbox is the standard UI element for binary choices (on/off, true/false, checked/unchecked). It is inherently designed to toggle a single state."},
+        {textId: "2", text: "While a dropdown can be used to select between true and false, it is primarily designed to select one item from a list of three or more options."},
+        {textId: "3", text: "A textbox is used for alphanumeric input and requires the user to type a value, which is inefficient for a binary choice."},
+    ]},
+    {id: "2.4.3", options: [
+        {textId: "1", text: "Checkboxes are used for binary choices (yes/no) or to select multiple items from a list, not just one."},
+        {textId: "2", text: "A dropdown menu (or select list) is designed to present a list of options from which the user can choose only one value by clicking or hovering. It is ideal for selecting a single item, especially when space is limited."},
+        {textId: "3", text: "A text box (or input box) is used for entering free-form text, not for selecting from a pre-defined list."},
+    ]},
+    {id: "2.4.4", options: [
+        {textId: "1", text: "Checkboxes are generally implemented using <Form.Check> or <Form.Check type='checkbox'> in React-Bootstrap, not <Form.Control>."},
+        {textId: "2", text: "While <Form.Control as='select'> can be used for a native browser dropdown, standard React-Bootstrap dropdowns generally use <Form.Select> components"},
+        {textId: "3", text: "In React-Bootstrap, <Form.Control> is used specifically for textual form controls. It provides consistent styling and functionality for text input."},
+    ]},
+    {id: "2.4.5", options: [
+        {textId: "1", text: "The Form.Check component in React-Bootstrap is specifically designed to create and style checkbox and radio inputs."},
+        {textId: "2", text: "A dropdown (or select menu) in React-Bootstrap is created using the Form.Select component, not Form.Check."},
+        {textId: "3", text: " A textbox is rendered using Form.Control with type='text' or as='textarea', not Form.Check"},
+    ]},
+    {id: "2.4.6", options: [
+        {textId: "1", text: "Checkboxes use <Form.Check type='checkbox'/>."},
+        {textId: "2", text: "Form.Select in React-Bootstrap is used to create customized dropdown menus."},
+        {textId: "3", text: "Textboxes use <Form.Control type='text'/> or <Form.Control as='textarea'/>."},
+    ]},
+    {id: "2.4.7", options: [
+        {textId: "1", text: "a textbox control stores user input within a text or value property, which is handled as a string of characters (sequence of characters)."},
+        {textId: "2", text: "A boolean only represents binary truth values (true/false)."},
+        {textId: "3", text: " While specialized input components (like number pickers) may return a numeric type, a standard text box returns raw characters, not a number data type."},
+    ]},
+    {id: "2.4.8", options: [
+        {textId: "1", text: "While a checkbox value can be represented as a string, it is not the standard or most efficient type. Using strings increases memory usage and requires extra conversion logic."},
+        {textId: "2", text: "Checkboxes are designed to represent binary choices—on or off, yes or no. A Boolean data type perfectly maps to this."},
+        {textId: "3", text: "Although sometimes a checkbox is represented as 1 or 0 (often in database storage), but there is a more semantically accurate and standard for UI state management"},
+    ]},
+    {id: "2.4.9", options: [
+        {textId: "1", text: "The state of a dropdown generally holds the value attribute of the currently selected option, which is a string. Even if the value is numerical, it is often stored as a string or a string-like token in many frameworks."},
+        {textId: "2", text: "A boolean only represents true/false (checked/unchecked) states, which is not suitable for a dropdown with multiple options."},
+        {textId: "3", text: "While the selected index can be a number, it is not the most common approach."},
+    ]},
+    {id: "2.4.10", options: [
+        {textId: "1", text: "Checkboxes are used for selection from a limited set of options."},
+        {textId: "2", text: " Dropdowns are used to select one value from a predefined list and are not suitable for unique inputs like personal names."},
+        {textId: "3", text: "A text box is the appropriate HTML component for user-entered text, such as a name, because it allows for an open-ended, unique response."},
+    ]},
+    {id: "2.4.11", options: [
+        {textId: "1", text: "A standalone checkbox is the standard UI element for accepting Terms and Conditions."},
+        {textId: "2", text: "A dropdown is used for selecting one item from a list (e.g., state or country selection). "},
+        {textId: "3", text: "A textbox is for freeform text input, such as asking for a name or email."},
+    ]},
+    {id: "2.4.12", options: [
+        {textId: "1", text: "Checkboxes are best used for allowing multiple selections or binary choices (yes/no), not for picking one item from a list."},
+        {textId: "2", text: "A dropdown menu is the most efficient component for allowing a user to select one option from a predefined list, especially if there are many colors to choose from."},
+        {textId: "3", text: "A textbox is used for free-form text input, not for selecting a pre-defined option from a list."},
+    ]},
+    {id: "2.4.13", options: [
+        {textId: "1", text: "Checkboxes are designed for binary (yes/no) choices, not for entering free-form text like an email address."},
+        {textId: "2", text: "A dropdown menu is used to select from a predefined list of options, not to type a unique email address."},
+        {textId: "3", text: "A textbox (specifically <input type='email'> in HTML) is the standard UI component for user-entered, free-form text such as an email address. It allows users to type any valid email format and supports browser-level validation to check for the '@' symbol and domain."},
+    ]},
+    {id: "2.4.14", options: [
+        {textId: "1", text: "A checkbox is the ideal component for a binary (yes/no) choice, such as 'Subscribe to newsletter.' It allows the user to quickly toggle their preference with a single click."},
+        {textId: "2", text: "While a dropdown can display yes/no options, it requires extra clicks to open and is best reserved for selecting one option from a long list (e.g., country selection) rather than a simple, fast decision."},
+        {textId: "3", text: "A textbox is used for users to type custom text input, which is inefficient and confusing for a simple yes/no preference decision"},
+    ]},
+    {id: "2.4.15", options: [
+        {textId: "1", text: "Checkboxes are designed for multiple-choice selections (allowing users to pick all that apply). For a 'preferred' method, you only want one choice."},
+        {textId: "2", text: "A dropdown is the best choice for selecting one option from a short list (email, phone, mail) while keeping the form compact and tidy. It restricts the user to a single selection, ensuring clean data collection."},
+        {textId: "3", text: "A textbox allows free-form text, which can lead to typos and inconsistent data. A dropdown forces a standardized, predictable input."},
+    ]},
+
 ]
 
 export const topic4FeedbackCode = []
