@@ -112,6 +112,37 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
 
 export const topic2FeedbackCode = []
 
-export const topic3FeedbackMCQ: mcFeedback[] = []
+export const topic3FeedbackMCQ: mcFeedback[] = [
+    {id: "3.3.1", options: [
+        {textId: "1", text: "These are separate form elements designed for different user experiences and are not used to populate the internal list of a dropdown menu."},
+        {textId: "2", text: "These are separate form elements designed for different user experiences and are not used to populate the internal list of a dropdown menu."},
+        {textId: "3", text: "dropdowns are created using the <select> tag, which is populated by a series of <option> tags, creating a distinct list of choices. This is the standard mechanism, often dynamically loaded via databases or arrays."},
+        {textId: "4", text: "Checkboxes and radio buttons are separate form elements designed for different user experiences and are not used to populate the internal list of a dropdown menu."},
+    ]},
+    {id: "3.3.2", options: [
+        {textId: "1", text: "The value prop is used to set the current data value of the option, but it does not tell React how to uniquely identify that option in the DOM structure during re-rendering."},
+        {textId: "2", text: "onChange is an event handler used to capture user selection changes, not a property for identifying list items."},
+        {textId: "3", text: "The type attribute defines the type of input (e.g., text, checkbox), but is not specific to list rendering efficiency in React."},
+        {textId: "4", text: "In React, when mapping over a list of data to render components (like <option> in a dropdown), each item requires a unique key prop. This prop gives elements a stable identity, allowing React to efficiently update, add, or remove only the items that change rather than re-rendering the entire list."},
+    ]},
+    {id: "3.3.3", options: [
+        {textId: "1", text: ".map() is ideal for transforming an array of data into an array of JSX/HTML elements (like <option>) because it returns a new array."},
+        {textId: "2", text: "While .forEach() iterates, it returns undefined, making it inefficient for creating new markup structures."},
+        {textId: "3", text: ".filter() is used to reduce the size of an array based on a condition, not to transform every element into a new format."},
+        {textId: "4", text: ".find() returns only the first single element that matches a condition, not a list of elements."},
+    ]},
+    {id: "3.3.4", options: [
+        {textId: "1", text: "While key is crucial for React list rendering, 'name' is often an HTML attribute for form submission rather than the mapping value, making it less specific than key-value pairing."},
+        {textId: "2", text: "data arrays are mapped to dropdown options, where each unique identifier (key or id) is mapped to an internal value"},
+        {textId: "3", text: "onChange is an event handler for handling changes in selection, not an attribute defining the option's value."},
+        {textId: "4", text: "'name' is often an HTML attribute for form submission rather than the mapping value, making it less specific than key-value pairing."},
+    ]},
+    {id: "3.3.5", options: [
+        {textId: "1", text: "While onChange handles changes, key is used for React list rendering, not managing the selected option."},
+        {textId: "2", text: "value sets the selected item, but without an event handler, the dropdown becomes read-only and cannot be updated."},
+        {textId: "3", text: "value binds the selected item, and onChange updates that value in state when the user makes a selection."},
+        {textId: "4", text: "name is for form submission identification, and value sets the initial value, but this does not handle updates."},
+    ]},
+]
 
 export const topic3FeedbackCode = []
