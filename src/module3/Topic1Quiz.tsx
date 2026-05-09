@@ -20,6 +20,7 @@ export function Topic1Quiz(): JSX.Element {
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
         setCurrentAInd(index);
+        setHasSubmit(false);
     }
 
     const [studentAnswers, setSA] = useState<Record<string, string>>({});

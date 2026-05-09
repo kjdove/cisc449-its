@@ -53,7 +53,62 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
 
 export const topic1FeedbackCode = []
 
-export const topic2FeedbackMCQ: mcFeedback[] = []
+export const topic2FeedbackMCQ: mcFeedback[] = [
+    {id: "3.2.1", options: [
+        {textId: "1", text: "While switches are a valid variation, they are not the only one. Switches are created using <Form.Check type='switch'/>."},
+        {textId: "2", text: 'Radio buttons are a valid variation using <Form.Check type="radio" />.'},
+        {textId: "3", text: "Creating a list of multiple checkboxes is a standard use case for <Form.Check>."},
+        {textId: "4", text: "The <Form.Check> component is a versatile wrapper used for multiple input types, including checkboxes, radio buttons, and switches."},
+    ]},
+    {id: "3.2.2", options: [
+        {textId: "1", text: "A switch (or toggle switch) is functionally a checkbox—it represents a binary on/off or true/false state. However, visually, it is modified to resemble a physical sliding switch rather than a small, square box."},
+        {textId: "2", text: "These are used for selecting one option from a list of two or more mutually exclusive choices."},
+        {textId: "3", text: "While these are functionally similar to a single checkbox, they are designed to allow users to select multiple options from a group. The question asks about a single visual variation of a checkbox."},
+        {textId: "4", text: " A dropdown is used to select an option from a list, typically when space is limited, and does not represent a visual modification of a checkbox or a direct binary on/off toggle."},
+    ]},
+    {id: "3.2.3", options: [
+        {textId: "1", text: "There is a different component for switches, so the type attribute is not used to create a switch variation."},
+        {textId: "2", text: "While a switch is a styled checkbox, setting the type specifically to 'checkbox' will render a standard square checkbox, not a toggle switch."},
+        {textId: "3", text: "This will render a radio button, used for selecting one option from a list, not a binary on/off switch."},
+        {textId: "4", text: "In React Bootstrap, a toggle switch is created by passing type='switch' to the <Form.Check> component."},
+    ]},
+    {id: "3.2.4", options: [
+        {textId: "1", text: "Radio buttons are designed specifically for mutually exclusive options, meaning selecting one automatically deselects any previously selected option in the group."},
+        {textId: "2", text: "While switches are for binary choices (on/off), they are typically used to immediately activate or deactivate a setting, rather than selecting one option from a list."},
+        {textId: "3", text: "Checkboxes are designed to allow users to select any number of options (zero, one, or several), making them unsuitable for single-choice scenarios."},
+        {textId: "4", text: "Textboxes are designed for user-inputted text, not for selecting from a predefined list of choices."},
+    ]},
+    {id: "3.2.5", options: [
+        {textId: "1", text: "This component is typically used for text inputs, textareas, or dropdowns (<select>), not radio buttons."},
+        {textId: "2", text: '<Form.Check> is the unified component used to create both checkboxes and radio buttons. By setting the type="radio" prop, you create a radio button. '},
+        {textId: "3", text: "This is can be used to create a toggle switch (a type of checkbox) to turn an option on or off, not for selecting one option from a group."},
+        {textId: "4", text: " While intuitive, React-Bootstrap does not use a <Form.Radio> component."},
+    ]},
+    {id: "3.2.6", options: [
+        {textId: "1", text: 'In React Bootstrap, to create a group of radio buttons where only one can be selected at a time, you must set the type prop to "radio". To ensure they function as a single, cohesive set (group), all Form.Check components must share the same name attribute'},
+        {textId: "2", text: 'Using type="switch" creates a toggle, not a radio button. The id attribute is used to uniquely identify a single element (e.g., for labels), not to group them.'},
+        {textId: "3", text: 'Using type="checkbox" allows multiple selections, which is not the intended behavior of a single-choice radio group.'},
+        {textId: "4", text: " This is incorrect for both the input type and the grouping mechanism."},
+    ]},
+    {id: "3.2.7", options: [
+        {textId: "1", text: "This attribute controls whether the user can interact with the element, not whether it is currently selected."},
+        {textId: "2", text: "The checked attribute for radio buttons is a boolean attribute. It calculates whether the current state matches the radio button's value. If the expression evaluates to true, the radio button is selected; if false, it is unselected."},
+        {textId: "3", text: "The value attribute defines the text value submitted with the form, but it does not determine the selection state of the radio button."},
+        {textId: "4", text: " This is not a standard attribute used to determine the selection state of a radio button."},
+    ]},
+    {id: "3.2.8", options: [
+        {textId: "1", text: "This attribute makes the radio button unclickable but does not change its layout position"},
+        {textId: "2", text: "This attribute determines if a radio button is selected by default, not its alignment."},
+        {textId: "3", text: " This attribute sets the data value submitted with the form, not the display format"},
+        {textId: "4", text: "Adding the inline attribute to a <Form.Check> component removes the default vertical stacking and displays checkboxes or radio buttons on the same horizontal row"},
+    ]},
+    {id: "3.2.9", options: [
+        {textId: "1", text: "These are generally used for selecting a single option from a long list to save space, though some dropdowns can be configured for multiple selection, they are not the standard choice for this description."},
+        {textId: "2", text: "These are used to immediately turn a single setting on or off, similar to a physical toggle switch, rather than selecting items from a list."},
+        {textId: "3", text: " These are used for mutually exclusive choices, meaning the user can select only one option from the set. Selecting a new radio button deselects the previous one."},
+        {textId: "4", text: "Checkboxes are designed for selecting one, several, or zero options from a list because each box is independent. They allow for multi-select functionality."},
+    ]},
+]
 
 export const topic2FeedbackCode = []
 
