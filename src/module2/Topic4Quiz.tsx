@@ -1,6 +1,6 @@
 //module 2 topic 4
 import { topic4MCQ, topic4Code } from './M2Questions';
-import { topic4MCQAnswers } from './M2Answers';
+import { topic4MCQAnswers, topic4CodeAnswers } from './M2Answers';
 import { useState } from 'react';
 import { T4Code } from './T4Code';
 import {type JSX} from 'react';
@@ -24,9 +24,9 @@ export function Topic4Quiz(): JSX.Element {
         setHasSubmit(false);
     }
 
-    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
 
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -40,8 +40,22 @@ export function Topic4Quiz(): JSX.Element {
         if(currentAInd < 15){
             correctAnswer = topic4MCQAnswers[currentAInd].correctId;
         }
+        else {
+            const codeAnswerObj = topic4CodeAnswers.find(q => q.id === currentQuestion.id);
+            switch(codeAnswerObj?.type) {
+                case "fib":
+                    correctAnswer = codeAnswerObj.correctAnswers;
+                    break;
+                case "mcq":
+                    correctAnswer = codeAnswerObj.correctId;
+                    break;
+                case "ordering":
+                    correctAnswer = codeAnswerObj.correctOrder;
+                    break;
+            }
+        }
 
-        const correct = studentAnswer === correctAnswer;
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
 
@@ -126,7 +140,7 @@ export function Topic4Quiz(): JSX.Element {
                         );
                     })}
 
-                    {currentAInd >= 15 && <T4Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 15 && <T4Code  questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
             </div>
