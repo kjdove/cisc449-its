@@ -93,7 +93,7 @@
     /* width: 100%; */
 }
 
-.submit-button {
+.submit-button, .next-button, .try-again-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--primary);
