@@ -163,13 +163,16 @@ export function Topic1Quiz(): JSX.Element {
                 {!hasSubmit && (
                     <button onClick={handleSubmit}className="submit-button">Submit</button>
                 )}
-                {hasSubmit && isCorrect && (
+                {hasSubmit && isCorrect && (currentQInd + 1 < allQuestions.length) && (
                     <button onClick={() => handleQuestionChange(currentQInd+1)}className="next-button">Next Question</button>
 
                 )}
+                {hasSubmit && isCorrect && (currentQInd + 1 === allQuestions.length) && (
+                    <div className="congrats-message">Congratulations! You have completed all the questions for this topic.</div>
+                )}
                 {hasSubmit && !isCorrect && (
                     <button onClick={() => handleQuestionChange(currentQInd)}className="try-again-button">Try Again</button>
-                )}
+                )} 
             {/*end of topic-content*/}
             </div>
         {/*end of topic-container*/}
