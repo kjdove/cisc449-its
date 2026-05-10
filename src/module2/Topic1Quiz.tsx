@@ -144,8 +144,16 @@ export function Topic1Quiz(): JSX.Element {
 
                     {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
-                <button onClick={handleSubmit}className="submit-button">Submit</button>
-           </div>
+                {!hasSubmit && (
+                    <button onClick={handleSubmit}className="submit-button">Submit</button>
+                )}
+                {hasSubmit && isCorrect && (
+                    <button onClick={() => handleQuestionChange(currentQInd+1)}className="next-button">Next Question</button>
+
+                )}
+                {hasSubmit && !isCorrect && (
+                    <button onClick={() => handleQuestionChange(currentQInd)}className="try-again-button">Try Again</button>
+                )}           </div>
         </div>
     )
 
