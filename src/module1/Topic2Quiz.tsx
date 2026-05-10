@@ -1,7 +1,7 @@
 //Module 1 Topic 2
 import { useState, type JSX } from "react";
 import { topic2MCQ, topic2Code } from "./M1Questions";
-import { topic2MCQAnswers } from "./M1Answers";
+import { topic2CodeAnswers, topic2MCQAnswers } from "./M1Answers";
 import './TopicPages.css';
 import { T2Code } from "./T2Code";
 import {topic2FeedbackMCQ} from "./M1Feedback";
@@ -24,9 +24,9 @@ export function Topic2Quiz(): JSX.Element {
         setHasSubmit(false);
     }
 
-    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
     
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -40,8 +40,22 @@ export function Topic2Quiz(): JSX.Element {
         if(currentAInd < 9){
             correctAnswer = topic2MCQAnswers[currentAInd].correctId;
         }
+        else {
+            const codeAnswerObj = topic2CodeAnswers.find(q => q.id === currentQuestion.id);
+            switch(codeAnswerObj?.type) {
+                case "fib":
+                    correctAnswer = codeAnswerObj.correctAnswers;
+                    break;
+                case "mcq":
+                    correctAnswer = codeAnswerObj.correctId;
+                    break;
+                case "ordering":
+                    correctAnswer = codeAnswerObj.correctOrder;
+                    break;
+            }
+        }
 
-        const correct = studentAnswer === correctAnswer;
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
         
@@ -127,7 +141,7 @@ export function Topic2Quiz(): JSX.Element {
                         );
                     })}
 
-                    {currentAInd >= 9 && <T2Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9 && <T2Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
             </div>

@@ -1,18 +1,23 @@
 import type { JSX } from 'react';
-import {useState} from 'react';
+// import {useState} from 'react';
 import {topic2CodeAnswers} from './M1Answers';
 
-export function T2Code({questionId}: {questionId: string}): JSX.Element {
-    const [codeAnswer, setCA] = useState<string[]>([]);
+interface T2CodeProps {
+    questionId: string;
+    studentAnswer: string[];
+    setStudentAnswer: ( questionId: string, answer: string[]) => void;
+}
+export function T2Code({questionId, studentAnswer, setStudentAnswer}: T2CodeProps): JSX.Element {
+    // const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t2Q10 = topic2CodeAnswers.find((q) => q.id === "1.2.10");
     const t2Q11 = topic2CodeAnswers.find((q) => q.id === "1.2.11");
 
     const updateCodeAnswer = (value: string, index: number) => {
-        const newCodeAnswer = [...codeAnswer];
-        newCodeAnswer[index] = value;
-        setCA(newCodeAnswer);
-    }
+        const updatedAnswers = [...studentAnswer];
+        updatedAnswers[index] = value;
+        setStudentAnswer(questionId, updatedAnswers);
+    };
 
     const T2CodeBlock = () => {
         switch(questionId) {
@@ -39,7 +44,14 @@ export function T2Code({questionId}: {questionId: string}): JSX.Element {
                     <div className='code-options-container'>
                             {t2Q10?.type === "mcq" && t2Q10?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                <input
+                                    type="radio"
+                                    id={option.textId}
+                                    name={t2Q10.id}
+                                    value={option.textId}
+                                    checked={studentAnswer[0] === option.textId}
+                                    onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                />
                                 <label htmlFor={option.textId}>{option.text}</label>
                             </div>
                             ))}
@@ -69,7 +81,14 @@ export function T2Code({questionId}: {questionId: string}): JSX.Element {
                     <div className='code-options-container'>
                             {t2Q11?.type === "mcq" && t2Q11?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                <input
+                                    type="radio"
+                                    id={option.textId}
+                                    name={t2Q11.id}
+                                    value={option.textId}
+                                    checked={studentAnswer[0] === option.textId}
+                                    onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                />
                                 <label htmlFor={option.textId}>{option.text}</label>
                             </div>
                             ))}
@@ -87,7 +106,7 @@ export function T2Code({questionId}: {questionId: string}): JSX.Element {
                             {` <Form.Control placeholder= "Enter message"`}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]||""}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -110,7 +129,7 @@ export function T2Code({questionId}: {questionId: string}): JSX.Element {
                             {` <Form.Control placeholder= "Enter message" value="Hello World"`}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]||""}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"

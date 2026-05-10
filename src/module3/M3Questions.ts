@@ -120,7 +120,7 @@ export const topic2Code: CodingQ[] = [
     {id: "3.2.15", question: "Fill in the blanks to create a set of multi checkboxes."},
 
     //scenarios
-    {id: "3.2.16", question: "You are creating a settings page for a web application. You want to include a toggle option option for users to enable or disable email notifications. Which of the following code snippets correctly implements this requirement?"},
+    {id: "3.2.16", question: "You are creating a settings page for a web application. You want to include a visual toggle option option for users to enable or disable email notifications. Which of the following code snippets correctly implements this requirement?"},
     {id: "3.2.17", question: "You are creating a quiz form that asks users to select their preferred development environment. Users should only be able to select one option. Which of the following code snippets correctly implements this requirement?"},
     {id: "3.2.18", question: "You are designing a survey form that asks users about their favorite programming languages. You want to allow users to select multiple languages from a list of options. Which of the following code snippets correctly implements this requirement?"},
 

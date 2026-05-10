@@ -1,16 +1,21 @@
 import type { JSX } from 'react';
-import {useState} from 'react';
+// import {useState} from 'react';
 import { topic1CodeAnswers} from './M3Answers';
 
+interface T1CodeProps {
+    questionId: string;
+    studentAnswer: string[];
+    setStudentAnswer: ( questionId: string, answer: string[]) => void;
+}
 
-export function T1Code({questionId}: {questionId: string}): JSX.Element {
-    const [codeAnswer, setCA] = useState<string[]>([]);
+export function T1Code({questionId, studentAnswer, setStudentAnswer}: T1CodeProps): JSX.Element {
+    // const [codeAnswer, setCA] = useState<string[]>([]);
 
     const updateCodeAnswer = (value: string, index: number) => {
-        const newCodeAnswer = [...codeAnswer];
-        newCodeAnswer[index] = value;
-        setCA(newCodeAnswer);
-    }
+        const updatedAnswers = [...studentAnswer];
+        updatedAnswers[index] = value;
+        setStudentAnswer(questionId, updatedAnswers);
+    };
 
     const t1Q12 = topic1CodeAnswers.find((q) => q.id === "3.1.12");
     const t1Q13 = topic1CodeAnswers.find((q) => q.id === "3.1.13");
@@ -28,7 +33,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`const [points, setPoints] = useState<`}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -48,7 +53,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`  <Form. `}
                             <input
                                 type="text"
-                                value={codeAnswer[1]}
+                                value={studentAnswer[1]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -56,7 +61,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {` type="`}
                             <input
                                 type="text"
-                                value={codeAnswer[2]}
+                                value={studentAnswer[2]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -78,7 +83,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`<Form.Group controlId ="formMovieName as ={`}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -88,7 +93,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`  <Form.Label `}
                             <input
                                 type="text"
-                                value={codeAnswer[1]}
+                                value={studentAnswer[1]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -98,7 +103,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`<`}
                             <input
                                 type="text"
-                                value={codeAnswer[2]}
+                                value={studentAnswer[2]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -112,7 +117,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`</`}
                             <input
                                 type="text"
-                                value={codeAnswer[3]}
+                                value={studentAnswer[3]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -124,7 +129,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`<Form.Group controlId="formMovieReleased" as = {`}
                             <input
                                 type="text"
-                                value={codeAnswer[4]}
+                                value={studentAnswer[4]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -134,7 +139,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {` <Form.Label `}
                             <input
                                 type="text"
-                                value={codeAnswer[5]}
+                                value={studentAnswer[5]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -144,7 +149,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`<`}
                             <input
                                 type="text"
-                                value={codeAnswer[6]}
+                                value={studentAnswer[6]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 6)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -158,7 +163,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`</`}
                             <input
                                 type="text"
-                                value={codeAnswer[7]}
+                                value={studentAnswer[7]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 7)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -189,7 +194,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`  <Form.Control as="`}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -197,7 +202,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                             {`" rows={`}
                             <input
                                 type="text"
-                                value={codeAnswer[1]}
+                                value={studentAnswer[1]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -214,7 +219,14 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                         <div className='code-options-container'>
                                 {t1Q12?.type==="mcq" && t1Q12?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t1Q12.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                    <label htmlFor={option.textId}>{option.text}</label>
                                </div>
                                 ))}
@@ -227,7 +239,14 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                         <div className='code-options-container'>
                                 {t1Q13?.type==="mcq"&& t1Q13?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t1Q13.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                    <label htmlFor={option.textId}>{option.text}</label>
                                </div>
                                 ))}
@@ -240,7 +259,14 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                         <div className='code-options-container'>
                                 {t1Q14?.type==="mcq" && t1Q14?.options.map((option) => (
                                    <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t1Q14.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                    <label htmlFor={option.textId}>{option.text}</label>
                                </div>
                                 ))}
@@ -260,7 +286,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="student-ordering">
                         <input
                             type="text"
-                            value={codeAnswer[0]}
+                            value={studentAnswer[0]}
                             onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
@@ -281,7 +307,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="student-ordering">
                         <input
                             type="text"
-                            value={codeAnswer[0]}
+                            value={studentAnswer[0]}
                             onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
@@ -302,7 +328,7 @@ export function T1Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="student-ordering">
                         <input
                             type="text"
-                            value={codeAnswer[0]}
+                            value={studentAnswer[0]}
                             onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"

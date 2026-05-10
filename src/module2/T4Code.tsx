@@ -1,9 +1,15 @@
 import type { JSX } from "react";
-import {useState} from "react";
+// import {useState} from "react";
 import {topic4CodeAnswers} from "./M2Answers";
 
-export function T4Code({questionId}: {questionId: string}): JSX.Element {
-    const [codeAnswer, setCA] = useState<string[]>([]);
+interface T4CodeProps {
+    questionId: string;
+    studentAnswer: string[];
+    setStudentAnswer: ( questionId: string, answer: string[]) => void;
+}
+
+export function T4Code({questionId, studentAnswer, setStudentAnswer}: T4CodeProps): JSX.Element {
+    // const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t4Q16 = topic4CodeAnswers.find((q) => q.id === "2.4.16");
     const t4Q17 = topic4CodeAnswers.find((q) => q.id === "2.4.17");
@@ -13,10 +19,10 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
     const t4Q21 = topic4CodeAnswers.find((q) => q.id === "2.4.21");
 
     const updateCodeAnswer = (value: string, index: number) => {
-        const newCodeAnswer = [...codeAnswer];
-        newCodeAnswer[index] = value;
-        setCA(newCodeAnswer);
-    }
+        const updatedAnswers = [...studentAnswer];
+        updatedAnswers[index] = value;
+        setStudentAnswer(questionId, updatedAnswers);
+    };
 
     const T4CodeBlock = () => {
         switch(questionId) {
@@ -49,7 +55,14 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="code-options-container">
                             { t4Q16?.type==="mcq"&& t4Q16?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t4Q16.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                     <label htmlFor={option.textId}>{option.text}</label>
                                 </div>
                             )) }
@@ -89,7 +102,14 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="code-options-container">
                             { t4Q17?.type==="mcq" && t4Q17?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t4Q17.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                     <label htmlFor={option.textId}>{option.text}</label>
                                 </div>
                             )) }
@@ -126,7 +146,14 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="code-options-container">
                             { t4Q18?.type==="mcq" && t4Q18?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t4Q18.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                     <label htmlFor={option.textId}>{option.text}</label>
                                 </div>
                             )) }
@@ -146,7 +173,7 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="student-ordering">
                         <input
                             type="text"
-                            value={codeAnswer[0]}
+                            value={studentAnswer[0]}
                             onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
@@ -167,7 +194,7 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                         <div className="student-ordering">
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter your answer in the format: 1,2,3,..."
                                 className="ordering"
@@ -188,7 +215,7 @@ export function T4Code({questionId}: {questionId: string}): JSX.Element {
                             <div className="student-ordering">
                                 <input
                                     type="text"
-                                    value={codeAnswer[0]}
+                                    value={studentAnswer[0]}
                                     onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                     placeholder="Enter your answer in the format: 1,2,3,..."
                                     className="ordering"

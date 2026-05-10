@@ -1,19 +1,25 @@
 import type { JSX } from "react";
-import {useState} from "react";
+// import {useState} from "react";
 import {topic3CodeAnswers} from "./M2Answers";
 
-export function T3Code({questionId}: {questionId: string}): JSX.Element {
-    const [codeAnswer, setCA] = useState<string[]>([]);
+interface T3CodeProps {
+    questionId: string;
+    studentAnswer: string[];
+    setStudentAnswer: ( questionId: string, answer: string[]) => void;
+}
+
+export function T3Code({questionId, studentAnswer, setStudentAnswer}: T3CodeProps): JSX.Element {
+    // const [codeAnswer, setCA] = useState<string[]>([]);
 
     const t3Q9 = topic3CodeAnswers.find((q) => q.id === "2.3.9");
     const t3Q10 = topic3CodeAnswers.find((q) => q.id === "2.3.10");
     const t3Q11 = topic3CodeAnswers.find((q) => q.id === "2.3.11");
 
     const updateCodeAnswer = (value: string, index: number) => {
-        const newCodeAnswer = [...codeAnswer];
-        newCodeAnswer[index] = value;
-        setCA(newCodeAnswer);
-    }
+        const updatedAnswers = [...studentAnswer];
+        updatedAnswers[index] = value;
+        setStudentAnswer(questionId, updatedAnswers);
+    };
 
     const T3CodeBlock = () => {
         switch(questionId) {
@@ -24,7 +30,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`//This is the `}
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -35,7 +41,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`//This is the `}
                             <input
                                 type="text"
-                                value={codeAnswer[1]}
+                                value={studentAnswer[1]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -50,7 +56,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`//This is the `}
                             <input
                                 type="text"
-                                value={codeAnswer[2]}
+                                value={studentAnswer[2]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -89,7 +95,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {` <Form.`} 
                             <input
                                 type="text"
-                                value={codeAnswer[0]}
+                                value={studentAnswer[0]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -99,7 +105,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`   <`} 
                             <input
                                 type="text"
-                                value={codeAnswer[1]}
+                                value={studentAnswer[1]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 1)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -107,7 +113,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`value="happy">Happy</`}
                             <input
                                 type="text"
-                                value={codeAnswer[2]}
+                                value={studentAnswer[2]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 2)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -117,7 +123,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`   <`} 
                             <input
                                 type="text"
-                                value={codeAnswer[3]}
+                                value={studentAnswer[3]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 3)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -125,7 +131,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`value="sad">Sad</`}
                             <input
                                 type="text"
-                                value={codeAnswer[4]}
+                                value={studentAnswer[4]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 4)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -135,7 +141,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                             {`  </Form.`}
                             <input
                                 type="text"
-                                value={codeAnswer[5]}
+                                value={studentAnswer[5]}
                                 onChange={(e) => updateCodeAnswer(e.target.value, 5)}
                                 placeholder="Enter answer"
                                 className="fill-in-blank"
@@ -179,7 +185,14 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="code-options-container">
                             {t3Q9?.type==="mcq" && t3Q9?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t3Q9.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                     <label htmlFor={option.textId}>{option.text}</label>
                                 </div>
                             )) }
@@ -218,7 +231,14 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="code-options-container">
                             {t3Q10?.type==="mcq" && t3Q10?.options.map((option) => (
                                 <div key={option.textId} className="code-answer-option">
-                                    <input type="radio" id={option.textId} name="answer" value={option.textId} />
+                                    <input
+                                        type="radio"
+                                        id={option.textId}
+                                        name={t3Q10.id}
+                                        value={option.textId}
+                                        checked={studentAnswer[0] === option.textId}
+                                        onChange={(e) => updateCodeAnswer(e.target.value, 0)}
+                                    />
                                     <label htmlFor={option.textId}>{option.text}</label>
                                 </div>
                             )) }
@@ -238,7 +258,7 @@ export function T3Code({questionId}: {questionId: string}): JSX.Element {
                     <div className="student-ordering">
                         <input
                             type="text"
-                            value={codeAnswer[0]}
+                            value={studentAnswer[0]}
                             onChange={(e) => updateCodeAnswer(e.target.value, 0)}
                             placeholder="Enter your answer in the format: 1,2,3,..."
                             className="ordering"
