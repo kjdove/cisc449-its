@@ -1,7 +1,7 @@
 //Module 1 Topic 1
 import type { JSX } from "react";
 import { topic1MCQ, topic1Code } from "./M1Questions";
-import {topic1MCQAnswers, /*topic1CodeAnswers*/} from "./M1Answers";
+import {topic1MCQAnswers, topic1CodeAnswers} from "./M1Answers";
 import { T1Code } from "./T1Code";
 import { useState } from "react";
 import {topic1FeedbackMCQ} from "./M1Feedback";
@@ -26,9 +26,9 @@ export function Topic1Quiz(): JSX.Element {
         setCurrentAInd(index);
         setHasSubmit(false);
     }
-    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
     
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -42,8 +42,20 @@ export function Topic1Quiz(): JSX.Element {
         if(currentAInd < 9){
             correctAnswer = topic1MCQAnswers[currentAInd].correctId;
         }
+        else {
+            const codeAnswerObj = topic1CodeAnswers.find(q => q.id === currentQuestion.id);
+            switch(codeAnswerObj?.type) {
+                case "fib":
+                    correctAnswer = codeAnswerObj.correctAnswers;
+                    break;
+            }
+        }
 
-        const correct = studentAnswer === correctAnswer;
+        // console.log("studentAnswer: ", studentAnswer);
+        // console.log("correctAnswer: ", correctAnswer);
+        // const correct = studentAnswer === correctAnswer;
+        const correct = JSON.stringify(studentAnswer) === JSON.stringify(correctAnswer);
+        // console.log("isCorrect: ", correct);
         setIsCorrect(correct);
         setHasSubmit(true);
         
@@ -57,9 +69,7 @@ export function Topic1Quiz(): JSX.Element {
         localStorage.setItem(
             "module1topic1",
             JSON.stringify(savedData)
-        );
-
-        
+        ); 
     }//end to handleSubmit
 
     return (
@@ -149,7 +159,9 @@ export function Topic1Quiz(): JSX.Element {
                         );
                     })}
 
-                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []
+    }
+    setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
             {/*end of topic-content*/}
