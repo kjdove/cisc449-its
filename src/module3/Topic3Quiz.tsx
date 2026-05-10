@@ -2,7 +2,7 @@
 import type { JSX } from "react";
 import {useState} from "react";
 import { T3Code } from "./T3Code";
-import { topic3MCQAnswers } from "./M3Answers";
+import { topic3MCQAnswers, topic3CodeAnswers } from "./M3Answers";
 import { topic3MCQ, topic3Code } from "./M3Questions";
 import {topic3FeedbackMCQ} from "./M3Feedback";
 
@@ -22,9 +22,9 @@ export function Topic3Quiz(): JSX.Element{
         setHasSubmit(false);
     }
 
-    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
     
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -38,8 +38,22 @@ export function Topic3Quiz(): JSX.Element{
         if(currentAInd < 5){
             correctAnswer = topic3MCQAnswers[currentAInd].correctId;
         }
+        else {
+            const codeAnswerObj = topic3CodeAnswers.find(q => q.id === currentQuestion.id);
+            switch(codeAnswerObj?.type) {
+                case "fib":
+                    correctAnswer = codeAnswerObj.correctAnswers;
+                    break;
+                case "mcq":
+                    correctAnswer = codeAnswerObj.correctId;
+                    break;
+                case "ordering":
+                    correctAnswer = codeAnswerObj.correctOrder;
+                    break;
+            }
+        }
 
-        const correct = studentAnswer === correctAnswer;
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
 
@@ -124,7 +138,7 @@ export function Topic3Quiz(): JSX.Element{
                         );
                     })}
 
-                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
             </div>
