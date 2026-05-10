@@ -44,13 +44,13 @@ export function Topic1Quiz(): JSX.Element {
             const codeAnswerObj = topic1CodeAnswers.find(q => q.id === currentQuestion.id);
             switch(codeAnswerObj?.type) {
                 case "fib":
-                    correctAnswer = codeAnswerObj.correctAnswers;
+                    correctAnswer = codeAnswerObj.correctAnswers || "";
                     break;
                 case "mcq":
-                    correctAnswer = codeAnswerObj.correctId;
+                    correctAnswer = codeAnswerObj.correctId || "";
                     break;
                 case "ordering":
-                    correctAnswer = codeAnswerObj.correctOrder;
+                    correctAnswer = codeAnswerObj.correctOrder || "";
                     break;
             }
         }
