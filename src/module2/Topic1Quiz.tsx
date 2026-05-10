@@ -55,7 +55,7 @@ export function Topic1Quiz(): JSX.Element {
             }
         }
 
-        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer?.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
         
