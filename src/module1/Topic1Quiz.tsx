@@ -48,14 +48,13 @@ export function Topic1Quiz(): JSX.Element {
                 case "fib":
                     correctAnswer = codeAnswerObj.correctAnswers;
                     break;
+                case "ordering":
+                    correctAnswer = codeAnswerObj.correctOrder;
+                    break;
             }
         }
 
-        // console.log("studentAnswer: ", studentAnswer);
-        // console.log("correctAnswer: ", correctAnswer);
-        // const correct = studentAnswer === correctAnswer;
-        const correct = JSON.stringify(studentAnswer) === JSON.stringify(correctAnswer);
-        // console.log("isCorrect: ", correct);
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
         
@@ -159,9 +158,7 @@ export function Topic1Quiz(): JSX.Element {
                         );
                     })}
 
-                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []
-    }
-    setStudentAnswer={handleAnswerChange}/>}
+                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit}className="submit-button">Submit</button>
             {/*end of topic-content*/}
