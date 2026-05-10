@@ -23,9 +23,9 @@ export function Topic3Quiz(): JSX.Element {
         setHasSubmit(false);
     }
 
-    const [studentAnswers, setSA] = useState<Record<string, string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
 
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -54,7 +54,7 @@ export function Topic3Quiz(): JSX.Element {
             }
         }
 
-        const correct = studentAnswer === correctAnswer;
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(correctAnswer.toString());
         setIsCorrect(correct);
         setHasSubmit(true);
         
@@ -140,7 +140,7 @@ export function Topic3Quiz(): JSX.Element {
                         );
                     })}
 
-                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} />}
+                    {currentAInd >= 5 && <T3Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
                 </div>
                 <button onClick={handleSubmit} className="submit-button">Submit</button>
             </div>
