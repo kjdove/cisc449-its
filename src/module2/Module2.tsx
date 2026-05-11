@@ -18,10 +18,6 @@ export function Module2(): JSX.Element {
         navigate(`/module2/${topic}`);
     };
 
-    const handleBackButton = () => {
-        navigate("/module2");
-    }
-
     return (
         <div className="m2-container">
             {!topicId && (
@@ -54,37 +50,21 @@ export function Module2(): JSX.Element {
             )}
             {topicId === "1" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 2</button>
-                        <h2>Textboxes</h2>
-                    </div>
                     <Topic1Quiz />
                 </div>
             )}
             {topicId === "2" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
-                        <h2>Checkboxes</h2>
-                    </div>
                     <Topic2Quiz />
                 </div>
             )}
             {topicId === "3" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
-                        <h2>Dropdowns</h2>
-                    </div>
                     <Topic3Quiz />
                 </div>
             )}
             {topicId === "4" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
-                        <h2>Differentiate between Textbox/Checkbox/Dropdown</h2>
-                    </div>
                     <Topic4Quiz />
                 </div>
             )}
