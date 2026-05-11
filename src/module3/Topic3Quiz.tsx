@@ -7,10 +7,25 @@ import { topic3MCQ, topic3Code } from "./M3Questions";
 import {topic3FeedbackMCQ} from "./M3Feedback";
 
 export function Topic3Quiz(): JSX.Element{
+    const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
+    const ptM1T3 = pretestResults["1.1"] || {};
+
+    const rating = ptM1T3.studentRating || 0;
+    const ptCorrect = ptM1T3.isCorrect || false;
+    let startInd = 0;
+
+    if (ptCorrect) {
+        if(8 <= rating || rating <= 10) {
+            startInd = 5;
+        }
+        else if(4 <= rating && rating <= 7) {
+            startInd = 2;
+        }
+    }
     const allQuestions = [...topic3MCQ, ...topic3Code];
-    const [currentQInd, setCurrentQInd] = useState<number>(0);
+    const [currentQInd, setCurrentQInd] = useState<number>(startInd);
     const currentQuestion = allQuestions[currentQInd];
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
+    const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     const currentFeedback = topic3FeedbackMCQ.find(f => f.id === currentQuestion.id);
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);

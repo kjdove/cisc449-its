@@ -7,11 +7,26 @@ import { topic2MCQ, topic2Code } from "./M3Questions";
 import {topic2FeedbackMCQ} from "./M3Feedback";
 
 export function Topic2Quiz(): JSX.Element {
+    const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
+    const ptM1T2 = pretestResults["1.1"] || {};
+
+    const rating = ptM1T2.studentRating || 0;
+    const ptCorrect = ptM1T2.isCorrect || false;
+    let startInd = 0;
+
+    if (ptCorrect) {
+        if(8 <= rating || rating <= 10) {
+            startInd = 9;
+        }
+        else if(4 <= rating && rating <= 7) {
+            startInd = 2;
+        }
+    }
     const allQuestions = [...topic2MCQ, ...topic2Code];
-    const [currentQInd, setCurrentQInd] = useState<number>(0);
+    const [currentQInd, setCurrentQInd] = useState<number>(startInd);
     const currentQuestion = allQuestions[currentQInd];
 
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
+    const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);
