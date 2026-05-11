@@ -11,7 +11,6 @@ import './TopicPages.css';
 export function Topic1Quiz(): JSX.Element {
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T1 = pretestResults["1.1"] || {};
-    // console.log("pretestResults in Topic1Quiz: ", ptM1T1);
 
     const rating = ptM1T1.studentRating || 0;
     const ptCorrect = ptM1T1.isCorrect || false;
@@ -25,7 +24,7 @@ export function Topic1Quiz(): JSX.Element {
             startInd = 2;
         }
     }
-    // console.log("startInd: ", startInd);
+
     const allQuestions = [...topic1MCQ, ...topic1Code];
     const [currentQInd, setCurrentQInd] = useState<number>(startInd);
 
