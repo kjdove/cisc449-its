@@ -28,6 +28,7 @@ export function Pretest(): JSX.Element {
     const mediumQuestions = pretestQuestions.filter((q) => q.difficulty === "medium" && q.topicId === topics[currentTopicInd].id);
     const hardQuestions = pretestQuestions.filter((q) => q.difficulty === "hard" && q.topicId === topics[currentTopicInd].id);
 
+    const progValue = ((currentTopicInd) / topics.length);
 
     const handleSubmit = () => {
         if (currentTopicInd === 0) {
@@ -88,6 +89,7 @@ export function Pretest(): JSX.Element {
     return (
         <div className="pretest-page">
             <h2>Pretest</h2>
+            <progress value={progValue}/>
             <div className="pretest-top">
                 <p>On a scale from 1 to 10:</p>
                 <p>{topics[currentTopicInd].topic}</p>
