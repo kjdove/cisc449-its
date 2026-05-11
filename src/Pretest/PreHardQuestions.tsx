@@ -1,13 +1,23 @@
 import './PreHardQuestions.css';
 import type { JSX } from 'react';
-import {useState} from 'react';
+// import {useState} from 'react';
 
-export function PreHardQuestions({questionId}: {questionId: string}): JSX.Element {
-    const [studentAnswer, setAnswer] = useState<string[]>([]);
+interface PreHardQuestionsProps {
+    questionId: string;
+    studentAnswer: string[];
+    setStudentAnswer: (
+        questionId: string,
+        answer: string[]
+    ) => void;
+}
+
+export function PreHardQuestions({questionId, studentAnswer,setStudentAnswer}: PreHardQuestionsProps): JSX.Element {
+    // const [studentAnswer, setAnswer] = useState<string[]>([]);
+    
     const updateAnswers = (value: string, index: number) => {
         const newAnswers = [...studentAnswer];
         newAnswers[index] = value;
-        setAnswer(newAnswers);
+        setStudentAnswer(questionId, newAnswers)
     };
 
     const codeBlock = () => {
@@ -30,7 +40,7 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                             <input 
                                 type="text"
                                 value={studentAnswer[1]}
-                                onChange={() => updateAnswers(studentAnswer[1], 1)}
+                                onChange={(e) => updateAnswers(e.target.value, 1)}
                                 placeholder="Enter missing tag"
                                 className="fill-in-blank"
                             /> 
@@ -210,8 +220,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`checked={`}
                         <input
                             type="text"
-                            value={studentAnswer[1]}
-                            onChange={(e) => updateAnswers(e.target.value, 1)}
+                            value={studentAnswer[2]}
+                            onChange={(e) => updateAnswers(e.target.value, 2)}
                             placeholder="Enter state variable"
                             className="fill-in-blank"
                         />
@@ -220,8 +230,8 @@ export function PreHardQuestions({questionId}: {questionId: string}): JSX.Elemen
                         {`onChange={(e) => `}
                         <input
                             type="text"
-                            value={studentAnswer[2]}
-                            onChange={(e) => updateAnswers(e.target.value, 2)}
+                            value={studentAnswer[3]}
+                            onChange={(e) => updateAnswers(e.target.value, 3)}
                             placeholder="Enter missing code"
                             className="fill-in-blank"
                         />

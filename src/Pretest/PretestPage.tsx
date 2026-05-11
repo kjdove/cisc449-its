@@ -11,13 +11,13 @@ export function Pretest(): JSX.Element {
     const [currentTopicInd, setCurrentTopicInd] = useState(0);
     const ratings = [1,2,3,4,5,6,7,8,9,10];
     const [studentRating, setSR] = useState<number>(0);
-    const [studentAnswers, setSA] = useState<Record<string,string>>({});
+    const [studentAnswers, setSA] = useState<Record<string, string | string[]>>({});
 
     const hnadleSR = (r: number) => {
         setSR(r);
     }
 
-    const handleAnswerChange = (questionId: string, answer: string) => {
+    const handleAnswerChange = (questionId: string, answer: string | string[]) => {
         setSA((prev) => ({
             ...prev,
             [questionId]: answer
@@ -55,9 +55,11 @@ export function Pretest(): JSX.Element {
     
         const studentAnswer = studentAnswers[currentQuestion.id] || "";
     
-        const isCorrect =
-            currentQuestion.correctAnswer === studentAnswer;
+        const correct = JSON.stringify(studentAnswer.toString()) === JSON.stringify(currentQuestion.correctAnswer?.toString());
+
     
+        console.log("studentAnswer: ",  studentAnswer);
+        console.log("correctAnswer: ", currentQuestion.correctAnswer);
         const savedData = JSON.parse(
             localStorage.getItem("pretestResults") || "{}"
         );
@@ -66,7 +68,7 @@ export function Pretest(): JSX.Element {
             rating: studentRating,
             questionId: currentQuestion.id,
             studentAnswer,
-            isCorrect
+            isCorrect: correct
         };
     
         localStorage.setItem(
@@ -166,7 +168,7 @@ export function Pretest(): JSX.Element {
                         </div>
                     ))}
                     {8 <= studentRating && studentRating <= 10 && 
-                        <PreHardQuestions questionId={hardQuestions[0]?.id || ""} />
+                        <PreHardQuestions questionId={hardQuestions[0]?.id || ""} studentAnswer={studentAnswers[hardQuestions[0]?.id || ""] as string[] || []} setStudentAnswer={handleAnswerChange} />
                     }
                 </div>
                {studentRating > 0 && 
