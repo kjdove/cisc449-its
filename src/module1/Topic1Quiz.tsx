@@ -9,11 +9,28 @@ import {topic1FeedbackMCQ, topic1FeedbackCode} from "./M1Feedback";
 import './TopicPages.css';
 
 export function Topic1Quiz(): JSX.Element {
+    const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
+    const ptM1T1 = pretestResults["1.1"] || {};
+    // console.log("pretestResults in Topic1Quiz: ", ptM1T1);
+
+    const rating = ptM1T1.studentRating || 0;
+    const ptCorrect = ptM1T1.isCorrect || false;
+    let startInd = 0;
+
+    if (ptCorrect) {
+        if(8 <= rating || rating <= 10) {
+            startInd = 9;
+        }
+        else if(4 <= rating && rating <= 7) {
+            startInd = 2;
+        }
+    }
+    // console.log("startInd: ", startInd);
     const allQuestions = [...topic1MCQ, ...topic1Code];
-    const [currentQInd, setCurrentQInd] = useState<number>(0);
+    const [currentQInd, setCurrentQInd] = useState<number>(startInd);
 
     const currentQuestion = allQuestions[currentQInd];
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
+    const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id) ;
     const currentCodeFeedback = topic1FeedbackCode.find(f => f.id === currentQuestion.id);
@@ -91,24 +108,6 @@ export function Topic1Quiz(): JSX.Element {
                 <div className="question">
                     <strong>Question {currentQInd+1}.</strong> {currentQuestion.question}
                 </div>
-                {/* <div className="answer">
-                    {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => (
-                        <div key={option.textId} className="answer-option">
-                            <input
-                                type="radio"
-                                id={option.textId}
-                                name={currentQuestion.id}
-                                value={option.textId}
-                                checked={studentAnswers[currentQuestion.id] === option.textId}
-                                onChange={(e) =>
-                                    handleAnswerChange(currentQuestion.id, e.target.value)
-                                }
-                            />
-                            <label htmlFor={option.textId}>{option.text}</label>
-                        </div>
-                    ))}
-                    {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} />}
-                </div> */}
                 <div className="answer">
                     {currentAInd < 9 && topic1MCQAnswers[currentAInd].options.map((option) => {
                         const optionFeedback = currentFeedback?.options.find(
