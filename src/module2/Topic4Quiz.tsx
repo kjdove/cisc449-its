@@ -8,10 +8,25 @@ import {topic4FeedbackMCQ} from "./M2Feedback";
 
 
 export function Topic4Quiz(): JSX.Element {
+    const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
+    const ptM1T4 = pretestResults["1.1"] || {};
+
+    const rating = ptM1T4.studentRating || 0;
+    const ptCorrect = ptM1T4.isCorrect || false;
+    let startInd = 0;
+
+    if (ptCorrect) {
+        if(8 <= rating || rating <= 10) {
+            startInd = 15;
+        }
+        else if(4 <= rating && rating <= 7) {
+            startInd = 9;
+        }
+    }
     const allQuestions = [...topic4MCQ, ...topic4Code];
-    const [currentQInd, setCurrentQInd] = useState<number>(0);
+    const [currentQInd, setCurrentQInd] = useState<number>(startInd);
     const currentQuestion = allQuestions[currentQInd];
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
+    const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     
     const currentFeedback = topic4FeedbackMCQ.find(f => f.id === currentQuestion.id);
