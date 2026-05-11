@@ -5,8 +5,13 @@ import { T1Code } from "./T1Code";
 import { topic1MCQAnswers, topic1CodeAnswers } from "./M3Answers";
 import { topic1MCQ, topic1Code } from "./M3Questions";
 import {topic1FeedbackMCQ} from "./M3Feedback";
+import { useNavigate } from "react-router-dom";
 
 export function Topic1Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module3");
+    }
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T1 = pretestResults["1.1"] || {};
 
@@ -89,6 +94,10 @@ export function Topic1Quiz(): JSX.Element {
 
     return (
         <div className="t1-container">
+             <div className="topic-header">
+                <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                <h2 className="topic-title">Textbox Variations</h2>
+            </div>
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                         <div

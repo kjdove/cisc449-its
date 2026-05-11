@@ -11,13 +11,8 @@ export function Module3(): JSX.Element {
     const navigate = useNavigate();
     const { topicId } = useParams();
 
-
     const handleTopicChange = (topic: string) => {
         navigate(`/module3/${topic}`);
-    }
-
-    const handleBackButton = () => {
-        navigate("/module3");
     }
 
     return (
@@ -48,28 +43,16 @@ export function Module3(): JSX.Element {
             )}
             {topicId === "1" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
-                        <h2>Textbox Variations</h2>
-                    </div>
                     <Topic1Quiz/>
                 </div>
             )}
             {topicId === "2" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
-                        <h2>Checkbox Variations</h2>
-                    </div>
                     <Topic2Quiz/>
                 </div>
             )}
             {topicId === "3" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
-                        <h2>Dropdown Variations</h2>
-                    </div>
                     <Topic3Quiz/>
                 </div>
             )}
