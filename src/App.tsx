@@ -2,18 +2,21 @@
 
 import './App.css'
 import { Dashboard } from './Dashboard'
-// import { StartPage } from './StartPage'
+import { StartPage } from './StartPage'
 
 function App() {
   
   //get pretest completion status from local storage (boolean)
+  const pretestCompleted = localStorage.getItem("pretestCompleted");
 
   { /**if pretest completed, '/' to be dashboard */}
  
   return (
     <>
-    <Dashboard />
-     {/* { <StartPage/>} */}
+    {pretestCompleted === "true" ? 
+      <Dashboard /> : <StartPage/>
+    }
+
     </>
   )
 }

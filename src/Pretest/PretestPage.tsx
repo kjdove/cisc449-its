@@ -78,8 +78,10 @@ export function Pretest(): JSX.Element {
         if (currentTopicInd < topics.length - 1) {
             setCurrentTopicInd(currentTopicInd + 1);
         } else {
+            localStorage.setItem("pretestCompleted", "true");
             navigate("/dashboard");
-            console.log("pretest completed");
+            
+            // console.log("pretest completed");
         }
     };//end to handleSubmit
 
