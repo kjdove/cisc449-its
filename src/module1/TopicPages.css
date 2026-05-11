@@ -73,6 +73,24 @@
     font-weight: 550;
 }
 
+.code-feedback {
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.code-feedback.correct-code-feedback {
+    color: green;
+    border: 1px solid green;
+    border-radius: 4px;
+    padding: 10px;
+
+}   
+.code-feedback.incorrect-code-feedback {
+    color: red;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 10px;
+} 
 .code-options-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 

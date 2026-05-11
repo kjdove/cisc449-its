@@ -4,7 +4,7 @@ import { topic1MCQ, topic1Code } from "./M1Questions";
 import {topic1MCQAnswers, topic1CodeAnswers} from "./M1Answers";
 import { T1Code } from "./T1Code";
 import { useState } from "react";
-import {topic1FeedbackMCQ} from "./M1Feedback";
+import {topic1FeedbackMCQ, topic1FeedbackCode} from "./M1Feedback";
 
 import './TopicPages.css';
 
@@ -13,12 +13,14 @@ export function Topic1Quiz(): JSX.Element {
     const [currentQInd, setCurrentQInd] = useState<number>(0);
 
     const currentQuestion = allQuestions[currentQInd];
+    const [currentAInd, setCurrentAInd] = useState<number>(0);
 
-    const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id) ;
+    const currentCodeFeedback = topic1FeedbackCode.find(f => f.id === currentQuestion.id);
+
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
     // const allAnswers = [...topic1MCQAnswers, topic1CodeAnswers];
 
     const handleQuestionChange = (index: number) => {
@@ -157,8 +159,16 @@ export function Topic1Quiz(): JSX.Element {
                             </div>
                         );
                     })}
-
                     {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
+                    {currentAInd >= 9 && hasSubmit && currentCodeFeedback && (
+                        
+                        <div className={`code-feedback ${isCorrect ? "correct-code-feedback" : "incorrect-code-feedback"}`}>
+                            {currentCodeFeedback.type  === "fib" ? currentCodeFeedback.feedback 
+                            : currentCodeFeedback.type === "ordering" ? currentCodeFeedback.feedback 
+                            : currentCodeFeedback.type === "mcq" ?  currentCodeFeedback.options.find(o => o.textId === (studentAnswers[currentQuestion.id] as string))?.text || ""
+                            : ""}
+                        </div>
+                    )}
                 </div>
                 {!hasSubmit && (
                     <button onClick={handleSubmit}className="submit-button">Submit</button>
