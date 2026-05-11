@@ -37,3 +37,15 @@ export type codingFeedback =
     | {type: "ordering"; id: string; feedback: string}
     |  {type: "mcq"; id: string; options: Option[]; correctId: string };
 
+
+
+/**Local Storage */
+interface QuestionResult {
+    studentAnswer: string | string[];
+    isCorrect: boolean;
+    hasSubmit: boolean;
+}
+
+export interface TopicData {
+    [questionId: string]: QuestionResult;
+}
