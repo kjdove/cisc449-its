@@ -5,10 +5,15 @@ import {topic1MCQAnswers, topic1CodeAnswers} from "./M1Answers";
 import { T1Code } from "./T1Code";
 import { useState } from "react";
 import {topic1FeedbackMCQ, topic1FeedbackCode} from "./M1Feedback";
-
+import { useNavigate } from "react-router-dom";
 import './TopicPages.css';
 
 export function Topic1Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module1");
+    };
+
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T1 = pretestResults["1.1"] || {};
 
@@ -91,8 +96,11 @@ export function Topic1Quiz(): JSX.Element {
 
     return (
         <div className="t1-container">
+            <div className="topic-header">
+                <button className="back-button"  onClick={handleBackButton}>Back to Module 1</button>
+                <h2 className='topic-title'>Form Attributes and Controls</h2>
+            </div>
            <div className="question-list">
-            
             {allQuestions.map((q, index) => (
                     <div
                         key={q.id}

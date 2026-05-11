@@ -5,9 +5,15 @@ import { topic2CodeAnswers, topic2MCQAnswers } from "./M1Answers";
 import './TopicPages.css';
 import { T2Code } from "./T2Code";
 import {topic2FeedbackMCQ} from "./M1Feedback";
+import { useNavigate } from "react-router-dom";
 
 
 export function Topic2Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module1");
+    };
+    
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T2 = pretestResults["1.2"] || {};
 
@@ -91,6 +97,10 @@ export function Topic2Quiz(): JSX.Element {
 
     return (
         <div className="t2-container">
+             <div className="topic-header">
+                <button className="back-button"  onClick={handleBackButton}>Back to Module 1</button>
+                <h2 className='topic-title'>Form Attributes and Controls</h2>
+            </div>
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                         <div

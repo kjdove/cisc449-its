@@ -5,9 +5,14 @@ import { useState } from 'react';
 import { T3Code } from './T3Code';
 import {type JSX} from 'react';
 import {topic3FeedbackMCQ} from "./M2Feedback";
+import { useNavigate } from 'react-router-dom';
 
 
 export function Topic3Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module2");
+    }
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T3 = pretestResults["1.1"] || {};
 
@@ -88,6 +93,10 @@ export function Topic3Quiz(): JSX.Element {
     }//end to handleSubmit
     return (
         <div className="t3-container">
+             <div className="topic-header">
+                <button className="back-button"  onClick={handleBackButton}>Back to Module 2</button>
+                <h2 className='topic-title'>Dropdowns</h2>
+            </div>
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                     <div

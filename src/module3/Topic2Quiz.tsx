@@ -5,8 +5,13 @@ import { T2Code } from "./T2Code";
 import { topic2MCQAnswers, topic2CodeAnswers } from "./M3Answers";
 import { topic2MCQ, topic2Code } from "./M3Questions";
 import {topic2FeedbackMCQ} from "./M3Feedback";
+import { useNavigate } from "react-router-dom";
 
 export function Topic2Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module3");
+    }
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T2 = pretestResults["1.1"] || {};
 
@@ -89,6 +94,10 @@ export function Topic2Quiz(): JSX.Element {
     }//end to handleSubmit
     return (
         <div className="t2-container">
+             <div className="topic-header">
+                <button className="back-button" onClick={handleBackButton}>Back to Module 3</button>
+                <h2 className="topic-title">Checkbox Variations</h2>
+            </div>
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                         <div
