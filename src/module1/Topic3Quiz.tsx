@@ -5,9 +5,15 @@ import { topic3MCQ, topic3Code } from "./M1Questions";
 import { topic3CodeAnswers, topic3MCQAnswers } from "./M1Answers";
 import { T3Code } from "./T3Code";
 import {topic3FeedbackMCQ} from "./M1Feedback";
+import { useNavigate } from "react-router-dom";
 
 
 export function Topic3Quiz(): JSX.Element {
+    const navigate = useNavigate();
+    const handleBackButton = () => {
+        navigate("/module1");
+    };
+    
     const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
     const ptM1T3 = pretestResults["1.3"] || {};
     const rating = ptM1T3.studentRating || 0;
@@ -88,6 +94,10 @@ export function Topic3Quiz(): JSX.Element {
 
     return (
         <div className="t3-container">
+             <div className="topic-header">
+                <button className="back-button" onClick={handleBackButton}>Back to Module 1</button>
+                <h2 className='topic-title'>How to Use the Value Attribute</h2>
+            </div>
             <div className="question-list">
                 {allQuestions.map((q, index) => (
                         <div

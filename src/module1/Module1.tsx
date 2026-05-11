@@ -14,10 +14,6 @@ export function Module1(): JSX.Element {
         navigate(`/module1/${topic}`);
     };
 
-    const handleBackButton = () => {
-        navigate("/module1");
-    };
-
     // const t1Data = JSON.parse(localStorage.getItem("module1topic1") || "{}");
     // const t2Data = JSON.parse(localStorage.getItem("module1topic2") || "{}");
     // const t3Data = JSON.parse(localStorage.getItem("module1topic3") || "{}");
@@ -51,28 +47,16 @@ export function Module1(): JSX.Element {
 
             {topicId === "1" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 1</button>
-                        <h2>Forms and Form.Groups</h2>
-                    </div>
                     <Topic1Quiz />
                 </div>
             )}
             {topicId === "2" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button"  onClick={handleBackButton}>Back to Module 1</button>
-                        <h2>Form Attributes and Controls</h2>
-                    </div>
                     <Topic2Quiz />
                 </div>
             )}
             {topicId === "3" && (
                 <div className="topic-page">
-                    <div className="topic-header">
-                        <button className="back-button" onClick={handleBackButton}>Back to Module 1</button>
-                        <h2>How to Use the Value Attribute</h2>
-                    </div>
                     <Topic3Quiz/>
                 </div>
             )}
