@@ -8,15 +8,30 @@ import {topic1FeedbackMCQ} from "./M2Feedback";
 
 
 export function Topic1Quiz(): JSX.Element {
+    const pretestResults = JSON.parse(localStorage.getItem("pretestResults") || "{}");
+    const ptM1T1 = pretestResults["1.1"] || {};
+
+    const rating = ptM1T1.studentRating || 0;
+    const ptCorrect = ptM1T1.isCorrect || false;
+    let startInd = 0;
+
+    if (ptCorrect) {
+        if(8 <= rating || rating <= 10) {
+            startInd = 9;
+        }
+        else if(4 <= rating && rating <= 7) {
+            startInd = 2;
+        }
+    }
     const allQuestions = [...topic1MCQ, ...topic1Code];
-    const [currentQInd, setCurrentQInd] = useState<number>(0);
+    const [currentQInd, setCurrentQInd] = useState<number>(startInd);
     const currentQuestion = allQuestions[currentQInd];
 
     const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
-    const [currentAInd, setCurrentAInd] = useState<number>(0);
+    const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     const handleQuestionChange = (index: number) => {
         setCurrentQInd(index);

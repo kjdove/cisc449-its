@@ -1,4 +1,4 @@
-import { type mcFeedback } from "../Types"
+import type {  mcFeedback, codingFeedback } from "../Types"
 export const topic1FeedbackMCQ: mcFeedback[] = [
     {id: "1.1.1", options: [
         {textId: "1", text: "A form is a structured container that groups together various interactive UI elements, including textboxes, checkboxes, and dropdowns, to allow users to input and submit data."},
@@ -56,7 +56,11 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
     ]}
 ]
 
-export const topic1FeedbackCode = []
+export const topic1FeedbackCode: codingFeedback[] = [
+    {type: "fib", id: "1.1.10", feedback: "These four elements are commonly used together to create an accessible form group. Think about the structure: A container that holds related inputs, a description for that container, the input itself, and the text associated with it."},
+    {type: "fib", id: "1.1.11", feedback: "The first blank links the label and input for accesibility. The second blank is for styling."},
+    {type: "ordering", id: "1.1.12", feedback: "Remember what component all form elements must be wrapped inside to ensure proper styling and layout. Ensure every opening tag has a corresponding closing tag. The label usually comes before the control, followed by the helper text."}
+]
 
 export const topic2FeedbackMCQ: mcFeedback[] = [
     {id: "1.2.1", options: [
@@ -115,7 +119,7 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2CodeFeedback = []
+export const topic2CodeFeedback: codingFeedback[] = []
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "1.3.1", options: [
@@ -150,4 +154,4 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3CodeFeedback = []
+export const topic3CodeFeedback: codingFeedback[] = []

@@ -17,10 +17,9 @@ export const topic1MCQ: MCQ[] = [
 export const topic1Code: CodingQ[] = [
     {id: "1.1.10", question: "Fill in the blanks for the following code."},
     {id: "1.1.11", question: "Fill in the blanks for the following code."},
-    {id: "1.1.12", question: "Fill in the blanks for the following code."},
 
     //parsons/ordering lines of code
-    {id: "1.1.13", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
+    {id: "1.1.12", question: "Order the following lines of code to correctly create a Form.Group with a label, control, and text."},
 ]
 
 /**TOPIC 2: Form Attributes and Controls*/

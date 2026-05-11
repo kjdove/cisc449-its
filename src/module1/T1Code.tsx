@@ -11,7 +11,7 @@ interface T1CodeProps {
 export function T1Code({questionId, studentAnswer, setStudentAnswer}: T1CodeProps): JSX.Element {
     // const [codeAnswer, setCA] = useState<string[]>([]);
     
-    const t1Q13 = topic1CodeAnswers.find((q) => q.id === "1.1.13");
+    const t1Q12 = topic1CodeAnswers.find((q) => q.id === "1.1.12");
 
     const updateCodeAnswer = (value: string, index: number) => {
         const updatedAnswers = [...studentAnswer];
@@ -112,52 +112,9 @@ export function T1Code({questionId, studentAnswer, setStudentAnswer}: T1CodeProp
                     )
                 case "1.1.12":
                     return (
-                        <div className = "code-container">
-                            <pre>
-                            {`<Form.Group controlId = "formBasicEmail" className = "mb-3">`}
-                                <br/>
-                                {`  <Form.Label>Email address</Form.Label>`}
-                                <br/>
-                                {` <`}
-                                <input
-                                    type="text"
-                                    value={studentAnswer[0] || ""}
-                                    onChange={(e) => updateCodeAnswer(e.target.value, 0)}
-                                    placeholder="Enter answer"
-                                    className="fill-in-blank"
-                                />
-                                <input
-                                    type="text"
-                                    value={studentAnswer[1]|| ""}   
-                                    onChange={(e) => updateCodeAnswer(e.target.value, 1)}
-                                    placeholder="Enter answer"
-                                    className="fill-in-blank"
-                                />
-                                {`= "email" `}
-                                <input
-                                    type="text"
-                                    value={studentAnswer[2] || ""}
-                                    onChange={(e) => updateCodeAnswer(e.target.value, 2)}
-                                    placeholder="Enter answer"
-                                    className="fill-in-blank"
-                                />
-                                {`= "Enter email" />`}
-                                <br/>
-                                {`  <Form.Text className="text-muted">`}
-                                <br/>
-                                {`    We'll never share your email with anyone else.`}
-                                <br/>
-                                {`</Form.Text>`}
-                                <br/>
-                                {`</Form.Group>`}
-                            </pre>
-                        </div>
-                    )
-                case "1.1.13":
-                    return (
                         <>
                         <div className="code-bank">
-                            {t1Q13!.type==="ordering" && t1Q13!.options!.map((option, index) => (
+                            {t1Q12!.type==="ordering" && t1Q12!.options!.map((option, index) => (
                                 <div key={index} className="code-option">
                                     <strong>{index+1}.</strong> {option}
                                 </div>
