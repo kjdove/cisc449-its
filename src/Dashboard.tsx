@@ -11,7 +11,7 @@ export function Dashboard(): JSX.Element {
         ...JSON.parse(localStorage.getItem("module1topic2") || "{}"),
         ...JSON.parse(localStorage.getItem("module1topic3") || "{}"),
     }
-    const m1Questions = 36;
+    const m1Questions = 35;
 
     const m2Data = {
         ...JSON.parse(localStorage.getItem("module2topic1") || "{}"),

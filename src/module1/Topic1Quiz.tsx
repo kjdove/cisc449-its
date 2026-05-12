@@ -166,13 +166,14 @@ export function Topic1Quiz(): JSX.Element {
                         );
                     })}
                     {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
-                    {currentAInd >= 9 && hasSubmit && currentCodeFeedback && (
-                        
-                        <div className={`code-feedback ${isCorrect ? "correct-code-feedback" : "incorrect-code-feedback"}`}>
-                            {currentCodeFeedback.type  === "fib" ? currentCodeFeedback.feedback 
-                            : currentCodeFeedback.type === "ordering" ? currentCodeFeedback.feedback 
-                            : currentCodeFeedback.type === "mcq" ?  currentCodeFeedback.options.find(o => o.textId === (studentAnswers[currentQuestion.id] as string))?.text || ""
-                            : ""}
+                    {currentAInd >= 9 && hasSubmit && (
+                        isCorrect ? 
+                        <div className={`code-feedback correct-code-feedback`}>
+                            Correct!
+                        </div>
+                        :
+                        <div className={`code-feedback incorrect-code-feedback`}>
+                            {currentCodeFeedback.feedback}
                         </div>
                     )}
                 </div>

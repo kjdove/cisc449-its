@@ -119,7 +119,11 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2CodeFeedback: codingFeedback[] = []
+export const topic2FeedbackCode: codingFeedback[] = [
+    {type: "mcq", id: "1.2.10", feedback: "Take a close look at all the attributes in the <Form.Control>."},
+    {type: "fib", id: "1.2.11", feedback: "Which attribute sets the initial value of an uncontrolled form control without binding it to a state after?"},
+    {type: "fib", id: "1.2.12", feedback: "Which attribute allows user interaction but users cannot change the value of the form?"}
+]
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "1.3.1", options: [
@@ -154,4 +158,4 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3CodeFeedback: codingFeedback[] = []
+export const topic3FeedbackCode: codingFeedback[] = []

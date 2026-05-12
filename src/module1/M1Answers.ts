@@ -127,15 +127,9 @@ export const topic2CodeAnswers: CodingAnswer[]  = [
         {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
         {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
         {textId: "4", text: "All of the above."},
-    ], correctId: "1"},
-    {id: "1.2.11",type: "mcq",options: [
-        {textId: "1", text: "The form control will be disabled and the user will not be able to interact with it."},
-        {textId: "2", text: "The form control will have placeholder text that says 'Enter email'."},
-        {textId: "3", text: "The form control will only accept email input and will show a validation error if the input is not in email format."},
-        {textId: "4", text: "All of the above."},
-    ], correctId: "2"},
-    {id: "1.2.12", type: "fib", correctAnswers: ["defaultValue"]},
-    {id: "1.2.13", type: "fib", correctAnswers: ["readOnly"]},
+    ], correctId: "4"},
+    {id: "1.2.11", type: "fib", correctAnswers: ["defaultValue"]},
+    {id: "1.2.12", type: "fib", correctAnswers: ["readOnly"]},
 ]
 
 export const topic3MCQAnswers: mcAnswer[] = [
