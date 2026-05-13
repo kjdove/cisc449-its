@@ -168,4 +168,9 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3FeedbackCode: codingFeedback[] = []
+export const topic3FeedbackCode: codingFeedback[] = [
+    {id: "3.3.6", type: "mcq", feedback: "Look at the code structure. Is the .map() method used to generate the list of options? Are the key and value attributes correctly implemented in the option tags?"},
+    {id: "3.3.7", type: "fib", feedback: "Which HTML input component tag is used to create a dropdown? What higher order array method is commonly used to generate all of the option tags? What unique attribute is required for each option in a dropdown to ensure efficient rendering?"},
+    {id: "3.3.8", type: "fib", feedback: "What attributes are used in the Form.Select tag to manage the selected option in a dropdown?"},
+    {id: "3.3.9", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+]
