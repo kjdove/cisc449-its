@@ -4,7 +4,7 @@ import { topic3CodeAnswers, topic3MCQAnswers } from './M2Answers';
 import { useState } from 'react';
 import { T3Code } from './T3Code';
 import {type JSX} from 'react';
-import {topic3FeedbackMCQ} from "./M2Feedback";
+import {topic3FeedbackMCQ, topic3FeedbackCode} from "./M2Feedback";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -33,6 +33,7 @@ export function Topic3Quiz(): JSX.Element {
     const currentQuestion = allQuestions[currentQInd];
     const [currentAInd, setCurrentAInd] = useState<number>(startInd);
     const currentFeedback = topic3FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const currentCodeFeedback = topic3FeedbackCode.find(f => f.id === currentQuestion.id);
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
@@ -164,6 +165,16 @@ export function Topic3Quiz(): JSX.Element {
                     })}
 
                     {currentAInd >= 6 && <T3Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
+                    {currentAInd >= 6 && hasSubmit && (
+                        isCorrect ? 
+                        <div className={`code-feedback correct-code-feedback`}>
+                            Correct!
+                        </div>
+                        :
+                        <div className={`code-feedback incorrect-code-feedback`}>
+                            {currentCodeFeedback.feedback}
+                        </div>
+                    )}
                 </div>
                 {!hasSubmit && (
                     <button onClick={handleSubmit}className="submit-button">Submit</button>

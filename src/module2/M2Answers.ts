@@ -239,7 +239,7 @@ export const topic3CodeAnswers: CodingAnswer[]  = [
         {textId: "3", text: "Since the code has the incorrect syntax for the value attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
         {textId: "4", text: "Since the code has the incorrect syntax for the onChange attribute, the dropdown value will not update and will stay as the initial value of 'Happy'."},
     ], correctId: "4"},
-    {id: "2.3.11", type: "ordering", correctOrder: ["3,7,2,4,9,8,1,6,5", "3,7,2,4,9,1,8,6,5"], options: [
+    {id: "2.3.11", type: "ordering", correctOrder: ["3,7,2,4,9,8,1,6,5"], options: [
         `<option value="sad">Sad</option>`,
         `setEmotion(event.target.value);}`,
         `const [emotion, setEmotion] = useState<string>("happy");`,

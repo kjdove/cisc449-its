@@ -139,6 +139,7 @@ export function T2Code({questionId, studentAnswer, setStudentAnswer}: T2CodeProp
                             {`onChange = {updateHappiness} `}
                             <br/>
                             {` />`}
+                            <br/>
                             {` </div>`}
                         </pre>
                     </div>
