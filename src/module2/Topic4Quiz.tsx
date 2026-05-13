@@ -6,7 +6,6 @@ import { T4Code } from './T4Code';
 import {type JSX} from 'react';
 import {topic4FeedbackMCQ, topic4FeedbackCode} from "./M2Feedback";
 import { useNavigate } from 'react-router-dom';
-import type { TopicData } from '../Types';
 
 
 export function Topic4Quiz(): JSX.Element {
@@ -29,9 +28,6 @@ export function Topic4Quiz(): JSX.Element {
             startInd = 9;
         }
     }
-
-    const m2t4 = JSON.parse(localStorage.getItem("module2topic4") || "{}");
-    const isCompleted = Object.values(m2t4).filter((item: TopicData) => item.isCorrect).length === 20;
 
     const allQuestions = [...topic4MCQ, ...topic4Code];
     const [currentQInd, setCurrentQInd] = useState<number>(startInd);
@@ -189,11 +185,8 @@ export function Topic4Quiz(): JSX.Element {
                     <button onClick={() => handleQuestionChange(currentQInd+1)}className="next-button">Next Question</button>
 
                 )}
-                {hasSubmit && isCorrect && (currentQInd + 1 === allQuestions.length) && isCompleted === false && (
-                    <div className="congrats-message">You still have uncompleted questions. Go back and complete them to finish this topic.</div>
-                )}
-                {hasSubmit && isCorrect && (currentQInd + 1 === allQuestions.length) && isCompleted === true && (
-                    <div className="congrats-message">Congrats! You have completed this topic.</div>
+                {hasSubmit && isCorrect && (currentQInd + 1 === allQuestions.length) && (
+                    <div className="congrats-message">Congratulations! You have completed all the questions for this topic.</div>
                 )}
                 {hasSubmit && !isCorrect && (
                     <button onClick={() => handleQuestionChange(currentQInd)}className="try-again-button">Try Again</button>
