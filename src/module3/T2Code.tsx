@@ -39,7 +39,7 @@ export function T2Code({questionId, studentAnswer, setStudentAnswer}: T2CodeProp
                             <br/>
                             {`function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {`}
                             <br/>
-                            {`  setIsHappy(event.target.value));`}
+                            {`  setIsHappy(event.target.checked));`}
                             <br/>
                             {`}`}
                             <br/>
@@ -147,7 +147,7 @@ export function T2Code({questionId, studentAnswer, setStudentAnswer}: T2CodeProp
                     <>
                     <div className='code-container'>
                         <pre>
-                            {`const [emotions, setEmotions] = useState<string>("happy");`}
+                            {`const [emotions, setEmotions] = useState<string>(["happy", "sad"]);`}
                             <br/>
                             {`function updateEmotions(event: React.ChangeEvent<HTMLInputElement>) {`}
                             <br/>

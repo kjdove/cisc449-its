@@ -120,7 +120,20 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2FeedbackCode: codingFeedback[] = []
+export const topic2FeedbackCode: codingFeedback[] = [
+    {id: "3.2.10", type: "mcq", feedback: "Look at the component attributes. Are they correct for a checkbox variation? Is there anything missing to create a switch?"},
+    {id: "3.2.11", type: "mcq", feedback: "Look at the syntax. Are the correct components used to create a set of radio buttons? Is the state value updated correctly?"},
+    {id: "3.2.12", type: "mcq", feedback: "Look at the syntax. Is the state value updated correctly? Does the state definition represent the expected data structure for multiple selections? Are the correct components used to create a set of checkboxes?"},
+    {id: "3.2.13", type: "fib", feedback: "What component and attribute are needed to create a switch?"},
+    {id: "3.2.14", type: "fib", feedback: "What type should the state hold for radio buttons? What component and type are needed to create checkable state with only one option selected at a time?"},
+    {id: "3.2.15", type: "fib", feedback: "What type should the state hold for multiple checkboxes? What component and type are needed to create checkable state with multiple options selected at a time?"},
+    {id: "3.2.16", type: "mcq", feedback: "Which checkbox variation type is a visual modification of a checkbox that uses a toggle? Which attribute is used for the controlled state?"},
+    {id: "3.2.17", type: "mcq", feedback: "Which checbox variation presents options to a user where only one option can be selected at a time? Which component and type are used to create this variation?"},
+    {id: "3.2.18", type: "mcq", feedback: "Which checkbox variation is used when you want to allow users to select multiple options from a set of choices? Which component and type are used to create this variation?"},
+    {id: "3.2.19", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.2.20", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.2.21", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "3.3.1", options: [
