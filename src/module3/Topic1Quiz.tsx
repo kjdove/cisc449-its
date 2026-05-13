@@ -4,7 +4,7 @@ import {useState} from "react";
 import { T1Code } from "./T1Code";
 import { topic1MCQAnswers, topic1CodeAnswers } from "./M3Answers";
 import { topic1MCQ, topic1Code } from "./M3Questions";
-import {topic1FeedbackMCQ} from "./M3Feedback";
+import {topic1FeedbackMCQ, topic1FeedbackCode} from "./M3Feedback";
 import { useNavigate } from "react-router-dom";
 
 export function Topic1Quiz(): JSX.Element {
@@ -34,6 +34,7 @@ export function Topic1Quiz(): JSX.Element {
     const [currentAInd, setCurrentAInd] = useState<number>(startInd);
 
     const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const currentCodeFeedback = topic1FeedbackCode.find(f => f.id === currentQuestion.id);
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
@@ -165,6 +166,16 @@ export function Topic1Quiz(): JSX.Element {
                     })}
 
                     {currentAInd >= 8 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
+                    {currentAInd >= 8 && hasSubmit && (
+                        isCorrect ? 
+                        <div className={`code-feedback correct-code-feedback`}>
+                            Correct!
+                        </div>
+                        :
+                        <div className={`code-feedback incorrect-code-feedback`}>
+                            {currentCodeFeedback.feedback}
+                        </div>
+                    )}
                 </div>
                 {!hasSubmit && (
                     <button onClick={handleSubmit}className="submit-button">Submit</button>

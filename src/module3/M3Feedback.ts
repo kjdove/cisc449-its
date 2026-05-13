@@ -1,4 +1,4 @@
-import { type mcFeedback } from "../Types"
+import type {  mcFeedback, codingFeedback } from "../Types"
 
 export const topic1FeedbackMCQ: mcFeedback[] = [
     {id: "3.1.1", options: [
@@ -51,7 +51,17 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic1FeedbackCode = []
+export const topic1FeedbackCode: codingFeedback[] = [
+    {id: "3.1.9", type: "fib", feedback: "What type does the state hold? What component renders input for a textbox? Which type attribute is used to create allow number input only?"},
+    {id: "3.1.10", type: "fib", feedback: "What is needed to create a horizontal layout? What is needed to align the label and input horizontally?"},
+    {id: "3.1.11", type: "fib", feedback: "What component is used to create a textarea? What attribute is used to specify the number of rows for a textarea?"},
+    {id: "3.1.12", type: "mcq", feedback: "Which textbox variation allows only numerical input? Look at the different options for the type attribute in Form.Control."},
+    {id: "3.1.13", type: "mcq", feedback: "Which textbox variation allows for multi-line input? Which attributes are used in the Form.Control tag to create a multiline textarea?."},
+    {id: "3.1.14", type: "mcq", feedback: "Which textbox variation allows for a the Form.Label to be inline as the input field? What components and attributes are needed to create a horizontal layout?"},
+    {id: "3.1.15", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.1.16", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.1.17", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic2FeedbackMCQ: mcFeedback[] = [
     {id: "3.2.1", options: [
@@ -110,7 +120,7 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2FeedbackCode = []
+export const topic2FeedbackCode: codingFeedback[] = []
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "3.3.1", options: [
@@ -145,4 +155,4 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3FeedbackCode = []
+export const topic3FeedbackCode: codingFeedback[] = []
