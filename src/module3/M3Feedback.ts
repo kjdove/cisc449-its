@@ -1,4 +1,4 @@
-import { type mcFeedback } from "../Types"
+import type {  mcFeedback, codingFeedback } from "../Types"
 
 export const topic1FeedbackMCQ: mcFeedback[] = [
     {id: "3.1.1", options: [
@@ -51,7 +51,17 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic1FeedbackCode = []
+export const topic1FeedbackCode: codingFeedback[] = [
+    {id: "3.1.9", type: "fib", feedback: "What type does the state hold? What component renders input for a textbox? Which type attribute is used to create allow number input only?"},
+    {id: "3.1.10", type: "fib", feedback: "What is needed to create a horizontal layout? What is needed to align the label and input horizontally?"},
+    {id: "3.1.11", type: "fib", feedback: "What component is used to create a textarea? What attribute is used to specify the number of rows for a textarea?"},
+    {id: "3.1.12", type: "mcq", feedback: "Which textbox variation allows only numerical input? Look at the different options for the type attribute in Form.Control."},
+    {id: "3.1.13", type: "mcq", feedback: "Which textbox variation allows for multi-line input? Which attributes are used in the Form.Control tag to create a multiline textarea?."},
+    {id: "3.1.14", type: "mcq", feedback: "Which textbox variation allows for a the Form.Label to be inline as the input field? What components and attributes are needed to create a horizontal layout?"},
+    {id: "3.1.15", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.1.16", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.1.17", type: "ordering", feedback: "Remeber, set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic2FeedbackMCQ: mcFeedback[] = [
     {id: "3.2.1", options: [
@@ -110,7 +120,20 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2FeedbackCode = []
+export const topic2FeedbackCode: codingFeedback[] = [
+    {id: "3.2.10", type: "mcq", feedback: "Look at the component attributes. Are they correct for a checkbox variation? Is there anything missing to create a switch?"},
+    {id: "3.2.11", type: "mcq", feedback: "Look at the syntax. Are the correct components used to create a set of radio buttons? Is the state value updated correctly?"},
+    {id: "3.2.12", type: "mcq", feedback: "Look at the syntax. Is the state value updated correctly? Does the state definition represent the expected data structure for multiple selections? Are the correct components used to create a set of checkboxes?"},
+    {id: "3.2.13", type: "fib", feedback: "What component and attribute are needed to create a switch?"},
+    {id: "3.2.14", type: "fib", feedback: "What type should the state hold for radio buttons? What component and type are needed to create checkable state with only one option selected at a time?"},
+    {id: "3.2.15", type: "fib", feedback: "What type should the state hold for multiple checkboxes? What component and type are needed to create checkable state with multiple options selected at a time?"},
+    {id: "3.2.16", type: "mcq", feedback: "Which checkbox variation type is a visual modification of a checkbox that uses a toggle? Which attribute is used for the controlled state?"},
+    {id: "3.2.17", type: "mcq", feedback: "Which checbox variation presents options to a user where only one option can be selected at a time? Which component and type are used to create this variation?"},
+    {id: "3.2.18", type: "mcq", feedback: "Which checkbox variation is used when you want to allow users to select multiple options from a set of choices? Which component and type are used to create this variation?"},
+    {id: "3.2.19", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.2.20", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+    {id: "3.2.21", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "3.3.1", options: [
@@ -145,4 +168,9 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3FeedbackCode = []
+export const topic3FeedbackCode: codingFeedback[] = [
+    {id: "3.3.6", type: "mcq", feedback: "Look at the code structure. Is the .map() method used to generate the list of options? Are the key and value attributes correctly implemented in the option tags?"},
+    {id: "3.3.7", type: "fib", feedback: "Which HTML input component tag is used to create a dropdown? What higher order array method is commonly used to generate all of the option tags? What unique attribute is required for each option in a dropdown to ensure efficient rendering?"},
+    {id: "3.3.8", type: "fib", feedback: "What attributes are used in the Form.Select tag to manage the selected option in a dropdown?"},
+    {id: "3.3.9", type: "ordering", feedback: "Remember, set up the state, look for the hook and handler function, then set up the form structure."},
+]

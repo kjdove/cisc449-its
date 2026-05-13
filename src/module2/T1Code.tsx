@@ -84,7 +84,7 @@ export function T1Code({questionId, studentAnswer, setStudentAnswer}: T1CodeProp
                             <br/>
                             {`function updateName(event: React.ChangeEvent<HTMLInputElement>) {`}
                             <br/>
-                            {`  setName(event.target.`}
+                            {`  setName(event.target.value);`}
                             <br/>
                             {`}`}
                             <br/>

@@ -119,7 +119,11 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2CodeFeedback: codingFeedback[] = []
+export const topic2FeedbackCode: codingFeedback[] = [
+    {type: "mcq", id: "1.2.10", feedback: "Take a close look at all the attributes in the <Form.Control>."},
+    {type: "fib", id: "1.2.11", feedback: "Which attribute sets the initial value of an uncontrolled form control without binding it to a state after?"},
+    {type: "fib", id: "1.2.12", feedback: "Which attribute allows user interaction but users cannot change the value of the form?"}
+]
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "1.3.1", options: [
@@ -154,4 +158,10 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3CodeFeedback: codingFeedback[] = []
+export const topic3FeedbackCode: codingFeedback[] = [
+    {type: "mcq", id: "1.3.6", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the input to the state variable and update it as the user types?"},
+    {type: "mcq", id: "1.3.7", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the input to the state variable and update it as the user types?"},
+    {type: "mcq", id: "1.3.8", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the input to the state variable and update it as the user types?"},
+    {type: "fib", id: "1.3.9", feedback: "What is used in React to create controlled components? What attributes are necessary to bind the value of a form control to a state variable and update it on user input?"},
+    {type: "fib", id: "1.3.10", feedback: "How is the value of a Form.Control bind to a state variable in React? What is the syntax for updating the state variable when the user types in the form control?"}
+]

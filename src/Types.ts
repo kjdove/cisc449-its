@@ -35,7 +35,7 @@ export interface mcFeedback {
 export type codingFeedback = 
     | {type: "fib"; id: string; feedback: string}
     | {type: "ordering"; id: string; feedback: string}
-    |  {type: "mcq"; id: string; options: Option[]; correctId: string };
+    |  {type: "mcq"; id: string; feedback: string};
 
 
 

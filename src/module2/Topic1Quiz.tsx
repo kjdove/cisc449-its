@@ -4,7 +4,7 @@ import { topic1CodeAnswers, topic1MCQAnswers } from './M2Answers';
 import { useState } from 'react';
 import { T1Code } from './T1Code';
 import {type JSX} from 'react';
-import {topic1FeedbackMCQ} from "./M2Feedback";
+import {topic1FeedbackMCQ, topic1FeedbackCode} from "./M2Feedback";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -33,6 +33,7 @@ export function Topic1Quiz(): JSX.Element {
     const currentQuestion = allQuestions[currentQInd];
 
     const currentFeedback = topic1FeedbackMCQ.find(f => f.id === currentQuestion.id);
+    const currentCodeFeedback = topic1FeedbackCode.find(f => f.id === currentQuestion.id);
     const [hasSubmit, setHasSubmit] = useState<boolean>(false);
     const [isCorrect, setIsCorrect] = useState<boolean| null>(null);
 
@@ -167,6 +168,16 @@ export function Topic1Quiz(): JSX.Element {
                     })}
 
                     {currentAInd >= 9 && <T1Code questionId={currentQuestion.id} studentAnswer={studentAnswers[currentQuestion.id] as string[] || []} setStudentAnswer={handleAnswerChange}/>}
+                    {currentAInd >= 9 && hasSubmit && (
+                        isCorrect ? 
+                        <div className={`code-feedback correct-code-feedback`}>
+                            Correct!
+                        </div>
+                        :
+                        <div className={`code-feedback incorrect-code-feedback`}>
+                            {currentCodeFeedback.feedback}
+                        </div>
+                    )}
                 </div>
                 {!hasSubmit && (
                     <button onClick={handleSubmit}className="submit-button">Submit</button>

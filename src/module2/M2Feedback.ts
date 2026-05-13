@@ -1,4 +1,4 @@
-import { type mcFeedback } from "../Types"
+import type{  mcFeedback, codingFeedback } from "../Types"
 
 export const topic1FeedbackMCQ: mcFeedback[] = [
     {id: "2.1.1", options: [
@@ -57,7 +57,13 @@ export const topic1FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic1FeedbackCode = []
+export const topic1FeedbackCode: codingFeedback[] = [
+    {id: "2.1.10", type: "fib", feedback: "Which part of the code describe the possible values stored in the State? Which part shows off the current State? Which part lets you change and update the current State?"},
+    {id: "2.1.11", type: "fib", feedback: "Which HTML tag is the input component used to create a textbox?"},
+    {id: "2.1.12", type: "mcq", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the input to the state variable and update it as the user types?"},
+    {id: "2.1.13", type: "mcq", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the input to the state variable and update it as the user types?"},
+    {id: "2.1.14", type: "ordering", feedback: "Remember the Model-View-Controller pattern. The state variable is the Model, the input field is the View, and the onChange handler is the Controller. Set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic2FeedbackMCQ: mcFeedback[] = [
     {id: "2.2.1", options: [
@@ -116,7 +122,13 @@ export const topic2FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic2FeedbackCode = []
+export const topic2FeedbackCode: codingFeedback[] = [
+    {id: "2.2.10", type: "fib", feedback: "Which part of the code describe the possible values stored in the State? Which part shows off the current State? Which part lets you change and update the current State?"},
+    {id: "2.2.11", type: "fib", feedback: "Which HTML tag is the input component used to create a checkbox? Which attribute represents the current state of the checkbox?"},
+    {id: "2.2.12", type: "mcq", feedback: "Look at the checked attribute and the onChange handler. Do they correctly bind the checkbox to the state variable and update it as the user clicks?"},
+    {id: "2.2.13", type: "mcq", feedback: "Look at the checked attribute and the onChange handler. Do they correctly bind the checkbox to the state variable and update it as the user clicks?"},
+    {id: "2.2.14", type: "ordering", feedback: "Remember the Model-View-Controller pattern. The state variable is the Model, the checkbox input is the View, and the onChange handler is the Controller. Set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic3FeedbackMCQ: mcFeedback[] = [
     {id: "2.3.1", options: [
@@ -157,7 +169,13 @@ export const topic3FeedbackMCQ: mcFeedback[] = [
     ]},
 ]
 
-export const topic3FeedbackCode = []
+export const topic3FeedbackCode: codingFeedback[] = [
+    {id: "2.3.7", type: "fib", feedback: "Which part of the code describe the possible values stored in the State? Which part shows off the current State? Which part lets you change and update the current State?"},
+    {id: "2.3.8", type: "fib", feedback: "Which HTML tag is the input component used to create a dropdown? Which tag is used to define the individual options within the dropdown?"},
+    {id: "2.3.9", type: "mcq", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the dropdown to the state variable and update it as the user selects an option?"},
+    {id: "2.3.10", type: "mcq", feedback: "Look at the value attribute and the onChange handler. Do they correctly bind the dropdown to the state variable and update it as the user selects an option?"},
+    {id: "2.3.11", type: "ordering", feedback: "Remember the Model-View-Controller pattern. The state variable is the Model, the dropdown input is the View, and the onChange handler is the Controller. Set up the state, look for the hook and handler function, then set up the form structure."},
+]
 
 export const topic4FeedbackMCQ: mcFeedback[] = [
     {id: "2.4.1", options: [
@@ -238,4 +256,11 @@ export const topic4FeedbackMCQ: mcFeedback[] = [
 
 ]
 
-export const topic4FeedbackCode = []
+export const topic4FeedbackCode: codingFeedback[] = [
+    {id: "2.4.16", type: "mcq", feedback: "Which component uses the Form.Control tags? Which component uses the Form.Check tags? Which component uses the Form.Select tags?"},
+    {id: "2.4.17", type: "mcq", feedback: "Which component is designed for free-form text input? Which component is designed for binary choices? Which component is designed for selecting one option from a predefined list?"},
+    {id: "2.4.18", type: "mcq", feedback: "Which component is best for entering a unique email address? Which component is best for accepting Terms and Conditions? Which component is best for selecting a current emotion from a list of options?"},
+    {id: "2.4.19", type: "ordering", feedback: "Remember, first intialize the state, define the change handler, then build the form structure."},
+    {id: "2.4.20", type: "ordering", feedback: "Remember, first intialize the state, define the change handler, then build the form structure."},
+    {id: "2.4.21", type: "ordering", feedback: "Remember, first intialize the state, define the change handler, then build the form structure."},
+]

@@ -20,7 +20,7 @@ export function Module1(): JSX.Element {
     const t3Data = JSON.parse(localStorage.getItem("module1topic3") || "{}");
 
     const t1Questions = 13;    
-    const t2Questions = 13;
+    const t2Questions = 12;
     const t3Questions = 10;
 
     const topicMasteryLevel = (data: TopicData[], questionNum: number): string => {

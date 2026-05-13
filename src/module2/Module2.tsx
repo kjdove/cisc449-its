@@ -58,8 +58,8 @@ export function Module2(): JSX.Element {
                             <h2 className="topic-title">Topics</h2>
                             <h4 className="m2-topic-link" onClick={() => handleTopicChange("1")}>1. Textboxes {isCompleted(t1Data, t1Questions) ? "✓" : ""}</h4>
                             <h4 className="m2-topic-link" onClick={() => handleTopicChange("2")}>2. Checkboxes {isCompleted(t2Data, t2Questions) ? "✓" : ""}</h4>
-                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdowns {isCompleted(t2Data, t2Questions) ? "✓" : ""}</h4>
-                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between Textbox/Checkbox/Dropdown {isCompleted(t2Data, t2Questions) ? "✓" : ""}</h4>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("3")}>3. Dropdowns {isCompleted(t3Data, t3Questions) ? "✓" : ""}</h4>
+                            <h4 className="m2-topic-link" onClick={() => handleTopicChange("4")}>4. Differentiate between Textbox/Checkbox/Dropdown {isCompleted(t4Data, t4Questions) ? "✓" : ""}</h4>
                         </div>
                         <div className="module-right">
                             <h2 className="mastery-title">Mastery</h2>

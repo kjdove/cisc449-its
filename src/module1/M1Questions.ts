@@ -51,12 +51,9 @@ export const topic2MCQ: MCQ[] = [
 ]
 
 export const topic2Code: CodingQ[] = [
-    //one attribute (readonly, disabled)- mcq with options for how the form control will behave with that attribute or textbox/free response
     {id: "1.2.10", question: "Given the following code, what will be the behavior of the form control?"},
-    {id: "1.2.11", question: "Given the following code, what will be the behavior of the form control?"},
-    //scenarios, what attribute(s) should be used to achieve this behavior
-    {id: "1.2.12", question: "You want to create a form control that has an initial value of 'Hello World' but can be edited by the user. Add the missing attribute(s)."},
-    {id: "1.2.13", question: "You want to create a form control that is visible but not editable by the user. Add the missing attribute(s)."},
+    {id: "1.2.11", question: "You want to create a form control that has an initial value of 'Hello World' but can be edited by the user. Add the missing attribute(s)."},
+    {id: "1.2.12", question: "You want to create a form control that is visible but not editable by the user. Add the missing attribute(s)."},
 ]
 
 /**TOPIC 3: How to Use the Value Attribute*/
