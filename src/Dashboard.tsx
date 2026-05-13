@@ -40,6 +40,14 @@ export function Dashboard(): JSX.Element {
         }
     }
 
+    const isLocked = (data: TopicData[], questionNum: number): boolean => {
+        const level = moduleMasteryLevel(data, questionNum);
+        if (level === "Advanced") {
+            return false;
+        }
+        return true;
+    }
+ 
     return (
         <div className="dashboard-page">
             <h2>Dashboard</h2>
@@ -55,11 +63,11 @@ export function Dashboard(): JSX.Element {
                        <h3>Module 1: Forms</h3>
                        <p>Mastery Level: {moduleMasteryLevel(m1Data, m1Questions)}</p>
                     </div>
-                    <div onClick={() => navigate("/module2")}className="module2">
+                    <div onClick={() => isLocked(m1Data, m1Questions) ? alert('Complete previous module before starting next.') : navigate("/module2")}className="module2">
                         <h3>Module 2: Textboxes, Checkboxes, Dropdowns</h3>
                         <p>Mastery Level: {moduleMasteryLevel(m2Data, m2Questions)}</p>
                     </div>
-                    <div onClick={() => navigate("/module3")}className="module3">
+                    <div onClick={() => isLocked(m2Data, m2Questions) ? alert('Complete previous module before starting next.') : navigate("/module3")}className="module3">
                         <h3>Module 3: Variations</h3>
                         <p>Mastery Level: {moduleMasteryLevel(m3Data, m3Questions)}</p>
                     </div>
