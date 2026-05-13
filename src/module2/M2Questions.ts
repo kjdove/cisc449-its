@@ -1,5 +1,5 @@
 /**TOPIC 1: Textboxes*/ 
-import  type { MCQ, CodingQ } from "../Types";
+import  type { MCQ, CodingQ, EndQuizQ } from "../Types";
 
 export const topic1MCQ: MCQ[] = [
     //type = "text"
@@ -163,3 +163,5 @@ export const topic4Code: CodingQ[] = [
     {id: "2.4.20", question: "Order the following code snippets to correctly create a checkbox component."},
     {id: "2.4.21", question: "Order the following code snippets to correctly create a dropdown component."},
 ]
+
+export const endOfModule: EndQuizQ[] = []

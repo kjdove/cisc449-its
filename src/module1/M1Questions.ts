@@ -1,5 +1,5 @@
 /**TOPIC 1: Forms and Form.Groups Questions*/
-import type { MCQ, CodingQ} from "../Types";
+import type { MCQ, CodingQ, EndQuizQ} from "../Types";
 //multiple choice questions for topic 1
 export const topic1MCQ: MCQ[] = [
     {id: "1.1.1", question: "What is a form?"},
@@ -94,4 +94,8 @@ export const topic3Code: CodingQ[] = [
     {id: "1.3.9", question: "Fill in the blank for the following code to correctly create a controlled form control."},
     //missing onChange handler
     {id: "1.3.10", question: "Fill in the blank for the following code to correctly create a controlled form control."},
+]
+
+export const endOfModule: EndQuizQ[] = [
+    
 ]

@@ -62,7 +62,7 @@ export function Module1(): JSX.Element {
                             <h4 className="mastery-level">{topicMasteryLevel(t3Data, t3Questions)}</h4>
                         </div>
                     </div>
-                    <button className="end-button">End of Module Quiz</button>
+                    <button className="end-button" onClick={() => navigate("/module1/endquiz")}>End of Module Quiz</button>
                 </div>
             )}
 

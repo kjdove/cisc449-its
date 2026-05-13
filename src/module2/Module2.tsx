@@ -70,7 +70,7 @@ export function Module2(): JSX.Element {
                         </div>
 
                     </div>
-                    <button className="end-button">End of Module Quiz</button>
+                    <button className="end-button" onClick={() => navigate("/module2/endquiz")}>End of Module Quiz</button>
                 </div>
             )}
             {topicId === "1" && (
