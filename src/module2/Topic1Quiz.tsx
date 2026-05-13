@@ -175,7 +175,7 @@ export function Topic1Quiz(): JSX.Element {
                         </div>
                         :
                         <div className={`code-feedback incorrect-code-feedback`}>
-                            {currentCodeFeedback.feedback}
+                            {currentCodeFeedback?.feedback}
                         </div>
                     )}
                 </div>
