@@ -9,7 +9,14 @@ export interface CodingQ {
     question: string;
 }
 
-export type EndQuizQ = CodingQ | MCQ;
+export interface EndQuizQ {
+    id: string;
+    question: string;
+    code?: string;
+    topic: string;
+    skill: string;
+    difficulty: number;
+}
 
 /**Answer Types */
 export interface Option {

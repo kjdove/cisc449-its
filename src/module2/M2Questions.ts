@@ -164,4 +164,113 @@ export const topic4Code: CodingQ[] = [
     {id: "2.4.21", question: "Order the following code snippets to correctly create a dropdown component."},
 ]
 
-export const endOfModule: EndQuizQ[] = []
+    /* id: string;
+    question: string;
+    code?: string;
+    topic: string;
+    skill: string;
+    difficulty: number; */
+export const endOfModule: EndQuizQ[] = [
+    //textboxes
+    {id: "E1", question: "Which React hook is commonly used to manage textbox state?", topic: "textboxes", skill: "recall", difficulty: 1},
+    {id: "E2", question: "Which part updates the state when the user types?", code: 
+        `<Form.Control
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+        />`, 
+    topic: "textboxes", skill: "event-handling", difficulty: 1},
+    {id: "E3", question: "What is the textbox value after the user types 'Ponyo'?", code: `
+        const [movie, setMovie] = useState("Spirited Away");
+        <Form.Control
+            type="text"
+            value={movie}
+            onChange={(e) => setMovie(e.target.value)}
+        />`,
+    topic: "textboxes", skill: "prediction", difficulty: 2},
+    {id: "E4", question: "Will the textbox update correctly? Why/why not?", code: `
+        <Form.Control
+            type="text"
+            value={username}
+        onChange={() => setUsername(username)}
+        />`,
+    topic: "textboxes", skill: "debugging", difficulty: 3},
+
+    //checkboxes
+    {id: "E5", question: "Checkbox state is typically represented using which data type?", topic: "checkboxes", skill: "recall", difficulty: 1},
+    {id: "E6", question: "Which property tells whether the checkbox is checked?", code: `
+        <Form.Check
+            type="checkbox"
+            checked={isAdmin}
+            onChange={(e) => setIsAdmin(e.target.checked)}
+        />`,
+    topic: "checkboxes", skill: "event-handling", difficulty: 1},
+    {id: "E7", question: "Is the checkbox checked or unchecked after the user clicks it?", code: `
+        const [isChecked, setIsChecked] = useState(false);
+        <Form.Check
+            type="checkbox"
+            checked={isChecked}
+            onChange={(e) => setIsChecked(e.target.checked)}
+        />`,
+    topic: "checkboxes", skill: "prediction", difficulty: 2},
+    {id: "E8", question: "Will the checkbox update correctly? Why/why not?", code: `
+        <Form.Check
+            type="checkbox"
+            checked={isSubscribed}
+            onChange={() => setIsSubscribed(e.target.value)}
+        />`,
+    topic: "checkboxes", skill: "debugging", difficulty: 3},
+
+    //dropdowns
+    {id: "E9", question: "Which tag is used inside <Form.Select> to define choices?", topic: "dropdowns", skill: "recall", difficulty: 1},
+    {id: "E10", question: "What becomes the new state value after user selects 'Happy'?", code: `
+        const [mood, setMood] = useState("Sad");
+        <Form.Select
+        value={mood}
+        onChange={(e) => setMood(e.target.value)}
+        >
+        <option value="Happy">Happy</option>
+        <option value="Sad">Sad</option>
+        </Form.Select>`,
+    topic: "dropdowns", skill: "prediction", difficulty: 2},
+    {id: "E11", question: "Will the dropdown update correctly? Why/why not?", code: `
+        <Form.Select
+        value={feeling}
+        onChange={() => setFeeling(e.target.value)}
+        >
+        <option value="Good">Good</option>
+        <option value="Bad">Bad</option>
+        </Form.Select>`,
+    topic: "dropdowns", skill: "debugging", difficulty: 3},
+    {id: "E12", question: "Which two attributes connect a dropdown to state?", topic: "dropdowns", skill: "recall", difficulty: 1},
+
+    //differences
+    {id: "E13", question: "A user must select one country from 100 options. Which component is best?", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E14", question: "A user must agree to terms and conditions. Which component should be used?", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E15", question: "A user must enter their email address. Which component should be used?", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E16", question: "What does the following code represent?", code: `
+        const [color, setColor] = useState<string>("Red");
+        <Form.Select
+        value={color}
+        onChange={(e) => setColor(e.target.value)}
+        >
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        </Form.Select>`,
+    topic: "differences", skill: "application", difficulty: 2},
+    {id: "E17", question: "What does the following code represent?", code: `
+        const [name, setName] = useState<string>("Brave");
+        <Form.Control 
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+        />`,
+    topic: "differences", skill: "application", difficulty: 2},
+    {id: "E18", question: "Will this component update correctly? Why/why not?", code: `
+        <Form.Check
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => setIsChecked(e.target.checked)}
+        />`,
+    topic: "differences", skill: "debugging", difficulty: 3},
+]
