@@ -13,3 +13,13 @@
     border-radius: 4px;
     margin-top: 10px;
 }
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+
+    max-width: 900px;
+    margin: 20px auto;
+
+    text-align: left;
+}

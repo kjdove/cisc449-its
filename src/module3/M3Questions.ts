@@ -172,7 +172,7 @@ export const endOfModule: EndQuiz[] = [
             <Form.Control
                 type="number"
                 value={released}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setReleased(event.target.value)}
+                onChange={(event) => setReleased(event.target.value)}
                 />
                 </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
             correctAnswer: "A number input box", topic: "tbVar", difficulty: 2},
@@ -182,7 +182,7 @@ export const endOfModule: EndQuiz[] = [
             <Col>
             <Form.Control
                 value={name}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)} 
+                onChange={(event) => setName(event.target.value)} 
             />
             </Col>
         </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
@@ -260,6 +260,53 @@ export const endOfModule: EndQuiz[] = [
             onChange={(e) => setIsEnabled(e.target.checked)}
         />`, options: ["The type attribute should be set to 'switch' instead of 'checkbox'.", "The checked attribute should be set to e.target.value instead of e.target.checked.", "The onChange handler should update the state using e.target.value instead of e.target.checked.", "There is no issue with this code."],
     correctAnswer: "The type attribute should be set to 'switch' instead of 'checkbox'.", topic: "cbVar", difficulty: 3},
-
     
+    //dropdown
+    {id: "E15", question: "Which array method is commonly used to generate dropdown options dynamically?", options: [".filter()", ".reduce()", ".map()", ".forEach()"],
+    correctAnswer: ".map()", topic: "ddVar", difficulty: 1},
+    {id: "E16", question: "Which attribute gives each dropdown option a unique identifier in React?", options: ["key", "id", "value", "name"],
+    correctAnswer: "key", topic: "ddVar", difficulty: 1},
+    
+    {id: "E17", question: " What is the purpose of the value and onChange attributes in a Form.Select component?", options: ["They are used to specify the unique identifier and display value for each dropdown option.", "They are used to manage the selected option in the dropdown.", "They are used to generate dropdown options from an array of data.", "They are used to apply styling to the dropdown component."],
+    correctAnswer: "They are used to manage the selected option in the dropdown.", topic: "ddVar", difficulty: 2},
+    {id: "E18", question: "What will this code create?", code: `
+        const COLORS = ["Red", "Green", "Blue"];
+        <Form.Select
+            value={selectedColor}
+            onChange={(e) => setSelectedColor(e.target.value)}
+        >
+            {COLORS.map((color) => (
+                <option key={color} value={color}>
+                    {color}
+                </option>
+            ))} 
+        </Form.Select>`, options: ["A dropdown with hardcoded options", "A dropdown with options generated from the COLORS array", "A number input box", "A set of radio buttons"],
+    correctAnswer: "A dropdown with options generated from the COLORS array", topic: "ddVar", difficulty: 3},
+
+    {id: "E19", question: "Identify the issue in this code for generating dropdown options.", code: `
+        const COLORS = ["Red", "Green", "Blue"];
+        <Form.Select
+            value={selectedColor}
+            onChange={(e) => setSelectedColor(e.target.value)}
+        >
+            {COLORS.map((color) => (
+                <option value={color}>
+                    {color}
+                </option>
+            ))}
+        </Form.Select>`, options: ["The value attribute is missing in the option tag.", "The key attribute is missing in the option tag.", "The onChange handler is not correctly updating the state.", "There is no issue with this code."],
+    correctAnswer: "The key attribute is missing in the option tag.", topic: "ddVar", difficulty: 3},
+    {id: "E20", question: "Identify the issue in this code for managing the selected option in a dropdown.", code: `
+        const COLORS = ["Red", "Green", "Blue"];
+        <Form.Select
+            value={selectedColor}
+            onChange={(e) => setSelectedColor(e.target.value)}
+        >
+            {COLORS.map((color) => (
+                <option key={color} value={color}>
+                    {color}
+                </option>
+            ))}
+        </Form.Select>`, options: ["The value state should be initialized as null instead of an empty string.", "The onChange handler should update the state using e.target.checked instead of e.target.value.", "The value attribute in the Form.Select tag should be set to null instead of selectedColor.", "There is no issue with this code."],
+    correctAnswer: "There is no issue with this code.", topic: "ddVar", difficulty: 3},
 ]

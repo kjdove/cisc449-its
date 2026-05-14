@@ -61,7 +61,7 @@ export function Module3(): JSX.Element {
                             <h4 className="mastery-level">{topicMasteryLevel(t3Data, t3Questions)}</h4>
                         </div>
                     </div>
-                    <button className="end-button">End of Module Quiz</button>
+                    <button onClick={() => navigate("/module3/endquiz")}className="end-button">End of Module Quiz</button>
                 </div>
             )}
             {topicId === "1" && (
