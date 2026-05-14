@@ -1,73 +1,19 @@
-# React + TypeScript + Vite
+# CISC449 ITS - Textboxes, Checkboxes, Dropdowns
+This ITS focuses on React Bootstrap's textboxes, checkboxes, and dropdowns. It is broken up into three modules: Forms; Textboxes, Checkboxes, Dropdowns; and Variations. Within each module are subtopics where students can complete quizzes/answer questions to improve their knowledge mastery of each topic and the module overall. Additionally, each module has an 'End of Module' quiz they can complete to further test their knowledge and skills. This quiz is adaptive to the student's performance and the system presents a question that the student should be able to successfully answer based on their current knowledge of the question's topic. This application uses HashRouters from react-router-dom to navigate across the dashboard, modules, and each topic page, as well as localstorage to store the student's results for each topic page, end of module quizzes, and the pretest. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Walkthrough
+1. Start Page
+2. Pretest
+3. Dashboard
+4. Module 1: Forms
+5. Module 2: Textboxes, Checkboxes, Dropdowns
+6. Module 3: Variations
 
-Currently, two official plugins are available:
+# Future Implementations
+1. Adaptive Topic Quizzes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Currently, the topic quizzes start the student with a question whose difficulty corresponds to the difficulty of the pretest question they were asked for that topic, if it was answered correctly. Then, they can linearly progress and complete any following questions; however, if a student wants advanced mastery of a topic, they will need to complete any prior questions as well. In the future, these quizzes should follow a similar format to the end of module quizzes and present the next question based on the student's previous responses and knowledge that has been tracked. 
 
-## React Compiler
+2. Coding Questions and Personalized Feedback
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+There are two types of coding questions implemented at the moment: fill in the blank and ordering. In the future, there will be questions that ask the student to write full code that will be graded by the ITS and receive any necessary feedback. Moreover, feedback for coding questions should be tailored to the student's incorrect answer. The system would be able to detect if a student got the question wrong due to a typo, a misconception, or if they just didn't understand the question correctly. There could be other metrics the system would look for to detect for possible wrong answers, but with these three, the system would then give feedback based on which metric it detected. For typos, it would instruct the student to look over their response again, or point out a possible typo the student could have made. For misconceptions, the system would be able to identify if the student answered the question incorrectly due to a misunderstanding about a previous topic they already mastered or a concept they should have previously known before starting this tool. In that case, within the feedback, the system would explain why their answer was wrong as well as suggest to the student to either review that previous topic or chapter from the textbook. Additionally, if the system were adaptive, it could then ask a question related to the misconception. 
