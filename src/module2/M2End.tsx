@@ -1,96 +1,208 @@
 //Module 2 End of Module Quiz page
 import type { JSX } from "react";
-import type { TopicData } from "../Types";
-import {endOfModule} from "./M2Questions"
-/**
- * 
- * in local storage:
- *  endQuiz: {
-         score: 18,
-         totalQuestions: 20,
-         percentage: 90,
-         passed: true,
-      },
- */
-export function M2EndQuiz(): JSX.Element {
-    const t1Data = JSON.parse(localStorage.getItem("module2topic1") || "{}");
-    const t2Data = JSON.parse(localStorage.getItem("module2topic2") || "{}");
-    const t3Data = JSON.parse(localStorage.getItem("module2topic3") || "{}");
-    const t4Data = JSON.parse(localStorage.getItem("module2topic4") || "{}");
-    const t1Questions = 14;
-    const t2Questions = 14;
-    const t3Questions = 11;
-    const t4Questions = 21;
+import type { EndQuiz, TopicData } from "../Types";
+import {endOfModule} from "./M2Questions";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-    const topicMasteryScore = (data: TopicData[], questionNum: number): number => {
+export function M2EndQuiz(): JSX.Element {
+   const navigate = useNavigate();
+   const t1Data = JSON.parse(localStorage.getItem("module2topic1") || "{}");
+   const t2Data = JSON.parse(localStorage.getItem("module2topic2") || "{}");
+   const t3Data = JSON.parse(localStorage.getItem("module2topic3") || "{}");
+   const t4Data = JSON.parse(localStorage.getItem("module2topic4") || "{}");
+   const t1Questions = 14;
+   const t2Questions = 14;
+   const t3Questions = 11;
+   const t4Questions = 21;
+
+   const topicMasteryScore = (data: TopicData[], questionNum: number): number => {
         const totalCorrect =
         Object.values(data).filter((question: TopicData) => question.isCorrect).length;
         return totalCorrect / questionNum;
-    }
-
-    const masteries = {
-        textbox: topicMasteryScore(t1Data, t1Questions),
-        checkbox: topicMasteryScore(t2Data, t2Questions),
-        dropdown: topicMasteryScore(t3Data, t3Questions),
-        differentiate: topicMasteryScore(t4Data, t4Questions)
-    };
-
-    /**
-     * update "mastery "during quiz
-     * function updateMastery(
-   oldMastery: number,
-   correct: boolean
-) {
-   if(correct) {
-      return oldMastery + (1 - oldMastery) * 0.15;
    }
 
-   return oldMastery * 0.85;
-}
-     */
+   const masteries = {
+      textboxes: topicMasteryScore(t1Data, t1Questions),
+      checkboxes: topicMasteryScore(t2Data, t2Questions),
+      dropdowns: topicMasteryScore(t3Data, t3Questions),
+      differences: topicMasteryScore(t4Data, t4Questions)
+   }
 
-/**
- * next question to be asked:
- * function chooseNextQuestion(
-   questions: Question[],
-   masteryMap: Record<string, number>,
-   answered: string[]
-) {
+   const chooseNextQuestion = (questions: EndQuiz[], masteryMap: Record<string, number>, answered: string[]) => {
+      const weakestTopic = Object.entries(masteryMap).sort((a,b) => a[1] - b[1])[0][0];
 
-   const weakestTopic =
-      Object.entries(masteryMap)
-         .sort((a,b) => a[1] - b[1])[0][0];
+      const mastery = masteryMap[weakestTopic];
 
-   const mastery = masteryMap[weakestTopic];
+      let targetDifficulty = 2;
 
-   let targetDifficulty = 2;
+      if(mastery < 0.4)
+         targetDifficulty = 1;
+      else if(mastery > 0.75)
+         targetDifficulty = 3;
 
-   if(mastery < 0.4)
-      targetDifficulty = 1;
-   else if(mastery > 0.75)
-      targetDifficulty = 3;
+      const candidates = questions.filter(q => q.topic === weakestTopic 
+         && q.difficulty === targetDifficulty && !answered.includes(q.id));
 
-   const candidates = questions.filter(q =>
-      q.topic === weakestTopic &&
-      q.difficulty === targetDifficulty &&
-      !answered.includes(q.id)
-   );
+      return candidates.length > 0 ? candidates[Math.floor(Math.random() * candidates.length)] : null;
+   }
 
-   return candidates[
-      Math.floor(Math.random() * candidates.length)
-   ];
-}
- */
+   const [currentQuestion, setCurrentQuestion] = useState<EndQuiz | null>(() => chooseNextQuestion(endOfModule, masteries,[]));   
+   const [askedQuestions, setAskedQuestions] = useState<string[]>([]);
 
-//onclick handler helper
-    //first update masteries
-    //then choose next question
-     
+   const [studentAnswers, setStudentAnswers] = useState<Record<string, string>>({});
+
+   const [correctCount, setCorrectCount] =  useState<number>(0);
+
+   const [questionsAsked, setQuestionsAsked] = useState<number>(0);
+
+   const [quizFinished, setQuizFinished] = useState<boolean>(false);
+
+   const [masteryMap, setMasteryMap] = useState(masteries);
+
+   const finishQuiz = (finalCorrect: number,finalQuestions: number) => {
+      const percentage = Math.round((finalCorrect / finalQuestions) * 100);
+
+      const passed = percentage >= 90;
+   
+      localStorage.setItem(
+         "module2EndQuiz",
+         JSON.stringify({
+            score: finalCorrect,
+            totalQuestions: finalQuestions,
+            percentage,
+            passed
+         })
+      );
+   
+      setQuizFinished(true);
+   }//end finishquiz
+
+   const handleSubmit = () => {
+
+      if(!currentQuestion) return;
+   
+      const studentAnswer = studentAnswers[currentQuestion.id];
+   
+      const correct = studentAnswer === currentQuestion.correctAnswer;
+   
+      //update score
+      let newCorrectCount = correctCount;
+   
+      if(correct) {
+         newCorrectCount++;
+         setCorrectCount(newCorrectCount);
+      }
+   
+      //update question count
+      const newQuestionsAsked = questionsAsked + 1;
+   
+      setQuestionsAsked(newQuestionsAsked);
+   
+      //update list of answered questions
+      const newAnsweredQuestions = [
+         ...askedQuestions,
+         currentQuestion.id
+      ];
+   
+      setAskedQuestions(newAnsweredQuestions);
+   
+      // update mastery
+      const oldMastery = masteryMap[currentQuestion.topic];
+   
+      const newMastery = correct ? oldMastery + (1 - oldMastery) * 0.15 : oldMastery * 0.85;
+   
+      const updatedMasteries = {
+         ...masteryMap,
+         [currentQuestion.topic]: newMastery
+      };
+   
+      setMasteryMap(updatedMasteries);
+   
+      //conditions to end quiz
+      if(newQuestionsAsked >= 12) {
+         const percentage = newCorrectCount / newQuestionsAsked;
+   
+         if(percentage >= 0.9) {
+            finishQuiz(newCorrectCount, newQuestionsAsked);
+            return;
+         }
+      }
+   
+      if(newQuestionsAsked >= 15) {
+         finishQuiz(newCorrectCount, newQuestionsAsked);
+         return;
+      }
+      
+      //next question
+      const nextQuestion = chooseNextQuestion(endOfModule, updatedMasteries, newAnsweredQuestions);
+   
+      if(!nextQuestion) {
+         finishQuiz(newCorrectCount, newQuestionsAsked);
+         return;
+      }
+
+      setCurrentQuestion(nextQuestion);
+   }//end handlesub
+
     return (
         <div className="m2-end-container">
             <h1>End of Module 2 Quiz</h1>
-            <p>Congratulations on completing Module 2! Please take the quiz below to test your knowledge.</p>
-            {masteries.textbox < 0.7 && <p>You may want to review the Textbox topic before taking the quiz.</p>}
+            {!quizFinished && currentQuestion && (
+               <div>
+                  <h3>{currentQuestion?.question}</h3>
+
+                  {currentQuestion?.code && (
+                     <pre>
+                        {currentQuestion.code}
+                     </pre>
+                  )}
+
+                  {currentQuestion?.options.map(option => (
+                     <div key={option}>
+                        <input
+                           type="radio"
+                           name={currentQuestion?.id}
+                           value={option}
+                           checked={
+                              studentAnswers[currentQuestion.id]
+                              === option
+                           }
+                           onChange={(e) =>
+                              setStudentAnswers(prev => ({
+                                 ...prev,
+                                 [currentQuestion.id]:
+                                    e.target.value
+                              }))
+                           }
+                        />
+                        {option}
+                     </div>
+                  ))}
+                  <button onClick={handleSubmit}>
+                     Submit
+                  </button>
+               </div>
+            )}
+            {quizFinished && (
+               <div>
+
+                  <h2>Quiz Complete</h2>
+
+                  <p>
+                     Score:
+                     {correctCount}/{questionsAsked}
+                  </p>
+
+                  <p>
+                     Percentage:
+                     {Math.round(
+                        correctCount/questionsAsked * 100
+                     )}%
+                  </p>
+                     <p onClick={() => navigate("/dashboard")}>Return to Dashboard</p>
+               </div>
+               )}
         </div>
     );
 }
