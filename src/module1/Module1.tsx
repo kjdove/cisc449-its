@@ -25,6 +25,11 @@ export function Module1(): JSX.Element {
     const t1Questions = 12;    
     const t2Questions = 12;
     const t3Questions = 10;
+    // console.log(
+    //     Object.values(t1Data).filter(
+    //        (question: TopicData) => question.isCorrect
+    //     ).length
+    //  );
 
     const topicMasteryLevel = (data: TopicData[], questionNum: number): string => {
         const totalCorrect = Object.values(data).filter((question: TopicData) => question.isCorrect).length;

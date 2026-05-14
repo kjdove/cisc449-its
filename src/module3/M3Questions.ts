@@ -160,5 +160,106 @@ export const topic3Code: CodingQ[] = [
 ]
 
 export const endOfModule: EndQuiz[] = [
+    //textbox
+    {id: "E1", question:"Which attribute is used to create a number input textbox?", options: ["type='number'", "as='input-box'", "rows={3}", "column sm={2}"],
+    correctAnswer: "type='number'", topic: "tbVar", difficulty: 1},
+    {id: "E2", question:"Which attribute allows a Form.Control to behave like a multiline textarea?", options: ["as='textarea'", "type='multiline'", "rows={3}", "column sm={2}"],
+    correctAnswer: "as='textarea'", topic: "tbVar", difficulty: 1},
+
+    {id: "E3", question: "What will this textbox variation create?", code: ` 
+        <Form.Group controlId="formMovieReleased">
+            <Form.Label>Released:</Form.Label>
+            <Form.Control
+                type="number"
+                value={released}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setReleased(event.target.value)}
+                />
+                </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
+            correctAnswer: "A number input box", topic: "tbVar", difficulty: 2},
+    {id: "E4", question: "What will this textbox variation create?", code: `
+        <Form.Group controlId="formMovieName" as={Row} >
+            <Form.Label column sm={2}>Name:</Form.Label>
+            <Col>
+            <Form.Control
+                value={name}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)} 
+            />
+            </Col>
+        </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
+        correctAnswer: "A horizontal layout textbox", topic: "tbVar", difficulty: 2},
+    {id: "E5", question: "What will this textbox variation create?", code: `
+        <Form.Group controlId="formMovieName">
+        <Form.Label>Name:</Form.Label>
+        <Form.Control
+            as="textarea"
+            rows={3}
+            value={description}
+            onChange={updateDescription}
+        />
+        </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
+        correctAnswer: "A multiline textarea", topic: "tbVar", difficulty: 2},
+    
+        {id: "E6", question: "Will this number input work correctly? Why or why not?", code: `
+            const [released, setReleased] = useState<string>("");
+                <Form.Group controlId="formMovieReleased">
+                    <Form.Label>Released:</Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={released}
+                        onChange={(event) => setReleased(event.target.value)}
+                    />
+                </Form.Group>`, options: ["Yes, because the type attribute does not affect the functionality of the number input box.", "No, because the value state should be initialized as a number, not a string.", "Yes, because the onChange handler will still update the state correctly.", "No, because the type attribute should be set to 'number' to create a number input box."],
+            correctAnswer: "No, because the value state should be initialized as a number, not a string.", topic: "tbVar", difficulty: 3},
+        {id: "E7", question: "What is missing in this code to create a horizontal layout textbox?", code: ` 
+            const [name, setName] = useState<string>("");
+            <Form.Group controlId="formMovieName" as={Row} >
+                <Form.Label>Name:</Form.Label>
+                <Form.Control
+                    value={name}
+                    onChange={(event) => setName(event.target.value)} 
+                />
+            </Form.Group>`, options: ["The Form.Group tag should have the attribute as={Row}.", "The Form.Label should have the attributes column and sm={2}.", "The Form.Control should be wrapped in a <Col> tag.", "All of the above."],
+            correctAnswer: "All of the above.", topic: "tbVar", difficulty: 3},
+    
+    //checkboxes
+    {id: "E8", question: "Which checkbox variation uses a toggle-style interface?", options: ["Switch", "Radio buttons", "Multi checkboxes"],
+    correctAnswer: "Switch", topic: "cbVar", difficulty: 1},
+    {id: "E9", question: "Which checkbox variation allows users to select multiple options from a set of choices?", options: ["Switch", "Radio buttons", "Multi checkboxes"],
+    correctAnswer: "Multi checkboxes", topic: "cbVar", difficulty: 1},
+
+    {id: "E10", question: "Why must radio buttons share the same name attribute?", options: ["To ensure that only one option can be selected at a time within the set.", "To allow users to select multiple options from the set.", "To visually group the radio buttons together on the form.", "To enable the use of the inline attribute for horizontal layout."],
+    correctAnswer: "To ensure that only one option can be selected at a time within the set.", topic: "cbVar", difficulty: 2},
+    {id: "E11", question: "What does the inline attribute do for Form.Check components?", options: ["It allows multiple checkboxes to be selected at once.", "It visually groups the checkboxes together on the form.", "It displays the checkboxes in a horizontal row instead of a vertical stack.", "It enables the use of the type='switch' attribute."],
+    correctAnswer: "It displays the checkboxes in a horizontal row instead of a vertical stack.", topic: "cbVar", difficulty: 2},
+
+    {id: "E12", question: "Will these radio buttons behave as a single group? Why or why not?", code: `
+        <Form.Check
+            type="radio"
+            label="Option 1"
+            name="options"
+            value="option1"
+            checked={selectedOption === "option1"}
+            onChange={(e) => setSelectedOption(e.target.value)}
+        />
+        <Form.Check
+            type="radio"
+            label="Option 2"
+            name="options"
+            value="option2"
+            checked={selectedOption === "option2"}
+            onChange={(e) => setSelectedOption(e.target.value)}
+        />`, options: ["Yes, because they both have the same name attribute.", "No, because they are missing the inline attribute.", "Yes, because they are both of type 'radio'.", "No, because they need to be wrapped in a <Col> tag for horizontal layout."],
+    correctAnswer: "Yes, because they both have the same name attribute.", topic: "cbVar", difficulty: 3},
+
+    {id: "E14", question: "Identify the issue in this switch component.", code: `
+        const [isEnabled, setIsEnabled] = useState(false);
+        <Form.Check
+            type="checkbox"
+            label="Enable feature"
+            checked={isEnabled}
+            onChange={(e) => setIsEnabled(e.target.checked)}
+        />`, options: ["The type attribute should be set to 'switch' instead of 'checkbox'.", "The checked attribute should be set to e.target.value instead of e.target.checked.", "The onChange handler should update the state using e.target.value instead of e.target.checked.", "There is no issue with this code."],
+    correctAnswer: "The type attribute should be set to 'switch' instead of 'checkbox'.", topic: "cbVar", difficulty: 3},
+
     
 ]
