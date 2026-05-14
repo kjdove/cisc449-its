@@ -9,6 +9,17 @@ export interface CodingQ {
     question: string;
 }
 
+export interface EndQuiz {
+    id: string;
+    question: string;
+    options: string[];
+    correctAnswer: string;
+    code?: string;
+    topic: string;
+    skill?: string;
+    difficulty: number;
+}
+
 /**Answer Types */
 export interface Option {
     textId: string;

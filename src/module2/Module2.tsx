@@ -17,6 +17,9 @@ export function Module2(): JSX.Element {
         navigate(`/module2/${topic}`);
     };
 
+    const endModResults = JSON.parse(localStorage.getItem("module2EndQuiz") || "{}");
+    const passed = endModResults.passed;
+
     const t1Data = JSON.parse(localStorage.getItem("module2topic1") || "{}");
     const t2Data = JSON.parse(localStorage.getItem("module2topic2") || "{}");
     const t3Data = JSON.parse(localStorage.getItem("module2topic3") || "{}");
@@ -27,17 +30,17 @@ export function Module2(): JSX.Element {
     const t3Questions = 11;
     const t4Questions = 21;
 
-    const topicMasteryLevel = (data: TopicData[], questionNum: number): string => {
-        const totalCorrect = Object.values(data).filter((question: TopicData) => question.isCorrect).length;
-        const mastery = Math.round(totalCorrect / questionNum * 100);
-        if (mastery >= 90) {
-            return "Advanced";
-        } else if (mastery >= 70) {
-            return "Intermediate";
-        } else {
-            return "Beginner";
-        }
+    const topicMasteryScore = (data: TopicData[], questionNum: number): number => {
+        const totalCorrect =
+        Object.values(data).filter((question: TopicData) => question.isCorrect).length;
+        return totalCorrect / questionNum;
     }
+
+    const topicMasteryLabel = (score: number): string => {
+        if(score >= 0.9) return "Advanced";
+        if(score >= 0.7) return "Intermediate";
+        return "Beginner";
+     };
 
     const isCompleted = (data: TopicData[], questionNum: number): boolean => {
         return Object.values(data).filter((question: TopicData) => question.isCorrect).length === questionNum;
@@ -63,14 +66,20 @@ export function Module2(): JSX.Element {
                         </div>
                         <div className="module-right">
                             <h2 className="mastery-title">Mastery</h2>
-                            <h4 className="mastery-level">{topicMasteryLevel(t1Data, t1Questions)}</h4>
-                            <h4 className="mastery-level">{topicMasteryLevel(t2Data, t2Questions)}</h4>
-                            <h4 className="mastery-level">{topicMasteryLevel(t3Data, t3Questions)}</h4>
-                            <h4 className="mastery-level">{topicMasteryLevel(t4Data, t4Questions)}</h4>
+                            <h4 className="mastery-level">{topicMasteryLabel(topicMasteryScore(t1Data, t1Questions))}</h4>
+                            <h4 className="mastery-level">{topicMasteryLabel(topicMasteryScore(t2Data, t2Questions))}</h4>
+                            <h4 className="mastery-level">{topicMasteryLabel(topicMasteryScore(t3Data, t3Questions))}</h4>
+                            <h4 className="mastery-level">{topicMasteryLabel(topicMasteryScore(t4Data, t4Questions))}</h4>
                         </div>
 
                     </div>
-                    <button className="end-button">End of Module Quiz</button>
+                    <button className="end-button" onClick={() => navigate("/module2/endquiz")}>End of Module Quiz</button>
+                    {passed === true && (
+                        <div className="congrats-message">
+                            <h2>Congratulations! You've passed the End of Module Quiz!</h2>
+                            <p>Feel free to review any topics or move on to the next module.</p>
+                        </div>
+                    )}
                 </div>
             )}
             {topicId === "1" && (
