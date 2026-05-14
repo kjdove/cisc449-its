@@ -260,6 +260,5 @@ export const endOfModule: EndQuiz[] = [
             onChange={(e) => setIsEnabled(e.target.checked)}
         />`, options: ["The type attribute should be set to 'switch' instead of 'checkbox'.", "The checked attribute should be set to e.target.value instead of e.target.checked.", "The onChange handler should update the state using e.target.value instead of e.target.checked.", "There is no issue with this code."],
     correctAnswer: "The type attribute should be set to 'switch' instead of 'checkbox'.", topic: "cbVar", difficulty: 3},
-
     
 ]
