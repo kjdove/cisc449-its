@@ -22,7 +22,7 @@ export function M2EndQuiz(): JSX.Element {
         return totalCorrect / questionNum;
    }
 
-   const masteries = {
+   const masteries: Record<string, number> = {
       textboxes: topicMasteryScore(t1Data, t1Questions),
       checkboxes: topicMasteryScore(t2Data, t2Questions),
       dropdowns: topicMasteryScore(t3Data, t3Questions),

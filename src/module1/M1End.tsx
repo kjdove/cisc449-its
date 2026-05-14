@@ -25,7 +25,7 @@ export function M1EndQuiz(): JSX.Element {
         return totalCorrect / questionNum;
     }
 
-    const masteries = {
+    const masteries: Record<string, number> = {
         forms: topicMasteryScore(t1Data, t1Questions),
         attributes: topicMasteryScore(t2Data, t2Questions),
         valueAttribute: topicMasteryScore(t3Data, t3Questions),
