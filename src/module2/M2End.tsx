@@ -1,6 +1,7 @@
 //Module 2 End of Module Quiz page
 import type { JSX } from "react";
 import type { TopicData } from "../Types";
+import {endOfModule} from "./M2Questions"
 /**
  * 
  * in local storage:

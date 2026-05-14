@@ -1,5 +1,5 @@
 /**TOPIC 1: Textboxes*/ 
-import  type { MCQ, CodingQ, EndQuizQ } from "../Types";
+import  type { MCQ, CodingQ, EndQuiz } from "../Types";
 
 export const topic1MCQ: MCQ[] = [
     //type = "text"
@@ -164,22 +164,17 @@ export const topic4Code: CodingQ[] = [
     {id: "2.4.21", question: "Order the following code snippets to correctly create a dropdown component."},
 ]
 
-    /* id: string;
-    question: string;
-    code?: string;
-    topic: string;
-    skill: string;
-    difficulty: number; */
-export const endOfModule: EndQuizQ[] = [
+
+export const endOfModule: EndQuiz[] = [
     //textboxes
-    {id: "E1", question: "Which React hook is commonly used to manage textbox state?", topic: "textboxes", skill: "recall", difficulty: 1},
+    {id: "E1", question: "Which React hook is commonly used to manage textbox state?", options: ["useState", "useEffect", "useMemo", "useRef"], correctAnswer: "useState",topic: "textboxes", skill: "recall", difficulty: 1},
     {id: "E2", question: "Which part updates the state when the user types?", code: 
         `<Form.Control
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
         />`, 
-    topic: "textboxes", skill: "event-handling", difficulty: 1},
+    options: ["<Form.Control>", "type='text'", "value={name}", "onChange={(e) => setName(e.target.value)}"], correctAnswer: "onChange={(e) => setName(e.target.value)}",topic: "textboxes", skill: "event-handling", difficulty: 1},
     {id: "E3", question: "What is the textbox value after the user types 'Ponyo'?", code: `
         const [movie, setMovie] = useState("Spirited Away");
         <Form.Control
@@ -187,24 +182,24 @@ export const endOfModule: EndQuizQ[] = [
             value={movie}
             onChange={(e) => setMovie(e.target.value)}
         />`,
-    topic: "textboxes", skill: "prediction", difficulty: 2},
+    options: ["Spirited Away", "Ponyo", "e.target.value", "movie"], correctAnswer: "Ponyo", topic: "textboxes", skill: "prediction", difficulty: 2},
     {id: "E4", question: "Will the textbox update correctly? Why/why not?", code: `
         <Form.Control
             type="text"
             value={username}
         onChange={() => setUsername(username)}
         />`,
-    topic: "textboxes", skill: "debugging", difficulty: 3},
+    options: ["Yes because it has the correct syntax.", "No, because it uses the wrong HTML tag for a textbox.", "No, because it incorrectly binds the state to the value attribute.", "No, because it has the incorrect onChange syntax for updating the name."], correctAnswer: "No, because it has the incorrect onChange syntax for updating the name.", topic: "textboxes", skill: "debugging", difficulty: 3},
 
     //checkboxes
-    {id: "E5", question: "Checkbox state is typically represented using which data type?", topic: "checkboxes", skill: "recall", difficulty: 1},
+    {id: "E5", question: "Checkbox state is typically represented using which data type?", options: ["string", "number", "boolean", "string[]"],correctAnswer: "boolean", topic: "checkboxes", skill: "recall", difficulty: 1},
     {id: "E6", question: "Which property tells whether the checkbox is checked?", code: `
         <Form.Check
             type="checkbox"
             checked={isAdmin}
             onChange={(e) => setIsAdmin(e.target.checked)}
         />`,
-    topic: "checkboxes", skill: "event-handling", difficulty: 1},
+    options: ["checked", "type", "value", "<Form.Check>"], correctAnswer: "checked", topic: "checkboxes", skill: "event-handling", difficulty: 1},
     {id: "E7", question: "Is the checkbox checked or unchecked after the user clicks it?", code: `
         const [isChecked, setIsChecked] = useState(false);
         <Form.Check
@@ -212,17 +207,17 @@ export const endOfModule: EndQuizQ[] = [
             checked={isChecked}
             onChange={(e) => setIsChecked(e.target.checked)}
         />`,
-    topic: "checkboxes", skill: "prediction", difficulty: 2},
+    options: ["Checked because the initial value was false.", "Checked because the initial value was true.", "Unchecked because the initial value was true.", "Unchecked because the initial value was false."], correctAnswer: "Checked because the initial value was false.", topic: "checkboxes", skill: "prediction", difficulty: 2},
     {id: "E8", question: "Will the checkbox update correctly? Why/why not?", code: `
         <Form.Check
             type="checkbox"
             checked={isSubscribed}
             onChange={() => setIsSubscribed(e.target.value)}
         />`,
-    topic: "checkboxes", skill: "debugging", difficulty: 3},
+    options: ["Yes, because it has the correct syntax.", "No, because it uses e.target.value instead of e.target.checked.", "No, because it use value instead of checked to bind the state to the input component.", "No, because it incorrectly binds the isSubscribed state to the checked attribute."], correctAnswer: "No, because it uses e.target.value instead of e.target.checked.", topic: "checkboxes", skill: "debugging", difficulty: 3},
 
     //dropdowns
-    {id: "E9", question: "Which tag is used inside <Form.Select> to define choices?", topic: "dropdowns", skill: "recall", difficulty: 1},
+    {id: "E9", question: "Which tag is used inside <Form.Select> to define choices?", options: ["<select>", "<option>", "<choice>", "<dropdown>"], correctAnswer: "<option>", topic: "dropdowns", skill: "recall", difficulty: 1},
     {id: "E10", question: "What becomes the new state value after user selects 'Happy'?", code: `
         const [mood, setMood] = useState("Sad");
         <Form.Select
@@ -232,7 +227,7 @@ export const endOfModule: EndQuizQ[] = [
         <option value="Happy">Happy</option>
         <option value="Sad">Sad</option>
         </Form.Select>`,
-    topic: "dropdowns", skill: "prediction", difficulty: 2},
+    options: ["Happy because the state will correctly update.", "Sad because the state will correctly update.", "Sad because the state is not correctly bind to the value attribute.", "Happy but the state will not update because the onChange syntax is incorrect."], correctAnswer: "Happy because the state will correctly update.", topic: "dropdowns", skill: "prediction", difficulty: 2},
     {id: "E11", question: "Will the dropdown update correctly? Why/why not?", code: `
         <Form.Select
         value={feeling}
@@ -241,13 +236,21 @@ export const endOfModule: EndQuizQ[] = [
         <option value="Good">Good</option>
         <option value="Bad">Bad</option>
         </Form.Select>`,
+    options: ["Yes, because it has the correct syntax and correctly uses the <option> tag to display the choices the user can select form.", 
+        "Yes, because it correctly binds the state to the value attribute and correctly uses the <select> tag to display the choices the users can select from.", 
+        "No, because it incorrectly binds the state to the value attribute.", 
+        "No, because it incorrectly updates the state since the onChange handler has the wrong syntax."], 
+    correctAnswer: "Yes, because it has the correct syntaxes and correctly uses the <option> tag to display the choices the user can select form.", 
     topic: "dropdowns", skill: "debugging", difficulty: 3},
-    {id: "E12", question: "Which two attributes connect a dropdown to state?", topic: "dropdowns", skill: "recall", difficulty: 1},
+    {id: "E12", question: "Which two attributes connect a dropdown to state?", options: ["value and onChange", "key and onChange", "value and setState", "key and setState"], correctAnswer: "value and onChange", topic: "dropdowns", skill: "recall", difficulty: 1},
 
     //differences
-    {id: "E13", question: "A user must select one country from 100 options. Which component is best?", topic: "differences", skill: "application", difficulty: 1},
-    {id: "E14", question: "A user must agree to terms and conditions. Which component should be used?", topic: "differences", skill: "application", difficulty: 1},
-    {id: "E15", question: "A user must enter their email address. Which component should be used?", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E13", question: "A user must select one country from 100 options. Which component is best?", 
+        options: ["dropdown", "textbox", "checkbox"],correctAnswer: "dropdown", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E14", question: "A user must agree to terms and conditions. Which component should be used?", 
+        options: ["dropdown", "textbox", "checkbox"], correctAnswer: "checkbox", topic: "differences", skill: "application", difficulty: 1},
+    {id: "E15", question: "A user must enter their email address. Which component should be used?", 
+        options: ["dropdown", "textbox", "checkbox"], correctAnswer: "textbox", topic: "differences", skill: "application", difficulty: 1},
     {id: "E16", question: "What does the following code represent?", code: `
         const [color, setColor] = useState<string>("Red");
         <Form.Select
@@ -257,7 +260,7 @@ export const endOfModule: EndQuizQ[] = [
         <option value="Red">Red</option>
         <option value="Blue">Blue</option>
         </Form.Select>`,
-    topic: "differences", skill: "application", difficulty: 2},
+    options: ["dropdown", "textbox", "checkbox"], correctAnswer: "dropdown", topic: "differences", skill: "application", difficulty: 2},
     {id: "E17", question: "What does the following code represent?", code: `
         const [name, setName] = useState<string>("Brave");
         <Form.Control 
@@ -265,12 +268,17 @@ export const endOfModule: EndQuizQ[] = [
             value={name}
             onChange={(e) => setName(e.target.value)}
         />`,
-    topic: "differences", skill: "application", difficulty: 2},
+    options: ["dropdown", "textbox", "checkbox"], correctAnswer: "textbox", topic: "differences", skill: "application", difficulty: 2},
     {id: "E18", question: "Will this component update correctly? Why/why not?", code: `
         <Form.Check
             type="checkbox"
             checked={isChecked}
             onChange={() => setIsChecked(e.target.checked)}
         />`,
+    options: ["Yes, because it correctly binds the state to the value attribute and uses the correct onChange syntax to update the state of the checkbox.",
+        "Yes, because it correctly binds the state to the checked attribute and uses the correct onChange syntax to update the state of the checkbox.",
+        "No, because it incorrectly binds the state to the value attribute and uses the wrong onChange syntax to update the state of the checkbox.",
+        "No, because it incorrectly binds the state to the checked attribute and uses the wrong onChange syntax to update the state of the checkbox."],
+    correctAnswer: "Yes, because it correctly binds the state to the checked attribute and uses the correct onChange syntax to update the state of the checkbox.",
     topic: "differences", skill: "debugging", difficulty: 3},
 ]

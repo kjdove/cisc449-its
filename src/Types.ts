@@ -9,9 +9,11 @@ export interface CodingQ {
     question: string;
 }
 
-export interface EndQuizQ {
+export interface EndQuiz {
     id: string;
     question: string;
+    options: string[];
+    correctAnswer: string;
     code?: string;
     topic: string;
     skill: string;
@@ -34,8 +36,6 @@ export type CodingAnswer =
   | { type: "fib"; id: string; correctAnswers: string| string[] }
   | { type: "ordering"; id: string; correctOrder: string | string[]; options: string[] }
   | { type: "mcq"; id: string; options: Option[]; correctId: string };
-
-export type EndQuizA = CodingAnswer | mcAnswer;
 
 /**Feedback Types */
 export interface mcFeedback {
