@@ -113,7 +113,6 @@ export const endOfModule: EndQuiz[] = [
     {id: "E5", question: "Will the following code correctly associate the label with the textbox? Why or why not?", code: `
     <Form.Group>
         <Form.Label>Name</Form.Label>
-    
         <Form.Control type="text" />
     </Form.Group>
             `,
@@ -124,31 +123,44 @@ export const endOfModule: EndQuiz[] = [
         "Yes, because type='text' handles accessibility"
     ], correctAnswer: "No, because Form.Group is missing controlId", topic: "forms", skill: "debugging", difficulty: 3},
 
+    {id: "E6", question: "Will the following code correctly associate the label with the textbox? Why or why not?", code: `
+        <Form.Group controlId="username">
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" />
+        </Form.Group>
+            `,
+        options: [
+            "Yes, because controlId connects the label and textbox",
+            "No, because Form.Control is missing an id",
+            "No, because Form.Label is missing a for attribute",
+            "Yes, because Form.Group automatically handles accessibility"   
+        ], correctAnswer: "Yes, because controlId connects the label and textbox", topic: "forms", skill: "debugging", difficulty: 3},
+
     //attributes
-    {id: "E6", question: "What is the purpose of form control attributes?", options: [
+    {id: "E7", question: "What is the purpose of form control attributes?", options: [
         "To control the behavior and appearance of form components",
         "To group related form elements together",
         "To display a human friendly identifier for an input component",
         "To provide helper text for form controls"
     ], correctAnswer: "To control the behavior and appearance of form components", topic: "attributes", skill: "conceptual", difficulty: 1},
    
-    {id: "E7", question: "Which component commonly uses attributes such as placeholder, required, and disabled?",
+    {id: "E8", question: "Which component commonly uses attributes such as placeholder, required, and disabled?",
     options: ["Form.Group", "Form.Control", "Form.Label", "Form.Text"], correctAnswer: "Form.Control", topic: "attributes", skill: "conceptual", difficulty: 1},
     
-    {id: "E8", question: "You want users to see example text inside an empty textbox before typing. Which attribute should be used?",
+    {id: "E9", question: "You want users to see example text inside an empty textbox before typing. Which attribute should be used?",
     options: ["placeholder", "value", "defaultValue", "readOnly"], correctAnswer: "placeholder", topic: "attributes", skill: "application", difficulty: 2},
     
-    {id: "E9", question: "A developer wants a textbox to display data that users can copy but not edit. Which attribute should be added?",
+    {id: "E10", question: "A developer wants a textbox to display data that users can copy but not edit. Which attribute should be added?",
     options: ["readOnly", "disabled", "value", "defaultValue"], correctAnswer: "readOnly", topic: "attributes", skill: "application", difficulty: 2},
     
-    {id: "E10", question: "What text initially appears inside the textbox?", code: `
+    {id: "E11", question: "What text initially appears inside the textbox?", code: `
     <Form.Control
         type="text"
         placeholder="Enter Email"
     />
-    `, options: ["Enter Email", "Email", "Nothing", "Placeholder"], correctAnswer: "Enter Email", topic: "attributes", skill: "prediction", difficulty: 2},
+    `, options: ["Enter Email", "Email", "Nothing", "Placeholder"], correctAnswer: "Enter Email", topic: "attributes", skill: "prediction", difficulty: 3},
     
-    {id: "E11", question: "What is incorrect about the following code?", code: `
+    {id: "E12", question: "What is incorrect about the following code?", code: `
     <Form.Control
         type="text"
         defaultValue={username}
@@ -162,19 +174,19 @@ export const endOfModule: EndQuiz[] = [
     ], correctAnswer: "defaultValue does not create a controlled component", topic: "attributes",skill: "debugging",difficulty: 3},
 
     //value attribute
-    {id: "E12", question: "Which attribute represents the current value of a form control?",
+    {id: "E13", question: "Which attribute represents the current value of a form control?",
     options: ["value", "defaultValue", "placeholder", "readOnly"], correctAnswer: "value", topic: "valueAttribute", skill: "conceptual", difficulty: 1},
     
-    {id: "E13", question:  "Which syntax correctly binds a textbox to a state variable called 'email'?",
+    {id: "E14", question:  "Which syntax correctly binds a textbox to a state variable called 'email'?",
         options: [
             'value={email}',
             'value="email"',
             'defaultValue={email}',
             'placeholder={email}'
          ],
-    correctAnswer: 'value={email}', topic: "valueAttribute", skill: "application", difficulty: 2},
+    correctAnswer: 'value={email}', topic: "valueAttribute", skill: "application", difficulty: 1},
     
-    {id: "E14", question: "Which line correctly updates the state variable 'username' from user input?",
+    {id: "E15", question: "Which line correctly updates the state variable 'username' from user input?",
     options: [
         'onChange={(e) => setUsername(e.target.value)}',
         'onChange={(e) => setUsername}',
@@ -182,7 +194,7 @@ export const endOfModule: EndQuiz[] = [
         'onChange={(e) => setUsername(e.target)}'
     ], correctAnswer: 'onChange={(e) => setUsername(e.target.value)}', topic: "valueAttribute", skill: "application", difficulty: 2},
     
-    {id: "E15", question: "Given the following code, will the form control update as the user types? Why or why not?", code: `
+    {id: "E16", question: "Given the following code, will the form control update as the user types? Why or why not?", code: `
         const [movie, setMovie] = useState("");
         <Form.Control
             type="text"
@@ -196,7 +208,7 @@ export const endOfModule: EndQuiz[] = [
         "The textbox updates but state does not"
     ], correctAnswer: "Yes, both state and textbox update", topic: "valueAttribute", skill: "prediction", difficulty: 2},
 
-    {id: "E16", question: "What is incorrect about the following code?", code: `
+    {id: "E17", question: "What is incorrect about the following code?", code: `
         const [email, setEmail] = useState("");
         <Form.Control
             type="text"
@@ -208,4 +220,17 @@ export const endOfModule: EndQuiz[] = [
          "type='text' is invalid",
          "useState cannot store strings"
         ], correctAnswer: 'value should be {email}, not "email"', topic: "valueAttribute", skill: "debugging", difficulty: 3},
+    
+    {id: "E18", question: "What is incorrect about the following code?", code: `
+        const [username, setUsername] = useState("");
+        <Form.Control
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(username)}
+        />`, options: [
+            'onChange should use e.target.value, not username',
+            "value should be defaultValue",
+            "type='text'is invalid",
+            "useState cannot store strings"], 
+    correctAnswer: 'onChange should use e.target.value, not username', topic: "valueAttribute", skill: "debugging", difficulty: 3},
 ]

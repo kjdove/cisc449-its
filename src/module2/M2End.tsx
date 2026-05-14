@@ -29,27 +29,54 @@ export function M2EndQuiz(): JSX.Element {
       differences: topicMasteryScore(t4Data, t4Questions)
    }
 
-   const chooseNextQuestion = (questions: EndQuiz[], masteryMap: Record<string, number>, answered: string[]) => {
-      const weakestTopic = Object.entries(masteryMap).sort((a,b) => a[1] - b[1])[0][0];
-
-      const mastery = masteryMap[weakestTopic];
-
+   const chooseNextQuestion = (questions: EndQuiz[], masteryMap: Record<string, number>, answered: string[], askedByTopic: Record<string, number>) => {
+      const topicMin = 2;
+   
+      const leastAskedTopics = Object.entries(askedByTopic).filter(([, count]) => count < topicMin).map(([topic]) => topic);
+   
+      let targetTopic: string;
+   
+      if (leastAskedTopics.length > 0) {
+         targetTopic = leastAskedTopics[0];
+      } else {
+         const weakestTopic = Object.entries(masteryMap).sort((a, b) => a[1] - b[1])[0][0];
+         targetTopic = weakestTopic;
+      }
+   
+      const mastery = masteryMap[targetTopic];
+   
       let targetDifficulty = 2;
+   
+      if (mastery < 0.4) targetDifficulty = 1;
+      else if (mastery > 0.75) targetDifficulty = 3;
+   
+      const candidates = questions.filter(q =>
+         q.topic === targetTopic &&
+         q.difficulty === targetDifficulty &&
+         !answered.includes(q.id)
+      );
+   
+      if (candidates.length > 0) {
+         return candidates[Math.floor(Math.random() * candidates.length)];
+      }
+   
+      //if same topic as current, choose different topic
+      const fallback = questions.filter(q => q.topic === targetTopic && !answered.includes(q.id));
 
-      if(mastery < 0.4)
-         targetDifficulty = 1;
-      else if(mastery > 0.75)
-         targetDifficulty = 3;
+      if (fallback.length > 0) {
+         return fallback[Math.floor(Math.random() * fallback.length)];
+      }
+   
+      return null;
+  }
 
-      const candidates = questions.filter(q => q.topic === weakestTopic 
-         && q.difficulty === targetDifficulty && !answered.includes(q.id));
-
-      return candidates.length > 0 ? candidates[Math.floor(Math.random() * candidates.length)] : null;
-   }
-
-   const [currentQuestion, setCurrentQuestion] = useState<EndQuiz | null>(() => chooseNextQuestion(endOfModule, masteries,[]));   
    const [askedQuestions, setAskedQuestions] = useState<string[]>([]);
-
+   const [askedByTopic, setAskedByTopic] = useState<Record<string, number>>({
+      textboxes: 0,
+      checkboxes: 0,
+      dropdowns: 0,
+      differences: 0
+   });
    const [studentAnswers, setStudentAnswers] = useState<Record<string, string>>({});
 
    const [correctCount, setCorrectCount] =  useState<number>(0);
@@ -59,7 +86,13 @@ export function M2EndQuiz(): JSX.Element {
    const [quizFinished, setQuizFinished] = useState<boolean>(false);
 
    const [masteryMap, setMasteryMap] = useState(masteries);
-
+   
+   const [currentQuestion, setCurrentQuestion] = useState<EndQuiz | null>(() => chooseNextQuestion(
+      endOfModule,
+      masteryMap,
+      [],
+      askedByTopic
+   ));
    const finishQuiz = (finalCorrect: number,finalQuestions: number) => {
       const percentage = Math.round((finalCorrect / finalQuestions) * 100);
 
@@ -118,6 +151,14 @@ export function M2EndQuiz(): JSX.Element {
       };
    
       setMasteryMap(updatedMasteries);
+
+      //update asked topics
+      const topic = currentQuestion.topic;
+
+      setAskedByTopic(prev => ({
+         ...prev,
+         [topic]: (prev[topic] || 0) + 1
+      }));
    
       //conditions to end quiz
       if(newQuestionsAsked >= 12) {
@@ -135,8 +176,12 @@ export function M2EndQuiz(): JSX.Element {
       }
       
       //next question
-      const nextQuestion = chooseNextQuestion(endOfModule, updatedMasteries, newAnsweredQuestions);
-   
+      const nextQuestion =chooseNextQuestion(
+         endOfModule,
+         updatedMasteries,
+         newAnsweredQuestions,
+         askedByTopic
+     );
       if(!nextQuestion) {
          finishQuiz(newCorrectCount, newQuestionsAsked);
          return;

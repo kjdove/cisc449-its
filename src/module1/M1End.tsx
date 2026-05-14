@@ -31,25 +31,52 @@ export function M1EndQuiz(): JSX.Element {
         valueAttribute: topicMasteryScore(t3Data, t3Questions),
     }
 
-    const chooseNextQuestion = (questions: EndQuiz[], masteryMap: Record<string, number>, answered: string[]) => {
-        const weakestTopic = Object.entries(masteryMap).sort((a,b) => a[1] - b[1])[0][0];
-  
-        const mastery = masteryMap[weakestTopic];
-  
+    const chooseNextQuestion = (questions: EndQuiz[], masteryMap: Record<string, number>, answered: string[], askedByTopic: Record<string, number>) => {
+        const topicMin = 2;
+     
+        const leastAskedTopics = Object.entries(askedByTopic).filter(([, count]) => count < topicMin).map(([topic]) => topic);
+     
+        let targetTopic: string;
+     
+        if (leastAskedTopics.length > 0) {
+           targetTopic = leastAskedTopics[0];
+        } else {
+           const weakestTopic = Object.entries(masteryMap).sort((a, b) => a[1] - b[1])[0][0];
+           targetTopic = weakestTopic;
+        }
+     
+        const mastery = masteryMap[targetTopic];
+     
         let targetDifficulty = 2;
-  
-        if(mastery < 0.4)
-           targetDifficulty = 1;
-        else if(mastery > 0.75)
-           targetDifficulty = 3;
-  
-        const candidates = questions.filter(q => q.topic === weakestTopic 
-           && q.difficulty === targetDifficulty && !answered.includes(q.id));
-  
-        return candidates.length > 0 ? candidates[Math.floor(Math.random() * candidates.length)] : null;
-    }
+     
+        if (mastery < 0.4) targetDifficulty = 1;
+        else if (mastery > 0.75) targetDifficulty = 3;
+     
+        const candidates = questions.filter(q =>
+           q.topic === targetTopic &&
+           q.difficulty === targetDifficulty &&
+           !answered.includes(q.id)
+        );
+     
+        if (candidates.length > 0) {
+           return candidates[Math.floor(Math.random() * candidates.length)];
+        }
+     
+        //if same topic as current, choose different topic
+        const fallback = questions.filter(q => q.topic === targetTopic && !answered.includes(q.id));
 
-    const [currentQuestion, setCurrentQuestion] = useState<EndQuiz | null>(() => chooseNextQuestion(endOfModule, masteries,[]));   
+        if (fallback.length > 0) {
+           return fallback[Math.floor(Math.random() * fallback.length)];
+        }
+     
+        return null;
+    }
+  
+    const [askedByTopic, setAskedByTopic] = useState<Record<string, number>>({
+        forms: 0,
+        attributes: 0,
+        valueAttribute: 0,
+     });
     const [askedQuestions, setAskedQuestions] = useState<string[]>([]);
 
     const [studentAnswers, setStudentAnswers] = useState<Record<string, string>>({});
@@ -61,6 +88,12 @@ export function M1EndQuiz(): JSX.Element {
     const [quizFinished, setQuizFinished] = useState<boolean>(false);
 
     const [masteryMap, setMasteryMap] = useState(masteries);
+    const [currentQuestion, setCurrentQuestion] = useState<EndQuiz | null>(() => chooseNextQuestion(
+        endOfModule,
+        masteryMap,
+        [],
+        askedByTopic
+     )); 
 
     const finishQuiz = (finalCorrect: number,finalQuestions: number) => {
         const percentage = Math.round((finalCorrect / finalQuestions) * 100);
@@ -120,6 +153,14 @@ export function M1EndQuiz(): JSX.Element {
         };
      
         setMasteryMap(updatedMasteries);
+
+        //update asked topics
+        const topic = currentQuestion.topic;
+
+        setAskedByTopic(prev => ({
+            ...prev,
+            [topic]: (prev[topic] || 0) + 1
+        }));
      
         //conditions to end quiz
         if(newQuestionsAsked >= 12) {
@@ -137,7 +178,12 @@ export function M1EndQuiz(): JSX.Element {
         }
         
         //next question
-        const nextQuestion = chooseNextQuestion(endOfModule, updatedMasteries, newAnsweredQuestions);
+        const nextQuestion =chooseNextQuestion(
+            endOfModule,
+            updatedMasteries,
+            newAnsweredQuestions,
+            askedByTopic
+        );
      
         if(!nextQuestion) {
            finishQuiz(newCorrectCount, newQuestionsAsked);
@@ -146,6 +192,8 @@ export function M1EndQuiz(): JSX.Element {
   
         setCurrentQuestion(nextQuestion);
     }//end handlesub
+
+
     return (
         <div className="endmod-content">
             <h1>End of Module 1 Quiz</h1>
