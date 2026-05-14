@@ -172,7 +172,7 @@ export const endOfModule: EndQuiz[] = [
             <Form.Control
                 type="number"
                 value={released}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setReleased(event.target.value)}
+                onChange={(event) => setReleased(event.target.value)}
                 />
                 </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
             correctAnswer: "A number input box", topic: "tbVar", difficulty: 2},
@@ -182,7 +182,7 @@ export const endOfModule: EndQuiz[] = [
             <Col>
             <Form.Control
                 value={name}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)} 
+                onChange={(event) => setName(event.target.value)} 
             />
             </Col>
         </Form.Group>`, options: ["A number input box", "A multiline textarea", "A horizontal layout textbox", "A regular textbox"],
