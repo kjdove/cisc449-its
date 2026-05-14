@@ -16,7 +16,7 @@ export interface EndQuiz {
     correctAnswer: string;
     code?: string;
     topic: string;
-    skill: string;
+    skill?: string;
     difficulty: number;
 }
 

@@ -15,6 +15,9 @@ export function Module1(): JSX.Element {
         navigate(`/module1/${topic}`);
     };
 
+    const endModResults = JSON.parse(localStorage.getItem("module1EndQuiz") || "{}");
+    const passed = endModResults.passed;
+
     const t1Data = JSON.parse(localStorage.getItem("module1topic1") || "{}");
     const t2Data = JSON.parse(localStorage.getItem("module1topic2") || "{}");
     const t3Data = JSON.parse(localStorage.getItem("module1topic3") || "{}");
@@ -63,6 +66,12 @@ export function Module1(): JSX.Element {
                         </div>
                     </div>
                     <button className="end-button" onClick={() => navigate("/module1/endquiz")}>End of Module Quiz</button>
+                    {passed === true && (
+                        <div className="congrats-message">
+                            <h2>Congratulations! You've passed the End of Module Quiz!</h2>
+                            <p>Feel free to review any topics or move on to the next module.</p>
+                        </div>
+                    )}
                 </div>
             )}
 

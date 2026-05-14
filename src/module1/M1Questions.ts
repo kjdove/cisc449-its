@@ -1,5 +1,5 @@
 /**TOPIC 1: Forms and Form.Groups Questions*/
-import type { MCQ, CodingQ, EndQuizQ} from "../Types";
+import type { MCQ, CodingQ, EndQuiz} from "../Types";
 //multiple choice questions for topic 1
 export const topic1MCQ: MCQ[] = [
     {id: "1.1.1", question: "What is a form?"},
@@ -96,6 +96,116 @@ export const topic3Code: CodingQ[] = [
     {id: "1.3.10", question: "Fill in the blank for the following code to correctly create a controlled form control."},
 ]
 
-export const endOfModule: EndQuizQ[] = [
+export const endOfModule: EndQuiz[] = [
+    //forms
+    {id: "E1", question: "Which component is commonly used to group related form elements together?", options: ["Form.Group", "Form.Control", "Form.Label", "Form.Text"], 
+    correctAnswer: "Form.Group", topic: "forms", skill: "form-structure", difficulty: 1},
+
+    {id: "E2", question: "Which tag displays a human friendly identifier for an input component?", options: ["Form.Group", "Form.Control", "Form.Label", "Form.Text"], 
+    correctAnswer: "Form.Label", topic: "forms", skill: "form-structure", difficulty: 1},
+
+    {id: "E3", question: "You want to group a label, textbox, and helper text together for a username input. Which component should wrap all of them?",
+    options: ["Form.Group", "Form.Control", "Form.Label", "Form.Text"], correctAnswer: "Form.Group", topic: "forms", skill: "form-structure", difficulty: 2},
+
+    {id: "E4", question:"A developer wants to connect a label to an input for accessibility. Which Form.Group property should be used?", 
+    options: ["controlId", "className", "id", "name"], correctAnswer: "controlId", topic: "forms", skill: "form-structure", difficulty: 2},
     
+    {id: "E5", question: "Will the following code correctly associate the label with the textbox? Why or why not?", code: `
+    <Form.Group>
+        <Form.Label>Name</Form.Label>
+    
+        <Form.Control type="text" />
+    </Form.Group>
+            `,
+    options: [
+        "No, because Form.Group is missing controlId",
+        "Yes, because Form.Label automatically connects",
+        "No, because Form.Control requires Form.Text",
+        "Yes, because type='text' handles accessibility"
+    ], correctAnswer: "No, because Form.Group is missing controlId", topic: "forms", skill: "debugging", difficulty: 3},
+
+    //attributes
+    {id: "E6", question: "What is the purpose of form control attributes?", options: [
+        "To control the behavior and appearance of form components",
+        "To group related form elements together",
+        "To display a human friendly identifier for an input component",
+        "To provide helper text for form controls"
+    ], correctAnswer: "To control the behavior and appearance of form components", topic: "attributes", skill: "conceptual", difficulty: 1},
+   
+    {id: "E7", question: "Which component commonly uses attributes such as placeholder, required, and disabled?",
+    options: ["Form.Group", "Form.Control", "Form.Label", "Form.Text"], correctAnswer: "Form.Control", topic: "attributes", skill: "conceptual", difficulty: 1},
+    
+    {id: "E8", question: "You want users to see example text inside an empty textbox before typing. Which attribute should be used?",
+    options: ["placeholder", "value", "defaultValue", "readOnly"], correctAnswer: "placeholder", topic: "attributes", skill: "application", difficulty: 2},
+    
+    {id: "E9", question: "A developer wants a textbox to display data that users can copy but not edit. Which attribute should be added?",
+    options: ["readOnly", "disabled", "value", "defaultValue"], correctAnswer: "readOnly", topic: "attributes", skill: "application", difficulty: 2},
+    
+    {id: "E10", question: "What text initially appears inside the textbox?", code: `
+    <Form.Control
+        type="text"
+        placeholder="Enter Email"
+    />
+    `, options: ["Enter Email", "Email", "Nothing", "Placeholder"], correctAnswer: "Enter Email", topic: "form-attributes", skill: "prediction", difficulty: 2},
+    
+    {id: "E11", question: "What is incorrect about the following code?", code: `
+    <Form.Control
+        type="text"
+        defaultValue={username}
+        onChange={(e) => setUsername(e.target.value)}
+    />`,
+    options: [
+        "defaultValue does not create a controlled component",
+        "onChange cannot be used with Form.Control",
+        "type='text' is invalid",
+        "defaultValue makes the textbox disabled"
+    ], correctAnswer: "defaultValue does not create a controlled component", topic: "form-attributes",skill: "debugging",difficulty: 3},
+
+    //value attribute
+    {id: "E12", question: "Which attribute represents the current value of a form control?",
+    options: ["value", "defaultValue", "placeholder", "readOnly"], correctAnswer: "value", topic: "value-attribute", skill: "conceptual", difficulty: 1},
+    
+    {id: "E13", question:  "Which syntax correctly binds a textbox to a state variable called 'email'?",
+        options: [
+            'value={email}',
+            'value="email"',
+            'defaultValue={email}',
+            'placeholder={email}'
+         ],
+    correctAnswer: 'value={email}', topic: "value-attribute", skill: "application", difficulty: 2},
+    
+    {id: "E14", question: "Which line correctly updates the state variable 'username' from user input?",
+    options: [
+        'onChange={(e) => setUsername(e.target.value)}',
+        'onChange={(e) => setUsername}',
+        'onChange={(e) => setUsername(e)}',
+        'onChange={(e) => setUsername(e.target)}'
+    ], correctAnswer: 'onChange={(e) => setUsername(e.target.value)}', topic: "value-attribute", skill: "application", difficulty: 2},
+    
+    {id: "E15", question: "Given the following code, will the form control update as the user types? Why or why not?", code: `
+        const [movie, setMovie] = useState("");
+        <Form.Control
+            type="text"
+            value={movie}
+            onChange={(e) => setMovie(e.target.value)}
+        />
+    `, options: [
+        "Yes, both state and textbox update",
+        "No, the textbox stays empty",
+        "No, React prevents typing",
+        "The textbox updates but state does not"
+    ], correctAnswer: "Yes, both state and textbox update", topic: "value-attribute", skill: "prediction", difficulty: 2},
+
+    {id: "E16", question: "What is incorrect about the following code?", code: `
+        const [email, setEmail] = useState("");
+        <Form.Control
+            type="text"
+            value="email"
+            onChange={(e) => setEmail(e.target.value)}
+        />`, options: [
+            'value should be {email}, not "email"',
+         "onChange is invalid",
+         "type='text' is invalid",
+         "useState cannot store strings"
+        ], correctAnswer: 'value should be {email}, not "email"', topic: "value-attribute", skill: "debugging", difficulty: 3},
 ]

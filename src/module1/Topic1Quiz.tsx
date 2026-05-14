@@ -98,7 +98,7 @@ export function Topic1Quiz(): JSX.Element {
         <div className="t1-container">
             <div className="topic-header">
                 <button className="back-button"  onClick={handleBackButton}>Back to Module 1</button>
-                <h2 className='topic-title'>Form Attributes and Controls</h2>
+                <h2 className='topic-title'>Forms and Form.Groups</h2>
             </div>
            <div className="question-list">
             {allQuestions.map((q, index) => (
