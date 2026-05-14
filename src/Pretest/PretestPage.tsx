@@ -172,8 +172,8 @@ export function Pretest(): JSX.Element {
                     }
                 </div>
                {studentRating > 0 && 
-                <div className="submit-button">
-                    <button onClick={handleSubmit}>submit</button>
+                <div>
+                    <button  className="submit-button" onClick={handleSubmit}>submit</button>
                 </div>
                 } 
             </div>
