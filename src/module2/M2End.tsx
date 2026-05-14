@@ -146,20 +146,20 @@ export function M2EndQuiz(): JSX.Element {
    }//end handlesub
 
     return (
-        <div className="m2-end-container">
+        <div className="endmod-content">
             <h1>End of Module 2 Quiz</h1>
             {!quizFinished && currentQuestion && (
                <div>
-                  <h3>{currentQuestion?.question}</h3>
+                  <p className="question">{currentQuestion?.question}</p>
 
                   {currentQuestion?.code && (
                      <pre>
                         {currentQuestion.code}
                      </pre>
                   )}
-
+                  <div className="answer">
                   {currentQuestion?.options.map(option => (
-                     <div key={option}>
+                     <div key={option} className="answer-option">
                         <input
                            type="radio"
                            name={currentQuestion?.id}
@@ -179,30 +179,20 @@ export function M2EndQuiz(): JSX.Element {
                         {option}
                      </div>
                   ))}
-                  <button onClick={handleSubmit}>
+                  </div>
+                  <button className="submit-button" onClick={handleSubmit}>
                      Submit
                   </button>
                </div>
             )}
             {quizFinished && (
                <div>
-
                   <h2>Quiz Complete</h2>
-
-                  <p>
-                     Score:
-                     {correctCount}/{questionsAsked}
-                  </p>
-
-                  <p>
-                     Percentage:
-                     {Math.round(
-                        correctCount/questionsAsked * 100
-                     )}%
-                  </p>
-                     <p onClick={() => navigate("/dashboard")}>Return to Dashboard</p>
+                  <p>Score: {correctCount}/{questionsAsked}</p>
+                  <p>Percentage: {Math.round(correctCount/questionsAsked * 100)}%</p>
+                  <p className='return' onClick={() => navigate("/dashboard")}>Return to Dashboard</p>
                </div>
-               )}
+            )}
         </div>
     );
 }

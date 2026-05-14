@@ -146,7 +146,7 @@ export const endOfModule: EndQuiz[] = [
         type="text"
         placeholder="Enter Email"
     />
-    `, options: ["Enter Email", "Email", "Nothing", "Placeholder"], correctAnswer: "Enter Email", topic: "form-attributes", skill: "prediction", difficulty: 2},
+    `, options: ["Enter Email", "Email", "Nothing", "Placeholder"], correctAnswer: "Enter Email", topic: "attributes", skill: "prediction", difficulty: 2},
     
     {id: "E11", question: "What is incorrect about the following code?", code: `
     <Form.Control
@@ -159,11 +159,11 @@ export const endOfModule: EndQuiz[] = [
         "onChange cannot be used with Form.Control",
         "type='text' is invalid",
         "defaultValue makes the textbox disabled"
-    ], correctAnswer: "defaultValue does not create a controlled component", topic: "form-attributes",skill: "debugging",difficulty: 3},
+    ], correctAnswer: "defaultValue does not create a controlled component", topic: "attributes",skill: "debugging",difficulty: 3},
 
     //value attribute
     {id: "E12", question: "Which attribute represents the current value of a form control?",
-    options: ["value", "defaultValue", "placeholder", "readOnly"], correctAnswer: "value", topic: "value-attribute", skill: "conceptual", difficulty: 1},
+    options: ["value", "defaultValue", "placeholder", "readOnly"], correctAnswer: "value", topic: "valueAttribute", skill: "conceptual", difficulty: 1},
     
     {id: "E13", question:  "Which syntax correctly binds a textbox to a state variable called 'email'?",
         options: [
@@ -172,7 +172,7 @@ export const endOfModule: EndQuiz[] = [
             'defaultValue={email}',
             'placeholder={email}'
          ],
-    correctAnswer: 'value={email}', topic: "value-attribute", skill: "application", difficulty: 2},
+    correctAnswer: 'value={email}', topic: "valueAttribute", skill: "application", difficulty: 2},
     
     {id: "E14", question: "Which line correctly updates the state variable 'username' from user input?",
     options: [
@@ -180,7 +180,7 @@ export const endOfModule: EndQuiz[] = [
         'onChange={(e) => setUsername}',
         'onChange={(e) => setUsername(e)}',
         'onChange={(e) => setUsername(e.target)}'
-    ], correctAnswer: 'onChange={(e) => setUsername(e.target.value)}', topic: "value-attribute", skill: "application", difficulty: 2},
+    ], correctAnswer: 'onChange={(e) => setUsername(e.target.value)}', topic: "valueAttribute", skill: "application", difficulty: 2},
     
     {id: "E15", question: "Given the following code, will the form control update as the user types? Why or why not?", code: `
         const [movie, setMovie] = useState("");
@@ -194,7 +194,7 @@ export const endOfModule: EndQuiz[] = [
         "No, the textbox stays empty",
         "No, React prevents typing",
         "The textbox updates but state does not"
-    ], correctAnswer: "Yes, both state and textbox update", topic: "value-attribute", skill: "prediction", difficulty: 2},
+    ], correctAnswer: "Yes, both state and textbox update", topic: "valueAttribute", skill: "prediction", difficulty: 2},
 
     {id: "E16", question: "What is incorrect about the following code?", code: `
         const [email, setEmail] = useState("");
@@ -207,5 +207,5 @@ export const endOfModule: EndQuiz[] = [
          "onChange is invalid",
          "type='text' is invalid",
          "useState cannot store strings"
-        ], correctAnswer: 'value should be {email}, not "email"', topic: "value-attribute", skill: "debugging", difficulty: 3},
+        ], correctAnswer: 'value should be {email}, not "email"', topic: "valueAttribute", skill: "debugging", difficulty: 3},
 ]
