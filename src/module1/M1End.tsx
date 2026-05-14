@@ -15,7 +15,7 @@ export function M1EndQuiz(): JSX.Element {
     const t2Data = JSON.parse(localStorage.getItem("module1topic2") || "{}");
     const t3Data = JSON.parse(localStorage.getItem("module1topic3") || "{}");
 
-    const t1Questions = 13;    
+    const t1Questions = 12;    
     const t2Questions = 12;
     const t3Questions = 10;
 
