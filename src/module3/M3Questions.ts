@@ -1,5 +1,5 @@
 /**TOPIC 1: Textbox Variations*/
-import type { MCQ, CodingQ } from "../Types"
+import type { MCQ, CodingQ, EndQuiz} from "../Types"
 export const topic1MCQ: MCQ[] = [
     //number input box, horizontal layout, multiline textarea
     {id: "3.1.1", question: "Which of the following are valid variations of textboxes in React-Bootstrap?"},
@@ -157,4 +157,8 @@ export const topic3Code: CodingQ[] = [
     //parsons/ordering
         //include possible lines of code that make a dropdown populated by an array of options and a regular dropdown
     {id: "3.3.9", question: "Order the following lines of code to correctly create a dropdown populated by an array of options."},
+]
+
+export const endOfModule: EndQuiz[] = [
+    
 ]

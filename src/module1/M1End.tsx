@@ -62,7 +62,7 @@ export function M1EndQuiz(): JSX.Element {
            return candidates[Math.floor(Math.random() * candidates.length)];
         }
      
-        //if same topic as current, choose different topic
+        //if no questions match difficulty, same topic but any difficulty
         const fallback = questions.filter(q => q.topic === targetTopic && !answered.includes(q.id));
 
         if (fallback.length > 0) {
